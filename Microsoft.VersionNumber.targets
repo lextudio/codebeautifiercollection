@@ -57,7 +57,7 @@
 
   <!-- The items that get processed by the task -->
   <ItemGroup>
-    <AssemblyInfoFiles Include="**\lexdkversion.*"/>
+    <AssemblyInfoFiles Include="**\lexdkversion.*" Exclude="**\.svn\**\lexdkversion.*" />
   </ItemGroup>
   
   <!-- Import the task -->

@@ -15,19 +15,18 @@
 		<LibFolder>lib</LibFolder>
 	</PropertyGroup>
 	<ItemGroup>
-		<BundledFiles Include="bundled\**\*.*" />
-		<DataFiles Include="data\**\*.*" Exclude="**\*.cfg;**\*.ota;**\*.exe.config" />
-		<PreferencesFiles Include="preferences\**\*.*" Exclude="**\*.ota" />
+		<BundledFiles Include="bundled\**\*.*" Exclude="bundled\**\.*\**\*.*"/>
+		<DataFiles Include="data\**\*.*" Exclude="data\**\.*\**\*.*;**\*.cfg;**\*.ota;**\*.exe.config" />
+		<PreferencesFiles Include="preferences\**\*.*" Exclude="preferences\**\.*\**\*.*;**\*.ota" />
 		<InstallFiles Include="gacutil.exe*;psvince.dll;*.exe.manifest;*.ini" />
 		<ProjectFiles Include="*.*proj;*.sln;*.plus2;*.targets;make*.bat;*.bds*" />
-		<SetupFiles Include="setup\*.*" Exclude="setup\*.exe" />
-		<LibFiles Include="lib\**\*.*" />
-		<ComFiles Include="comimports\**\*.*" />
-		<SrcFiles Include="src\**\*.*" />
-		<ThirdpartiesFiles Include="thirdparties\**\*.*" />
-		<TestFiles Include="test\**\*.*" />
-		<KeyFiles Include="LextmKeyFiles\*.*" />
-		<ExtraFiles Include="*.*" Exclude="*.zip"/>
+		<SetupFiles Include="setup\*.*" Exclude="setup\**\.*\**\*.*;setup\*.exe" />
+		<LibFiles Include="lib\**\*.*" Exclude="lib\**\.*\**\*.*"/>
+		<SrcFiles Include="src\**\*.*" Exclude="src\**\.*\**\*.*"/>
+		<ThirdpartiesFiles Include="thirdparties\**\*.*" Exclude="thirdparties\**\.*\**\*.*"/>
+		<TestFiles Include="test\**\*.*" Exclude="test\**\.*\**\*.*"/>
+		<KeyFiles Include="LextmKeyFiles\*.*" Exclude="LextmKeyFiles\**\.*\**\*.*"/>
+		<ExtraFiles Include="*.*" Exclude="**\.*\**\*.*;*.zip"/>
 		<LostReferences Include="$(LibFolder)\Unhandled*.dll" />
 		<LostReferences Include="$(LibFolder)\NUnit*.dll" />
     <LostReferences Include="$(LibFolder)\visibles.dll" />
