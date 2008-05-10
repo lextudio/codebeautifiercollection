@@ -8,6 +8,9 @@
 		<ChmFile>$(ChmFolder)\ClassReference.chm</ChmFile>
 		<DocFolder>doc</DocFolder>
 		<WorkingFolder>src\chm\working</WorkingFolder>
+		<KeyFolder>.\lextmkeyfiles</KeyFolder>
+		<KeyFile>PublicPrivateKeyFile.snk</KeyFile>
+		<TempFile>temp.snk</TempFile>
 	</PropertyGroup>
 	<ItemGroup>
 		<TempFiles Include="$(ChmFolder)\LastBuild.log" />
@@ -24,12 +27,17 @@
 		<RemoveDir Directories="$(WorkingFolder)" Condition="Exists('$(WorkingFolder)')" />
 		<Delete Files="@(TempFiles)" />
 	</Target>
-	<Target Name="Release">
+	<Target Name="Common">
+	<!-- create a temp key for others -->
+		<MakeDir Directories="$(KeyFolder)" Condition="!Exists('$(KeyFolder)')"/>
+		<Copy SourceFiles="$(TempFile)" DestinationFiles="$(KeyFolder)\$(KeyFile)" />
+	</Target>
+	<Target Name="Release" DependsOnTargets="Common">
 		<!--<Exec Command="$(MSBuildPath) $(MSBeeWords) /v:m /p:Configuration=Release Lextm.CBC2.Full.sln" />-->
 	    <MSBuild Projects="Lextm.CBC2.Full.sln" Properties="Configuration=Release" />
 	</Target>	
 		
-	<Target Name="Debug">
+	<Target Name="Debug" DependsOnTargets="Common">
 		<!--<Exec Command="$(MSBuildPath) $(MSBeeWords) /p:Configuration=Debug Lextm.CBC2.Full.sln" />-->
 	    <MSBuild Projects="Lextm.CBC2.Full.sln" Properties="Configuration=Debug" />
 	</Target>
