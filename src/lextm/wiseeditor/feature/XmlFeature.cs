@@ -15,7 +15,7 @@ namespace Lextm.WiseEditor.Feature
 
 	public class XmlFeature : CustomFeature
 	{
-
+		const string Name = "XML";
 		/**************************************************************/
 		/*                     Protected
                     /**************************************************************/
@@ -79,7 +79,7 @@ namespace Lextm.WiseEditor.Feature
 			}
 			else
 			{
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
 			}
 		}
 
@@ -224,7 +224,7 @@ namespace Lextm.WiseEditor.Feature
 
 			if (_FileNames.Count == 0)
 			{
-				Lextm.Windows.Forms.MessageBoxFactory.Info("No xsd file found in the current project");
+				Lextm.Windows.Forms.MessageBoxFactory.Info(Name, "No rule found", "No xsd file found in the current project");
 				return;
 			}
 

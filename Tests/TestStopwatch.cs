@@ -1,3 +1,4 @@
+#pragma warning disable 1591
 namespace Lextm.Common.Tests
 {
     using System;
@@ -58,3 +59,4 @@ namespace Lextm.Common.Tests
 		}
 	}
 }
+#pragma warning restore 1591

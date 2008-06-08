@@ -157,7 +157,7 @@ namespace Lextm.WiseEditor.Gui
             }
 
             if (fProjectStartupChanged) {
-            	Lextm.Windows.Forms.MessageBoxFactory.Info("The new Default projects directory will be available next time you start the application");
+            	Lextm.Windows.Forms.MessageBoxFactory.Info(null, "Change saved", "The new Default projects directory will be available next time you start the application");
             }
             
             //preferences.WarnOnCompileUnsavedFile = chkWarnOnCompileUnsavedFile.Checked;

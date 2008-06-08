@@ -117,11 +117,11 @@
     <Compile Include="src\bewise\common\commandline\BoolCommandLineOption.cs" />
     <Compile Include="src\bewise\common\commandline\CommandLineManager.cs" />
     <Compile Include="src\bewise\common\commandline\ValueCommandLineOption.cs" />
-    <Compile Include="src\bewise\common\iconmanager\BaseIconManager.cs" />
-    <Compile Include="src\bewise\common\iconmanager\ExtractIcons.cs" />
-    <Compile Include="src\bewise\common\iconmanager\FileIconManager.cs" />
-    <Compile Include="src\bewise\common\iconmanager\IconManager.cs" />
-    <Compile Include="src\bewise\common\iconmanager\ToolBoxIconManager.cs" />
+    <Compile Include="src\bewise\common\iconmanagers\BaseIconManager.cs" />
+    <Compile Include="src\bewise\common\iconmanagers\ExtractIcons.cs" />
+    <Compile Include="src\bewise\common\iconmanagers\FileIconManager.cs" />
+    <Compile Include="src\bewise\common\iconmanagers\IconManager.cs" />
+    <Compile Include="src\bewise\common\iconmanagers\ToolBoxIconManager.cs" />
     <Compile Include="src\bewise\common\info\ExpertInfo.cs" />
     <Compile Include="src\bewise\common\info\ModuleFileInfo.cs" />
     <Compile Include="src\bewise\common\utils\DelphiProjectModuleInfo.cs" />

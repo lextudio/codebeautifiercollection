@@ -20,7 +20,7 @@ namespace Lextm.WiseEditor.Feature {
     /// </summary>
     public class ComponentNamerFeature : CustomFeature {
 
-		private const string TabGeneral = "ComponentNamer";
+		private const string Name = "Component Namer";
 
         ///<summary>
         ///Registers tabs.
@@ -30,7 +30,7 @@ namespace Lextm.WiseEditor.Feature {
         ///</remarks>
         protected override void IdeRegisterTabs() {
             base.IdeRegisterTabs();
-			RegisterTab(CreateTabNode(TabGeneral, typeof(Gui.ComponentNamerPage)));
+			RegisterTab(CreateTabNode(Name, typeof(Gui.ComponentNamerPage)));
         }
 
         /**************************************************************/
@@ -216,8 +216,8 @@ namespace Lextm.WiseEditor.Feature {
                         }
                     }
                 }
-            } catch (Exception e) {
-                Lextm.Windows.Forms.MessageBoxFactory.Fatal(e);
+            } catch (Exception ex) {
+                Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
             }
         }
 

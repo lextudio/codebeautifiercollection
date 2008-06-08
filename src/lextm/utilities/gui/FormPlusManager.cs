@@ -424,7 +424,7 @@ namespace Lextm.Utilities.Gui
 
         private void PersistState()
         {
-            if (modified && MessageBoxFactory.Confirm("Do you want to apply your changes?") == DialogResult.Yes)
+            if (modified && MessageBoxFactory.Confirm(Text, "Do you want to apply your changes?", "Click Yes and the changes are applied. Click No if you want to cancel.") == DialogResult.Yes)
             {
                 UpdateTag(rootNode);
                 Plus2Registry.GeneratePlus2Files();

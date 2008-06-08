@@ -21,6 +21,8 @@ namespace Lextm.WiseEditor.Feature {
 
 	public class ProjectAidFeature : CustomFeatureTool {
 		
+		const string Name = "Project Aid";
+		
 		public ProjectAidFeature() {
 			IOTAService _Service = OtaUtils.GetService();
 			_Service.FileNotification += new FileNotificationHandler(OpenCloseFileNotificationHandler);
@@ -72,7 +74,7 @@ namespace Lextm.WiseEditor.Feature {
 				return;
 			}
 			IHandler handler = HandlerFactory.GetHandlerFor(proj);
-			if (handler is Manner20UnsignedHandler && MessageBoxFactory.Confirm("Do you want to sign this project?") == DialogResult.No)
+			if (handler is Manner20UnsignedHandler && MessageBoxFactory.Confirm(Name, "Do you want to sign this project?", "Signing your projects is recommended by .NET Design Guidelines") == DialogResult.No)
 			{
 				return;
 			}
@@ -133,7 +135,7 @@ namespace Lextm.WiseEditor.Feature {
 					}
 				}
 			} catch (Exception ex) {
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
 			}
 		}
 		#endregion
@@ -225,7 +227,7 @@ namespace Lextm.WiseEditor.Feature {
 			IOTAModule _Module = OtaUtils.GetCurrentModule();
 			string _FileName = _Module.FileName;
 
-			if (MessageBoxFactory.Confirm("Do you really want to delete the file " + _FileName + "?") == DialogResult.Yes) {
+			if (MessageBoxFactory.Confirm(Name, "Do you really want to delete the file ?", _FileName) == DialogResult.Yes) {
 				_Module.Close(false);
 
 				string _ResourceFileName = Path.ChangeExtension(_FileName, ".resx");
@@ -261,7 +263,7 @@ namespace Lextm.WiseEditor.Feature {
 
 			string _Target = OtaUtils.GetProjectTarget(OtaUtils.GetCurrentProject());
 
-			if (MessageBoxFactory.Confirm("Do you really want to delete the target " + _Target + "?") == DialogResult.Yes) {
+			if (MessageBoxFactory.Confirm(Name, "Do you really want to delete the target ?", _Target) == DialogResult.Yes) {
 				File.Delete(_Target);
 			}
 		}
@@ -273,7 +275,7 @@ namespace Lextm.WiseEditor.Feature {
 			string _FileName = OtaUtils.GetCurrentEditorFileName();
 
 			if (!File.Exists(_FileName)) {
-				Lextm.Windows.Forms.MessageBoxFactory.Info("Please save to see the file properties");
+				Lextm.Windows.Forms.MessageBoxFactory.Info(Name, "File not saved", "Please save to see the file properties");
 				return;
 			}
 
@@ -393,7 +395,7 @@ namespace Lextm.WiseEditor.Feature {
 					}
 				}
 			} else {
-				Lextm.Windows.Forms.MessageBoxFactory.Info("No file to save !");
+				Lextm.Windows.Forms.MessageBoxFactory.Info(Name, "No file found", "There is no file to save");
 			}
 		}
 
@@ -413,7 +415,7 @@ namespace Lextm.WiseEditor.Feature {
 				CurrentPEVerify.RunConsole(new object[] {_Target, String.Empty}, String.Empty);
 			} catch (Exception ex)
 			{
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
 			}
 		}
 

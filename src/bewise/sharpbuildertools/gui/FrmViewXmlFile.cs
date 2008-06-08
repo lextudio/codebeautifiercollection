@@ -171,7 +171,7 @@ namespace BeWise.SharpBuilderTools.Gui {
           try {
             fDataSet.ReadXml(aFileName);
           } catch {
-            Lextm.Windows.Forms.MessageBoxFactory.Info("Unable to load the Xml file in a DataGrid");
+            Lextm.Windows.Forms.MessageBoxFactory.Info(Text, "File corrupt", "Unable to load the Xml file in a DataGrid");
           }
 
           dataGrid1.DataSource = fDataSet;

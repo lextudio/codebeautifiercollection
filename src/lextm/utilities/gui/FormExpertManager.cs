@@ -143,7 +143,7 @@ namespace Lextm.Utilities.Gui
         {
             ExpertInfo _ExpertInfo = GetCurrentExpertInfo();
 
-            if (_ExpertInfo != null && Lextm.Windows.Forms.MessageBoxFactory.Confirm("Do you really want to remove this IDE assembly ?") == DialogResult.Yes)
+            if (_ExpertInfo != null && Lextm.Windows.Forms.MessageBoxFactory.Confirm(Text, "Do you really want to remove this IDE assembly ?", "Click Yes and the assembly will be removed. Click No if you want to cancel.") == DialogResult.Yes)
             {
                 if (_ExpertInfo.IsDotNet)
                 {

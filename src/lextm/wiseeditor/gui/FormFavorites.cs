@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using BeWise.Common.IconManager;
+using BeWise.Common.IconManagers;
 using BeWise.Common.Utils;
 using Borland.Studio.ToolsAPI;
 using Lextm.OpenTools;
@@ -652,7 +652,7 @@ namespace Lextm.WiseEditor.Gui {
             if (e.Label != null) {
                 if (e.Label.Length == 0) {
                     e.CancelEdit = true;
-                    Lextm.Windows.Forms.MessageBoxFactory.Warn("Invalid folder name." + Environment.NewLine + "The name cannot be empty");
+                    Lextm.Windows.Forms.MessageBoxFactory.Warn(Text, "Invalid folder name", "The name cannot be empty");
                     e.Node.BeginEdit();
                 }
             }

@@ -1,12 +1,13 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace BeWise.Common.Utils {
 	
 	/// <summary>WinAPI wrapper.</summary>
-	public sealed class WinAPI {
+	public sealed class WinApi {
 
-		private WinAPI() { }
+		private WinApi() { }
 
 		/**************************************************************/
 		/*                        Const
@@ -23,8 +24,11 @@ namespace BeWise.Common.Utils {
 		
 		/// <summary>
 		/// SHGFI.
-		/// </summary>
-		[FlagsAttribute]
+		/// </summary>		
+		[SuppressMessage("Microsoft.Naming", "CA1712:DoNotPrefixEnumValuesWithTypeName")]
+		[SuppressMessage("Microsoft.Naming", "CA1714:FlagsEnumsShouldHavePluralNames")]
+		[SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId="SHGFI")]
+		[Flags]
 		public enum SHGFI
 		{
 			/// <summary>get icon</summary>

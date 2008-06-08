@@ -17,6 +17,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Globalization;
 
@@ -138,8 +139,9 @@ namespace Lextm
         /// <param name="currentPos">Current position</param>
         /// <param name="prev">Previous</param>
         /// <param name="foundPos">Found position</param>
-        /// <returns>true if found, false if not.</returns>
-        public static bool SearchText(string text,
+        /// <returns>true if found, false if not.</returns>        	        
+		[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
+		public static bool SearchText(string text,
                                       string source,
                                       int currentPos,
                                       bool prev,
@@ -174,7 +176,8 @@ namespace Lextm
         /// <param name="source">Source</param>
         /// <param name="startPos">Start position</param>
         /// <param name="prev">Previous</param>
-        /// <returns>true if right, false if out of bound.</returns>
+        /// <returns>true if right, false if out of bound.</returns>        
+		[SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", MessageId="1#")]
         public static bool GoNext(string source, ref int startPos, bool prev)
         {
             if (prev)

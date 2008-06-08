@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
 using System.IO;
-
+#pragma warning disable 1591
 namespace Lextm.Common.Tests
 {
 	[TestFixture]
@@ -37,3 +37,4 @@ namespace Lextm.Common.Tests
 		}
 	}
 }
+#pragma warning restore 1591

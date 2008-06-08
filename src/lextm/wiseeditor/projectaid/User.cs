@@ -17,7 +17,7 @@ namespace Lextm.WiseEditor.ProjectAid
 		public string ProvideKeyFile()
 		{
 			string result = null;
-			if (MessageBoxFactory.Confirm("Do you have a key file?") == DialogResult.Yes)
+			if (MessageBoxFactory.Confirm(null, "Do you have a key file?", "Please provide a valid key file (.snk).") == DialogResult.Yes)
 			{
 				Vista_Api.OpenFileDialog dialog = new Vista_Api.OpenFileDialog();
 				dialog.Filter = "Key Files (*.snk)|*.snk";

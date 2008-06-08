@@ -411,7 +411,7 @@ namespace ArtCSB{
 			}
 			if (e.Button == toolBarButton_DEL_CMP){
 
-				DialogResult result = Lextm.Windows.Forms.MessageBoxFactory.Confirm("Selected components will be deleted!");
+				DialogResult result = Lextm.Windows.Forms.MessageBoxFactory.Confirm(Text, "Do you want to delete it?", "Selected components will be deleted");
 				if (result == DialogResult.Yes)
 				{
 					this.Activate();

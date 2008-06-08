@@ -330,7 +330,7 @@ namespace Lextm.CodeBeautifiers.Gui
             }
             else
             {
-                MessageBoxFactory.Warn("JCF Format Settings is already running.");
+                MessageBoxFactory.Warn(null, "Already opened", "JCF Format Settings dialog is already open.");
             }
         }
 
@@ -350,7 +350,7 @@ namespace Lextm.CodeBeautifiers.Gui
             }
             else
             {
-                MessageBoxFactory.Warn("Please close JCF Format Settings.");
+                MessageBoxFactory.Warn(null, "Already opened", "Please close JCF Format Settings dialog before importing a configuration file.");
             }
         }
 

@@ -364,13 +364,13 @@ namespace Lextm.WiseEditor.Gui
 
 		private bool ControlPrefixIsValid(){
 			if (String.IsNullOrEmpty(txtControlPrefixPrefix.Text)) {
-				Lextm.Windows.Forms.MessageBoxFactory.Info("You must enter a prefix");
+				Lextm.Windows.Forms.MessageBoxFactory.Info(null, "Empty input", "You must enter a prefix");
 
 				return false;
 			}
 
 			if (String.IsNullOrEmpty(txtControlPrefixTypeName.Text)) {
-				Lextm.Windows.Forms.MessageBoxFactory.Info("You must enter a type name");
+				Lextm.Windows.Forms.MessageBoxFactory.Info(null, "Empty input", "You must enter a type name");
 
 				return false;
 			}

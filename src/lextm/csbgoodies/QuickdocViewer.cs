@@ -42,7 +42,7 @@ namespace Lextm.CsbGoodies {
 			if (OtaUtils.CurrentModuleIsCSFile()) {				
 				pglowacki.XmlDoc.FormXmlDocViewer.ShowViewer(PrepareHtml()); 
 			} else {
-				Lextm.Windows.Forms.MessageBoxFactory.Warn("Quickdoc Viewer only apply to C# files !");
+				Lextm.Windows.Forms.MessageBoxFactory.Warn(null, "Not a C# file", "Quickdoc Viewer only apply to C# files");
 			}
 			LoggingService.LeaveMethod();
 		

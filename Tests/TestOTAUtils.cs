@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 using BeWise.Common.Utils;
-
+#pragma warning disable 1591
 namespace BeWise.Common.Tests
 {
 	// Test methods for class OtaUtils
@@ -67,3 +67,4 @@ namespace BeWise.Common.Tests
 		}
 	}
 }
+#pragma warning restore 1591

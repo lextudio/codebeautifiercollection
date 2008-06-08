@@ -1,6 +1,6 @@
 
 #define MyAppID "{F768F6BA-F164-4599-BC26-DCCFC2F76855}"
-#define MyAppCopyright "Copyright (C) 2005-2007 Lex Y. Li and other contributors."
+#define MyAppCopyright "Copyright (C) 2005-2008 Lex Y. Li and other contributors."
 #define MyAppName "Code Beautifier Collection 6"
 #define MyAppVersion GetFileVersion("..\bin\release\Lextm.CodeBeautifierCollection.Framework.dll")
 #pragma message "Detailed version info: " + MyAppVersion
@@ -10,8 +10,8 @@
 AppName={#MyAppName}
 AppVerName={#MyAppName}
 AppPublisher=Lex Y. Li (lextm)
-AppPublisherURL=http://lextm.blogspot.com
-AppSupportURL=http://lextm.blogspot.com
+AppPublisherURL=http://lextm.cn
+AppSupportURL=http://lextm.cn
 AppUpdatesURL=http://code.google.com/p/lextudio
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}

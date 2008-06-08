@@ -43,9 +43,9 @@ namespace Lextm.OpenTools.Plus {
 				return enabledRecords;
 			}
 			set {
-                enabledRecords = value;
+				enabledRecords = value;
 			}
-		}                   
+		}
 		/// <summary>
 		/// Name.
 		/// </summary>
@@ -61,13 +61,13 @@ namespace Lextm.OpenTools.Plus {
 		/// Description.
 		/// </summary>
 		public string Description {
-            get {
+			get {
 				return description;
 			}
 			set {
-                description = value;
-            }
-        }
+				description = value;
+			}
+		}
 		/// <summary>
 		/// Gets enabled.
 		/// </summary>
@@ -81,7 +81,7 @@ namespace Lextm.OpenTools.Plus {
 					return r.Enabled;
 				}
 			}
-          	// no record, set false by default;
+			// no record, set false by default;
 			return false;
 		}
 		/// <summary>
@@ -97,32 +97,51 @@ namespace Lextm.OpenTools.Plus {
 					r.Enabled = enabled;
 				}
 			}
-        }	
+		}
 
-        /// <summary>Loads feature object.</summary>
+		/// <summary>Loads feature object.</summary>
 		internal static ILoadableFeature LoadFeature(string fullName, Assembly assembly) {
 			ILoadableFeature result = null;
 			object temp = null;
 			Type type = assembly.GetType(fullName);
 
-            if (type != null) {
-                try {
-                    //MethodInfo method = type.GetMethod("getInstance");
-                    temp = Activator.CreateInstance(type);//method.Invoke(null, null);
+			if (type != null) {
+				try {
+					//MethodInfo method = type.GetMethod("getInstance");
+					temp = Activator.CreateInstance(type);//method.Invoke(null, null);
 				}
-                catch (Exception ex) {
+				catch (TargetInvocationException ex)
+				{
 					LoggingService.Error(ex.ToString());
 					MessageService.Show("Invoke exception so instance is not loaded: "
-                                    + assembly.GetName() + ";" + fullName);
-                }
+					                    + assembly.GetName() + ";" + fullName);
+				}
+				catch (MethodAccessException ex)
+				{
+					LoggingService.Error(ex.ToString());
+					MessageService.Show("Invoke exception so instance is not loaded: "
+					                    + assembly.GetName() + ";" + fullName);
+				}
+				catch (MemberAccessException ex)
+				{
+					LoggingService.Error(ex.ToString());
+					MessageService.Show("Invoke exception so instance is not loaded: "
+					                    + assembly.GetName() + ";" + fullName);
+				}
+				catch (TypeLoadException ex)
+				{
+					LoggingService.Error(ex.ToString());
+					MessageService.Show("Invoke exception so instance is not loaded: "
+					                    + assembly.GetName() + ";" + fullName);
+				}
 				finally {
 					result = temp as ILoadableFeature;
 					if (result == null) {
 						MessageService.Show("ILoadableFeature is not implemented, feature is disabled: "
-						                + assembly.GetName() + ";" + fullName);
+						                    + assembly.GetName() + ";" + fullName);
 					}
-                }
-			} 
+				}
+			}
 			return result;
 		}
 	}

@@ -28,8 +28,8 @@ namespace Lextm.Diagnostics
 	/// <summary>
 	/// Logging service class.
 	/// </summary>
-	/// <summary>Debug related functions such as <see cref="Debug">Debug</see>,
-	/// <see cref="EnterMethod">EnterMethod</see>, and <see cref="LeaveMethod()">
+	/// <summary>Debug related functions such as <see cref="Debug(object)">Debug</see>,
+	/// <see cref="EnterMethod()">EnterMethod</see>, and <see cref="LeaveMethod()">
 	/// LeaveMethod</see> are
 	/// available only in Debug Build mode.</summary>
 	public sealed class LoggingService
@@ -59,10 +59,14 @@ namespace Lextm.Diagnostics
 		public static void Warn(object message) {
 			WarnInternal(message);
 		}
-		
+		/// <summary>
+		/// Logs a warning.
+		/// </summary>
+		/// <param name="format">Format</param>
+		/// <param name="args">Arguments</param>
 		public static void Warn(string format, params object[] args)
 		{
-			WarnInternal(string.Format(format, args));
+			WarnInternal(string.Format(CultureInfo.CurrentCulture, format, args));
 		}		                        
 		
 		static void WarnInternal(object message)
@@ -77,10 +81,15 @@ namespace Lextm.Diagnostics
 		public static void Debug(object message) {
 			DebugInternal(message);
 		}
-				
+		
+		/// <summary>
+		/// Logs a debug word.
+		/// </summary>
+		/// <param name="format">Format</param>
+		/// <param name="args">Arguments</param>
 		public static void Debug(string format, params object[] args)
 		{
-			DebugInternal(string.Format(format, args));
+			DebugInternal(string.Format(CultureInfo.CurrentCulture, format, args));
 		}	
 		
 		static void DebugInternal(object message) {			
@@ -93,10 +102,14 @@ namespace Lextm.Diagnostics
 		public static void Info(object message) {
 			InfoInternal(message);
 		}
-		
+		/// <summary>
+		/// Logs an info.
+		/// </summary>
+		/// <param name="format">Format</param>
+		/// <param name="args">Arguments</param>
 		public static void Info(string format, params object[] args)
 		{
-			InfoInternal(string.Format(format, args));
+			InfoInternal(string.Format(CultureInfo.CurrentCulture, format, args));
 		}	
 		
 		static void InfoInternal(object message) {
@@ -109,10 +122,15 @@ namespace Lextm.Diagnostics
 		public static void Error(object message) {
 			ErrorInternal(message);
 		}
-				
+		
+		/// <summary>
+		/// Logs an error.
+		/// </summary>
+		/// <param name="format">Format</param>
+		/// <param name="args">Arguments</param>
 		public static void Error(string format, params object[] args)
 		{
-			ErrorInternal(string.Format(format, args));
+			ErrorInternal(string.Format(CultureInfo.CurrentCulture, format, args));
 		}	
 		
 		static void ErrorInternal(object message) {
@@ -125,10 +143,15 @@ namespace Lextm.Diagnostics
 		public static void Fatal(object message) {
 			FatalInternal(message);
 		}
-				
+		
+		/// <summary>
+		/// Logs a fatal.
+		/// </summary>
+		/// <param name="format">Format</param>
+		/// <param name="args">Arguments</param>
 		public static void Fatal(string format, params object[] args)
 		{
-			FatalInternal(string.Format(format, args));
+			FatalInternal(string.Format(CultureInfo.CurrentCulture, format, args));
 		}	
 		
 		static void FatalInternal(object message) {
@@ -178,7 +201,7 @@ namespace Lextm.Diagnostics
 		/// </summary>
 		/// <seealso cref="LeaveMethod()"/>
 		public static void EnterMethod(object message) {
-			DebugInternal(string.Format("--> {0} {1}", GetMethodName(), message));
+			DebugInternal(string.Format(CultureInfo.CurrentCulture, "--> {0} {1}", GetMethodName(), message));
 			indentLevel++;
 		}
 		/// <summary>

@@ -20,168 +20,76 @@ namespace Lextm.Windows.Forms
 		[Conditional("DEBUG")]
 		public static void Debug(object text)
 		{
-//            List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//            Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//            cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//            cl.BackColor = SystemColors.Window;
-//            cl.UseVisualStyleBackColor = false;
-//            links.Add(cl);
-//            cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//            cl.BackColor = SystemColors.Window;
-//            cl.UseVisualStyleBackColor = false;
-//            links.Add(cl);
-//            cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Shield, "Lorem Ipsum", "Lorem Ipsum");
-//            cl.BackColor = SystemColors.Window;
-//                        cl.UseVisualStyleBackColor = false;
-//            links.Add(cl);
-//            Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//            cd.Title = "Lorem Ipsum";
-//            cd.Description = "Lorem Ipsum";
-//            cd.ShowDialog();			
-			
-//			List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//			Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "OK", "OK");
-//			//cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.Yes;
-//			links.Add(cl);
-//			Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//			cd.Title = "Debug";
-//			cd.Description = text.ToString();
-//			cd.ShowDialog();
-			MessageBox.Show(text.ToString(), 
-                "Debug", 
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information, 
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+			MessageBox.Show(text.ToString(),
+			                "Debug",
+			                MessageBoxButtons.OK,
+			                MessageBoxIcon.Information,
+			                MessageBoxDefaultButton.Button1,
+			                0);
 		}
 		/// <summary>
 		/// Shows info.
 		/// </summary>
+		/// <param name="title"></param>
 		/// <param name="text"></param>
+		/// <param name="detail"></param>
 		/// <returns></returns>
-		public static void Info(object text)
+		public static void Info(string title, string text, string detail)
 		{
-//			List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//			Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "OK");
-//			cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.Yes;
-//			links.Add(cl);
-//			Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//			cd.Title = "Info";
-//			cd.Description = text.ToString();
-//			cd.ShowDialog();
-			MessageBox.Show(text.ToString(),
-			                "Info", 
-			                MessageBoxButtons.OK,
-			                MessageBoxIcon.Information,
-			                MessageBoxDefaultButton.Button1,
-			                MessageBoxOptions.DefaultDesktopOnly);
+			cTaskDialog.ForceEmulationMode = true;
+			cTaskDialog.UseToolWindowOnXP = true;
+			cTaskDialog.MessageBox(title, text, detail, eTaskDialogButtons.OK, eSysIcons.Information);
 		}
 		/// <summary>
 		/// Shows warning.
 		/// </summary>
+		/// <param name="title"></param>
 		/// <param name="text"></param>
+		/// <param name="detail"></param>
 		/// <returns></returns>
-		public static void Warn(object text)
+		public static void Warn(string title, string text, string detail)
 		{
-//			List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//			Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "OK");
-//			cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.Yes;
-//			links.Add(cl);
-//			Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//			cd.Title = "Warn";
-//			cd.Description = text.ToString();
-//			cd.ShowDialog();
-			MessageBox.Show(text.ToString(), 
-			                "Warning", 
-			                MessageBoxButtons.OK, 
-			                MessageBoxIcon.Warning,
-			                MessageBoxDefaultButton.Button1,
-			                MessageBoxOptions.DefaultDesktopOnly);
+			cTaskDialog.ForceEmulationMode = true;
+			cTaskDialog.UseToolWindowOnXP = true;
+			cTaskDialog.MessageBox(title, text, detail, eTaskDialogButtons.OK, eSysIcons.Warning);
 		}
 		/// <summary>
 		/// Shows error.
 		/// </summary>
+		/// <param name="title"></param>
 		/// <param name="text"></param>
+		/// <param name="detail"></param>
 		/// <returns></returns>
-		public static void Error(object text)
+		public static void Error(string title, string text, string detail)
 		{
-//			List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//			Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "OK");
-//			cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.Yes;
-//			links.Add(cl);
-//			Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//			cd.Title = "Error";
-//			cd.Description = text.ToString();
-//			cd.ShowDialog();
-			MessageBox.Show(text.ToString(), 
-			                "Error", 
-			                MessageBoxButtons.OK, 
-			                MessageBoxIcon.Error,
-			                MessageBoxDefaultButton.Button1,
-			                MessageBoxOptions.DefaultDesktopOnly);
+			cTaskDialog.ForceEmulationMode = true;
+			cTaskDialog.UseToolWindowOnXP = true;
+			cTaskDialog.MessageBox(title, text, detail, eTaskDialogButtons.OK, eSysIcons.Error);
 		}
 		/// <summary>
 		/// Shows fatal.
 		/// </summary>
-		/// <param name="text"></param>
+		/// <param name="title"></param>
+		/// <param name="ex"></param>
 		/// <returns></returns>
-		public static void Fatal(object text)
+		public static void Fatal(string title, Exception ex)
 		{
-//			List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//			Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "OK");
-//			cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.Yes;
-//			links.Add(cl);
-//			Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//			cd.Title = "Fatal";
-//			cd.Description = text.ToString();
-//			cd.ShowDialog();
-			MessageBox.Show(text.ToString(), 
-			                "Fatal", 
-			                MessageBoxButtons.OK, 
-			                MessageBoxIcon.Stop,
-			                MessageBoxDefaultButton.Button1,
-			                MessageBoxOptions.DefaultDesktopOnly);
+			cTaskDialog.ForceEmulationMode = true;
+			cTaskDialog.UseToolWindowOnXP = true;
+			cTaskDialog.MessageBox(title, ex.GetType().Name, ex.ToString(), eTaskDialogButtons.OK, eSysIcons.Error);
 		}
 		/// <summary>
 		/// Shows confirmation.
 		/// </summary>
+		/// <param name="title"></param>
 		/// <param name="text"></param>
+		/// <param name="detail"></param>
 		/// <returns>DialogResult.Yes or DialogResult.No is returned.</returns>
-		public static DialogResult Confirm(object text)
+		public static DialogResult Confirm(string title, string text, string detail)
 		{
-//			List<Vista_Api.CommandLink> links=new List<Vista_Api.CommandLink>();
-//			Vista_Api.CommandLink cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Lorem Ipsum", "Lorem Ipsum");
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "Yes");
-//			cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.Yes;
-//			links.Add(cl);
-//			cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Arrow, "No");
-//			cl.BackColor = SystemColors.Window;
-//			cl.DialogResult = DialogResult.No;
-//			links.Add(cl);
-			//cl = new Vista_Api.CommandLink(Vista_Api.CommandLink.DisplayStyle.Shield, "Lorem Ipsum", "Lorem Ipsum");
-			//cl.BackColor = SystemColors.Window;
-			//links.Add(cl);
-//			Vista_Api.CommandDialog cd = new Vista_Api.CommandDialog(links);
-//			cd.Title = "Confirm";
-//			cd.Description = text;
-//			return cd.ShowDialog();
 			cTaskDialog.ForceEmulationMode = true;
 			cTaskDialog.UseToolWindowOnXP = true;
-			//cTaskDialog.
-			return cTaskDialog.MessageBox("Confirm", "Please confirm", text.ToString(), eTaskDialogButtons.YesNo, eSysIcons.Question);
-			//return VDialog.Show(text.ToString(), "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-			//return MessageBox.Show(text.ToString(), "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);//TODO: finish
+			return cTaskDialog.MessageBox(title, text, detail, eTaskDialogButtons.YesNo, eSysIcons.Question);
 		}
 	}
 }

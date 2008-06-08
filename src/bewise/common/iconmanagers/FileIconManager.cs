@@ -1,11 +1,12 @@
+using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace BeWise.Common.IconManager {
+namespace BeWise.Common.IconManagers {
 	/// <summary>
 	/// File icon manager.
 	/// </summary>
-    public class FileIconManager : BaseIconManager {
+    public class FileIconManager : BaseIconManager, IDisposable {
 		
 		/// <summary>
 		/// Constructor.
@@ -66,6 +67,24 @@ namespace BeWise.Common.IconManager {
                 return ImageList;
             }
         }
+    	
+		private bool _disposed;
+		/// <summary>
+		/// Disposes of the resources (other than memory) used by the <see cref="FileIconManager"/>.
+		/// </summary>
+		/// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources. 
+		/// </param>
+		protected override void Dispose(bool disposing)
+		{
+			if (_disposed) {
+				return;
+			}
+			if (disposing) {
+				imageListLarge.Dispose();
+			}
+			base.Dispose(disposing);
+			_disposed = true;
+		}		
     }
 }
 

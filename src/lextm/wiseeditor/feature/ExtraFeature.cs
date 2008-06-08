@@ -11,7 +11,7 @@ namespace Lextm.WiseEditor.Feature {
 	/// </summary>
 	public class ExtraFeature : CustomFeature {
 				
-		private const string TabGeneral = "Extra";
+		private const string Name = "Extra";
 	
 
 		///<summary>
@@ -22,7 +22,7 @@ namespace Lextm.WiseEditor.Feature {
 		///</remarks>
 		protected override void IdeRegisterTabs() {
 			base.IdeRegisterTabs();
-			RegisterTab(CreateTabNode(TabGeneral, typeof(Gui.NotificationPage)));
+			RegisterTab(CreateTabNode(Name, typeof(Gui.NotificationPage)));
 		}
 
 
@@ -65,8 +65,8 @@ namespace Lextm.WiseEditor.Feature {
 //                        }
 //                    }
 //                }
-            } catch (Exception _Exception) {
-                Lextm.Windows.Forms.MessageBoxFactory.Fatal(_Exception);
+            } catch (Exception ex) {
+                Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
             }
         }
 
@@ -88,8 +88,8 @@ namespace Lextm.WiseEditor.Feature {
 //                        _Ant.ResetTargets();
 //                    }
                 }
-            } catch (Exception e) {
-                Lextm.Windows.Forms.MessageBoxFactory.Fatal(e);
+            } catch (Exception ex) {
+                Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
             }
 		}
     }

@@ -47,7 +47,7 @@ namespace BeWise.SharpBuilderTools.Helpers {
                         } else if (e.KeyCode == Keys.Down) {
                             SelectNextItem(aListView);
                         } else {
-                            WinAPI.PostMessage(aListView.Handle, WinAPI.WM_KEYDOWN, e.KeyValue, 0);
+                            WinApi.PostMessage(aListView.Handle, WinApi.WM_KEYDOWN, e.KeyValue, 0);
                         }
 
                         e.Handled = true;

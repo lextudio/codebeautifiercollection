@@ -111,20 +111,20 @@ namespace Lextm.Diagnostics
             {
                 if(e.NativeErrorCode == ERROR_FILE_NOT_FOUND)
                 {
-					Lextm.Windows.Forms.MessageBoxFactory.Error("Check if the path is valid. " + fileName);
+					Lextm.Windows.Forms.MessageBoxFactory.Error(null, "Check if the path is valid", "Cannot find the file." + fileName);
 				}
 				else if (e.NativeErrorCode == ERROR_ACCESS_DENIED)
 				{
-					Lextm.Windows.Forms.MessageBoxFactory.Error(
+					Lextm.Windows.Forms.MessageBoxFactory.Error(null, "Access denied",
 						"You do not have permission to run this file. " + fileName);
 				}
 				else if (e.NativeErrorCode == ERROR_NO_ASSOCIATION)
 				{
-					Lextm.Windows.Forms.MessageBoxFactory.Error(
+					Lextm.Windows.Forms.MessageBoxFactory.Error(null, "No application associated with this file type",
 						"You must install necessary software to see this file. " + fileName);
 				}
 				else {
-					Lextm.Windows.Forms.MessageBoxFactory.Error(e.Message + " " + fileName);
+					Lextm.Windows.Forms.MessageBoxFactory.Error(null, e.Message, fileName);
                 }
 			}
             finally {

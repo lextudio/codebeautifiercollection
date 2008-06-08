@@ -237,7 +237,7 @@ namespace Lextm.Utilities.Gui {
 		#region NotifyIcon menus
 
 		private void miAbout_Click(object sender, System.EventArgs e) {
-			Lextm.Windows.Forms.MessageBoxFactory.Info("InDate is working to keep your CBC up-to-date.");
+			Lextm.Windows.Forms.MessageBoxFactory.Info(Text, "InDate", "InDate keeps your CBC up-to-date.");
 		}
 
 		private void miShow_Click(object sender, System.EventArgs e) {
@@ -252,7 +252,7 @@ namespace Lextm.Utilities.Gui {
 
 		private void FormInDate3_Closing(object sender, System.ComponentModel.CancelEventArgs e) {
 			if (worker.IsBusy) {
-				if (Lextm.Windows.Forms.MessageBoxFactory.Confirm("InDate is still working. Do you want to abort?")
+				if (Lextm.Windows.Forms.MessageBoxFactory.Confirm(Text, "Do you want to abort InDate?", "InDate is still working.")
 				    == DialogResult.No)
 				{
 					e.Cancel = true;

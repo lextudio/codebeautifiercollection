@@ -1,4 +1,4 @@
-// this is the form shortcuts class. 
+// this is the form shortcuts class.
 // Copyright (C) 2005-2006  Lex Y. Li
 // 
 // This program is free software; you can redistribute it and/or
@@ -31,8 +31,8 @@ namespace Lextm.CodeBeautifierCollection.Gui {
 		/// Constructor.
 		/// </summary>
 		internal FormShortcuts() {
-            InitializeComponent();
-            
+			InitializeComponent();
+			
 			foreach (string name in table.Keys) {
 				cbMenuNames.Items.Add(name);
 			}
@@ -45,22 +45,22 @@ namespace Lextm.CodeBeautifierCollection.Gui {
 		///Cleans up any resources being used.
 		///</summary>
 		protected override void Dispose (bool disposing) {
-            if (disposing) {
-                if (components != null) {
-                    components.Dispose();
-                }
-            }
-            base.Dispose(disposing);
-        }
-        
+			if (disposing) {
+				if (components != null) {
+					components.Dispose();
+				}
+			}
+			base.Dispose(disposing);
+		}
+		
 		private System.ComponentModel.Container components = null;
 		private System.Windows.Forms.TextBox textBox1;
 
-#region Windows Form Designer generated code
-        ///<summary>
-        ///Required method for Designer support - do not modify
-        ///the contents of this method with the code editor.
-        ///</summary>
+		#region Windows Form Designer generated code
+		///<summary>
+		///Required method for Designer support - do not modify
+		///the contents of this method with the code editor.
+		///</summary>
 		private void InitializeComponent()
 		{
 			this.btOK = new System.Windows.Forms.Button();
@@ -174,7 +174,7 @@ namespace Lextm.CodeBeautifierCollection.Gui {
 		private System.Windows.Forms.GroupBox gbShortcuts;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox cbMenuNames;
-#endregion
+		#endregion
 
 		void btOKClick(object sender, System.EventArgs e)
 		{
@@ -186,19 +186,19 @@ namespace Lextm.CodeBeautifierCollection.Gui {
 		void CbMenuNamesSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			if (cbMenuNames.SelectedIndex == -1) {
-			    // no selection
+				// no selection
 				textBox1.Visible = false;
 				label2.Visible = false;
-				Lextm.Windows.Forms.MessageBoxFactory.Warn("Please select an item.");
-			} else {
-                if (table.ContainsKey(cbMenuNames.SelectedItem.ToString()))
-				{
-					textBox1.Text = OtaUtils.GetKeysTextFromShortcut(
-                        table[cbMenuNames.SelectedItem.ToString()].Shortcut
-					);
-					textBox1.Visible = true;
-					label2.Visible = true;
-                }
+				Lextm.Windows.Forms.MessageBoxFactory.Warn(Text, "No selection", "Please select an item.");
+				return;
+			}
+			if (table.ContainsKey(cbMenuNames.SelectedItem.ToString()))
+			{
+				textBox1.Text = OtaUtils.GetKeysTextFromShortcut(
+					table[cbMenuNames.SelectedItem.ToString()].Shortcut
+				);
+				textBox1.Visible = true;
+				label2.Visible = true;
 			}
 		}
 		private	IDictionary<string, Lextm.OpenTools.Elements.ShortcutRecord> table =
@@ -225,14 +225,14 @@ namespace Lextm.CodeBeautifierCollection.Gui {
 		{
 			if (String.IsNullOrEmpty(textBox1.Text)) {
 				(table[cbMenuNames.SelectedItem.ToString()]
-					as ShortcutRecord).Shortcut = 0;
+				 as ShortcutRecord).Shortcut = 0;
 				textBox1.Text = OtaUtils.GetKeysTextFromShortcut(0);
-            } 
+			}
 		}
 		
 		private void btCancel_Click(object sender, System.EventArgs e)
 		{
-            this.Hide();
+			this.Hide();
 		}
 
 	}

@@ -101,7 +101,7 @@ namespace Lextm.CodeBeautifiers.Tool {
 				return true;
 			} 
 			catch (IOException ex) {
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
 				return false;
 			}     	
         }

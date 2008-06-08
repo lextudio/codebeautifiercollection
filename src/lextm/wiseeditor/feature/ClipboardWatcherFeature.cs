@@ -15,6 +15,8 @@ namespace Lextm.WiseEditor.Feature {
 
 	public class ClipboardWatcherFeature : CustomFeature {
 		
+		const string Name = "Clipboard Watcher";
+		
 		public ClipboardWatcherFeature() {}
 		
 #region hook
@@ -71,12 +73,12 @@ namespace Lextm.WiseEditor.Feature {
 					if (_NextClipboardWindow == m.WParam)
 						_NextClipboardWindow = m.LParam;
 					else
-						WinAPI.SendMessage(_NextClipboardWindow, WM_CHANGECBCHAIN, m.WParam, m.LParam);
+						WinApi.SendMessage(_NextClipboardWindow, WM_CHANGECBCHAIN, m.WParam, m.LParam);
 				} else if (m.Msg == WM_DRAWCLIPBOARD) {
 					try {
 						OnChanged();
 					} finally {
-						WinAPI.SendMessage(_NextClipboardWindow, WM_DRAWCLIPBOARD, m.WParam, m.LParam);
+						WinApi.SendMessage(_NextClipboardWindow, WM_DRAWCLIPBOARD, m.WParam, m.LParam);
 					}
 				} else
 					base.WndProc(ref m);
@@ -94,11 +96,11 @@ namespace Lextm.WiseEditor.Feature {
 			public override void CreateHandle(CreateParams aCp) {
 				base.CreateHandle(aCp);
 
-				_NextClipboardWindow = WinAPI.SetClipboardViewer(Handle);
+				_NextClipboardWindow = WinApi.SetClipboardViewer(Handle);
 			}
 
 			public override void DestroyHandle() {
-				WinAPI.ChangeClipboardChain(Handle, _NextClipboardWindow);
+				WinApi.ChangeClipboardChain(Handle, _NextClipboardWindow);
 				base.DestroyHandle();
 			}
 
@@ -143,7 +145,7 @@ namespace Lextm.WiseEditor.Feature {
 			}
 
 			MiscUtils.SetTextDataToClipboard(OtaUtils.GetSelectedText(OtaUtils.GetCurrentModule()) +
-			                             MiscUtils.GetTextDataFromClipboard());
+			                             MiscUtils.TextDataFromClipboard);
 		}
 
 		private void DoCopyFileNameToClipboard(object aSender, EventArgs AEventArgs) {
@@ -175,7 +177,7 @@ namespace Lextm.WiseEditor.Feature {
 				_Frm.Show();
 				_Frm.BringToFront();
             } catch (Exception ex) {
-                Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+                Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
 			}
 		}
 

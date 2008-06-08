@@ -1,3 +1,4 @@
+#pragma warning disable 1591
 namespace Lextm.OpenTools.Tests
 { 
 	using System;
@@ -93,3 +94,4 @@ namespace Lextm.OpenTools.Tests
 
 	}
 }
+#pragma warning restore 1591

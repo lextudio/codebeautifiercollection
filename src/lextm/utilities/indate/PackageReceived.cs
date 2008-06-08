@@ -62,7 +62,7 @@ namespace Lextm.Utilities.InDate
                 {
                     while (IdeIsRunning)
                     {
-                        Lextm.Windows.Forms.MessageBoxFactory.Info("Please close CodeGear RAD Studio before installing the update.");
+                        Lextm.Windows.Forms.MessageBoxFactory.Info(null, "RAD Studio is running", "Please close CodeGear RAD Studio before installing the update.");
                     }
                     Lextm.Diagnostics.ShellHelper.Execute(installerName);
                     SetState(context, new Succeeded());

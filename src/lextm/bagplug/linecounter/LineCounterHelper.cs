@@ -250,7 +250,7 @@ namespace Lextm.BagPlug.LineCounter
 			}
 			catch (Exception ex)
 			{
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
 				throw;
 			}
 		}
@@ -333,7 +333,7 @@ namespace Lextm.BagPlug.LineCounter
 			}
 			catch (Exception ex)
 			{
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
 				throw;
 			}
 		}
@@ -383,7 +383,7 @@ namespace Lextm.BagPlug.LineCounter
 			}
 			catch (Exception ex)
 			{
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
 				throw;
 			}
 		}
@@ -652,60 +652,58 @@ namespace Lextm.BagPlug.LineCounter
 
 			IOTAProjectGroup solution = OtaUtils.GetCurrentProjectGroup();
 			//Solution solution = ProjectService.OpenSolution;
-			if (solution != null) // OpenSolution is null when no solution is opened
+			if (solution == null) // OpenSolution is null when no solution is opened
 			{
-				//FileInfo fiSolution = new FileInfo(solution.FileName);
-				LineCountSummary summary = new LineCountSummary("All Projects", (int)m_projIconMappings["{00000000-0000-0000-0000-000000000000}"]);
-				m_summaryList.Add(summary);
+				MessageBoxFactory.Warn(null, "No project group", "There is no project group open.");
+				return;
+			}
+			//FileInfo fiSolution = new FileInfo(solution.FileName);
+			LineCountSummary summary = new LineCountSummary("All Projects", (int)m_projIconMappings["{00000000-0000-0000-0000-000000000000}"]);
+			m_summaryList.Add(summary);
 
-				// Configure progress bars
-				tsprgTotal.Minimum = 0;
-				tsprgTotal.Step = 1;
-				tsprgTask.Minimum = 0;
-				tsprgTask.Step = 1;
+			// Configure progress bars
+			tsprgTotal.Minimum = 0;
+			tsprgTotal.Step = 1;
+			tsprgTask.Minimum = 0;
+			tsprgTask.Step = 1;
 
-				IList<IOTAProject> projects = OtaUtils.GetAllProjectsOf(solution);
-				tsprgTotal.Maximum = projects.Count;
-				tsprgTask.Value = 0;
-				foreach (IOTAProject fiProject in projects) {
-					tsprgTotal.PerformStep();
-					string projName, lang;
-					if (fiProject.FileName.IndexOf("://", StringComparison.Ordinal) != -1)
-					{
-						projName = fiProject.FileName; // this is a web project
-						lang = "{00000001-0000-0000-0000-000000000000}";
-					} else {
-						projName = fiProject.FileName;
-						lang = fiProject.ProjectGUID.ToString();
-					}
-
-					int iconIndex;
-					//#if IMPR1
-					//iconIndex = projectImageListHelper.GetIndex(IconService.GetImageForProjectType(fiProject.Language ?? "defaultLanguageName"));
-					//#else
-					if (m_projIconMappings.ContainsKey(lang))
-					{
-						iconIndex = (int)m_projIconMappings[lang];
-					} else {
-						iconIndex = 0;
-					}
-					//m_projIconMappings.TryGetValue(lang, out iconIndex); // default icon 0
-					//#endif
-					summary = new LineCountSummary(projName, iconIndex);
-					m_summaryList.Add(summary);
-
-					tsprgTask.Maximum = 0;
-					tsprgTotal.Value = 0;
-					ScanProjectItems(tsprgTask, OtaUtils.GetAllModuleInfoOf(fiProject), summary);
+			IList<IOTAProject> projects = OtaUtils.GetAllProjectsOf(solution);
+			tsprgTotal.Maximum = projects.Count;
+			tsprgTask.Value = 0;
+			foreach (IOTAProject fiProject in projects) {
+				tsprgTotal.PerformStep();
+				string projName, lang;
+				if (fiProject.FileName.IndexOf("://", StringComparison.Ordinal) != -1)
+				{
+					projName = fiProject.FileName; // this is a web project
+					lang = "{00000001-0000-0000-0000-000000000000}";
+				} else {
+					projName = fiProject.FileName;
+					lang = fiProject.ProjectGUID.ToString();
 				}
 
-				tsprgTask.Value = tsprgTask.Maximum;
-				tsprgTotal.Value = tsprgTotal.Maximum;
+				int iconIndex;
+				//#if IMPR1
+				//iconIndex = projectImageListHelper.GetIndex(IconService.GetImageForProjectType(fiProject.Language ?? "defaultLanguageName"));
+				//#else
+				if (m_projIconMappings.ContainsKey(lang))
+				{
+					iconIndex = (int)m_projIconMappings[lang];
+				} else {
+					iconIndex = 0;
+				}
+				//m_projIconMappings.TryGetValue(lang, out iconIndex); // default icon 0
+				//#endif
+				summary = new LineCountSummary(projName, iconIndex);
+				m_summaryList.Add(summary);
+
+				tsprgTask.Maximum = 0;
+				tsprgTotal.Value = 0;
+				ScanProjectItems(tsprgTask, OtaUtils.GetAllModuleInfoOf(fiProject), summary);
 			}
-			else
-			{
-				MessageBoxFactory.Warn("There is no project group open.");
-			}
+
+			tsprgTask.Value = tsprgTask.Maximum;
+			tsprgTotal.Value = tsprgTotal.Maximum;
 		}
 
 		/// <summary>
@@ -766,7 +764,7 @@ namespace Lextm.BagPlug.LineCounter
 			// Skip if there are no projects
 			if (m_summaryList == null || (m_summaryList != null && m_summaryList.Count == 1))
 			{
-				MessageBoxFactory.Warn("There are no projects loaded to summarize.");
+				MessageBoxFactory.Warn(null, "No projects loaded", "There are no projects loaded to summarize.");
 				return;
 			}
 
@@ -810,7 +808,7 @@ namespace Lextm.BagPlug.LineCounter
 						}
 						catch (Exception ex)
 						{
-							Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+							Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
 							throw;
 						}
 						

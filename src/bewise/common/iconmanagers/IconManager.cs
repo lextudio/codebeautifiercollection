@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace BeWise.Common.IconManager {
+namespace BeWise.Common.IconManagers {
 	/// <summary>
 	/// Icon manager.
 	/// </summary>

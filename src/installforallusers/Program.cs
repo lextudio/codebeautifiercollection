@@ -25,7 +25,7 @@ namespace installforallusers
 				// first check if expertregistry exists
 				if (File.Exists(expertRegistry))
 				{
-					if (MessageBoxFactory.Confirm("Install Code Beautifier Collection for all users? (This is an experimental feature. Click No if you don't want to paticipate in the trial.)") == System.Windows.Forms.DialogResult.Yes)
+					if (MessageBoxFactory.Confirm(null, "Install Code Beautifier Collection for all users?", "This is an experimental feature. Click No if you don't want to paticipate in the trial.") == System.Windows.Forms.DialogResult.Yes)
 					{
 						//for all users
 						RegistryHelper.SetValueToRegKey(BaseKey.LocalMachine, @"Software\LeXtudio\CodeBeautifierCollection", "InstallForAllUsers", 1);

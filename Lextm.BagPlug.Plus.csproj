@@ -177,10 +177,6 @@
     <VisualStudio />
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="thirdparties\LineCounterAddin\LineCounterAddin.csproj">
-      <Project>{96463C72-F108-4FE6-B21F-1578A93ADC98}</Project>
-      <Name>LineCounterAddin</Name>
-    </ProjectReference>
     <Folder Include="data" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,9 @@
 using System;
-using System.Windows.Forms;
+using System.ComponentModel;
 using System.Diagnostics;
-using System.Text;
 using System.IO;
+using System.Text;
+using System.Windows.Forms;
 
 namespace BeWise.Common.Utils {
 	/// <summary>
@@ -120,8 +121,10 @@ namespace BeWise.Common.Utils {
 
                 DoRunCompleted();
                 return fMsg;
-            } catch (Exception e) {
-                Lextm.Windows.Forms.MessageBoxFactory.Fatal(e);
+            } 
+			catch (Win32Exception ex) 
+			{
+                Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
                 DoConsoleOutput("Error, unable to execute: " + args[0]);
                 return "Error, unable to execute: " + args[0];
             }

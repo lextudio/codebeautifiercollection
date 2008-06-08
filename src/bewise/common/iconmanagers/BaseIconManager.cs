@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace BeWise.Common.IconManager {
+namespace BeWise.Common.IconManagers {
 	/// <summary>
 	/// Base icon manager.
 	/// </summary>
-    public class BaseIconManager {
+	public class BaseIconManager : IDisposable {
 
         // *********************************************************************
         //                           Private
@@ -92,6 +92,37 @@ namespace BeWise.Common.IconManager {
                 return imageList;
             }
         }
+        private bool _disposed;
+		/// <summary>
+		/// Finalizer of <see cref="BaseIconManager"/>.
+		/// </summary>
+		~BaseIconManager()
+		{
+			Dispose(false);
+		}
+		/// <summary>
+		/// Releases all resources used by the <see cref="BaseIconManager"/>.
+		/// </summary>
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+		/// <summary>
+		/// Disposes of the resources (other than memory) used by the <see cref="BaseIconManager"/>.
+		/// </summary>
+		/// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources. 
+		/// </param>
+		protected virtual void Dispose(bool disposing)
+		{
+			if (_disposed) {
+				return;
+			}
+			if (disposing) {
+				imageList.Dispose();		
+			}
+			_disposed = true;
+		}		
     }
 }
 

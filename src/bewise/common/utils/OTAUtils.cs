@@ -4,11 +4,12 @@
 // other extensions are copyrighted by its original authors.
 
 using System;
-
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Diagnostics;
-using System.Drawing;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing.Design;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,8 +18,6 @@ using System.Windows.Forms;
 using Borland.Studio.ToolsAPI;
 using Lextm.Diagnostics;
 using Lextm.Win32;
-using System.Collections.Generic;
-using System.Globalization;
 
 namespace BeWise.Common.Utils {
 	/// <summary>
@@ -630,7 +629,7 @@ namespace BeWise.Common.Utils {
 
                     if (_Editor != null && _Editor.IsModified)
                     {
-                        if (Lextm.Windows.Forms.MessageBoxFactory.Confirm("The project contains unsaved files" + Environment.NewLine + _Module.FileName + Environment.NewLine + "Do you still want to compile the project?") == DialogResult.No)
+                        if (Lextm.Windows.Forms.MessageBoxFactory.Confirm(null, "The project contains unsaved files", "Do you still want to compile the project?") == DialogResult.No)
                         {
                             return true;
                         }
@@ -1041,7 +1040,8 @@ namespace BeWise.Common.Utils {
         /// <param name="lastPos">Last position</param>
         /// <param name="prev">Previous</param>
         /// <param name="pos">Position</param>
-        /// <returns>true if found, false if not.</returns>
+        /// <returns>true if found, false if not.</returns>        
+		[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
         public static bool FindSelectionText(string id, string source, int lastPos, bool prev, out int pos)
         {
             IOTAEditView _EditView = GetCurrentEditView();
@@ -1088,7 +1088,8 @@ namespace BeWise.Common.Utils {
         /// <param name="lastPos">Last position</param>
         /// <param name="prev">Previous</param>
         /// <param name="pos">Position</param>
-        /// <returns>true if found, false if not.</returns>
+        /// <returns>true if found, false if not.</returns>        
+		[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
         public static bool FindTextIdent(string id, string source, int lastPos, bool prev, out int pos)
         {
             int _StartPos = GoToBeginingOfWord(source, lastPos);
@@ -2304,7 +2305,7 @@ namespace BeWise.Common.Utils {
             }
             catch (InvalidCastException ex)
             {
-                Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+            	Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
             }
             return result;
         }

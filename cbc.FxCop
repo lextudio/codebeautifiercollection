@@ -33,102 +33,56 @@
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.BagPlug.Plus.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.CodeBeautifierCollection.Framework.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.CodeBeautifiers.Plus.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/bin/Debug/Lextm.Common.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/Lextm.Common.dll" Analyze="True" AnalyzeAllChildren="False">
+   <Modules AnalyzeAllChildren="False">
+    <Module Name="lextm.common.dll" Analyze="True" AnalyzeAllChildren="False">
+     <Namespaces AnalyzeAllChildren="False">
+      <Namespace Name="Lextm" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Collections" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Diagnostics" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Drawing" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.IO" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Reflection" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Win32" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Windows.Forms" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.Xml" Analyze="True" AnalyzeAllChildren="True" />
+     </Namespaces>
+     <Resources AnalyzeAllChildren="False" />
+    </Module>
+   </Modules>
+  </Target>
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.CSBuilderGoodies.Plus.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/bin/Debug/Lextm.ExpertLibrary.Minus.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.NFamily.Plus.exe" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/bin/Debug/Lextm.OpenTools.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/Lextm.OpenTools.Core.dll" Analyze="True" AnalyzeAllChildren="False">
+   <Modules AnalyzeAllChildren="False">
+    <Module Name="lextm.opentools.core.dll" Analyze="True" AnalyzeAllChildren="False">
+     <Namespaces AnalyzeAllChildren="False">
+      <Namespace Name="BeWise.Common.CommandLine" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="BeWise.Common.IconManager" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="BeWise.Common.Info" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="BeWise.Common.Utils" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.OpenTools" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.OpenTools.CodeDom" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.OpenTools.Elements" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.OpenTools.Gui" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.OpenTools.IO" Analyze="True" AnalyzeAllChildren="True" />
+      <Namespace Name="Lextm.OpenTools.Plus" Analyze="True" AnalyzeAllChildren="True" />
+     </Namespaces>
+     <Resources AnalyzeAllChildren="False" />
+    </Module>
+   </Modules>
+  </Target>
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.Utilities.Plus.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/bin/Debug/Lextm.WiseEditor.Plus.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/bin/Debug/PlusManager.exe" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
-   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="False">
-    <Rule Name="AbstractTypesShouldNotHaveConstructors" Enabled="True" />
-    <Rule Name="AssembliesShouldHaveValidStrongNames" Enabled="True" />
-    <Rule Name="AvoidEmptyInterfaces" Enabled="True" />
-    <Rule Name="AvoidExcessiveParametersOnGenericTypes" Enabled="True" />
-    <Rule Name="CollectionsShouldImplementGenericInterface" Enabled="True" />
-    <Rule Name="ConsiderPassingBaseTypesAsParameters" Enabled="True" />
-    <Rule Name="DeclareEventHandlersCorrectly" Enabled="True" />
-    <Rule Name="DeclareTypesInNamespaces" Enabled="True" />
-    <Rule Name="DefaultParametersShouldNotBeUsed" Enabled="True" />
-    <Rule Name="DefineAccessorsForAttributeArguments" Enabled="True" />
-    <Rule Name="DoNotDeclareProtectedMembersInSealedTypes" Enabled="True" />
-    <Rule Name="DoNotDeclareStaticMembersOnGenericTypes" Enabled="True" />
-    <Rule Name="DoNotDeclareVirtualMembersInSealedTypes" Enabled="True" />
-    <Rule Name="DoNotExposeGenericLists" Enabled="True" />
-    <Rule Name="DoNotHideBaseClassMethods" Enabled="True" />
-    <Rule Name="DoNotNestGenericTypesInMemberSignatures" Enabled="True" />
-    <Rule Name="DoNotOverloadOperatorEqualsOnReferenceTypes" Enabled="True" />
-    <Rule Name="DoNotPassTypesByReference" Enabled="True" />
-    <Rule Name="DoNotRaiseExceptionsInUnexpectedLocations" Enabled="True" />
-    <Rule Name="EnumeratorsShouldBeStronglyTyped" Enabled="True" />
-    <Rule Name="EnumsShouldHaveZeroValue" Enabled="True" />
-    <Rule Name="EnumStorageShouldBeInt32" Enabled="True" />
-    <Rule Name="ExceptionsShouldBePublic" Enabled="True" />
-    <Rule Name="GenericMethodsShouldProvideTypeParameter" Enabled="True" />
-    <Rule Name="ICollectionImplementationsHaveStronglyTypedMembers" Enabled="True" />
-    <Rule Name="ImplementIDisposableCorrectly" Enabled="True" />
-    <Rule Name="ImplementStandardExceptionConstructors" Enabled="True" />
-    <Rule Name="IndexersShouldNotBeMultidimensional" Enabled="True" />
-    <Rule Name="InterfaceMethodsShouldBeCallableByChildTypes" Enabled="True" />
-    <Rule Name="ListsAreStronglyTyped" Enabled="True" />
-    <Rule Name="MarkAssembliesWithAssemblyVersion" Enabled="True" />
-    <Rule Name="MarkAssembliesWithClsCompliant" Enabled="True" />
-    <Rule Name="MarkAssembliesWithComVisible" Enabled="True" />
-    <Rule Name="MarkAttributesWithAttributeUsage" Enabled="True" />
-    <Rule Name="MarkEnumsWithFlags" Enabled="True" />
-    <Rule Name="MembersShouldNotExposeCertainConcreteTypes" Enabled="True" />
-    <Rule Name="MovePInvokesToNativeMethodsClass" Enabled="True" />
-    <Rule Name="NestedTypesShouldNotBeVisible" Enabled="True" />
-    <Rule Name="OverloadOperatorEqualsOnOverloadingAddAndSubtract" Enabled="True" />
-    <Rule Name="OverrideMethodsOnComparableTypes" Enabled="True" />
-    <Rule Name="PropertiesShouldNotBeWriteOnly" Enabled="True" />
-    <Rule Name="ProvideObsoleteAttributeMessage" Enabled="True" />
-    <Rule Name="ReplaceRepetitiveArgumentsWithParamsArray" Enabled="True" />
-    <Rule Name="StaticHolderTypesShouldBeSealed" Enabled="True" />
-    <Rule Name="StaticHolderTypesShouldNotHaveConstructors" Enabled="True" />
-    <Rule Name="StringUriOverloadsCallSystemUriOverloads" Enabled="True" />
-    <Rule Name="TypesShouldNotExtendCertainBaseTypes" Enabled="True" />
-    <Rule Name="TypesThatOwnDisposableFieldsShouldBeDisposable" Enabled="True" />
-    <Rule Name="TypesThatOwnNativeResourcesShouldBeDisposable" Enabled="True" />
-    <Rule Name="UriParametersShouldNotBeStrings" Enabled="True" />
-    <Rule Name="UriPropertiesShouldNotBeStrings" Enabled="True" />
-    <Rule Name="UriReturnValuesShouldNotBeStrings" Enabled="True" />
-    <Rule Name="UseEventsWhereAppropriate" Enabled="True" />
-    <Rule Name="UseGenericEventHandlerInstances" Enabled="True" />
-    <Rule Name="UseGenericsWhereAppropriate" Enabled="True" />
-    <Rule Name="UseIntegralOrStringArgumentForIndexers" Enabled="True" />
-   </RuleFile>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
    <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
    <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
    <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
-   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="False">
-    <Rule Name="CompoundWordsShouldBeCasedCorrectly" Enabled="True" />
-    <Rule Name="DoNotNameEnumValuesReserved" Enabled="True" />
-    <Rule Name="DoNotPrefixEnumValuesWithTypeName" Enabled="True" />
-    <Rule Name="EventsShouldNotHaveBeforeOrAfterPrefix" Enabled="True" />
-    <Rule Name="FlagsEnumsShouldHavePluralNames" Enabled="True" />
-    <Rule Name="IdentifiersShouldBeCasedCorrectly" Enabled="True" />
-    <Rule Name="IdentifiersShouldDifferByMoreThanCase" Enabled="True" />
-    <Rule Name="IdentifiersShouldHaveCorrectPrefix" Enabled="True" />
-    <Rule Name="IdentifiersShouldHaveCorrectSuffix" Enabled="True" />
-    <Rule Name="IdentifiersShouldNotContainTypeNames" Enabled="True" />
-    <Rule Name="IdentifiersShouldNotContainUnderscores" Enabled="True" />
-    <Rule Name="IdentifiersShouldNotHaveIncorrectPrefix" Enabled="True" />
-    <Rule Name="IdentifiersShouldNotHaveIncorrectSuffix" Enabled="True" />
-    <Rule Name="IdentifiersShouldNotMatchKeywords" Enabled="True" />
-    <Rule Name="OnlyFlagsEnumsShouldHavePluralNames" Enabled="True" />
-    <Rule Name="ParameterNamesShouldMatchBaseDeclaration" Enabled="True" />
-    <Rule Name="ParameterNamesShouldNotMatchMemberNames" Enabled="True" />
-    <Rule Name="PropertyNamesShouldNotMatchGetMethods" Enabled="True" />
-    <Rule Name="ResourceStringCompoundWordsShouldBeCasedCorrectly" Enabled="True" />
-    <Rule Name="ResourceStringsShouldBeSpelledCorrectly" Enabled="True" />
-    <Rule Name="TypeNamesShouldNotMatchNamespaces" Enabled="True" />
-    <Rule Name="UsePreferredTerms" Enabled="True" />
-   </RuleFile>
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
    <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
    <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
    <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
@@ -139,8 +93,85 @@
  </Rules>
  <FxCopReport Version="1.36">
   <Namespaces>
+   <Namespace Name="BeWise.Common.CommandLine">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>BeWise.Common.CommandLine</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="BeWise.Common.Info">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>BeWise.Common.Info</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="BeWise.Common.Utils">
+    <Messages>
+     <Message Id="Utils" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Utils</Item>
+       <Item>BeWise.Common.Utils</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="BeWise.SharpBuilderTools.Gui">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>BeWise.SharpBuilderTools.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="BeWise.SharpBuilderTools.Tools">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>BeWise.SharpBuilderTools.Tools</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.AddMany.Feature">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.AddMany.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
    <Namespace Name="Lextm.ArtCSB.Feature">
     <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.ArtCSB.Feature</Item>
+      </Issue>
+     </Message>
      <Message Id="CSB" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2008-01-01 08:08:12Z">
       <Issue Name="Namespace">
        <Item>CSB</Item>
@@ -155,12 +186,807 @@
      </Message>
     </Messages>
    </Namespace>
+   <Namespace Name="Lextm.BagPlug.Feature">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.BagPlug.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.BagPlug.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.BagPlug.Gui</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.BagPlug.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.BagPlug.LineCounter">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.BagPlug.LineCounter</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.BagPlug.LineCounter</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.BagPlug.TypingSpeeder">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.BagPlug.TypingSpeeder</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.BagPlug.TypingSpeeder</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifierCollection">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifierCollection</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifierCollection</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifierCollection.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifierCollection.Gui</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifierCollection.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifierCollection.Tests">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifierCollection.Tests</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifierCollection.Tests</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifiers">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifiers</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifiers</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifiers.Feature">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifiers.Feature</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifiers.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifiers.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifiers.Gui</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifiers.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CodeBeautifiers.IO">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CodeBeautifiers.IO</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.CodeBeautifiers.IO</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Collections">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Collections</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Collections</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.CsbGoodies.Feature">
+    <Messages>
+     <Message Id="Csb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Csb</Item>
+       <Item>Lextm.CsbGoodies.Feature</Item>
+      </Issue>
+     </Message>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.CsbGoodies.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Diagnostics">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Diagnostics</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Diagnostics</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Drawing">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Drawing</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Drawing</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.IO">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.IO</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.IO</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.NFamily">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.NFamily</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.NFamily.Feature">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.NFamily.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.NFamily.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.NFamily.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.OpenTools">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.OpenTools</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.OpenTools.CodeDom">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.OpenTools.CodeDom</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.OpenTools.Elements">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.OpenTools.Elements</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.OpenTools.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.OpenTools.Gui</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.OpenTools.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.OpenTools.IO">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.OpenTools.IO</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.OpenTools.IO</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.OpenTools.Plus">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.OpenTools.Plus</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.OpenTools.Plus</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Reflection">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Reflection</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Reflection</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Utilities">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Utilities</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Utilities.Feature">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Utilities.Feature</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Utilities.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Utilities.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Utilities.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Win32">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Win32</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Win32</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Windows.Forms">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Windows.Forms</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Windows.Forms</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.WiseEditor.Feature">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.WiseEditor.Feature</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.WiseEditor.Gui">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.WiseEditor.Gui</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.WiseEditor.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.WiseEditor.ProjectAid">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.WiseEditor.ProjectAid</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.WiseEditor.ProjectAid</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.WiseEditor.Tests">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.WiseEditor.Tests</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.WiseEditor.Tests</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Lextm.Xml">
+    <Messages>
+     <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+      <Issue Name="Namespace">
+       <Item>Lextm</Item>
+       <Item>Lextm.Xml</Item>
+      </Issue>
+     </Message>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>Lextm.Xml</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="TestFramework">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2008-05-11 03:22:19Z">
+      <Issue>
+       <Item>TestFramework</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
   </Namespaces>
   <Targets>
    <Target Name="$(ProjectDir)/bin/Debug/BeWise.SharpBuilderTools.Minus.dll">
     <Modules>
      <Module Name="bewise.sharpbuildertools.minus.dll">
       <Namespaces>
+       <Namespace Name="BeWise.SharpBuilderTools.Helpers">
+        <Types>
+         <Type Name="BaseLanguageCodeHelper">
+          <Members>
+           <Member Name="#CommentLine(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.CommentLine(string)'</Item>
+               <Item>a</Item>
+               <Item>'aLine'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CommentLines(System.Collections.Generic.IList`1&lt;System.String&gt;)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.CommentLines(IList&lt;string&gt;)'</Item>
+               <Item>a</Item>
+               <Item>'aLines'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateRegionFooter(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.CreateRegionFooter(string)'</Item>
+               <Item>a</Item>
+               <Item>'aRegionText'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateRegionHeader(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.CreateRegionHeader(string)'</Item>
+               <Item>a</Item>
+               <Item>'aRegionText'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateString(System.Collections.Generic.IList`1&lt;System.String&gt;)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.CreateString(IList&lt;string&gt;)'</Item>
+               <Item>a</Item>
+               <Item>'aLines'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetIndentation()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseLanguageCodeHelper.GetIndentation()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsCommented(System.Collections.Generic.IList`1&lt;System.String&gt;)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.IsCommented(IList&lt;string&gt;)'</Item>
+               <Item>a</Item>
+               <Item>'aLines'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsCommented(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.IsCommented(string)'</Item>
+               <Item>a</Item>
+               <Item>'aLine'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UncommentLine(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.UncommentLine(string)'</Item>
+               <Item>a</Item>
+               <Item>'aLine'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UncommentLines(System.Collections.Generic.IList`1&lt;System.String&gt;)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseLanguageCodeHelper.UncommentLines(IList&lt;string&gt;)'</Item>
+               <Item>a</Item>
+               <Item>'aLines'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LanguageCodeHelperFactory">
+          <Members>
+           <Member Name="#GetLanguageCodeHelper(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'LanguageCodeHelperFactory.GetLanguageCodeHelper(string)'</Item>
+               <Item>a</Item>
+               <Item>'aFileName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ListViewHelper">
+          <Members>
+           <Member Name="#SendKeyToListView(Vista_Api.ListView,System.Windows.Forms.KeyEventArgs)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'ListViewHelper.SendKeyToListView(ListView, KeyEventArgs)'</Item>
+               <Item>a</Item>
+               <Item>'aListView'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="BeWise.SharpBuilderTools.Tools">
+        <Types>
+         <Type Name="BaseTool">
+          <Members>
+           <Member Name="#GetConsole()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'BaseTool.GetConsole()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetConsoleArgument()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseTool.GetConsoleArgument()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetGui()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseTool.GetGui()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetGuiArgument()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseTool.GetGuiArgument()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetInstalled()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseTool.GetInstalled()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetName()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseTool.GetName()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetToolPath()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'BaseTool.GetToolPath()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OnConsoleOutput">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'BaseTool.OnConsoleOutput'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OnRunCompleted">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'BaseTool.OnRunCompleted'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RunConsole(System.Object[],System.String)">
+            <Messages>
+             <Message Id="Params" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseTool.RunConsole(object[], string)'</Item>
+               <Item>Params</Item>
+               <Item>'aParams'</Item>
+              </Issue>
+             </Message>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseTool.RunConsole(object[], string)'</Item>
+               <Item>a</Item>
+               <Item>'aParams'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'BaseTool.RunConsole(object[], string)'</Item>
+               <Item>a</Item>
+               <Item>'aWorkingDir'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RunGui(System.Object[],System.String)">
+            <Messages>
+             <Message Id="Params" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseTool.RunGui(object[], string)'</Item>
+               <Item>Params</Item>
+               <Item>'aParams'</Item>
+              </Issue>
+             </Message>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseTool.RunGui(object[], string)'</Item>
+               <Item>a</Item>
+               <Item>'aParams'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'BaseTool.RunGui(object[], string)'</Item>
+               <Item>a</Item>
+               <Item>'aWorkingDir'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.CodeBeautifiers">
+        <Types>
+         <Type Name="JcfStyle">
+          <Messages>
+           <Message Id="Jcf" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Jcf</Item>
+             <Item>'JcfStyle'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
        <Namespace Name="Lextm.CodeBeautifiers.IO">
         <Types>
          <Type Name="ValidFile">
@@ -205,34 +1031,21 @@
              </Message>
             </Messages>
            </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-      </Namespaces>
-     </Module>
-    </Modules>
-   </Target>
-   <Target Name="$(ProjectDir)/bin/Debug/ExpertManager.exe">
-    <Modules>
-     <Module Name="expertmanager.exe">
-      <Namespaces>
-       <Namespace Name="Lextm.Utilities">
-        <Types>
-         <Type Name="ExpertManagerEntry">
-          <Members>
-           <Member Name="#Main(System.String[])">
+           <Member Name="#GetCurrentTool()">
             <Messages>
-             <Message Id="args" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Excluded" Created="2007-12-26 12:13:18Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'args'</Item>
-               <Item>'ExpertManagerEntry.Main(string[])'</Item>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'CustomFeatureTool.GetCurrentTool()'</Item>
               </Issue>
-              <Notes>
-               <User Name="lextm">
-                <Note Id="55" />
-               </User>
-              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetToolFileFromCurrentProject()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'CustomFeatureTool.GetToolFileFromCurrentProject()'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -248,24 +1061,22 @@
     <Modules>
      <Module Name="indate.exe">
       <Namespaces>
-       <Namespace Name="Lextm.Utilities">
+       <Namespace Name="Lextm.Utilities.InDate">
         <Types>
-         <Type Name="InDateEntry">
+         <Type Name="UpdateContext">
           <Members>
-           <Member Name="#Main(System.String[])">
-            <Messages>
-             <Message Id="args" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Excluded" Created="2008-01-01 05:36:31Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'args'</Item>
-               <Item>'InDateEntry.Main(string[])'</Item>
-              </Issue>
-              <Notes>
-               <User Name="lextm">
-                <Note Id="55" />
-               </User>
-              </Notes>
-             </Message>
-            </Messages>
+           <Member Name="#AlwaysInstall">
+            <Accessors>
+             <Accessor Name="#get_AlwaysInstall()">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2008-05-11 03:07:23Z">
+                <Issue>
+                 <Item>'UpdateContext.AlwaysInstall.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
            </Member>
           </Members>
          </Type>
@@ -279,6 +1090,12 @@
     <Modules>
      <Module Name="lextm.addmany.plus.dll">
       <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.AddMany.Plus.dll'</Item>
+        </Issue>
+       </Message>
        <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2008-01-01 11:25:02Z">
         <Issue Name="NoStrongName">
          <Item>'Lextm.AddMany.Plus.dll'</Item>
@@ -318,6 +1135,12 @@
     <Modules>
      <Module Name="lextm.artcsb.plus.dll">
       <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.ArtCSB.Plus.dll'</Item>
+        </Issue>
+       </Message>
        <Message Id="CSB" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2008-01-01 08:08:12Z">
         <Issue Name="Assembly">
          <Item>CSB</Item>
@@ -331,6 +1154,80 @@
         </Notes>
        </Message>
       </Messages>
+      <Namespaces>
+       <Namespace Name="ArtCSB">
+        <Types>
+         <Type Name="WinForm_DesignerNavigator">
+          <Members>
+           <Member Name="#MyTreeRefresh()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.MyTreeRefresh()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.MyTreeRefresh()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectionRefresh()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.SelectionRefresh()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#toolBar_Designer_ButtonClick(System.Object,System.Windows.Forms.ToolBarButtonClickEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.toolBar_Designer_ButtonClick(object, ToolBarButtonClickEventArgs)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TreeView_ControlsAndComponents_AfterSelect(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.TreeView_ControlsAndComponents_AfterSelect(object, TreeViewEventArgs)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#WinForm_DesignerNavigator_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.WinForm_DesignerNavigator_Closing(object, CancelEventArgs)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#WinForm_DesignerNavigator_Load(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'WinForm_DesignerNavigator.WinForm_DesignerNavigator_Load(object, EventArgs)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
       <Resources>
        <Resource Name="ArtCSB.src.lextm.artcsb.ArtCSB_MyResource.resources">
         <Messages>
@@ -18477,6 +19374,14 @@
    <Target Name="$(ProjectDir)/bin/Debug/Lextm.BagPlug.Plus.dll">
     <Modules>
      <Module Name="lextm.bagplug.plus.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.BagPlug.Plus.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
       <Namespaces>
        <Namespace Name="Lextm.BagPlug.Feature">
         <Types>
@@ -18492,6 +19397,16 @@
               <Note Id="53" />
              </User>
             </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="ReadmeNotifierFeature">
+          <Messages>
+           <Message Id="Notifier" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Notifier</Item>
+             <Item>'ReadmeNotifierFeature'</Item>
+            </Issue>
            </Message>
           </Messages>
          </Type>
@@ -18768,6 +19683,21 @@
            </Member>
           </Members>
          </Type>
+         <Type Name="LineCountSummary">
+          <Members>
+           <Member Name="#.ctor(System.String,System.Int32)">
+            <Messages>
+             <Message Id="proj" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'LineCountSummary.LineCountSummary(string, int)'</Item>
+               <Item>proj</Item>
+               <Item>'projName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
         </Types>
        </Namespace>
        <Namespace Name="Lextm.BagPlug.TypingSpeeder">
@@ -18800,6 +19730,12 @@
     <Modules>
      <Module Name="lextm.codebeautifiercollection.framework.dll">
       <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.CodeBeautifierCollection.Framework.dll'</Item>
+        </Issue>
+       </Message>
        <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2007-12-25 12:39:51Z">
         <Issue Name="NoStrongName">
          <Item>'Lextm.CodeBeautifierCollection.Framework.dll'</Item>
@@ -18836,6 +19772,173 @@
          </Type>
         </Types>
        </Namespace>
+       <Namespace Name="Lextm.CodeBeautifierCollection.Tests">
+        <Types>
+         <Type Name="TestMenuTree">
+          <Members>
+           <Member Name="#SetUp()">
+            <Messages>
+             <Message Id="SetUp" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>SetUp</Item>
+               <Item>'TestMenuTree.SetUp()'</Item>
+               <Item>Setup</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TearDown()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestMenuTree.TearDown()'</Item>
+              </Issue>
+             </Message>
+             <Message Id="TearDown" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>TearDown</Item>
+               <Item>'TestMenuTree.TearDown()'</Item>
+               <Item>Teardown</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TestRegister()">
+            <Messages>
+             <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'int.ToString()'</Item>
+               <Item>'TestMenuTree.TestRegister()'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TestOtaArrayList">
+          <Members>
+           <Member Name="#SetUp()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestOtaArrayList.SetUp()'</Item>
+              </Issue>
+             </Message>
+             <Message Id="SetUp" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>SetUp</Item>
+               <Item>'TestOtaArrayList.SetUp()'</Item>
+               <Item>Setup</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TearDown()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestOtaArrayList.TearDown()'</Item>
+              </Issue>
+             </Message>
+             <Message Id="TearDown" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>TearDown</Item>
+               <Item>'TestOtaArrayList.TearDown()'</Item>
+               <Item>Teardown</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TestRegister()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestOtaArrayList.TestRegister()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="TestFramework">
+        <Types>
+         <Type Name="TestTabTree">
+          <Members>
+           <Member Name="#SetUp()">
+            <Messages>
+             <Message Id="SetUp" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>SetUp</Item>
+               <Item>'TestTabTree.SetUp()'</Item>
+               <Item>Setup</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TearDown()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestTabTree.TearDown()'</Item>
+              </Issue>
+             </Message>
+             <Message Id="TearDown" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>TearDown</Item>
+               <Item>'TestTabTree.TearDown()'</Item>
+               <Item>Teardown</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TestRegister()">
+            <Messages>
+             <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'int.ToString()'</Item>
+               <Item>'TestTabTree.TestRegister()'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/Lextm.CodeBeautifiers.Plus.dll">
+    <Modules>
+     <Module Name="lextm.codebeautifiers.plus.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.CodeBeautifiers.Plus.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="Lextm.CodeBeautifiers.Gui">
+        <Types>
+         <Type Name="JcfPage">
+          <Messages>
+           <Message Id="Jcf" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Jcf</Item>
+             <Item>'JcfPage'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
       </Namespaces>
      </Module>
     </Modules>
@@ -18843,7 +19946,206 @@
    <Target Name="$(ProjectDir)/bin/Debug/Lextm.Common.dll">
     <Modules>
      <Module Name="lextm.common.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.Common.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
       <Namespaces>
+       <Namespace Name="Lextm">
+        <Types>
+         <Type Name="StringHelper">
+          <Members>
+           <Member Name="#GetLinesFromString(System.String)">
+            <Messages>
+             <Message Id="str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.GetLinesFromString(string)'</Item>
+               <Item>str</Item>
+               <Item>'str'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetLineValue(System.String,System.Int32)">
+            <Messages>
+             <Message Id="str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.GetLineValue(string, int)'</Item>
+               <Item>str</Item>
+               <Item>'str'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GoNext(System.String,System.Int32&amp;,System.Boolean)">
+            <Messages>
+             <Message Id="1#" TypeName="DoNotPassTypesByReference" Category="Microsoft.Design" CheckId="CA1045" Created="2008-05-11 03:07:23Z">
+              <Issue Certainty="50">
+               <Item>'startPos'</Item>
+              </Issue>
+             </Message>
+             <Message Id="prev" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.GoNext(string, ref int, bool)'</Item>
+               <Item>prev</Item>
+               <Item>'prev'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsHttpUri(System.String)">
+            <Messages>
+             <Message Id="str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.IsHttpUri(string)'</Item>
+               <Item>str</Item>
+               <Item>'str'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsStrCaseIns(System.String,System.Int32,System.String)">
+            <Messages>
+             <Message Id="CaseIns" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>CaseIns</Item>
+               <Item>'StringHelper.IsStrCaseIns(string, int, string)'</Item>
+               <Item>Caseins</Item>
+              </Issue>
+             </Message>
+             <Message Id="Str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Str</Item>
+               <Item>'StringHelper.IsStrCaseIns(string, int, string)'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.IsStrCaseIns(string, int, string)'</Item>
+               <Item>Str</Item>
+               <Item>'subStr'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsWhite(System.String)">
+            <Messages>
+             <Message Id="str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.IsWhite(string)'</Item>
+               <Item>str</Item>
+               <Item>'str'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#QuoteString(System.String)">
+            <Messages>
+             <Message Id="str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.QuoteString(string)'</Item>
+               <Item>str</Item>
+               <Item>'str'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SearchText(System.String,System.String,System.Int32,System.Boolean,System.Int32&amp;)">
+            <Messages>
+             <Message Id="4#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'foundPos'</Item>
+              </Issue>
+             </Message>
+             <Message Id="prev" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'StringHelper.SearchText(string, string, int, bool, out int)'</Item>
+               <Item>prev</Item>
+               <Item>'prev'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.Diagnostics">
+        <Types>
+         <Type Name="LoggingService">
+          <Members>
+           <Member Name="#Debug(System.String,System.Object[])">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'LoggingService.Debug(string, params object[])'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnterMethod(System.Object)">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'LoggingService.EnterMethod(object)'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Error(System.String,System.Object[])">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'LoggingService.Error(string, params object[])'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Fatal(System.String,System.Object[])">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'LoggingService.Fatal(string, params object[])'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Info(System.String,System.Object[])">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'LoggingService.Info(string, params object[])'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Warn(System.String,System.Object[])">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'LoggingService.Warn(string, params object[])'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
        <Namespace Name="Lextm.IO">
         <Types>
          <Type Name="FileHelper">
@@ -18945,6 +20247,17 @@
                 <Note Id="36" />
                </User>
               </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetReadOnlyFile(System.String,System.Boolean)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'FileHelper.SetReadOnlyFile(string, bool)'</Item>
+               <Item>a</Item>
+               <Item>'aValue'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -19053,13 +20366,49 @@
          </Type>
         </Types>
        </Namespace>
+       <Namespace Name="Lextm.Xml">
+        <Types>
+         <Type Name="XmlConvertor">
+          <Messages>
+           <Message Id="Convertor" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Convertor</Item>
+             <Item>'XmlConvertor'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
       </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/Lextm.CSBuilderGoodies.Plus.dll">
+    <Modules>
+     <Module Name="lextm.csbuildergoodies.plus.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.CSBuilderGoodies.Plus.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
      </Module>
     </Modules>
    </Target>
    <Target Name="$(ProjectDir)/bin/Debug/Lextm.NFamily.Plus.exe">
     <Modules>
      <Module Name="lextm.nfamily.plus.exe">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.NFamily.Plus.exe'</Item>
+        </Issue>
+       </Message>
+      </Messages>
       <Namespaces>
        <Namespace Name="BeWise.SharpBuilderTools.Gui.AssemblyInfo">
         <Types>
@@ -19077,6 +20426,177 @@
                 <Note Id="4" />
                </User>
               </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadAssemblyInfoDefFromFile(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FrmAssemblyInfoEditor.LoadAssemblyInfoDefFromFile(string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="BeWise.SharpBuilderTools.Info">
+        <Types>
+         <Type Name="AssemblyInfoDef">
+          <Members>
+           <Member Name="#AssemblyCompany">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyCompany'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyConfiguration">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyConfiguration'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyCopyright">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyCopyright'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyCulture">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyDelaySign">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyDelaySign'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyDescription">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyDescription'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyKeyFile">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyKeyFile'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyKeyName">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyKeyName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyProduct">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyProduct'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyTitle">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyTitle'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyTrademark">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyTrademark'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AssemblyVersion">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.AssemblyVersion'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Index">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.Index'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InputFileName">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.InputFileName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OutputFileName">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoDef.OutputFileName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="BeWise.SharpBuilderTools.Tools.AssemblyInfo">
+        <Types>
+         <Type Name="AssemblyInfoCreator">
+          <Members>
+           <Member Name="#LoadAssemblyInfoDefFromXml(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'AssemblyInfoCreator.LoadAssemblyInfoDefFromXml(string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -19228,6 +20748,17 @@
              </Message>
             </Messages>
            </Member>
+           <Member Name="#Main(System.String[])">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'MainClass.Main(string[])'</Item>
+               <Item>a</Item>
+               <Item>'aArgs'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
            <Member Name="#OUTPUT_FILE_SWITCH">
             <Messages>
              <Message Id="FILE" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2007-12-25 12:39:51Z">
@@ -19272,6 +20803,34 @@
          </Type>
         </Types>
        </Namespace>
+       <Namespace Name="Lextm.NFamily.Feature">
+        <Types>
+         <Type Name="ExpressoFeature">
+          <Messages>
+           <Message Id="Expresso" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Expresso</Item>
+             <Item>'ExpressoFeature'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.NFamily.Gui">
+        <Types>
+         <Type Name="ExpressoPage">
+          <Messages>
+           <Message Id="Expresso" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Expresso</Item>
+             <Item>'ExpressoPage'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
       </Namespaces>
      </Module>
     </Modules>
@@ -19279,7 +20838,90 @@
    <Target Name="$(ProjectDir)/bin/Debug/Lextm.OpenTools.Core.dll">
     <Modules>
      <Module Name="lextm.opentools.core.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.OpenTools.Core.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
       <Namespaces>
+       <Namespace Name="BeWise.Common.CommandLine">
+        <Types>
+         <Type Name="BaseCommandLineOption">
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message Id="aswitch" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseCommandLineOption.BaseCommandLineOption(string)'</Item>
+               <Item>aswitch</Item>
+               <Item>'aswitch'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Process(System.String)">
+            <Messages>
+             <Message Id="param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BaseCommandLineOption.Process(string)'</Item>
+               <Item>param</Item>
+               <Item>'param'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BoolCommandLineOption">
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'BoolCommandLineOption.BoolCommandLineOption(string)'</Item>
+               <Item>a</Item>
+               <Item>'aSwitch'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CommandLineManager">
+          <Members>
+           <Member Name="#GetCommandLineOptionBySwitch(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'CommandLineManager.GetCommandLineOptionBySwitch(string)'</Item>
+               <Item>a</Item>
+               <Item>'aSwitch'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ValueCommandLineOption">
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'ValueCommandLineOption.ValueCommandLineOption(string)'</Item>
+               <Item>a</Item>
+               <Item>'aSwitch'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
        <Namespace Name="BeWise.Common.IconManager">
         <Types>
          <Type Name="BaseIconManager">
@@ -19316,6 +20958,11 @@
                <Item>'WinAPI.ExtractIconEx(string, int, IntPtr[], IntPtr[], uint)'</Item>
               </Issue>
              </Message>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'ExtractIcons.GetDesktopIcon()'</Item>
+              </Issue>
+             </Message>
             </Messages>
            </Member>
           </Members>
@@ -19339,19 +20986,468 @@
             </Issue>
            </Message>
           </Messages>
+          <Members>
+           <Member Name="#ImageList">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'IconManager.ImageList'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="BeWise.Common.Info">
+        <Types>
+         <Type Name="ExpertInfo">
+          <Members>
+           <Member Name="#Desactivate()">
+            <Messages>
+             <Message Id="Desactivate" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Desactivate</Item>
+               <Item>'ExpertInfo.Desactivate()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
          </Type>
         </Types>
        </Namespace>
        <Namespace Name="BeWise.Common.Utils">
         <Types>
-         <Type Name="OtaUtils">
+         <Type Name="MiscUtils">
+          <Messages>
+           <Message Id="Utils" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Utils</Item>
+             <Item>'MiscUtils'</Item>
+            </Issue>
+           </Message>
+          </Messages>
           <Members>
+           <Member Name="#GetTextDataFromClipboard()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'MiscUtils.GetTextDataFromClipboard()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="OtaUtils">
+          <Messages>
+           <Message Id="Utils" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Utils</Item>
+             <Item>'OtaUtils'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#CreatePresentationLineFromDirtyString(System.String)">
+            <Messages>
+             <Message Id="str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'OtaUtils.CreatePresentationLineFromDirtyString(string)'</Item>
+               <Item>str</Item>
+               <Item>'str'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
            <Member Name="#FindSelectionText(System.String,System.String,System.Int32,System.Boolean,System.Int32&amp;)">
             <Messages>
+             <Message Id="4#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'pos'</Item>
+              </Issue>
+             </Message>
+             <Message Id="prev" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'OtaUtils.FindSelectionText(string, string, int, bool, out int)'</Item>
+               <Item>prev</Item>
+               <Item>'prev'</Item>
+              </Issue>
+             </Message>
              <Message Id="lastPos" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2008-01-22 13:10:52Z" FixCategory="DependsOnFix">
               <Issue>
                <Item>'lastPos'</Item>
                <Item>'OtaUtils.FindSelectionText(string, string, int, bool, out int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FindTextIdent(System.String,System.String,System.Int32,System.Boolean,System.Int32&amp;)">
+            <Messages>
+             <Message Id="4#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'pos'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Ident" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Ident</Item>
+               <Item>'OtaUtils.FindTextIdent(string, string, int, bool, out int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="prev" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'OtaUtils.FindTextIdent(string, string, int, bool, out int)'</Item>
+               <Item>prev</Item>
+               <Item>'prev'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetAboutBoxService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetAboutBoxService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetActionService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetActionService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetBasicIndentationFromOptions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetBasicIndentationFromOptions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCIndentationFromOptions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCIndentationFromOptions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetComponentInstallService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetComponentInstallService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCSIndentationFromOptions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCSIndentationFromOptions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentDotNetModule()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentDotNetModule()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentEditActions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentEditActions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentEditor(Borland.Studio.ToolsAPI.IOTAModule)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'OtaUtils.GetCurrentEditor(IOTAModule)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentEditorFileName()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentEditorFileName()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentEditView()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentEditView()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentElideActions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentElideActions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentLineNumber()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentLineNumber()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentModule()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentModule()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentModuleFileName()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentModuleFileName()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentProject()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentProject()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentProjectGroup()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentProjectGroup()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentSelectedText()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentSelectedText()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentSourceEditor()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentSourceEditor()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetCurrentSourceEditorText()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetCurrentSourceEditorText()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetDelphiIndentationFromOptions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetDelphiIndentationFromOptions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetDotNetFrameworkInstallationPath()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetDotNetFrameworkInstallationPath()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetGalleryCategoryManager()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetGalleryCategoryManager()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetHelpService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetHelpService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetIdeRootDir()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetIdeRootDir()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMainMenuService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetMainMenuService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMessageService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetMessageService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetModuleServices()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetModuleServices()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetSelectionService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetSelectionService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetSplashScreenService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetSplashScreenService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetStringBeforeFirstWord()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetStringBeforeFirstWord()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetToolboxService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetToolboxService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetWizardService()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetWizardService()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetXmlIndentationFromOptions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue Certainty="50">
+               <Item>'OtaUtils.GetXmlIndentationFromOptions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GoToBeginingOfWord(System.String,System.Int32)">
+            <Messages>
+             <Message Id="Begining" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Begining</Item>
+               <Item>'OtaUtils.GoToBeginingOfWord(string, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InvokeCodeInsight(System.Boolean)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'OtaUtils.InvokeCodeInsight(bool)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InvokeLiveTemplate()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'OtaUtils.InvokeLiveTemplate()'</Item>
+               <Item>'object'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -19368,24 +21464,14 @@
            </Member>
           </Members>
          </Type>
-         <Type Name="OtherUtils">
+         <Type Name="RunProcess">
           <Members>
-           <Member Name="#GoNext(System.String,System.Int32&amp;,System.Boolean)">
+           <Member Name="#Run(System.String[],System.String)">
             <Messages>
-             <Message Id="1#" TypeName="DoNotPassTypesByReference" Category="Microsoft.Design" CheckId="CA1045" Created="2008-01-22 13:12:53Z">
-              <Issue Certainty="50">
-               <Item>'startPos'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#IsStrCaseIns(System.String,System.Int32,System.String)">
-            <Messages>
-             <Message Id="CaseIns" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2008-01-22 13:12:53Z">
-              <Issue Name="MemberShouldBeDiscreteTerm">
-               <Item>CaseIns</Item>
-               <Item>'OtherUtils.IsStrCaseIns(string, int, string)'</Item>
-               <Item>Caseins</Item>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'RunProcess.Run(string[], string)'</Item>
+               <Item>'Exception'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -19405,6 +21491,18 @@
           <Members>
            <Member Name="#Beep(System.UInt32,System.UInt32)">
             <Messages>
+             <Message Id="dw" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.Beep(uint, uint)'</Item>
+               <Item>dw</Item>
+               <Item>'dwDuration'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.Beep(uint, uint)'</Item>
+               <Item>dw</Item>
+               <Item>'dwFreq'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Created="2008-01-22 13:10:52Z">
               <Issue Name="Return">
                <Item>'WinAPI.Beep(uint, uint)'</Item>
@@ -19424,6 +21522,30 @@
            </Member>
            <Member Name="#ChangeClipboardChain(System.IntPtr,System.IntPtr)">
             <Messages>
+             <Message Id="Wnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.ChangeClipboardChain(IntPtr, IntPtr)'</Item>
+               <Item>Wnd</Item>
+               <Item>'hWndNewNext'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.ChangeClipboardChain(IntPtr, IntPtr)'</Item>
+               <Item>Wnd</Item>
+               <Item>'hWndRemove'</Item>
+              </Issue>
+             </Message>
+             <Message Id="h" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.ChangeClipboardChain(IntPtr, IntPtr)'</Item>
+               <Item>h</Item>
+               <Item>'hWndNewNext'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.ChangeClipboardChain(IntPtr, IntPtr)'</Item>
+               <Item>h</Item>
+               <Item>'hWndRemove'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Created="2008-01-22 13:10:52Z">
               <Issue>
                <Item>'WinAPI.ChangeClipboardChain(IntPtr, IntPtr)'</Item>
@@ -19469,6 +21591,46 @@
                <Item>msg</Item>
               </Issue>
              </Message>
+             <Message Id="Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
+               <Item>Param</Item>
+               <Item>'lParam'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
+               <Item>Param</Item>
+               <Item>'wParam'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Wnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
+               <Item>Wnd</Item>
+               <Item>'hWnd'</Item>
+              </Issue>
+             </Message>
+             <Message Id="h" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
+               <Item>h</Item>
+               <Item>'hWnd'</Item>
+              </Issue>
+             </Message>
+             <Message Id="l" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
+               <Item>l</Item>
+               <Item>'lParam'</Item>
+              </Issue>
+             </Message>
+             <Message Id="w" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
+               <Item>w</Item>
+               <Item>'wParam'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Created="2008-01-22 13:10:52Z">
               <Issue Name="Return">
                <Item>'WinAPI.PostMessage(IntPtr, uint, int, int)'</Item>
@@ -19496,6 +21658,46 @@
                <Item>msg</Item>
               </Issue>
              </Message>
+             <Message Id="Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
+               <Item>Param</Item>
+               <Item>'lParam'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
+               <Item>Param</Item>
+               <Item>'wParam'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Wnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
+               <Item>Wnd</Item>
+               <Item>'hWnd'</Item>
+              </Issue>
+             </Message>
+             <Message Id="h" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
+               <Item>h</Item>
+               <Item>'hWnd'</Item>
+              </Issue>
+             </Message>
+             <Message Id="l" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
+               <Item>l</Item>
+               <Item>'lParam'</Item>
+              </Issue>
+             </Message>
+             <Message Id="w" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
+               <Item>w</Item>
+               <Item>'wParam'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Created="2008-01-22 13:10:52Z">
               <Issue>
                <Item>'WinAPI.SendMessage(IntPtr, int, IntPtr, IntPtr)'</Item>
@@ -19519,6 +21721,20 @@
            </Member>
            <Member Name="#SetClipboardViewer(System.IntPtr)">
             <Messages>
+             <Message Id="Wnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SetClipboardViewer(IntPtr)'</Item>
+               <Item>Wnd</Item>
+               <Item>'hWndNewViewer'</Item>
+              </Issue>
+             </Message>
+             <Message Id="h" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'WinAPI.SetClipboardViewer(IntPtr)'</Item>
+               <Item>h</Item>
+               <Item>'hWndNewViewer'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Created="2008-01-22 13:10:52Z">
               <Issue>
                <Item>'WinAPI.SetClipboardViewer(IntPtr)'</Item>
@@ -20046,10 +22262,31 @@
        </Namespace>
        <Namespace Name="Lextm.OpenTools">
         <Types>
+         <Type Name="CoreException">
+          <Members>
+           <Member Name="#.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="si" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'CoreException.CoreException(SerializationInfo, StreamingContext)'</Item>
+               <Item>si</Item>
+               <Item>'si'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="PropertyRegistry">
           <Members>
            <Member Name="#.cctor()">
             <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'PropertyRegistry.PropertyRegistry()'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2008-01-22 13:10:52Z">
               <Issue>
                <Item>'PropertyRegistry'</Item>
@@ -20059,26 +22296,28 @@
            </Member>
           </Members>
          </Type>
+         <Type Name="ShareUtils">
+          <Messages>
+           <Message Id="Utils" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Utils</Item>
+             <Item>'ShareUtils'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
         </Types>
        </Namespace>
        <Namespace Name="Lextm.OpenTools.CodeDom">
         <Types>
-         <Type Name="CodeDomProvider">
+         <Type Name="CodeDomInfo">
           <Members>
-           <Member Name="#LoadMethodInfoInto(System.Collections.Generic.IList`1&lt;Lextm.OpenTools.CodeDom.CodeDomInfo&gt;,Borland.Studio.ToolsAPI.IOTAServiceProvider)">
+           <Member Name="#Goto()">
             <Messages>
-             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2008-01-22 13:10:52Z">
-              <Issue Name="Local">
-               <Item>'_CodeTypeMember'</Item>
-               <Item>'CodeMemberProperty'</Item>
-               <Item>'CodeDomProvider.LoadMethodInfoInto(IList&lt;CodeDomInfo&gt;, IOTAServiceProvider)'</Item>
-               <Item>castclass</Item>
-              </Issue>
-              <Issue Name="Local">
-               <Item>'_CodeTypeMember'</Item>
-               <Item>'CodeTypeDeclaration'</Item>
-               <Item>'CodeDomProvider.LoadMethodInfoInto(IList&lt;CodeDomInfo&gt;, IOTAServiceProvider)'</Item>
-               <Item>castclass</Item>
+             <Message Id="Goto" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Goto</Item>
+               <Item>'CodeDomInfo.Goto()'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -20101,6 +22340,30 @@
          </Type>
         </Types>
        </Namespace>
+       <Namespace Name="Lextm.OpenTools.IO">
+        <Types>
+         <Type Name="Path">
+          <Members>
+           <Member Name="#JcfStyler">
+            <Messages>
+             <Message Id="Jcf" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Jcf</Item>
+               <Item>'Path.JcfStyler'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Styler" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="Member">
+               <Item>Styler</Item>
+               <Item>'Path.JcfStyler'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
        <Namespace Name="Lextm.OpenTools.Plus">
         <Types>
          <Type Name="Feature2">
@@ -20110,6 +22373,16 @@
              <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2008-01-22 13:10:52Z">
               <Issue>
                <Item>'Feature2.EnabledRecords'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadFeature(System.String,System.Reflection.Assembly)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'Feature2.LoadFeature(string, Assembly)'</Item>
+               <Item>'Exception'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -20138,51 +22411,66 @@
    <Target Name="$(ProjectDir)/bin/Debug/Lextm.Utilities.Plus.dll">
     <Modules>
      <Module Name="lextm.utilities.plus.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.Utilities.Plus.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
       <Namespaces>
        <Namespace Name="Lextm.Utilities.Gui">
         <Types>
          <Type Name="FormExpertManager">
           <Members>
-           <Member Name="#.ctor(Lextm.Utilities.Mode)">
+           <Member Name="#.ctor()">
             <Messages>
-             <Message Id="EV.Windows.Forms.ListViewSortManager" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Excluded" Created="2008-01-01 05:36:31Z">
+             <Message Id="EV.Windows.Forms.ListViewSortManager" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Created="2008-05-11 03:07:23Z">
               <Issue Name="ObjectCreation">
-               <Item>'FormExpertManager.FormExpertManager(Mode)'</Item>
+               <Item>'FormExpertManager.FormExpertManager()'</Item>
                <Item>'ListViewSortManager'</Item>
               </Issue>
-              <Notes>
-               <User Name="lextm">
-                <Note Id="42" />
-               </User>
-              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadExpertInfo()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FormExpertManager.LoadExpertInfo()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'FormExpertManager.LoadExpertInfo()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'FormExpertManager.LoadExpertInfo()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'FormExpertManager.LoadExpertInfo()'</Item>
+               <Item>'object'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
           </Members>
          </Type>
-        </Types>
-       </Namespace>
-       <Namespace Name="Lextm.Utilities.InDate">
-        <Types>
-         <Type Name="UpdateContext">
+         <Type Name="FormPlusManager">
           <Members>
-           <Member Name="#AlwaysInstall">
-            <Accessors>
-             <Accessor Name="#get_AlwaysInstall()">
-              <Messages>
-               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2008-01-01 05:36:31Z">
-                <Issue>
-                 <Item>'UpdateContext.AlwaysInstall.get()'</Item>
-                </Issue>
-                <Notes>
-                 <User Name="lextm">
-                  <Note Id="2" />
-                 </User>
-                </Notes>
-               </Message>
-              </Messages>
-             </Accessor>
-            </Accessors>
+           <Member Name="#.ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'FormPlusManager.FormPlusManager()'</Item>
+               <Item>'FormPlusManager.modified'</Item>
+               <Item>'bool'</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
            </Member>
           </Members>
          </Type>
@@ -20195,6 +22483,14 @@
    <Target Name="$(ProjectDir)/bin/Debug/Lextm.WiseEditor.Plus.dll">
     <Modules>
      <Module Name="lextm.wiseeditor.plus.dll">
+      <Messages>
+       <Message Id="Lextm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+        <Issue Name="Assembly">
+         <Item>Lextm</Item>
+         <Item>'Lextm.WiseEditor.Plus.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
       <Namespaces>
        <Namespace Name="BeWise.SharpBuilderTools.Gui">
         <Types>
@@ -20212,6 +22508,19 @@
                 <Note Id="46" />
                </User>
               </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FrmFileProperties">
+          <Members>
+           <Member Name="#InitializeComponent()">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'FrmFileProperties.InitializeComponent()'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -20236,6 +22545,65 @@
            </Member>
           </Members>
          </Type>
+         <Type Name="FrmViewXmlFile">
+          <Messages>
+           <Message Id="Frm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Frm</Item>
+             <Item>'FrmViewXmlFile'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message Id="a" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+              <Issue Name="MemberParameter">
+               <Item>'FrmViewXmlFile.FrmViewXmlFile(string)'</Item>
+               <Item>a</Item>
+               <Item>'aFileName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadXml(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FrmViewXmlFile.LoadXml(string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.WiseEditor">
+        <Types>
+         <Type Name="ControlPrefix">
+          <Members>
+           <Member Name="#ControlTypeName">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ControlPrefix.ControlTypeName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Prefix">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ControlPrefix.Prefix'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
         </Types>
        </Namespace>
        <Namespace Name="Lextm.WiseEditor.Feature">
@@ -20254,6 +22622,18 @@
             </Notes>
            </Message>
           </Messages>
+          <Members>
+           <Member Name="#DoOpenClipboardViewer(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ClipboardWatcherFeature.DoOpenClipboardViewer(object, EventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
          </Type>
          <Type Name="ClipboardWatcherFeature+ClipboardHook">
           <Members>
@@ -20293,8 +22673,35 @@
            </Member>
           </Members>
          </Type>
+         <Type Name="ColorPalletteFeature">
+          <Messages>
+           <Message Id="Pallette" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Pallette</Item>
+             <Item>'ColorPalletteFeature'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
          <Type Name="ComponentNamerFeature">
+          <Messages>
+           <Message Id="Namer" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Namer</Item>
+             <Item>'ComponentNamerFeature'</Item>
+            </Issue>
+           </Message>
+          </Messages>
           <Members>
+           <Member Name="#GetOptions()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ComponentNamerFeature.GetOptions()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
            <Member Name="#OnComponentAdded(System.Object,System.ComponentModel.Design.ComponentEventArgs)">
             <Messages>
              <Message TypeName="DoNotUseTimersThatPreventPowerStateChanges" Category="Microsoft.Mobility" CheckId="CA1601" Status="Excluded" Created="2008-01-01 05:36:31Z">
@@ -20307,6 +22714,30 @@
                 <Note Id="40" />
                </User>
               </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OpenCloseFileNotificationHandler(System.Object,Borland.Studio.ToolsAPI.FileNotificationEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ComponentNamerFeature.OpenCloseFileNotificationHandler(object, FileNotificationEventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetValidControlName(System.Windows.Forms.Control,System.ComponentModel.Design.Serialization.INameCreationService,System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ComponentNamerFeature.SetValidControlName(Control, INameCreationService, string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'ComponentNamerFeature.SetValidControlName(Control, INameCreationService, string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -20346,6 +22777,24 @@
           <Members>
            <Member Name="#InteriorElideToDefinitions(Borland.Studio.ToolsAPI.IOTACodeDomProvider,System.CodeDom.CodeObject,System.Int32&amp;)">
             <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'EditorAidFeature.InteriorElideToDefinitions(IOTACodeDomProvider, CodeObject, ref int)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'EditorAidFeature.InteriorElideToDefinitions(IOTACodeDomProvider, CodeObject, ref int)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'EditorAidFeature.InteriorElideToDefinitions(IOTACodeDomProvider, CodeObject, ref int)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Issue>
+               <Item>'EditorAidFeature.InteriorElideToDefinitions(IOTACodeDomProvider, CodeObject, ref int)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
              <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Excluded" Created="2008-01-01 05:36:31Z">
               <Issue Name="Parameter">
                <Item>'_CodeObject'</Item>
@@ -20459,6 +22908,123 @@
            </Member>
           </Members>
          </Type>
+         <Type Name="ExtraFeature">
+          <Members>
+           <Member Name="#DoTimerActiveProject(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ExtraFeature.DoTimerActiveProject(object, EventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetActiveProjectFileNotificationHandler(System.Object,Borland.Studio.ToolsAPI.FileNotificationEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ExtraFeature.SetActiveProjectFileNotificationHandler(object, FileNotificationEventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FavoriteCategory">
+          <Members>
+           <Member Name="#Expanded">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteCategory.Expanded'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FavoriteCategories">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteCategory.FavoriteCategories'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FavoriteFiles">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteCategory.FavoriteFiles'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Name">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteCategory.Name'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FavoriteFile">
+          <Members>
+           <Member Name="#FileName">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteFile.FileName'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Name">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteFile.Name'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FavoriteRecords">
+          <Members>
+           <Member Name="#FavoriteCategories">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteRecords.FavoriteCategories'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectedFavoriteCategoryPath">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteRecords.SelectedFavoriteCategoryPath'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectedFilePath">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'FavoriteRecords.SelectedFilePath'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="FavoritesFeature">
           <Messages>
            <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Excluded" Created="2008-01-01 05:36:31Z" FixCategory="DependsOnFix">
@@ -20473,6 +23039,84 @@
             </Notes>
            </Message>
           </Messages>
+         </Type>
+         <Type Name="ProjectAidFeature">
+          <Members>
+           <Member Name="#DoDeleteCurrentModule(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'ProjectAidFeature.DoDeleteCurrentModule(object, EventArgs)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DoGetFileProperties(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'ProjectAidFeature.DoGetFileProperties(object, EventArgs)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DoPEVerifyProjectTarget(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ProjectAidFeature.DoPEVerifyProjectTarget(object, EventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DoSaveFileList(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ProjectAidFeature.DoSaveFileList(object, EventArgs)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#KeyFileExistInProject(Borland.Studio.ToolsAPI.IOTAProject)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'ProjectAidFeature.KeyFileExistInProject(IOTAProject)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ProjectAidFeature.KeyFileExistInProject(IOTAProject)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.EndsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'ProjectAidFeature.KeyFileExistInProject(IOTAProject)'</Item>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'ProjectAidFeature.KeyFileExistInProject(IOTAProject)'</Item>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OpenCloseFileNotificationHandler(System.Object,Borland.Studio.ToolsAPI.FileNotificationEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ProjectAidFeature.OpenCloseFileNotificationHandler(object, FileNotificationEventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
          </Type>
          <Type Name="SpellcheckerFeature">
           <Messages>
@@ -20489,11 +23133,70 @@
            </Message>
           </Messages>
          </Type>
+         <Type Name="XmlFeature">
+          <Members>
+           <Member Name="#ValidateXmlFile(System.String,System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'XmlFeature.ValidateXmlFile(string, string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidateXsdFile(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'XmlFeature.ValidateXsdFile(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.WiseEditor.FileAid">
+        <Types>
+         <Type Name="ModuleRegistry">
+          <Members>
+           <Member Name="#.cctor()">
+            <Messages>
+             <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'ModuleRegistry'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsValidModuleInfo(Borland.Studio.ToolsAPI.IOTAModuleInfo)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-05-11 03:22:19Z">
+              <Issue>
+               <Item>'ModuleRegistry.IsValidModuleInfo(IOTAModuleInfo)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
         </Types>
        </Namespace>
        <Namespace Name="Lextm.WiseEditor.Gui">
         <Types>
          <Type Name="ComponentNamerPage">
+          <Messages>
+           <Message Id="Namer" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-05-11 03:22:19Z">
+            <Issue Name="Type">
+             <Item>Namer</Item>
+             <Item>'ComponentNamerPage'</Item>
+            </Issue>
+           </Message>
+          </Messages>
           <Members>
            <Member Name="#.ctor()">
             <Messages>
@@ -20526,6 +23229,103 @@
                 <Note Id="0" />
                </User>
               </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.WiseEditor.ProjectAid">
+        <Types>
+         <Type Name="Generator">
+          <Members>
+           <Member Name="#GenerateKey(System.String)">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'Generator.GenerateKey(string)'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="OptionSet">
+          <Members>
+           <Member Name="#CreateFrom(System.Xml.XmlDocument,System.Xml.XmlNode,System.String)">
+            <Messages>
+             <Message Id="System.Convert.ToBoolean(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-05-11 03:07:23Z">
+              <Issue>
+               <Item>'Convert.ToBoolean(string)'</Item>
+               <Item>'OptionSet.CreateFrom(XmlDocument, XmlNode, string)'</Item>
+               <Item>'Convert.ToBoolean(string, IFormatProvider)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Lextm.WiseEditor.Tests">
+        <Types>
+         <Type Name="TestHandlerFactory">
+          <Members>
+           <Member Name="#SetUp()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestHandlerFactory.SetUp()'</Item>
+              </Issue>
+             </Message>
+             <Message Id="SetUp" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>SetUp</Item>
+               <Item>'TestHandlerFactory.SetUp()'</Item>
+               <Item>Setup</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TearDown()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestHandlerFactory.TearDown()'</Item>
+              </Issue>
+             </Message>
+             <Message Id="TearDown" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>TearDown</Item>
+               <Item>'TestHandlerFactory.TearDown()'</Item>
+               <Item>Teardown</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TestGetHandlerFor()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-05-11 03:07:23Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'TestHandlerFactory.TestGetHandlerFor()'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Excluded" Created="2008-05-11 03:07:23Z">
+              <Issue Name="Local">
+               <Item>'handler'</Item>
+               <Item>'Manner20UnsignedHandler'</Item>
+               <Item>'TestHandlerFactory.TestGetHandlerFor()'</Item>
+               <Item>isint</Item>
+              </Issue>
+              <Issue Name="Local">
+               <Item>'handler'</Item>
+               <Item>'Manner20UnsignedHandler'</Item>
+               <Item>'TestHandlerFactory.TestGetHandlerFor()'</Item>
+               <Item>isint</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -20572,7 +23372,6 @@
   <Notes>
    <User Name="lextm">
     <Note Id="0" Modified="2008-01-01 08:10:05Z">ignore</Note>
-    <Note Id="2" Modified="2008-01-01 08:25:03Z">false alarm</Note>
     <Note Id="4" Modified="2007-12-26 13:06:49Z">later</Note>
     <Note Id="13" Modified="2007-12-28 13:10:32Z">ignore</Note>
     <Note Id="16" Modified="2007-12-29 12:53:02Z">ignore</Note>
@@ -20602,6 +23401,12 @@
    <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
     <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
    </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021">
+    <Resolution Name="Default">Consider a design that does not require that {0} be an out parameter.</Resolution>
+   </Rule>
    <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
     <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
    </Rule>
@@ -20612,9 +23417,18 @@
     <Resolution Name="Local">{0}, a variable, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
     <Resolution Name="Parameter">{0}, a parameter, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
    </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+    <Resolution Name="Default">Because field {0} is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Resolution>
+   </Rule>
    <Rule TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806">
     <Resolution Name="HResultOrErrorCode">{0} calls {1} but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Resolution>
     <Resolution Name="ObjectCreation">{0} creates a new instance of {1} which is never used. Pass the instance as an argument to another method, assign the instance to a variable, or remove the object creation if it is unnecessary.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization because it will be done automatically by the runtime.</Resolution>
    </Rule>
    <Rule TypeName="DoNotPassTypesByReference" Category="Microsoft.Design" CheckId="CA1045">
     <Resolution Name="Default">Consider a design that does not require that {0} be a reference parameter.</Resolution>
@@ -20638,6 +23452,13 @@
     <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
     <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
    </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
+    <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+    <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   </Rule>
    <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
     <Resolution Name="Member">Remove the underscores from member name {0}.</Resolution>
    </Rule>
@@ -20646,6 +23467,9 @@
    </Rule>
    <Rule TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414">
     <Resolution Name="Return">Add the MarshalAsAttribute to the return type of P/Invoke {0}. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
    </Rule>
    <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
     <Resolution Name="Default">Because it is a P/Invoke method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
@@ -20697,6 +23521,9 @@
    </Rule>
    <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
     <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
    </Rule>
   </Rules>
  </FxCopReport>

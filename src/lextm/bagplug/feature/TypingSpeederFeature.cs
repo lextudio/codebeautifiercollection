@@ -29,7 +29,7 @@ namespace Lextm.BagPlug.Feature {
 	/// </summary>
 	public class TypingSpeederFeature : CustomFeature {
 		
-		//private const string Name = "AutoCompletion";
+		private const string Name = "Typing Speeder";
 		//private const string TabGeneral = "AutoCompletion";
 		/**************************************************************/
 		/*                     Constructor
@@ -76,7 +76,7 @@ namespace Lextm.BagPlug.Feature {
 					LoggingService.Warn("empty editor or wrong file");
 				}
 			} catch (Exception ex) {
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
 				throw;
 			} finally {
 				fEditor = null;
@@ -130,7 +130,7 @@ namespace Lextm.BagPlug.Feature {
 					}
 				}
 			} catch (Exception ex) {
-				Lextm.Windows.Forms.MessageBoxFactory.Fatal(ex);
+				Lextm.Windows.Forms.MessageBoxFactory.Fatal(Name, ex);
 				throw;
 			}
 		}
