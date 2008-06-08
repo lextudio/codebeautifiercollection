@@ -22,7 +22,7 @@ namespace PSTaskDialog
     static public int EmulatedFormWidth = 450;
     static public bool ForceEmulationMode;
     static public bool UseToolWindowOnXP = true;
-    static public bool NoParentForm; 
+    static public IWin32Window Parent; 
 
     //--------------------------------------------------------------------------------
     #region ShowTaskDialogBox
@@ -145,7 +145,7 @@ namespace PSTaskDialog
         vtd.PositionRelativeToWindow = true;
         vtd.RightToLeftLayout = false;
         vtd.NoDefaultRadioButton = false;
-        vtd.CanBeMinimized = NoParentForm;// add a public property
+        vtd.CanBeMinimized = Parent == null;// add a public property
         vtd.ShowMarqueeProgressBar = false;
         vtd.UseCommandLinks = (CommandButtons != "");
         vtd.UseCommandLinksNoIcon = false;
@@ -187,7 +187,7 @@ namespace PSTaskDialog
         td.VerificationText = VerificationText;
         td.Width = EmulatedFormWidth;
         td.BuildForm();
-        DialogResult result = td.ShowDialog((NoParentForm ? null : Form.ActiveForm));
+        DialogResult result = td.ShowDialog(Parent == null ? Form.ActiveForm : Parent);
 
         RadioButtonResult = td.RadioButtonIndex;
         CommandButtonResult = td.CommandButtonClickedIndex;
