@@ -128,6 +128,12 @@
       <Project>{BC328F36-A346-4171-822B-240104733760}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="thirdparties\Mono.Addins\Mono.Addins.csproj">
+      <Project>{13306CF8-572B-4657-8C7E-2736AEBBEEB6}</Project>
+      <Name>Mono.Addins</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <BorlandProject>

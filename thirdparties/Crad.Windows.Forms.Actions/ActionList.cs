@@ -41,6 +41,10 @@ namespace Crad.Windows.Forms.Actions
         public event EventHandler Update;
         protected virtual void OnUpdate(EventArgs eventArgs)
         {
+        	if (ContainerControl != null && ContainerControl.IsDisposed) 
+        	{
+        		return;	
+        	}
             // si solleva l'evento Update per l'ActionList
             if (Update != null)
                 Update(this, eventArgs);
@@ -98,7 +102,7 @@ namespace Crad.Windows.Forms.Actions
                     throw new ArgumentException("The Action you selected is owned by another ActionList");
             }
 
-            /* Se extendee appartiene già alla collection, rimuovo l'handler
+            /* Se extendee appartiene gi?alla collection, rimuovo l'handler
              * sul suo evento Click e lo rimuovo dai component associati alla
              * collection */
             if (targets.ContainsKey(extendee))
@@ -181,7 +185,7 @@ namespace Crad.Windows.Forms.Actions
         private void checkInternalCollections()
         {
             /* questo metodo verifica che ogni action su targets
-             * appartenga a questa actionList e che abbia la proprietà
+             * appartenga a questa actionList e che abbia la propriet?
              * ActionList correttamente impostata */
             foreach (Action action in targets.Values)
             {

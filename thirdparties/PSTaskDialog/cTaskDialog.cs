@@ -187,7 +187,7 @@ namespace PSTaskDialog
         td.VerificationText = VerificationText;
         td.Width = EmulatedFormWidth;
         td.BuildForm();
-        DialogResult result = td.ShowDialog(Parent == null ? Form.ActiveForm : Parent);
+        DialogResult result = td.ShowDialog(Parent?? Form.ActiveForm?? (Application.OpenForms.Count == 0 ? null : Application.OpenForms[0]));
 
         RadioButtonResult = td.RadioButtonIndex;
         CommandButtonResult = td.CommandButtonClickedIndex;
