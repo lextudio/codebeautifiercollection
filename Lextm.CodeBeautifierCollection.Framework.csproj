@@ -209,10 +209,6 @@
     <None Include="lextmkeyfiles\PublicPrivateKeyFile.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="thirdparties\Mono.Addins\Mono.Addins.csproj">
-      <Project>{13306CF8-572B-4657-8C7E-2736AEBBEEB6}</Project>
-      <Name>Mono.Addins</Name>
-    </ProjectReference>
     <ProjectReference Include="thirdparties\SharpDevTools\SharpDevTools.csproj">
       <Project>{49FA9FDF-019F-4E05-8501-38975F41C4C6}</Project>
       <Name>SharpDevTools</Name>

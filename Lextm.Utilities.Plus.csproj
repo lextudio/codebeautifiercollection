@@ -146,6 +146,7 @@
     <Compile Include="src\assemblyinfo\Common.cs" />
     <Compile Include="src\assemblyinfo\LeXtudio.cs" />
     <Compile Include="src\assemblyinfo\Utilities.cs" />
+    <Compile Include="src\lextm\utilities\expertmanager\ExpertRegistry.cs" />
     <Compile Include="src\lextm\utilities\feature\ExpertManagerFeature.cs" />
     <Compile Include="src\lextm\utilities\feature\InDateFeature.cs" />
     <Compile Include="src\lextm\utilities\feature\PlusManagerFeature.cs" />

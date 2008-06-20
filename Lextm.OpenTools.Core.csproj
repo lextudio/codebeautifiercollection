@@ -122,8 +122,10 @@
     <Compile Include="src\bewise\common\iconmanagers\FileIconManager.cs" />
     <Compile Include="src\bewise\common\iconmanagers\IconManager.cs" />
     <Compile Include="src\bewise\common\iconmanagers\ToolBoxIconManager.cs" />
+    <Compile Include="src\bewise\common\info\DotNetExpert.cs" />
     <Compile Include="src\bewise\common\info\ExpertInfo.cs" />
     <Compile Include="src\bewise\common\info\ModuleFileInfo.cs" />
+    <Compile Include="src\bewise\common\info\Win32Expert.cs" />
     <Compile Include="src\bewise\common\utils\DelphiProjectModuleInfo.cs" />
     <Compile Include="src\bewise\common\utils\OTAUtils.cs" />
     <Compile Include="src\bewise\common\utils\RunProcess.cs" />
@@ -173,10 +175,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="thirdparties\Mono.Addins\Mono.Addins.csproj">
-      <Project>{13306CF8-572B-4657-8C7E-2736AEBBEEB6}</Project>
-      <Name>Mono.Addins</Name>
-    </ProjectReference>
     <ProjectReference Include="thirdparties\Vista Api\VistaApi.csproj">
       <Project>{9EC6098C-09C6-4623-819B-08835D183038}</Project>
       <Name>VistaApi</Name>
