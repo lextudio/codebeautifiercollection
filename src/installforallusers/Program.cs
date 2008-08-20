@@ -71,14 +71,14 @@ namespace installforallusers
 		private static void UninstallDllFromGac()
 		{
 			string exe = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "gacutil.exe");
-			Lextm.Diagnostics.ShellHelper.Execute(exe, "-u UnhandledExceptionManager", true);
+			Lextm.Diagnostics.ShellHelper.Execute(exe, "/r /u UnhandledExceptionManager", true);
 		}
 
 		private static void InstallDllToGac()
 		{
 			string fileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "UnhandledExceptionManager.dll");
 			string exe = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "gacutil.exe");
-			Lextm.Diagnostics.ShellHelper.Execute(exe, String.Format("-i \"{0}\"", fileName), true);
+			Lextm.Diagnostics.ShellHelper.Execute(exe, String.Format("/r /i \"{0}\"", fileName), true);
 		}
 		
 		static void UnfakeLauncher()
