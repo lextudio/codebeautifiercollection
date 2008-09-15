@@ -82,7 +82,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Borland.Studio.ToolsAPI">
-      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
       <Private>False</Private>
       <SpecificVersion>False</SpecificVersion>
     </Reference>

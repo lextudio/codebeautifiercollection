@@ -6,7 +6,7 @@
     <Feature2>
       <EnabledRecords>
         <EnabledRecord>
-          <Version>5</Version>
+          <Version>6</Version>
           <Enabled>true</Enabled>
         </EnabledRecord>
       </EnabledRecords>

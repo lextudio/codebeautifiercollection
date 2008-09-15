@@ -64,8 +64,8 @@
       <SpecificVersion>False</SpecificVersion>
       <AssemblyName>Borland.Studio.ToolsAPI, Version=11.0.5000.7751, Culture=neutral, PublicKeyToken=91d62ebb5b0d1b1b, processorArchitecture=MSIL</AssemblyName>
       <Version>11.0.5000.9245</Version>
-      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
-      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>lib\nunit.framework.dll</HintPath>

@@ -1,10 +1,11 @@
 
-#define MyAppID "{F768F6BA-F164-4599-BC26-DCCFC2F76855}"
+#define MyAppID "{571B30F3-ECF9-46b5-9572-9AD6ACA5E9C6}"
 #define MyAppCopyright "Copyright (C) 2005-2008 Lex Y. Li and other contributors."
-#define MyAppName "Code Beautifier Collection 6"
+#define MyAppName "Code Beautifier Collection 6 for RAD Studio 2009"
 #define MyAppVersion GetFileVersion("..\bin\release\Lextm.CodeBeautifierCollection.Framework.dll")
 #pragma message "Detailed version info: " + MyAppVersion
-#define OtaVersion "11.0.2902.10471"
+#define OtaVersion "12.0.3170.16989"
+#define IdeRegKey "SOFTWARE\CodeGear\BDS\6.0"
 
 [Setup]
 AppName={#MyAppName}
@@ -45,7 +46,7 @@ Name: Custom; Description: Custom; Flags: iscustom
 [Components]
 Name: LeXDK; Description: LeXDK and basic pluses; Types: Custom Full Compact; Languages: 
 Name: Plus; Description: Extra pluses; Types: Custom Full; Languages: 
-Name: ExpReg; Description: Expert Registry experimental binaries; Types: Custom Full
+;Name: ExpReg; Description: Expert Registry experimental binaries; Types: Custom Full
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
@@ -288,7 +289,7 @@ var
   version: String;
 begin
   existed := RegKeyExists(HKEY_LOCAL_MACHINE,
-	'SOFTWARE\Borland\BDS\5.0');
+	'{#IdeRegKey}');
   if not existed then
   begin
     // RAD Studio is not there.
@@ -297,7 +298,7 @@ begin
   end;
 
   RegQueryStringValue(HKEY_LOCAL_MACHINE,
-			'SOFTWARE\Borland\BDS\5.0',
+			'{#IdeRegKey}',
 			'RootDir', rootFolder);
 			  //MsgBox('rootFolder is ' + rootFolder, mbError, MB_OK);
   otaFile := rootFolder + 'Bin\Borland.Studio.ToolsAPI.dll';

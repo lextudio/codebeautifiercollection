@@ -69,8 +69,8 @@
       <SpecificVersion>False</SpecificVersion>
       <AssemblyName>Borland.Studio.ToolsAPI</AssemblyName>
       <Version>11.0.5000.9245</Version>
-      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
-      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>lib\nunit.framework.dll</HintPath>
@@ -204,6 +204,8 @@
       <Name>Lextm.OpenTools.Core</Name>
       <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
     </ProjectReference>
+    <None Include="Microsoft.VersionNumber.targets" />
+    <None Include="setup\CBC2Exe.iss" />
   </ItemGroup>
   <ItemGroup>
     <None Include="lextmkeyfiles\PublicPrivateKeyFile.snk" />
@@ -217,6 +219,7 @@
       <Project>{BC328F36-A346-4171-822B-240104733760}</Project>
       <Name>ThirdParty</Name>
     </ProjectReference>
+    <Folder Include="setup" />
     <Folder Include="Tests" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

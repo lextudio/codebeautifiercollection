@@ -11,11 +11,8 @@ namespace Lextm.Utilities
     /// <summary>
     /// Executable entry.
     /// </summary>
-    public sealed class ExpertManagerEntry
+    public static class ExpertManagerEntry
     {
-        private ExpertManagerEntry()
-        {
-        }
         private static readonly string configuration =
             Lextm.OpenTools.IO.Path.GetDataFile("cbc2.exe.config");
         /// <summary>

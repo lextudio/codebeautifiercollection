@@ -15,6 +15,13 @@ namespace BeWise.Common.Info {
         bool isActive;
         string valueData;
 
+        /// <summary>
+        /// Initiates an <see cref="ExpertInfo"/> instance.
+        /// </summary>
+        /// <param name="valueName">Value name.</param>
+        /// <param name="valueData">Value data.</param>
+        /// <param name="active">Active flag.</param>
+        /// <param name="version">Version number.</param>
         public ExpertInfo(string valueName, string valueData, bool active, int version)
         {
             this.valueName = valueName;
@@ -23,6 +30,9 @@ namespace BeWise.Common.Info {
             this.version = version;
         }
 
+        /// <summary>
+        /// Version number.
+        /// </summary>
         public int Version
         {
             get
@@ -31,6 +41,9 @@ namespace BeWise.Common.Info {
             }
         }
 
+        /// <summary>
+        /// Active flag.
+        /// </summary>
         public bool Active
         {
             get
@@ -39,6 +52,9 @@ namespace BeWise.Common.Info {
             }
         }
 
+        /// <summary>
+        /// Indicates that if this expert file exists.
+        /// </summary>
         public bool Exists
         {
             get
@@ -67,24 +83,28 @@ namespace BeWise.Common.Info {
         }
 
         /// <summary>
-        /// Adds reg key.
+        /// Persists the expert to registry.
         /// </summary>
-        /// <param name="fileName">File name</param>
-        /// <param name="name">Name</param>
-        /// <param name="version">IDE version</param>
-        /// <param name="isDotNet">IsDotNet flag</param>
         public void Persist()
         {
             WriteKey(this is DotNetExpert ? OtaUtils.GetEnabledAssembliesRegKey(version) : OtaUtils.GetEnabledPackagesRegKey(version));
         }
 
+        /// <summary>
+        /// Deletes the expert key.
+        /// </summary>
         public abstract void Delete();
+        
         /// <summary>
         /// Activates an expert.
         /// </summary>
         public abstract void Activate();
-
+        
+        /// <summary>
+        /// Deactives an expert.
+        /// </summary>
         public abstract void Deactivate();
+        
         /// <summary>
         /// IDE version.
         /// </summary>
@@ -104,6 +124,9 @@ namespace BeWise.Common.Info {
             get;
         }
 
+        /// <summary>
+        /// Value name.
+        /// </summary>
         protected string ValueName
         {
             get
@@ -111,6 +134,7 @@ namespace BeWise.Common.Info {
                 return valueName;
             }
         }
+        
         /// <summary>
         /// Is active.
         /// </summary>
@@ -121,6 +145,7 @@ namespace BeWise.Common.Info {
                 return isActive;
             }
         }
+        
         /// <summary>
         /// Name.
         /// </summary>
@@ -129,6 +154,9 @@ namespace BeWise.Common.Info {
             get;
         }
 
+        /// <summary>
+        /// Value data.
+        /// </summary>
         protected string ValueData
         {
             get

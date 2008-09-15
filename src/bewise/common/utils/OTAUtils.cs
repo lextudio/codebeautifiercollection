@@ -1,6 +1,6 @@
 // modified by lextm
 // some extensions are added.
-// lextm extensions are copyrighted by lextm, 2005-2006
+// lextm extensions are copyrighted by lextm, 2005-2008
 // other extensions are copyrighted by its original authors.
 
 using System;
@@ -20,10 +20,10 @@ using Lextm.Diagnostics;
 using Lextm.Win32;
 
 namespace BeWise.Common.Utils {
-	/// <summary>
-	/// OTA related functions.
-	/// </summary>
-    public sealed class OtaUtils
+    /// <summary>
+    /// OTA related functions.
+    /// </summary>
+    public static class OtaUtils
     {
 
         /**************************************************************/
@@ -1040,8 +1040,8 @@ namespace BeWise.Common.Utils {
         /// <param name="lastPos">Last position</param>
         /// <param name="prev">Previous</param>
         /// <param name="pos">Position</param>
-        /// <returns>true if found, false if not.</returns>        
-		[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
+        /// <returns>true if found, false if not.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
         public static bool FindSelectionText(string id, string source, int lastPos, bool prev, out int pos)
         {
             IOTAEditView _EditView = GetCurrentEditView();
@@ -1088,8 +1088,8 @@ namespace BeWise.Common.Utils {
         /// <param name="lastPos">Last position</param>
         /// <param name="prev">Previous</param>
         /// <param name="pos">Position</param>
-        /// <returns>true if found, false if not.</returns>        
-		[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
+        /// <returns>true if found, false if not.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId="4#")]
         public static bool FindTextIdent(string id, string source, int lastPos, bool prev, out int pos)
         {
             int _StartPos = GoToBeginingOfWord(source, lastPos);
@@ -1776,22 +1776,26 @@ namespace BeWise.Common.Utils {
         {
             get
             {
-                string regular = @"(?<1>\d+.\d+)";
-
-                Regex r = new Regex(regular, RegexOptions.IgnoreCase |
-                                    RegexOptions.Singleline | RegexOptions.Compiled);
-                Match m = r.Match(IdeRegKey);
-                if (m.Success)
-                {
-                    Version version = new Version(m.Groups[1].Value);
-                    return version.Major;
-                }
-                else
-                {
-                    return 0;
-                }
+                return ExtractVersionFrom(IdeRegKey);
             }
         }
+
+        private static int ExtractVersionFrom(string keyString)
+        {
+            string regular = "(?<1>\\d+.\\d+)";
+            Regex r = new Regex(regular, RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+            Match m = r.Match(keyString);
+            if (m.Success) 
+            {
+                Version version = new Version(m.Groups[1].Value);
+                return version.Major;
+            }
+            else 
+            {
+                return 0;
+            }
+        }
+
 
         private const string IDE_DOT_NET_FRAMEWORK_REG_KEY = @"\DotNetFramework";
         /// <summary>
@@ -1861,22 +1865,30 @@ namespace BeWise.Common.Utils {
         }
 
         private readonly static IEnumerable<IdeVersionInfo> _ideVersionInfos = new List<IdeVersionInfo>() {
-			new IdeVersionInfo(1, "C#Builder"),
-			new IdeVersionInfo(2, "Delphi 8 for .NET"),
-			new IdeVersionInfo(3, "Delphi 2005"),
-			new IdeVersionInfo(4, "Borland Developer Studio 2006"),
-			new IdeVersionInfo(5, "CodeGear RAD Studio 2007")
-		};
+            new IdeVersionInfo(1, "C#Builder"),
+            new IdeVersionInfo(2, "Delphi 8 for .NET"),
+            new IdeVersionInfo(3, "Delphi 2005"),
+            new IdeVersionInfo(4, "Borland Developer Studio 2006"),
+            new IdeVersionInfo(5, "CodeGear RAD Studio 2007"),
+            new IdeVersionInfo(6, "CodeGear RAD Studio 2009")
+        };
 
         private const string MaskIDERegKey = @"Software\Borland\BDS\{0}.0";
+        private const string MaskIDENewRegKey = @"Software\CodeGear\BDS\{0}.0";
+        
         /// <summary>No / in the end.</summary>
         private static string GetIdeRegKey(int version)
         {
-            return String.Format(CultureInfo.InvariantCulture, MaskIDERegKey, version);
+            if (version < 6)
+            {
+                return String.Format(CultureInfo.InvariantCulture, MaskIDERegKey, version);
+            }
+            
+            return string.Format(CultureInfo.InvariantCulture, MaskIDENewRegKey, version);
         }
+        
         private const string IDEEnabledAssembliesRegKey = @"\Known IDE Assemblies";
         private const string IDEDisabledAssembliesRegKey = @"\Disabled IDE Assemblies";
-
         private const string IDEDisabledPackagesRegKey = @"\Disabled Experts";
         private const string IDEEnabledPackagesRegKey = @"\Experts";
         /// <summary>
@@ -1915,7 +1927,7 @@ namespace BeWise.Common.Utils {
         public static bool IsDelphiProject(IOTAProject project)
         {
             return project.Personality == OTAIDEPersonalities.sDelphiPersonality
-                            || project.Personality == OTAIDEPersonalities.sDelphiDotNetPersonality;
+                || project.Personality == OTAIDEPersonalities.sDelphiDotNetPersonality;
         }
         /// <summary>
         /// Determines if it is a .NET project.
@@ -2305,7 +2317,7 @@ namespace BeWise.Common.Utils {
             }
             catch (InvalidCastException ex)
             {
-            	Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
+                Lextm.Windows.Forms.MessageBoxFactory.Fatal(null, ex);
             }
             return result;
         }
@@ -2354,11 +2366,11 @@ namespace BeWise.Common.Utils {
             if (splashService != null)
             {
                 splashService.AddPluginBitmap(
-                        Lextm.Reflection.AssemblyHelper.GetTitle(assembly),
-                        Lextm.Drawing.ImageLoader.GetImageDataPtr(name),
-                        false,  //isUnregistered
-                        Lextm.Reflection.AssemblyHelper.GetConfiguration(assembly),  //licenseStatus
-                        "Standard"); //skuName
+                    Lextm.Reflection.AssemblyHelper.GetTitle(assembly),
+                    Lextm.Drawing.ImageLoader.GetImageDataPtr(name),
+                    false,  //isUnregistered
+                    Lextm.Reflection.AssemblyHelper.GetConfiguration(assembly),  //licenseStatus
+                    "Standard"); //skuName
             }
             else
             {
@@ -2384,12 +2396,12 @@ namespace BeWise.Common.Utils {
             if (aboutBoxService != null)
             {
                 PlugInIndex = aboutBoxService.AddPluginInfo(
-                        Lextm.Reflection.AssemblyHelper.GetTitle(assembly),  //Title
-                        Lextm.Reflection.AssemblyHelper.GetDescription(assembly),  //Description
-                        Lextm.Drawing.ImageLoader.GetImageDataPtr(name),
-                        false,  //isUnregistered
-                        Lextm.Reflection.AssemblyHelper.GetConfiguration(assembly),  //LicenseStatus
-                        "Standard"); //SkuName
+                    Lextm.Reflection.AssemblyHelper.GetTitle(assembly),  //Title
+                    Lextm.Reflection.AssemblyHelper.GetDescription(assembly),  //Description
+                    Lextm.Drawing.ImageLoader.GetImageDataPtr(name),
+                    false,  //isUnregistered
+                    Lextm.Reflection.AssemblyHelper.GetConfiguration(assembly),  //LicenseStatus
+                    "Standard"); //SkuName
             }
             else
             {
@@ -2771,7 +2783,6 @@ namespace BeWise.Common.Utils {
         //			return result;
         //		}
 
-        private OtaUtils() { }
         #endregion
 
         #region CSBuilder Goodies extensions
@@ -2965,11 +2976,11 @@ namespace BeWise.Common.Utils {
         }
 
         readonly static Regex regex = new Regex(
-              "<DelphiCompile\\s+Include=\"(?<source_name>.+)\">\\s*<MainSo" +
-              "urce>MainSource</MainSource>\\s*</DelphiCompile>",
+            "<DelphiCompile\\s+Include=\"(?<source_name>.+)\">\\s*<MainSo" +
+            "urce>MainSource</MainSource>\\s*</DelphiCompile>",
             RegexOptions.CultureInvariant
             | RegexOptions.Compiled
-            );
+           );
         /// <summary>
         /// Sets menu item check state.
         /// </summary>
@@ -2985,75 +2996,75 @@ namespace BeWise.Common.Utils {
         }
     }
 
-	/// <summary>
-	/// IDE version info type.
-	/// </summary>
-	public class IdeVersionInfo
-	{
-		private int version;
-		/// <summary>
-		/// IDE version.
-		/// </summary>
-		public int Version
-		{
-			get
-			{
-				return version;
-			}
-		}
-		private string name;
-		/// <summary>
-		/// IDE title.
-		/// </summary>
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-		}
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="version">IDE version</param>
-		/// <param name="name">IDE title</param>
-		internal IdeVersionInfo(int version, string name)
-		{
-			this.version = version;
-			this.name = name;
-		}
-	}
+    /// <summary>
+    /// IDE version info type.
+    /// </summary>
+    public class IdeVersionInfo
+    {
+        private int version;
+        /// <summary>
+        /// IDE version.
+        /// </summary>
+        public int Version
+        {
+            get
+            {
+                return version;
+            }
+        }
+        private string name;
+        /// <summary>
+        /// IDE title.
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="version">IDE version</param>
+        /// <param name="name">IDE title</param>
+        internal IdeVersionInfo(int version, string name)
+        {
+            this.version = version;
+            this.name = name;
+        }
+    }
 
-	///<summary>
-	///Exception thrown when this expert is loaded twice.
-	///</summary>
-	[System.Serializable]
-	public sealed class AddTwiceException : System.Exception
-	{
+    ///<summary>
+    ///Exception thrown when this expert is loaded twice.
+    ///</summary>
+    [System.Serializable]
+    public sealed class AddTwiceException : System.Exception
+    {
 
-		///<summary>
-		///Protected constructor.
-		///</summary>
-		private AddTwiceException(System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext sc) : base(si, sc) { }
+        ///<summary>
+        ///Protected constructor.
+        ///</summary>
+        private AddTwiceException(System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext sc) : base(si, sc) { }
 
-		///<summary>
-		///Default constructor
-		///</summary>
-		public AddTwiceException() { }
+        ///<summary>
+        ///Default constructor
+        ///</summary>
+        public AddTwiceException() { }
 
-		///<summary>
-		///Constructor with message
-		///</summary>
-		///<param name="message">Message</param>
-		public AddTwiceException(string message)
-			: base(message) { }
+        ///<summary>
+        ///Constructor with message
+        ///</summary>
+        ///<param name="message">Message</param>
+        public AddTwiceException(string message)
+            : base(message) { }
 
-		///<summary>
-		///Constructor with message and inner exception
-		///</summary>
-		///<param name="message">Message</param>
-		///<param name="inner">Inner exception</param>
-		public AddTwiceException(string message, System.Exception inner)
-			: base(message, inner) { }
-	}
+        ///<summary>
+        ///Constructor with message and inner exception
+        ///</summary>
+        ///<param name="message">Message</param>
+        ///<param name="inner">Inner exception</param>
+        public AddTwiceException(string message, System.Exception inner)
+            : base(message, inner) { }
+    }
 }

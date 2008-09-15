@@ -15,21 +15,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-using Lextm.Windows.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Windows.Forms;
-using BeWise.Common;
 using BeWise.Common.Info;
 using BeWise.Common.Utils;
-using BeWise.SharpBuilderTools;
 using BeWise.SharpBuilderTools.Helpers;
 using EV.Windows.Forms;
 using Lextm.Diagnostics;
-using Microsoft.Win32;
 using Lextm.Utilities.ExpertManager;
 
 namespace Lextm.Utilities.Gui
@@ -55,8 +48,8 @@ namespace Lextm.Utilities.Gui
 			                        	typeof(ListViewTextSort)
 			                        });
 		}
+
 		ExpertRegistry registry;
-		//private IList<ExpertInfo> fExpertInfoList = new List<ExpertInfo>();
 		private Vista_Api.ListView lvExperts;
 		private System.Windows.Forms.MenuItem menuFile;
 		private System.Windows.Forms.MenuItem menuExit;

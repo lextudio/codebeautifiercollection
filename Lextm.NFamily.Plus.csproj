@@ -76,8 +76,8 @@
     <Reference Include="Borland.Studio.ToolsAPI">
       <AssemblyName>Borland.Studio.ToolsAPI</AssemblyName>
       <Version>11.0.5000.9245</Version>
-      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\Bin\Borland.Studio.ToolsAPI.dll</HintPath>
-      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\5.0\Bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
     </Reference>
     <Reference Include="nunit.framework">
       <SpecificVersion>False</SpecificVersion>

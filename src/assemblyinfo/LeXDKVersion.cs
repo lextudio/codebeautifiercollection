@@ -10,5 +10,5 @@ using System.Reflection;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("6.0.010614.03")]
-[assembly: AssemblyFileVersion("6.0.010614.03")]
+[assembly: AssemblyVersion("6.1.010915.06")]
+[assembly: AssemblyFileVersion("6.1.010915.06")]

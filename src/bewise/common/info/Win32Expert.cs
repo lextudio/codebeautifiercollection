@@ -3,17 +3,23 @@ using BeWise.Common.Utils;
 
 namespace BeWise.Common.Info
 {
+    /// <summary>
+    /// This class represents a Win32 expert.
+    /// </summary>
 	public class Win32Expert : ExpertInfo
 	{
 	    /// <summary>
 	    /// General constructor.
 	    /// </summary>
-	    /// <param name="name">Name</param>
-	    /// <param name="fileName">File name</param>
-	    /// <param name="isActive">Is active</param>
-	    /// <param name="version">IDE version</param>
+	    /// <param name="valueName">Value name.</param>
+	    /// <param name="valueData">Value data.</param>
+	    /// <param name="isActive">Active flag.</param>
+	    /// <param name="version">IDE version.</param>
 	    public Win32Expert(string valueName, string valueData, bool isActive, int version) : base(valueName, valueData, isActive, version) { }
 	
+	    /// <summary>
+	    /// Deletes the expert key.
+	    /// </summary>
 	    public override void Delete()
 	    {
 	        DeleteKey(Active ? OtaUtils.GetEnabledPackagesRegKey(Version) : OtaUtils.GetDisabledPackagesRegKey(Version));
@@ -31,6 +37,7 @@ namespace BeWise.Common.Info
 	        WriteKey(OtaUtils.GetEnabledPackagesRegKey(Version));
 	        DeleteKey(OtaUtils.GetDisabledPackagesRegKey(Version));
 	    }
+	    
 	    /// <summary>
 	    /// Deactivates an expert.
 	    /// </summary>
@@ -44,11 +51,17 @@ namespace BeWise.Common.Info
 	        DeleteKey(OtaUtils.GetEnabledPackagesRegKey(Version));
 	    }
 	
+	    /// <summary>
+	    /// File name.
+	    /// </summary>
 	    public override string FileName
 	    {
 	        get { return ValueData; }
 	    }
 	
+	    /// <summary>
+	    /// Name.
+	    /// </summary>
 	    public override string Name
 	    {
 	        get { return ValueName; }

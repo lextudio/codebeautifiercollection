@@ -56,7 +56,7 @@
   <ItemGroup>
     <Reference Include="Borland.Studio.ToolsAPI, Version=11.0.5000.7751, Culture=neutral, PublicKeyToken=91d62ebb5b0d1b1b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
