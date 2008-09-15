@@ -1,7 +1,7 @@
 
 #define MyAppID "{571B30F3-ECF9-46b5-9572-9AD6ACA5E9C6}"
 #define MyAppCopyright "Copyright (C) 2005-2008 Lex Y. Li and other contributors."
-#define MyAppName "Code Beautifier Collection 6 for RAD Studio 2009"
+#define MyAppName "Code Beautifier Collection 7 for RAD Studio 2009"
 #define MyAppVersion GetFileVersion("..\bin\release\Lextm.CodeBeautifierCollection.Framework.dll")
 #pragma message "Detailed version info: " + MyAppVersion
 #define OtaVersion "12.0.3170.16989"
@@ -25,7 +25,7 @@ AppCopyright={#MyAppCopyright}
 VersionInfoVersion={#MyAppVersion}
 VersionInfoCompany=LeXtudio
 VersionInfoDescription={#MyAppName} Setup
-VersionInfoTextVersion=GrapeVine
+VersionInfoTextVersion=CandyCan
 InternalCompressLevel=max
 VersionInfoCopyright={#MyAppCopyright}
 Compression=zip
