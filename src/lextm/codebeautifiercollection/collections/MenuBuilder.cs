@@ -24,7 +24,7 @@ namespace Lextm.CodeBeautifierCollection.Collections {
 	///<summary>
 	///Menu builder.
 	///</summary>
-	sealed class MenuBuilder {
+	internal sealed class MenuBuilder {
 		
 		private int nodeCount;
 		/// <summary>

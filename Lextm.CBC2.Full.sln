@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-# SharpDevelop 3.0.0.3517
+# SharpDevelop 3.0.0.3558
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lextm.OpenTools.Core", "Lextm.OpenTools.Core.csproj", "{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lextm.CodeBeautifiers.Plus", "Lextm.CodeBeautifiers.Plus.csproj", "{878882DC-2A04-42FA-B96D-486AD31DB9DB}"
@@ -59,6 +59,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "thirdparties\ZetaLibNet\Core\Core.csproj", "{89EA4864-CC33-4BEB-9860-A3CF71BF2E65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VistaApi", "thirdparties\Vista Api\VistaApi.csproj", "{9EC6098C-09C6-4623-819B-08835D183038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lextm.Windows.Forms", "Lextm.Windows.Forms.csproj", "{884079DE-160F-4E17-9634-7BAC3DAFCC34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "0AC93577-D786-476B-BECF-E72E16FC0D44"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -182,6 +186,14 @@ Global
 		{9EC6098C-09C6-4623-819B-08835D183038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EC6098C-09C6-4623-819B-08835D183038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EC6098C-09C6-4623-819B-08835D183038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884079DE-160F-4E17-9634-7BAC3DAFCC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884079DE-160F-4E17-9634-7BAC3DAFCC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884079DE-160F-4E17-9634-7BAC3DAFCC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884079DE-160F-4E17-9634-7BAC3DAFCC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		0AC93577-D786-476B-BECF-E72E16FC0D44.Debug|Any CPU.Build.0 = Debug|Any CPU
+		0AC93577-D786-476B-BECF-E72E16FC0D44.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		0AC93577-D786-476B-BECF-E72E16FC0D44.Release|Any CPU.Build.0 = Release|Any CPU
+		0AC93577-D786-476B-BECF-E72E16FC0D44.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

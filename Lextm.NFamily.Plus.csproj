@@ -79,13 +79,6 @@
       <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
       <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
     </Reference>
-    <Reference Include="nunit.framework">
-      <SpecificVersion>False</SpecificVersion>
-      <AssemblyName>nunit.framework</AssemblyName>
-      <Version>2.4.2.0</Version>
-      <HintPath>lib\nunit.framework.dll</HintPath>
-      <AssemblyTag>lib\nunit.framework.dll</AssemblyTag>
-    </Reference>
     <Reference Include="System">
       <Private>False</Private>
       <SpecificVersion>False</SpecificVersion>

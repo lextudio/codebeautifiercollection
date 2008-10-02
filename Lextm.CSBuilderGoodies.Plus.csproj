@@ -128,6 +128,12 @@
       <Project>{BC328F36-A346-4171-822B-240104733760}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Lextm.Windows.Forms.csproj">
+      <Project>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</Project>
+      <Name>Lextm.Windows.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <BorlandProject>

@@ -67,9 +67,6 @@
       <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
       <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Private>False</Private>
       <SpecificVersion>False</SpecificVersion>
@@ -167,14 +164,16 @@
     <Compile Include="src\lextm\opentools\PropertyRegistry.cs" />
     <Compile Include="src\lextm\opentools\ShareUtils.cs" />
     <Compile Include="src\lextm\opentools\ShortcutService.cs" />
-    <Compile Include="Tests\TestOTAUtils.cs" />
-    <Compile Include="Tests\TestPath.cs" />
     <ProjectReference Include="Lextm.Common.csproj">
       <Name>Lextm.Common</Name>
       <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Lextm.Windows.Forms.csproj">
+      <Project>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</Project>
+      <Name>Lextm.Windows.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="thirdparties\Vista Api\VistaApi.csproj">
       <Project>{9EC6098C-09C6-4623-819B-08835D183038}</Project>
       <Name>VistaApi</Name>

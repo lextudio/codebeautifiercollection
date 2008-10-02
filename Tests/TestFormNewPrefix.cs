@@ -10,7 +10,6 @@ namespace TestWiseEditor
     using System;
     using System.Collections;
     using System.ComponentModel;
-    using System.Data;
     using NUnit.Framework;
 	using Lextm.WiseEditor.Gui;
 	using System.Windows.Forms;

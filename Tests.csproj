@@ -1,0 +1,95 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\lextm\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Folder Include="Tests" />
+    <Compile Include="Tests\TestAlertForm.cs" />
+    <Compile Include="Tests\TestFileHelper.cs" />
+    <Compile Include="Tests\TestFormAbout.cs" />
+    <Compile Include="Tests\TestFormComponentName.cs" />
+    <Compile Include="Tests\TestFormNewPrefix.cs" />
+    <Compile Include="Tests\TestFormOptions.cs" />
+    <Compile Include="Tests\TestFormShortcuts.cs" />
+    <Compile Include="Tests\TestFormXmlDocViewer.cs" />
+    <Compile Include="Tests\TestHandlerFactory.cs" />
+    <Compile Include="Tests\TestMenuTree.cs" />
+    <Compile Include="Tests\TestMessageBoxFactory.cs" />
+    <Compile Include="Tests\TestOtaArrayList.cs" />
+    <Compile Include="Tests\TestOTAUtils.cs" />
+    <Compile Include="Tests\TestPath.cs" />
+    <Compile Include="Tests\TestStopwatch.cs" />
+    <Compile Include="Tests\TestTabTree.cs" />
+    <Reference Include="Borland.Studio.ToolsAPI">
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\6.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="NMock2">
+      <HintPath>lib\NMock2.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <ProjectReference Include="Lextm.CodeBeautifierCollection.Framework.csproj">
+      <Project>{02203F0B-E80C-4BA5-B27E-F94043676CFE}</Project>
+      <Name>Lextm.CodeBeautifierCollection.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+      <Name>Lextm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.OpenTools.Core.csproj">
+      <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
+      <Name>Lextm.OpenTools.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Windows.Forms.csproj">
+      <Project>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</Project>
+      <Name>Lextm.Windows.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.WiseEditor.Plus.csproj">
+      <Project>{5CEE57FA-81BD-4BFA-8DB7-5F693852FCC7}</Project>
+      <Name>Lextm.WiseEditor.Plus</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

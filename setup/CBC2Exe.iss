@@ -104,6 +104,9 @@ Source: ..\bin\release\NDepend.Helpers.FileDirectoryPath.pdb; DestDir: {app}; Fl
 Source: ..\bin\release\lextm.common.dll; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
 Source: ..\bin\release\lextm.common.pdb; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
 Source: ..\bin\release\lextm.common.xml; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
+Source: ..\bin\release\lextm.windows.forms.dll; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
+Source: ..\bin\release\lextm.windows.forms.pdb; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
+Source: ..\bin\release\lextm.windows.forms.xml; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
 Source: ..\bin\release\bewise.sharpbuildertools.minus.dll; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
 Source: ..\bin\release\bewise.sharpbuildertools.minus.pdb; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
 Source: ..\bin\release\bewise.sharpbuildertools.minus.xml; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: LeXDK
@@ -172,7 +175,7 @@ Source: ..\bin\release\lextm.csbuildergoodies.plus.pdb; DestDir: {app}; Flags: r
 Source: ..\bin\release\*.plus2; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: Plus
 Source: ..\bin\release\netspell.spellchecker.dll; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: Plus
 Source: ..\bin\release\netspell.spellchecker.pdb; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: Plus
-Source: ..\bin\release\nunit.framework.dll; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: Plus
+;Source: ..\bin\release\nunit.framework.dll; DestDir: {app}; Flags: recursesubdirs ignoreversion createallsubdirs; Components: Plus
 [Icons]
 Name: {group}\{cm:UninstallProgram,Code Beautifier Collection}; Filename: {uninstallexe}; Components: LeXDK
 Name: {group}\Help\License; Filename: {app}\doc\license.pdf; Comment: License; Flags: createonlyiffileexists; Components: LeXDK

@@ -10,7 +10,6 @@ namespace TestThirdParty
     using System;
     using System.Collections;
     using System.ComponentModel;
-    using System.Data;
     using NUnit.Framework;
 	using pglowacki.XmlDoc;
 	using System.Windows.Forms;

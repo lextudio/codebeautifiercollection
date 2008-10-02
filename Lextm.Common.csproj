@@ -71,10 +71,6 @@
     <Reference Include="Mono.Cecil">
       <HintPath>lib\Mono.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.4.2.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Private>False</Private>
       <SpecificVersion>False</SpecificVersion>
@@ -106,14 +102,6 @@
       <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
       <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Runtime.Serialization.Formatters.Soap.dll</AssemblyTag>
     </Reference>
-    <Reference Include="System.Windows.Forms">
-      <Private>False</Private>
-      <SpecificVersion>False</SpecificVersion>
-      <AssemblyName>System.Windows.Forms</AssemblyName>
-      <Version>2.0.0.0</Version>
-      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
-      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</AssemblyTag>
-    </Reference>
     <Reference Include="System.XML">
       <Private>False</Private>
       <SpecificVersion>False</SpecificVersion>
@@ -124,10 +112,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="src\lextm\windows\forms\AlertForm.resx">
-      <DependentUpon>AlertForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="src\AssemblyInfo\Common.cs" />
     <Compile Include="src\AssemblyInfo\LeXDKVersion.cs" />
     <Compile Include="src\AssemblyInfo\LextmCommon.cs" />
@@ -138,7 +122,6 @@
     <Compile Include="src\lextm\diagnostics\Dead.cs" />
     <Compile Include="src\lextm\diagnostics\Idle.cs" />
     <Compile Include="src\lextm\diagnostics\LoggingService.cs" />
-    <Compile Include="src\lextm\diagnostics\ShellHelper.cs" />
     <Compile Include="src\lextm\diagnostics\Stopwatch.cs" />
     <Compile Include="src\lextm\diagnostics\Working.cs" />
     <Compile Include="src\lextm\drawing\ImageLoader.cs" />
@@ -147,17 +130,8 @@
     <Compile Include="src\lextm\reflection\AssemblyHelper.cs" />
     <Compile Include="src\lextm\StringHelper.cs" />
     <Compile Include="src\lextm\win32\RegistryHelper.cs" />
-    <Compile Include="src\lextm\windows\forms\AlertForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\lextm\windows\forms\MessageBoxFactory.cs" />
-    <Compile Include="src\lextm\windows\forms\TraceListenerTextLog.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="src\lextm\xml\SerializationService.cs" />
     <Compile Include="src\lextm\xml\XmlConvertor.cs" />
-    <Compile Include="Tests\TestFileHelper.cs" />
-    <Compile Include="Tests\TestStopwatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="thirdparties\log4net-1.2.10\src\log4net.csproj">
@@ -167,10 +141,6 @@
     <ProjectReference Include="thirdparties\NDepend.Helpers.FileDirectoryPath\NDepend.Helpers.FileDirectoryPath.csproj">
       <Project>{680342E7-0F89-473C-A4C4-C67B7DB0EA40}</Project>
       <Name>NDepend.Helpers.FileDirectoryPath</Name>
-    </ProjectReference>
-    <ProjectReference Include="thirdparties\PSTaskDialog\PSTaskDialog.csproj">
-      <Project>{0253E98B-6374-48AA-8740-89BC2939FF77}</Project>
-      <Name>PSTaskDialog</Name>
     </ProjectReference>
     <ProjectReference Include="ThirdParty.csproj">
       <Project>{BC328F36-A346-4171-822B-240104733760}</Project>

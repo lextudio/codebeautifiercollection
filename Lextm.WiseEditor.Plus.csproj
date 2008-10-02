@@ -51,12 +51,6 @@
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NMock2">
-      <HintPath>lib\NMock2.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="SharpDevTools">
       <HintPath>lib\SharpDevTools.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -263,7 +257,6 @@
     <Compile Include="src\bewise\sharpbuildertools\gui\FrmClipBoardViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\TestHandlerFactory.cs" />
     <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmClipBoardViewer.resx">
       <DependentUpon>FrmClipBoardViewer.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -285,6 +278,10 @@
     <ProjectReference Include="Lextm.OpenTools.Core.csproj">
       <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
       <Name>Lextm.OpenTools.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Windows.Forms.csproj">
+      <Project>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</Project>
+      <Name>Lextm.Windows.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="thirdparties\NetSpell.SpellChecker\NetSpell.SpellChecker.csproj">
       <Project>{A426EE0B-E52E-4D74-AF24-06797142D7B2}</Project>

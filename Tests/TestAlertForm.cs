@@ -3,7 +3,6 @@ namespace Lextm.Common.Tests {
     using System;
     using System.Collections;
     using System.ComponentModel;
-    using System.Data;
     using NUnit.Framework;
     using Lextm.Windows.Forms;
     using System.Windows.Forms;

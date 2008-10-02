@@ -5,7 +5,6 @@ namespace TestFramework
 	using System;
 	using System.Collections;
 	using System.ComponentModel;
-	using System.Data;
 	using NUnit.Framework;
 	using Lextm.CodeBeautifierCollection;
 	using Lextm.CodeBeautifierCollection.Gui;

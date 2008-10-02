@@ -1,0 +1,101 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Lextm.Windows.Forms</RootNamespace>
+    <AssemblyName>Lextm.Windows.Forms</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\lextm\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <DocumentationFile>bin\Release\Lextm.Windows.Forms.xml</DocumentationFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnhandledExceptionManager">
+      <HintPath>lib\UnhandledExceptionManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
+    <Folder Include="src\assemblyinfo" />
+    <Folder Include="src\lextm" />
+    <Folder Include="src\lextm\diagnostics" />
+    <Folder Include="src\lextm\windows" />
+    <Folder Include="src\lextm\windows\forms" />
+    <Folder Include="src\pglowacki" />
+    <Folder Include="src\pglowacki\XmlDoc" />
+    <Folder Include="src\SingletonApp" />
+    <Folder Include="src\Zayko" />
+    <Folder Include="src\Zayko\Dialogs" />
+    <Folder Include="src\Zayko\Dialogs\UnhandledExceptionDlg" />
+    <Compile Include="src\assemblyinfo\Common.cs" />
+    <Compile Include="src\assemblyinfo\LeXDKVersion.cs" />
+    <Compile Include="src\assemblyinfo\LextmCommon.cs" />
+    <Compile Include="src\assemblyinfo\LeXtudio.cs" />
+    <Compile Include="src\lextm\diagnostics\ShellHelper.cs" />
+    <Compile Include="src\lextm\windows\forms\AlertForm.cs" />
+    <Compile Include="src\lextm\windows\forms\MessageBoxFactory.cs" />
+    <Compile Include="src\lextm\windows\forms\TraceListenerTextLog.cs" />
+    <Compile Include="src\pglowacki\XmlDoc\FormXmlDocViewer.cs" />
+    <Compile Include="src\SendFileTo.cs" />
+    <Compile Include="src\SingletonApp\SingletonApplication.cs" />
+    <Compile Include="src\Zayko\Dialogs\UnhandledExceptionDlg\UnhandledExDlgForm.cs" />
+    <Compile Include="src\Zayko\Dialogs\UnhandledExceptionDlg\UnhandledExDlgForm.Designer.cs">
+      <DependentUpon>UnhandledExDlgForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\lextm\windows\forms\AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\pglowacki\XmlDoc\FormXmlDocViewer.resx">
+      <DependentUpon>FormXmlDocViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Zayko\Dialogs\UnhandledExceptionDlg\UnhandledExDlgForm.resx">
+      <DependentUpon>UnhandledExDlgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+      <Name>Lextm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="thirdparties\PSTaskDialog\PSTaskDialog.csproj">
+      <Project>{0253E98B-6374-48AA-8740-89BC2939FF77}</Project>
+      <Name>PSTaskDialog</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

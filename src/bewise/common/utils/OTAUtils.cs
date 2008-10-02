@@ -979,7 +979,7 @@ namespace BeWise.Common.Utils {
             if (sourceEditor != null)
             {
                 string content = GetSourceEditorText(sourceEditor);
-                using (StreamWriter sw = new StreamWriter(fileName))
+                using (StreamWriter sw = new StreamWriter(File.OpenWrite(fileName), System.Text.Encoding.Unicode))
                 {
                     // Add some text to the file.
                     sw.Write(content);
@@ -1376,7 +1376,7 @@ namespace BeWise.Common.Utils {
                 throw new Lextm.OpenTools.CoreException("No file reader");
             }
 
-            System.Text.UTF8Encoding _Encoding = new System.Text.UTF8Encoding();
+            System.Text.UnicodeEncoding _Encoding = new System.Text.UnicodeEncoding();
             StringBuilder _StringBuilder = new StringBuilder();
             Byte[] _Source = _Reader.Read(1024, 0);
 
@@ -1389,6 +1389,7 @@ namespace BeWise.Common.Utils {
             //LoggingService.Info("the source is " + _StringBuilder.ToString());
             return _StringBuilder.ToString();
         }
+        
         /// <summary>
         /// Gets source editor text position.
         /// </summary>

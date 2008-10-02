@@ -27,7 +27,7 @@ namespace Lextm.CodeBeautifierCollection.Collections {
 	///<summary>
 	/// Tab builder.
 	/// </summary>
-	sealed class TabBuilder {
+	internal sealed class TabBuilder {
 
 		private static TabBuilder instance;
 

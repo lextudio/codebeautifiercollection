@@ -158,4 +158,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Lextm.Windows.Forms.csproj">
+      <Project>{884079DE-160F-4E17-9634-7BAC3DAFCC34}</Project>
+      <Name>Lextm.Windows.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
