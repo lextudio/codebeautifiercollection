@@ -1,0 +1,303 @@
+\chapter{How to Use}
+\emph{''Simple is perfect!''}
+
+And it is modern.
+\label{cha:commonusage}
+
+\piccbc \newpage
+
+\section{Framework}
+
+Framework provides basic funcions that all pluses shared.
+
+\begin{description}
+
+\item[To Change Root Menu Position] Choose where LeXtudio menu should be.
+
+Select ''Options $|$ Preferences'' menu item. In the dialog, click on
+''Framework'' node on the left. In the right panel check the position you
+prefer. Click OK to exit.
+
+\pic{framework}{Preferences Form}{width=0.5\textwidth}
+
+Restart the IDE, then the changes take effect.
+
+\item[To Change Shortcuts] Choose another shortcut for a function.
+
+Select ''Options $|$ Shortcuts'' menu item.
+
+\pic{shortcuts}{Shortcuts Dialog}{width=0.5\textwidth}
+
+In the dialog, choose a menu name and press the key combination you like. Click
+OK and the changes take effect at once.
+
+\boxing{You must notice that not all menu items are listed there. Only authors
+can define which item has a shortcut, not users. Two many shortcuts may conflict
+with each other.}
+\end{description}
+
+
+\section{CodeBeautifiers Plus}
+
+This plus helps you beautify source files. It is also what CBC is named after.
+It is inspired by the Code Beautifier feature in Sharp Builder Tools.
+
+\begin{description}
+
+\item[To Format A File] Format an open file.
+
+\pic{beautify}{Beautify Menu}{width=0.25\textwidth}
+
+Open a source file in IDE.
+
+Click ''Beautify $|$ Document'' (or use its shortcut, Ctrl + W by default) to
+beautify/format it. A message of ''File type is not supported'' is displayed in the
+Message Panel if you try to format an unsupported file.
+
+\item[Undo Formatting A File] Undo formatting.
+
+The standard undo command, Ctrl + Z, is available, which brings back the
+original file content.
+
+\item[To Change Formatting Styles] Change the coding style of formatting.
+
+\begin{description}
+
+\item [Basic] Choose among the Built-in styles.
+
+Select ''Options $|$ Preferences'' menu item. In the dialog, click on ''Object
+Pascal'' or ''C/C++/C\#'' node on the left. In the right
+ panel, check the style you prefer. Click OK to exit.
+
+\pic{astylestyles}{AStyle Styles}{width=0.5\textwidth}
+
+
+
+\pic{jcfstyles}{JCF Styles}{width=0.5\textwidth}
+
+\item[Advanced(Experimental)] Command-line configuration or custom settings files.
+
+You must feel sad that only a few built-in style
+are available. Generally
+speaking, it is very hard to fully configure the formatter, so built-in styles
+are suggested. Changing the command line settings is not an easy task but they
+provide you much more power. You should read the provided help files in the
+''Help'' folder to learn about AStyle and JCF command line carefully.
+
+Follow the Basic tip and choose command line style. An edit box is showed for
+you to type in command line parameters. AStyle can be configured very well in
+this way. However, for JCF I suggust you use its GUI version to modify the
+settings file. If you have such a JCF settings file already, you can choose
+''Custom File'' option in JCF tab page and input the file's path.
+
+Since 6.0 a JCF Style Editor is added. You can now switch to Custom Style and
+create your own Object Pascal coding style by clicking Configure button.
+\end{description}
+
+This setting takes effect immediately.
+
+\end{description}
+
+\section{Utilities Plus}
+
+This plus contains basic utilities to configure CBC.
+
+\begin{description}
+\item[Tip of the Day] Display tips.
+
+\pic{tipoftheday}{Tip of the Day}{width=0.5\textwidth}
+
+\item[Expert Manager] Manage IDE experts, both Win32 and .NET.
+
+\pic{expertmanager}{Expert Manager}{width=0.5\textwidth}
+
+\item[Plus Manager] Manage CBC pluses and features.
+
+\pic{plusmanager}{Plus Manager}{width=0.5\textwidth}
+
+Checked features are enabled when IDE loads.
+
+If a plus is checked, all its features are enabled. If a plus has all its
+features enabled, it is checked, too.
+
+% Partially enabled plus is displayed in yellow.
+
+\boxing{Some experimental features are disabled when a stable version is
+released. You may turn them on to have a preview.}
+
+% \item[HelpWizards] Add some useful links under IDE Help menu.
+%
+% \pic{help}{Help Menu Items}{width=0.25\textwidth}
+%
+% LeXDK Developer's Guide and the help of CBC are links to PDF files. You must
+% have a viewer installed before viewing them.
+%
+% Others are links to websites. There is a link to GForge homepage of CBC, and
+% another to my weblog.
+
+\item[InDate] Keep your CBC version up to date.
+
+If a new version is available, it will prompt you to download and install it.
+Otherwise, the dialog closes automatically.
+
+\pic{indate}{InDate Dialog}{width=0.5\textwidth}
+
+
+\end{description}
+
+\section{AddMany Plus}
+
+This plus enables you to add a lot of files to your project all at a time. This
+plus is a port of AddMany 5.2.
+
+\begin{description}
+\item[To Add Many Files to Current Project] Add many files in different folders
+to current project.
+
+Click ''Add Many to Project\dots'' (or use its shortcut,
+Ctrl + Alt + A by default\footnote{This conflicts GExperts, and users can
+override it.}). A dialog pops for you to choose a folder.
+
+\pic{browsefolder}{Folder Selection}{width=0.5\textwidth}
+
+After selecting and click OK, all source files in this folder and sub-folders
+are listed in a dialog for you to select.
+
+Multi-selection in this dialog is similar to the same operation in Windows by
+pressing Ctrl key while selecting or Shift key used to select a section of
+files.
+
+\pic{addmanydialog}{AddMany Dialog}{width=0.5\textwidth}
+
+Click OK after selection, and those files are added to current project. Hints
+are displayed in the Message Panel.
+
+\item [To Add Another Project's Files] Add all source files of another project
+to current project.
+
+Choose a valid IDE project and click OK, the source files of the selected
+project will be added to current project.
+
+\boxing{As a limitation of AddMany 5.2, the related references are not added
+automatically. You have to manually add them to your project.}
+
+\end{description}
+
+\section{ArtCSB Plus}
+
+This plus adds a Designer Navigator and an Auto-Save utility. It is a port of
+ArtCSB 2.5.
+
+\begin{description}
+  \item[Designer Navigator] It provides a structure view for WinForms and
+  WebForms Form Designer like Visual Studio's Document Outline.
+
+  \item[Auto-Save Utility] It auto-saves files in the editor according to your
+  settings. In this way you can prevent data loss when IDE crashes. Because
+  Delphi 2007 Release 2 already includes a similar feature, this utility is
+  obsolete.
+\end{description}
+
+\section{BagPlug Plus}
+This plus contains a few GPL covered features \lextm\ created.
+
+\begin{description}
+
+  \item[Readme Notifier] if your project contains a ''readme'' file, it will be
+  opened automatically when the project is opened inside IDE.
+  \item[Source Navigator] help to navigate along a long file. (Object Pascal
+  only)
+  \boxing{because Delphi CodeDOM has a different implementation, the
+  first line after ''begin'' is highlighted. Also, global functions are not navigatable.}
+  \item[Typing Speeder] Some templates are triggered by Space
+key to speed up your typing.
+
+in C\# file, type if and press Space, the rest of a code template is added
+automatically for you. There are only a few templates now and cannot be
+modified with a dialog.
+
+\boxing{You may notice that BDS 2006+ has a feature named Live Code Templates.
+In that case, Typing Speeder will add no more value.}
+
+% An important function of Speeder is that when you type ''///'' and press Space
+% before a declarartion (class, method, and so on), for example,
+%
+% \code{///(Press Space key here)\\
+% public void GetBack() \{...\} }
+%
+% basic XML comments will be generated for you. At this moment, this function supports
+% only C\# files. However, because of a .NET bug, it does not work for constructors.
+
+\boxing{Sometimes Speeder fails because OTA has a bug.}
+
+\item[Line Counter] provides simple statistics of the project group (solution)
+based on line counting.
+  \item[Icon Browser] It is a utility created by Kenny Kerr. You can browse all
+  icons inside a file (exe, dll, bpl, and so on) and save them into .ico files.
+\end{description}
+
+\section{CSBuilderGoodies Plus}
+
+This plus helps you preview C\# XML comments in a browser. It is a port of
+C\#Builder Goodies 1.1.
+
+\begin{description}
+\item[To preview an XML Comment] View a section of XML comments in a browser dialog.
+
+Open a C\# file and place the cursor inside an XML comment section. Select
+''Doc Preview'' menu item (or use its shortcut, Alt + Q by default) to activate
+the previewer.
+
+\pic{docview}{Doc Previewer}{width=0.5\textwidth}
+
+Click other forms, and this previewer will hide itself automatically.
+
+\end{description}
+
+\section{NFamily Plus}
+
+This plus is experimental, so not documented here. It adds a few menu items that
+help you call Expresso, FxCop, NUnit, and other .NET tools from with the IDE.
+
+\section{WiseEditor Plus}
+
+This plus adds a few interesting enhancement to the IDE. Since this plus is
+under construction yet, many new features are not documented at this moment.
+
+\begin{description}
+
+\item[Editor/Project Aid Menu Items] Useful items.
+
+\pic{edit}{Editor Aid Menu Items}{width=0.25\textwidth}
+
+% \pic{filewizards}{File Wizards}{width=0.5\textwidth}
+
+\item[File Aid] provide complex file searching functions.
+\item[Clipboard Watcher] It tries to manage the clipboard for you.
+\item[Color Pallette Helper] sometimes it is hard to remember a pre-define
+System.Color name or ARGB value. This helper provides a Color Pallette to
+choose the color visually and generate the name or the ARGB value for you.
+
+Stop when you need to add a phrase such as Color.* or Color.FromArgb(****) and
+click ''Color Pallette Helper'' menu item, a Color Dialog will show. Choose the
+exact color you like and exit the dialog, the phrase will be generated for you.
+
+\item[Shell Launchers] they help you to open a shell(cmd.exe) from common
+places.
+
+\item[Spell Checker] make a selection of words, and check their spellings.
+
+Do a selection in the source editor and select ''Spell Check\dots'' menu item.
+The dialog popped is similar to Microsoft Word's Spell Check dialog. You can
+then decide whether to correct a spelling error or ignore it.
+
+\pic{spell}{Spell Checker}{width=0.5\textwidth}
+
+
+\item[WinMerge]WinMerge is a open source tool that can compare two files.
+
+\item[Favorites]It provides a dialog to manage favorite files, projects, and references.
+
+   \item[Extra] some tiny helpers.
+\end{description}
+

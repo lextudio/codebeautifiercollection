@@ -1,0 +1,254 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89EA4864-CC33-4BEB-9860-A3CF71BF2E65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZetaLib.Core</RootNamespace>
+    <AssemblyName>ZetaLib.Core</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>zetalib.core.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CACHESQL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CACHESQL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.2.329, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\TaskCommand.cs" />
+    <Compile Include="Base\ILibraryConfiguration.cs" />
+    <Compile Include="Base\IApplicationEnvironment.cs" />
+    <Compile Include="Base\ConsoleBase.cs" />
+    <Compile Include="Base\GenericBase.cs" />
+    <Compile Include="Base\LibraryConfigurationBase.cs" />
+    <Compile Include="Base\TaskBase.cs" />
+    <Compile Include="Caching\AsyncCleanupCacheBackend.cs" />
+    <Compile Include="Caching\CacheItemGroup.cs" />
+    <Compile Include="Caching\CacheItemHolder.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\ICacheBackend.cs" />
+    <Compile Include="Caching\CacheItemInformation.cs" />
+    <Compile Include="Caching\SimpleCacheBackend.cs" />
+    <Compile Include="Caching\SmartCacheKey.cs" />
+    <Compile Include="Collections\StringTripple.cs" />
+    <Compile Include="Collections\StringPair.cs" />
+    <Compile Include="Collections\Tree.cs" />
+    <Compile Include="Common\WordWrapper.cs" />
+    <Compile Include="DirectoryServices\ActiveDirectory.cs" />
+    <Compile Include="Common\ArgumentParser.cs" />
+    <Compile Include="IO\Compression\CompressionHelper.cs" />
+    <Compile Include="Common\ConvertHelper.cs" />
+    <Compile Include="Common\IPersistentPairStorage.cs" />
+    <Compile Include="Common\PersistentPairStorageBase.cs" />
+    <Compile Include="Common\IDumpable.cs" />
+    <Compile Include="Common\DumpBuilder.cs" />
+    <Compile Include="Common\ReflectionHelper.cs" />
+    <Compile Include="Data\AdoNetCacheItemInformation.cs" />
+    <Compile Include="Data\CacheUsage.cs" />
+    <Compile Include="Data\AdoNetCacheDBOperation.cs" />
+    <Compile Include="Data\AdoNetOdbcParamCollection.cs" />
+    <Compile Include="Data\AdoNetOleDBParamCollection.cs" />
+    <Compile Include="Data\AdoNetOracleParamCollection.cs" />
+    <Compile Include="Data\AdoNetSqlParamCollection.cs" />
+    <Compile Include="Data\NullBehaviour.cs" />
+    <Compile Include="Data\AdoNetBaseParamCollection.cs" />
+    <Compile Include="DirectoryServices\ActiveDirectoryConfiguration.cs" />
+    <Compile Include="DirectoryServices\ADGroupInfo.cs" />
+    <Compile Include="DirectoryServices\ADUserInfo.cs" />
+    <Compile Include="DirectoryServices\ADUserFlags.cs" />
+    <Compile Include="IO\Compression\CompressStringsInfo.cs" />
+    <Compile Include="IO\Compression\CompressHeterogenousInfo.cs" />
+    <Compile Include="IO\Compression\CompressHeterogenousInfos.cs" />
+    <Compile Include="IO\Compression\DecompressionHelper.cs" />
+    <Compile Include="IO\Compression\PathSaveMode.cs" />
+    <Compile Include="IO\Compression\DeepMode.cs" />
+    <Compile Include="IO\Compression\DecompressedItemInfo.cs" />
+    <Compile Include="IO\Compression\IZipEventSink.cs" />
+    <Compile Include="IO\CancelMode.cs" />
+    <Compile Include="IO\Cancelable.cs" />
+    <Compile Include="IO\ICancelableProgress.cs" />
+    <Compile Include="IO\FileDeleteHelper.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="IO\DirectoryHelper.cs" />
+    <Compile Include="IO\MimeHelper.cs" />
+    <Compile Include="IO\PathHelper.cs" />
+    <Compile Include="IO\SafeFileOperations.cs" />
+    <Compile Include="IO\SplittedPath.cs" />
+    <Compile Include="IO\FileOrDirectoryInfo.cs" />
+    <Compile Include="IO\IProgress.cs" />
+    <Compile Include="Common\HtmlHelper.cs" />
+    <Compile Include="Common\ImageHelper.cs" />
+    <Compile Include="Common\ImageScaler.cs" />
+    <Compile Include="Common\Impersonator.cs" />
+    <Compile Include="Localization\LanguageStringBaseCollection.cs" />
+    <Compile Include="Localization\LanguageString.cs" />
+    <Compile Include="Localization\LanguageStringLanguageInfo.cs" />
+    <Compile Include="Localization\ILanguageStringLanguagesProvider.cs" />
+    <Compile Include="Logging\LoggingInformationNeedMoreInfoEventArgs.cs" />
+    <Compile Include="Logging\Events.cs" />
+    <Compile Include="Logging\IExpandFilePathMacrosResolver.cs" />
+    <Compile Include="Logging\LogCentralTraceListener.cs" />
+    <Compile Include="Logging\ILoggingUserDefinedInformation.cs" />
+    <Compile Include="Logging\LoggingInformation.cs" />
+    <Compile Include="Logging\LogType.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LogCentral.cs" />
+    <Compile Include="Collections\Pair.cs" />
+    <Compile Include="Collections\Set.cs" />
+    <Compile Include="Common\PersistentRegistryPairStorage.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Common\TextFormatter.cs" />
+    <Compile Include="Common\UrlParser.cs" />
+    <Compile Include="Common\XmlHelper.cs" />
+    <Compile Include="Common\ZetaApplicationException.cs" />
+    <Compile Include="Data\AdoNetBaseHelper.cs" />
+    <Compile Include="Data\AdoNetCacheManager.cs" />
+    <Compile Include="Data\AdoNetOdbcHelper.cs" />
+    <Compile Include="Data\AdoNetOdbcUpdater.cs" />
+    <Compile Include="Data\AdoNetOleDBHelper.cs" />
+    <Compile Include="Data\AdoNetOleDBUpdater.cs" />
+    <Compile Include="Data\AdoNetOracleHelper.cs" />
+    <Compile Include="Data\AdoNetOracleUpdater.cs" />
+    <Compile Include="Data\AdoNetSqlHelper.cs" />
+    <Compile Include="Data\AdoNetSqlUpdater.cs" />
+    <Compile Include="Data\AdoNetBaseUpdater.cs" />
+    <Compile Include="Data\DBHelper.cs" />
+    <Compile Include="Data\SmartConnectionString.cs" />
+    <Compile Include="LibraryConfiguration.cs" />
+    <Compile Include="Localization\LocalizationHelper.cs" />
+    <Compile Include="Localization\ReplacementPair.cs" />
+    <Compile Include="Misc\FileExtensionRegistration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zetalib.core.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="JRO">
+      <Guid>{AC3B8B4C-B6CA-11D1-9F31-00C04FC29D52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\log4net-1.2.10\src\log4net.csproj">
+      <Project>{F6A02431-167E-4347-BC43-65532C31CDB7}</Project>
+      <Name>log4net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

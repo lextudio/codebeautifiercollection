@@ -1,0 +1,136 @@
+
+\chapter{Plus Registration File Format}
+
+\newpage
+\section{Specifications Version I (out-of-date)}
+From 5.1.1, this version of .plus file is not used any more.
+
+You should refer to Specifications Version II.
+
+\subsection{Why Version I is Simple}
+Actually, I knew little about file manipulations before I designed this
+architecture. So I have to first do some experiments in order to make myself
+familiar with this staff. A simple version I of this file format can already
+provide basic configuration ability for Plus. As a result, I take it as the
+specifications.
+
+Later version should be more complex, but still easy to configure.
+
+\subsection{File Extension}
+.plus is the file extension.
+
+\subsection{How to Generate}
+The file should be a text file.
+
+The file name should be the same with the corresponding Plus assembly file.
+
+Each lines is for a feature.
+
+One line should contains two sections separated by a semicolon.
+
+The first section is the name of the feature class.
+
+The second is a flag. Set it to true for enabled and false for disabled.
+
+\begin{quotation}
+For example, this is how I write for Code Beautifiers Plus.
+
+The file name should be Lextm.CodeBeautifiers.Plus.plus.
+
+In the file there is only one line:
+
+Lextm.CodeBeautifierCollection.Features.Code\-Beauti\-fiers;\-true
+\end{quotation}
+
+\section{Specifications Version II}
+
+\subsection{What's missing in Version I}
+\index{Plus registration}
+Basic functions are done in version I. However, it is not easy to configure a
+feature freely even with a GUI tool (finally I wrote a Plus Manager to do
+this). The file format lacks a few flexibility in fact. So this version II
+should go further.
+
+It is sometimes comfortable to enable one feature in BDS 1 and disabled it in
+BDS 2. So Version II takes this need into account. For example, FileWizards
+feature in WiseEditor Plus cannot run under BDS 1.0 because of some unsupported
+interfaces. So it is better that the enabled flag can be set for every BDS
+version.
+
+Also, there are a few calls for personality level enabled/disabled control.
+Such a further requirement may be included in this version or in a later
+version III.
+
+In order to make this format more powerful, simple text file may not be suited.
+So it should be in INI format or XML format. XML file is easy for serialization
+and deserialization, so .plus2 file is an XML file.
+
+\subsection{File Extension}
+.plus2 is the file extension.
+
+\subsection{How to Generate}
+\begin{quote}
+\begin{flushleft}
+\begin{sffamily}
+$<$Plus2$>$\\
+\tab $<$ModuleName$>$G:$\backslash$lextm$\backslash$SharpDevelop
+Projects$\backslash$XmlReader$\backslash$bin$\backslash$Debug$\backslash$Lextm.CodeBeautifiers.Plus$<$/ModuleName$>$\\
+\tab $<$Name$>$CodeBeautifiers$<$/Name$>$\\
+\tab $<$Features$>$\\
+\tab \tab $<$Feature2$>$\\
+\tab \tab \tab $<$EnabledRecords$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$1$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$2$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$3$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$4$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab $<$/EnabledRecords$>$\\
+\tab \tab \tab $<$Name$>$Lextm.CodeBeautifierCollection.Features.
+Code\-Beaut\-ifi\-ers$<$/Name$>$\\
+\tab \tab \tab $<$Description$>$This feature invokes several tools to format
+current file or projects.\\
+Ctrl + W is its shortcut.$<$/Description$>$\\
+\tab \tab $<$/Feature2$>$\\
+\tab $<$/Features$>$\\
+$<$/Plus2$>$
+\end{sffamily}
+\end{flushleft}
+\end{quote}
+
+The above is an example .plus2 file, named Lextm.CodeBeautifiers.Pl\-us.pl\-us2.
+
+The file name should be the same with the corresponding plus assembly file,
+only the extension changes to .plus2.
+
+When loaded, this file is deserialized to an object of class Plus2.
+
+$<$Plus2$>$ tag indicates that it is a Plus2 object.
+
+$<$ModuleName$>$ tag refers to its plus assembly name without extension.
+
+$<$Name$>$ tag stores the plus' name.
+
+$<$Features$>$ tag contains many instance of class Feature2.
+
+$<$Feature2$>$ tag indicates that it is a Feature2 object.
+
+$<$EnabledRecords$>$ tag stores a few EnabledRecord objects.
+
+$<$EnabledRecord$>$ tag indicates that it is a EnabledRecord object.
+
+$<$Version$>$ tag refers to IDE version, 1 to 5.
+
+$<$Enabled$>$ tag contains the flag, true or false.
+
+$<$Name$>$ and $<$Description$>$ tags stores feature information.

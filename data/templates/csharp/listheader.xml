@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="listheader" invoke="auto">
+		<point name="content">
+			<hint>
+				XML doc tag content
+			</hint>
+			<text>
+				Content
+			</text>
+		</point>
+		<description>
+			listheader XML doc tag
+		</description>
+		<author>
+			Lex Mark (lextm)
+		</author>
+		<code language="CSharp" context="methodbody"><![CDATA[<listheader>$content$</listheader>]]>
+		</code>
+	</template>
+</codetemplate>

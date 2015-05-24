@@ -1,0 +1,85 @@
+﻿<project schemaVersion="1.4.0.2">
+    <assemblies>
+        <assembly assemblyPath="..\..\bin\Release\BeWise.SharpBuilderTools.Minus.dll" xmlCommentsPath="..\..\bin\Release\BeWise.SharpBuilderTools.Minus.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\..\bin\Release\Lextm.Common.dll" xmlCommentsPath="..\..\bin\Release\Lextm.Common.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\..\bin\Release\Lextm.LeXDK.Core.dll" xmlCommentsPath="..\..\bin\Release\Lextm.LeXDK.Core.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\..\bin\release\ThirdParty.dll" xmlCommentsPath="..\..\bin\release\ThirdParty.xml" commentsOnly="False" />
+    </assemblies>
+    <namespaceSummaries>
+        <namespaceSummaryItem name="" isDocumented="False" />
+        <namespaceSummaryItem name="BeWise.Common" isDocumented="True">Common classes defined in Sharp Builder Tools.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.Common.CommandLine" isDocumented="True">Command line parsing classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.Common.IconManager" isDocumented="True">Icon related managers.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.Common.Info" isDocumented="True">Info related classes used in CodeDOM.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.Common.Utils" isDocumented="True">Utility classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.SharpBuilderTools" isDocumented="True">Sharp Builder Tools classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.SharpBuilderTools.Helpers" isDocumented="True">Sharp Builder Tools helpers.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.SharpBuilderTools.Info" isDocumented="True">Info classes mainly used in DOM operations.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.SharpBuilderTools.Tools" isDocumented="True">Tool wrapper classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="BeWise.SharpBuilderTools.Wizard" isDocumented="True">Wizard classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm" isDocumented="True">Some helper classes, such as StringHelper.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifierCollection" isDocumented="True">Code Beautifier Collection classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifierCollection.Collections" isDocumented="True">Code Beautifier Collection used collection classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifierCollection.Features" isDocumented="True">Code Beautifier Collection feature classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifierCollection.Gui" isDocumented="True">Code Beautifier Collection GUI related classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifierCollection.IO" isDocumented="True">Code Beautifier Collection IO classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifiers" isDocumented="True">Code Beautifiers Plus classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifiers.IO" isDocumented="True">Code Beautifiers Plus IO classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.CodeBeautifiers.Tool" isDocumented="True">Code Beautifiers Plus tool classes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Collections" isDocumented="True">Collection classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Diagnostics" isDocumented="True">Diagonostics helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Drawing" isDocumented="True">Drawing helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.IO" isDocumented="True">IO helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.LeXDK" isDocumented="True" />
+        <namespaceSummaryItem name="Lextm.LeXDK.Elements" isDocumented="True" />
+        <namespaceSummaryItem name="Lextm.LeXDK.Gui" isDocumented="True" />
+        <namespaceSummaryItem name="Lextm.LeXDK.IO" isDocumented="True" />
+        <namespaceSummaryItem name="Lextm.LeXDK.Plus" isDocumented="True" />
+        <namespaceSummaryItem name="Lextm.Reflection" isDocumented="True">Reflection helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Threading" isDocumented="True">Threading helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Win32" isDocumented="True">Win32 helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Windows.Forms" isDocumented="True">WinForms helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Lextm.Xml" isDocumented="True">XML helper classes written by Lex Mark.</namespaceSummaryItem>
+        <namespaceSummaryItem name="MattBerther.Controls" isDocumented="True" />
+        <namespaceSummaryItem name="pglowacki.XmlDoc" isDocumented="True">XmlDoc classes written by Pawel Glowacki.</namespaceSummaryItem>
+        <namespaceSummaryItem name="SingletonApp" isDocumented="True">SingletonApp unit written by Sergey A. Kryukov.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Yaowi.Common.Serialization" isDocumented="True">Advanced serialization units written by Marcus Deecke.</namespaceSummaryItem>
+    </namespaceSummaries>
+    <dependencies>
+        <dependencyItem depPath="..\..\lib\*.*" />
+        <dependencyItem depPath="C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll" />
+        <dependencyItem depPath="C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Globalization.dll" />
+    </dependencies>
+    <ProjectSummary>All available classes in the LeXtudio OpenTools SDK are listed in this file.</ProjectSummary>
+    <MissingTags>Summary, Parameter, AutoDocumentCtors, Namespace</MissingTags>
+    <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath path="" />
+    <HtmlHelp2xCompilerPath path="" />
+    <OutputPath>.\</OutputPath>
+    <SandcastlePath path="" />
+    <WorkingPath path="" />
+    <CleanIntermediates>True</CleanIntermediates>
+    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <PurgeDuplicateTopics>True</PurgeDuplicateTopics>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <FrameworkVersion>2.0.50727</FrameworkVersion>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <Preliminary>False</Preliminary>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <RootNamespaceTitle />
+    <HelpTitle>LeXtudio OpenTools SDK Documented Class Library</HelpTitle>
+    <HtmlHelpName>ClassReference</HtmlHelpName>
+    <Language>en-US</Language>
+    <CopyrightHref />
+    <CopyrightText>Copyright © 2005-2007 Lex Mark. All LeXtudio brand and product names are trademarks or registered trademarks of Lex Mark. All other marks are the property of their respective owners.</CopyrightText>
+    <FeedbackEMailAddress>cylextm-guard@yahoo.com.cn</FeedbackEMailAddress>
+    <HeaderText />
+    <FooterText />
+    <ProjectLinkType>Local</ProjectLinkType>
+    <SdkLinkType>None</SdkLinkType>
+    <PresentationStyle>vs2005</PresentationStyle>
+    <NamingMethod>MemberName</NamingMethod>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+</project>

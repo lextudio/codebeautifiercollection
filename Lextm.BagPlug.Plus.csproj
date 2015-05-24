@@ -1,0 +1,186 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectGuid>{B2E80ECD-08A2-4F5E-BCB4-04309007ADA0}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Lextm.BagPlug.Plus</RootNamespace>
+    <AssemblyName>Lextm.BagPlug.Plus</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <LangVersion>default</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>False</NoStdLib>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <BaseAddress>285212672</BaseAddress>
+    <UseLauncher>False</UseLauncher>
+    <LoadAllSymbols>True</LoadAllSymbols>
+    <LoadUnspecifiedSymbols>False</LoadUnspecifiedSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Borland.Studio.ToolsAPI">
+      <AssemblyName>Borland.Studio.ToolsAPI</AssemblyName>
+      <Version>11.0.5000.9245</Version>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\Bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\5.0\Bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System">
+      <AssemblyName>System</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <AssemblyName>System.Drawing</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <AssemblyName>System.Windows.Forms</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.XML">
+      <AssemblyName>System.Xml</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="VistaApi">
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>VistaApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL</AssemblyName>
+      <Version>1.0.0.0</Version>
+      <HintPath>lib\VistaApi.dll</HintPath>
+      <AssemblyTag>lib\VistaApi.dll</AssemblyTag>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="src\lextm\bagplug\gui\FormLineCounter.resx">
+      <DependentUpon>FormLineCounter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\bagplug\gui\FormSourceNavigator.resx">
+      <DependentUpon>FormSourceNavigator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="src\assemblyinfo\bagplug.cs" />
+    <Compile Include="src\assemblyinfo\Common.cs" />
+    <Compile Include="src\assemblyinfo\LeXtudio.cs" />
+    <Compile Include="src\lextm\bagplug\feature\IconBrowserFeature.cs" />
+    <Compile Include="src\lextm\bagplug\feature\LineCounterFeature.cs" />
+    <Compile Include="src\lextm\bagplug\feature\ReadmeNotifierFeature.cs" />
+    <Compile Include="src\lextm\bagplug\feature\SourceNavigatorFeature.cs" />
+    <Compile Include="src\lextm\bagplug\feature\TypingSpeederFeature.cs" />
+    <Compile Include="src\lextm\bagplug\gui\FormLineCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\bagplug\gui\FormSourceNavigator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\bagplug\linecounter\LineCountDetails.cs" />
+    <Compile Include="src\lextm\bagplug\linecounter\LineCounterHelper.cs" />
+    <Compile Include="src\lextm\bagplug\linecounter\LineCountInfo.cs" />
+    <Compile Include="src\lextm\bagplug\linecounter\LineCountSummary.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\CommandRegistry.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\ICommand.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\IKey.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\InvalidKey.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\KeyChecker.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\KeywordCommand.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\NullCommand.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\TriggerKey.cs" />
+    <Compile Include="src\lextm\bagplug\typingspeeder\XmlCommentCommand.cs" />
+    <ProjectReference Include="BeWise.SharpBuilderTools.Minus.csproj">
+      <Name>BeWise.SharpBuilderTools.Minus</Name>
+      <Project>{C238A1A6-DE61-4729-8569-7041E2AC6C48}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Name>Lextm.Common</Name>
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.OpenTools.Core.csproj">
+      <Name>Lextm.OpenTools.Core</Name>
+      <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
+    </ProjectReference>
+    <ProjectReference Include="ThirdParty.csproj">
+      <Name>ThirdParty</Name>
+      <Project>{BC328F36-A346-4171-822B-240104733760}</Project>
+    </ProjectReference>
+    <None Include="data\typingspeeder.config" />
+    <None Include="Lextm.BagPlug.Plus.plus2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="lextmkeyfiles\PublicPrivateKeyFile.snk" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <BorlandProject>
+      <BorlandProject>
+        <CSharp.Personality>
+          <Options>
+            <Options Name="AspNetUseHostServer">False</Options>
+            <Options Name="AspNetLaunchBrowser">False</Options>
+            <Options Name="AspNetStartPage">
+            </Options>
+            <Options Name="AspNetHostServer">IIS</Options>
+            <Options Name="AspNetCassiniPortIndex">0</Options>
+            <Options Name="AspNetCassiniStartup">
+            </Options>
+            <Options Name="AspNetIISVirtualDirectory">
+            </Options>
+            <Options Name="AspNetHTTPAddress">
+            </Options>
+            <Options Name="AspNetCassiniHTTPAddress">
+            </Options>
+          </Options>
+        </CSharp.Personality>
+      </BorlandProject>
+    </BorlandProject>
+    <VisualStudio />
+  </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="thirdparties\LineCounterAddin\LineCounterAddin.csproj">
+      <Project>{96463C72-F108-4FE6-B21F-1578A93ADC98}</Project>
+      <Name>LineCounterAddin</Name>
+    </ProjectReference>
+    <Folder Include="data" />
+  </ItemGroup>
+</Project>

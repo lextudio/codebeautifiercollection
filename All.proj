@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+    <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+	<ItemGroup>
+		<TempFiles Include="**\*.~*" />
+		<TempFiles Include="**\*.dsk" />
+		<TempFiles Include="**\*.bak" />
+		<TempFiles Include="**\*.tmp" />
+		<TempFiles Include="**\*.pdb" />
+		<TempFiles Include="**\*.identcache" />
+		<TempFiles Include="**\*.local" />
+		<TempFiles Include="**\*.resources" />
+		<!-- 
+		<SourceFiles Include="..\install\**\*.*" Exclude="@(TempFiles)" />-->
+	</ItemGroup>
+	<Target Name="Build">
+		<MSBuild Projects="Build.proj" />
+		<MSBuild Projects="Doc.proj" />
+		<MSBuild Projects="Deploy.proj" />
+		<MSBuild Projects="Package.proj" />
+	</Target>
+	
+	<Target Name="Debug">
+		<MSBuild Projects="Build.proj" Targets="Debug"/>
+		<MSBuild Projects="Deploy.proj" Properties="OutputPath=bin\debug" Targets="Debug" />
+	</Target>	
+	
+	<Target Name="Clean" DependsOnTargets="BDSProjectClean">
+		<MSBuild Projects="Build.proj" Targets="Clean" />
+		<MSBuild Projects="Doc.proj" Targets="Clean" />
+		<MSBuild Projects="Deploy.proj" Targets="Clean" />
+		<MSBuild Projects="Package.proj" Targets="Clean" />		
+	</Target>
+	
+	<Target Name="BDSProjectClean">
+		<Delete Files="@(TempFiles)" />		
+	</Target>
+	
+	<Target Name="SourceAll" DependsOnTargets="Clean">
+		<MSBuild Projects="Deploy.proj" Targets="SourceAll" />
+		<MSBuild Projects="Package.proj" Targets="Source" />
+	</Target>
+
+	<Target Name="Source" DependsOnTargets="Clean">
+		<MSBuild Projects="Deploy.proj" Targets="Source" />
+		<MSBuild Projects="Package.proj" Targets="Source" />
+	</Target>	
+</Project>

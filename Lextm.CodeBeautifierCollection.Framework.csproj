@@ -1,0 +1,251 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02203F0B-E80C-4BA5-B27E-F94043676CFE}</ProjectGuid>
+    <RootNamespace>Lextm.CodeBeautifierCollection.Framework</RootNamespace>
+    <AssemblyName>Lextm.CodeBeautifierCollection.Framework</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnSuccessfulBuild</RunPostBuildEvent>
+    <NoConfig>false</NoConfig>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release</OutputPath>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <LangVersion>default</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>512</FileAlignment>
+    <DebugType>pdbonly</DebugType>
+    <BaseAddress>285212672</BaseAddress>
+    <UseLauncher>False</UseLauncher>
+    <LoadAllSymbols>True</LoadAllSymbols>
+    <LoadUnspecifiedSymbols>False</LoadUnspecifiedSymbols>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>False</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Borland.Delphi">
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>Borland.Delphi</AssemblyName>
+      <Version>11.0.5000.9245</Version>
+      <HintPath>C:\Program Files\Common Files\CodeGear Shared\Rad Studio\Shared Assemblies\5.0\Borland.Delphi.dll</HintPath>
+      <AssemblyTag>C:\Program Files\Common Files\CodeGear Shared\Rad Studio\Shared Assemblies\5.0\Borland.Delphi.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="Borland.Studio.ToolsAPI">
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>Borland.Studio.ToolsAPI</AssemblyName>
+      <Version>11.0.5000.9245</Version>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PSTaskDialog, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f5f17b83389b498, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\PSTaskDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.Data</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.Drawing</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.Windows.Forms</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.XML</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="UnhandledExceptionManager">
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>UnhandledExceptionManager</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>lib\UnhandledExceptionManager.dll</HintPath>
+      <AssemblyTag>lib\UnhandledExceptionManager.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="VistaApi">
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>VistaApi</AssemblyName>
+      <Version>1.0.0.0</Version>
+      <HintPath>lib\VistaApi.dll</HintPath>
+      <AssemblyTag>lib\VistaApi.dll</AssemblyTag>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="src\lextm\codebeautifiercollection\gui\DavidTheCreator.resx">
+      <DependentUpon>DavidTheCreator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\codebeautifiercollection\gui\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\codebeautifiercollection\gui\FormPreferences.resx">
+      <DependentUpon>FormPreferences.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\codebeautifiercollection\gui\FormShortcuts.resx">
+      <DependentUpon>FormShortcuts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\codebeautifiercollection\gui\FrameworkPage.resx">
+      <DependentUpon>FrameworkPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\codebeautifiercollection\gui\TeamKeyManager.resx">
+      <DependentUpon>TeamKeyManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="src\assemblyinfo\Common.cs" />
+    <Compile Include="src\assemblyinfo\Framework.cs" />
+    <Compile Include="src\assemblyinfo\LeXDKVersion.cs" />
+    <Compile Include="src\assemblyinfo\LeXtudio.cs" />
+    <Compile Include="src\lextm\codebeautifiercollection\collections\FeatureBuilder.cs" />
+    <Compile Include="src\lextm\codebeautifiercollection\collections\MenuBuilder.cs" />
+    <Compile Include="src\lextm\codebeautifiercollection\collections\TabBuilder.cs" />
+    <Compile Include="src\lextm\codebeautifiercollection\Entry.cs" />
+    <Compile Include="src\lextm\codebeautifiercollection\feature\Framework.cs" />
+    <Compile Include="src\lextm\codebeautifiercollection\gui\DavidTheCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\codebeautifiercollection\gui\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\codebeautifiercollection\gui\FormPreferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\codebeautifiercollection\gui\FormShortcuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\codebeautifiercollection\gui\FrameworkPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\lextm\codebeautifiercollection\gui\TeamKeyManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\lextm\codebeautifiercollection\ParentType.cs" />
+    <Compile Include="Tests\TestMenuTree.cs" />
+    <Compile Include="Tests\TestOtaArrayList.cs" />
+    <Compile Include="Tests\TestTabTree.cs" />
+    <ProjectReference Include="BeWise.SharpBuilderTools.Minus.csproj">
+      <Name>BeWise.SharpBuilderTools.Minus</Name>
+      <Private>True</Private>
+      <Project>{C238A1A6-DE61-4729-8569-7041E2AC6C48}</Project>
+      <SpecificVersion>True</SpecificVersion>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Name>Lextm.Common</Name>
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.OpenTools.Core.csproj">
+      <Name>Lextm.OpenTools.Core</Name>
+      <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lextmkeyfiles\PublicPrivateKeyFile.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="thirdparties\SharpDevTools\SharpDevTools.csproj">
+      <Project>{49FA9FDF-019F-4E05-8501-38975F41C4C6}</Project>
+      <Name>SharpDevTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="ThirdParty.csproj">
+      <Project>{BC328F36-A346-4171-822B-240104733760}</Project>
+      <Name>ThirdParty</Name>
+    </ProjectReference>
+    <Folder Include="Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <BorlandProject>
+      <BorlandProject>
+        <CSharp.Personality>
+          <Options>
+            <Options Name="AspNetUseHostServer">False</Options>
+            <Options Name="AspNetLaunchBrowser">False</Options>
+            <Options Name="AspNetStartPage">
+            </Options>
+            <Options Name="AspNetHostServer">IIS</Options>
+            <Options Name="AspNetCassiniPortIndex">0</Options>
+            <Options Name="AspNetCassiniStartup">
+            </Options>
+            <Options Name="AspNetIISVirtualDirectory">
+            </Options>
+            <Options Name="AspNetHTTPAddress">
+            </Options>
+            <Options Name="AspNetCassiniHTTPAddress">
+            </Options>
+          </Options>
+        </CSharp.Personality>
+      </BorlandProject>
+    </BorlandProject>
+    <VisualStudio />
+  </ProjectExtensions>
+</Project>

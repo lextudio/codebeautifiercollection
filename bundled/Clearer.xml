@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Filters>*.~*|*.dsk|*.bak|*.tmp|*.pdb|*.identcache|*.local</Filters>
+  <KnownDirectories>__history|Model|ModelSupport</KnownDirectories>
+  <AppDataClear>true</AppDataClear>
+</TOptions>

@@ -1,0 +1,88 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A090F8B6-8F2F-4BF8-A715-4B6702440A78}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>expertregistry</RootNamespace>
+    <AssemblyName>expertregistry</AssemblyName>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <LangVersion>default</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>False</NoStdLib>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <BaseAddress>285212672</BaseAddress>
+    <UseLauncher>False</UseLauncher>
+    <LoadAllSymbols>True</LoadAllSymbols>
+    <LoadUnspecifiedSymbols>False</LoadUnspecifiedSymbols>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System">
+      <AssemblyName>System</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</AssemblyTag>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\expertregistry\AssemblyInfo.cs" />
+    <Compile Include="src\expertregistry\Program.cs" />
+    <Folder Include="src" />
+    <Folder Include="src\expertregistry" />
+    <ProjectReference Include="Lextm.ExpertLibrary.Minus.csproj">
+      <Name>Lextm.ExpertLibrary.Minus</Name>
+      <Project>{47A7189C-7A3C-4486-A34F-AA7A0EF67123}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ProjectExtensions>
+    <BorlandProject>
+      <BorlandProject>
+        <CSharp.Personality>
+          <Options>
+            <Options Name="AspNetUseHostServer">False</Options>
+            <Options Name="AspNetLaunchBrowser">False</Options>
+            <Options Name="AspNetStartPage">
+            </Options>
+            <Options Name="AspNetHostServer">IIS</Options>
+            <Options Name="AspNetCassiniPortIndex">0</Options>
+            <Options Name="AspNetCassiniStartup">
+            </Options>
+            <Options Name="AspNetIISVirtualDirectory">
+            </Options>
+            <Options Name="AspNetHTTPAddress">
+            </Options>
+            <Options Name="AspNetCassiniHTTPAddress">
+            </Options>
+          </Options>
+        </CSharp.Personality>
+      </BorlandProject>
+    </BorlandProject>
+  </ProjectExtensions>
+</Project>

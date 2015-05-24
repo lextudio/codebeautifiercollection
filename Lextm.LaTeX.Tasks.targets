@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+	<PropertyGroup>
+		<DviFile>$(Name).dvi</DviFile>
+		<MainFile>$(Name).tex</MainFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<TempFiles Include="**\*.aux" />
+		<TempFiles Include="**\*.idx" />
+		<TempFiles Include="**\*.log" />
+		<TempFiles Include="**\*.aux" />
+		<TempFiles Include="**\*.toc" />
+		<TempFiles Include="**\*.ind" />
+		<TempFiles Include="**\*.ilg" />
+		<TempFiles Include="**\*.dvi" />
+		<TempFiles Include="**\*.pdf" />
+	</ItemGroup>
+	<Target Name="Build">
+		<Exec Command="texify --src --silent $(MainFile)" />
+		<Exec Command="dvipdfmx $(DviFile)" />
+	</Target>
+	<Target Name="Clean">
+		<Delete Files="@(TempFiles)"/>
+	</Target>
+</Project>

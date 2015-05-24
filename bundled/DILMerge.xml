@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<TOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AllowZeroPeKind>false</AllowZeroPeKind>
+  <AttributeFile />
+  <Closed>false</Closed>
+  <CopyAttributes>false</CopyAttributes>
+  <MultipleAssemblyLevelAttributes>false</MultipleAssemblyLevelAttributes>
+  <DelaySign>false</DelaySign>
+  <ExcludeFile />
+  <Internalize>true</Internalize>
+  <DuplicateTypeFile />
+  <AllowDuplicateType>false</AllowDuplicateType>
+  <TypeUnionMerge>false</TypeUnionMerge>
+  <PublicKeyTokens>true</PublicKeyTokens>
+  <XmlDocumentation>false</XmlDocumentation>
+  <KeyFile />
+  <Platform>2</Platform>
+  <PlatformDir>
+    <TPlatformDir>
+      <Platform>1.1</Platform>
+      <Value>c:\windows\microsoft.net\framework\v1.1.4322</Value>
+    </TPlatformDir>
+    <TPlatformDir>
+      <Platform>2</Platform>
+      <Value>c:\windows\microsoft.net\framework\v2.0.50727</Value>
+    </TPlatformDir>
+  </PlatformDir>
+  <PlatformSearchDirectories>
+    <TPlatformSearchDirectories>
+      <Platform>1.1</Platform>
+      <Value>
+        <string>c:\program files\delphi10\bin</string>
+        <string>c:\program files\common files\borland shared\bds\shared assemblies\4.0</string>
+      </Value>
+    </TPlatformSearchDirectories>
+    <TPlatformSearchDirectories>
+      <Platform>2</Platform>
+      <Value>
+        <string>c:\program files\delphi11\bin</string>
+        <string>c:\program files\common files\codegear shared\rad studio\shared assemblies\5.0</string>
+      </Value>
+    </TPlatformSearchDirectories>
+  </PlatformSearchDirectories>
+</TOptions>

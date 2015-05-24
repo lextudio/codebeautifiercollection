@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>CodeBeautifiers</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.CodeBeautifiers.Feature.CodeBeautifiersFeature</Name>
+      <Description>This feature invokes several tools to format current file or projects.
+Ctrl + W is its shortcut.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

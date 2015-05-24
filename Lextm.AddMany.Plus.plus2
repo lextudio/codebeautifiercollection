@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ModuleName>G:\lextm\SharpDevelop Projects\XmlReader\bin\Debug\Lextm.AddMany.Plus</ModuleName>
+  <Name>AddMany</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.AddMany.Feature.AddManyFeature</Name>
+      <Description>This feature invokes AddMany to enhance add to project function.
+Ctrl + Alt + A is a useful shortcut.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

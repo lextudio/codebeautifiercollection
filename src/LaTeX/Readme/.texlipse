@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Sat Dec 01 18:41:34 CST 2007
+builderNum=0
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=dvi
+tempDir=tmp
+mainTexFile=Readme.tex
+outputFile=Readme.dvi
+langSpell=en
+markDer=true
+srcDir=

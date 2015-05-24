@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>CSBuilderGoodies</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.CsbGoodies.Feature.DocPreviewFeature</Name>
+      <Description>This feature previews C# XML comments in a browser dialog. Alt + Q is the shortcut for Doc Preview.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

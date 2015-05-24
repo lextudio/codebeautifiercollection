@@ -1,0 +1,122 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C238A1A6-DE61-4729-8569-7041E2AC6C48}</ProjectGuid>
+    <RootNamespace>BeWise.SharpBuilderTools.Minus</RootNamespace>
+    <AssemblyName>BeWise.SharpBuilderTools.Minus</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnSuccessfulBuild</RunPostBuildEvent>
+    <NoConfig>false</NoConfig>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <DocumentationFile>bin\Release\BeWise.SharpBuilderTools.Minus.xml</DocumentationFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>False</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Borland.Studio.ToolsAPI, Version=11.0.5000.7751, Culture=neutral, PublicKeyToken=91d62ebb5b0d1b1b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="VistaApi">
+      <HintPath>lib\VistaApi.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\bewise\sharpbuildertools\helpers\ValidationHelpers.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\tools\BaseTool.cs" />
+    <Compile Include="src\assemblyinfo\Common.cs" />
+    <Compile Include="src\assemblyinfo\BeWiseSharpBuilderTools.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\info\BookmarkInfo.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\info\ComponentInfo.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\info\FilePropertyInfo.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\helpers\BaseViewHelpers.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\helpers\ListViewHelpers.cs" />
+    <Compile Include="src\lextm\codebeautifiers\tool\AStyle.cs" />
+    <Compile Include="src\lextm\codebeautifiers\tool\Jcf.cs" />
+    <Compile Include="src\lextm\codebeautifiers\tool\XmlLex.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\AStyleFile.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\CustomFile.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\IFormattableFile.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\InvalidFile.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\JcfFile.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\ValidFile.cs" />
+    <Compile Include="src\lextm\codebeautifiers\io\XmlFile.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\helpers\LanguageCodeHelpers.cs" />
+    <Compile Include="src\lextm\codebeautifiers\AStyleStyle.cs" />
+    <Compile Include="src\lextm\codebeautifiers\JcfStyle.cs" />
+    <Compile Include="src\lextm\opentools\CustomFeatureTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+      <Name>Lextm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.OpenTools.Core.csproj">
+      <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
+      <Name>Lextm.OpenTools.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

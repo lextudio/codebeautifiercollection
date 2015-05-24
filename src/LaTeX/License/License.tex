@@ -1,0 +1,473 @@
+\documentclass{article}
+\include{../shared/package.cn}
+\include{../shared/lextm}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\author{\lextm}
+\title{Code Beautifier Collection License Issues}
+
+\begin{document}
+
+\maketitle
+
+\copyclaimer
+
+\include{../shared/notinmanual}
+
+\include{../shared/toc}
+
+\section{General Notes}
+Code Beautifier Collection Standard is doned by \lextm\ and other
+contributors. Portions created by a specific author are copyrighted by him/her.
+
+It consists of several assemblies. Each assembly/plug-in is licensed under its
+respective license terms.
+
+If there is something wrong or you have a problem, please contact me by sending
+a mail to \underline{lextudio@gmail.com}.
+
+\section{Assemblies Licensing}
+
+\subsection{The Framework Assembly}
+
+All files in the Lextm.Code\-Beautifier\-Collection.Frame\-work assembly is
+licensed under the terms of GNU General Public License.
+
+The Framework assembly uses the third party library 
+UnhandledExceptionManager, which is included as binaries (DLLs).
+
+\subsubsection{UnhandledExceptionManager V2.0 by Mauro Venturini}
+When a .NET application hits an unhandled exception the default behaviour is to
+show a very poor dialog (Form1.jpg). Therefore, it is (or should be) common
+practice to hook UnhandledException event of the current AppDomain and
+ThreadException event of Application. Unfortunately, there are security
+restrictions on these hookings that prevent their direct use inside
+applications that will be run without full trust (and even Local Intranet group
+does NOT have full trust). A solution is to delegate the hookings to a full
+trusted assembly inside the GAC and reference it. UnhandledExceptionManager is
+an assembly that implements the technique.
+
+UnhandledExceptionManager.dll was created and tested using Borland Developer
+Studio V10.0.2166.28377 (Delhi 2006 Update 1) under Windows 2000 SP4,.NET 1.1
+SP1 Merging of Borland.Delphi.dll was done using DILMerge. DILMerge can be
+dowloaded at http://cc.borland.com/Item.aspx?id=23227
+
+\underline{Please notice the version included in CBC is a slightly modified version.}
+
+\subsection{LeXDK Assembly}
+Most of Le\-xtm.Le\-XDK.Co\-re files are licensed under the terms of GNU Lesser General Public
+License.
+
+A few files are taken from SBT directly, so they are copyrighted by David
+Hervieux. Refer to the file headers and appendix \ref{sec:sbt} for
+details.
+
+\subsection{BeWise.SharpBuilderTools.Minus}
+This assembly is built on SBT code with a few modifications done by \lextm.
+Original SBT files are copyrighted by David Hervieux. Refer to the file headers and
+appendix \ref{sec:sbt} for details.
+
+\subsection{Utilities Plus, CodeBeautifiers Plus, BagPlug Plus, CSBuilderGoodies
+Plus, and AddMany Plus}
+They are written by \lextm\ and licensed under the terms of GNU General Public
+License.
+
+CSBuilderGoodies Plus brought the idea of C\#Builder Goodies 1.1 assembly. One
+original file ''QuickdocViewer.cs'' is ported and modified by \lextm.
+Original source code is copyrighted by Valentino Kyriakides (KyrSoft).
+
+AddMany Plus uses the third party library AddMany, which are included as
+binaries (DLLs). Refer to appendix \ref{sec:addmany} for details on AddMany.
+
+Utilities Plus uses the following third party libraries which are included as
+binaries (DLLs):
+
+\begin{itemize}
+
+  \item SharpZipLib library.
+
+  \item ThirdParty assembly. Refer to appendix \ref{sec:thirdparty} for details.
+
+%   \item Invisibles library.
+
+  \item LoadingCircle control.
+
+\end{itemize}
+
+\subsubsection{C\#Builder Goodies (written by Valentino Kyriakides)}
+The C\#Builder Goodies OpenTool is an add-on module for the Borland C\#Builder
+IDE which helps you to perform C\# language specific reserved keyword and XML
+documentation autocompletions inside the C\#Builder editors. Further it
+actually also includes a quick access WYSIWYG XML to HTML viewer helper and a
+keycode analyzer helper. The main motivation for this C\#Builder OpenTool is,
+to enhance the productivity of lazy typers by offering some of missing
+C\#Builder support for C\# reserved keywords and XML documentation tags
+autocompletion.
+
+Copyright \copyright\ 2003, Valentino Kyriakides (KyrSoft)
+
+Available on the web at
+\hyperlink{http://cc.borland.com/Item.aspx?ID=21168}
+
+
+% \subsubsection{Lextm.AddMany}
+%
+% It contains only a wrapping class that connects AddMany 4.1 to CBC. This class
+% is a slightly modified version of AddMany TIDEPlugin unit. Since Mauro
+% Venturini does not mention any restriction, I do not add any restriction to
+% this modified version, too.
+%
+% The code is public domain, you may use and modify it freely.
+%
+% Refer to appendix \ref{sec:addmany} for details on AddMany.
+
+\subsubsection{ICSharpCode.SharpZipLib Library}
+
+SharpZipLib is used in Utilities Plus' InDate feature to unzip zip package.
+
+This library is under GPL. You can see the license details on its homepage.
+
+Available on the web at
+\hyperlink{http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx}
+
+% \subsubsection{Invisibles library by Mauro Venturini}
+% Windows Forms applications often require some sort of asynchronous invocation
+% option. .NET 2.0 provides the BackgroundWorker component to facilitate easy
+% asynchronous invocation with Windows Forms. Waiting for it this is a Delphi.NET
+% BackgroundWorker component implementation based on .NET 1.1.
+
+\subsubsection{LoadingCircle control by Martin R. Gagn$\acute{e}$}
+\begin{small}
+\begin{flushleft}
+//\\
+// Copyright \copyright 2006, Martin R. Gagn$\acute{e}$ (martingagne@gmail.com)\\
+// All rights reserved.\\
+//\\
+// Redistribution and use in source and binary forms, with or without modification, \\
+// are permitted provided that the following conditions are met:\\
+//\\
+//   - Redistributions of source code must retain the above copyright notice, \\
+//     this list of conditions and the following disclaimer.\\
+//\\
+//   - Redistributions in binary form must reproduce the above copyright notice, \\
+//     this list of conditions and the following disclaimer in the documentation \\
+//     and/or other materials provided with the distribution.\\
+// \\
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND \\
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED \\
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. \\
+// IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, \\
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT \\
+// NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, \\
+// OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, \\
+// WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) \\
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY \\
+// OF SUCH DAMAGE.\\
+//\\
+\end{flushleft}
+\end{small}
+
+\subsection{NFamily Plus and WiseEditor Plus}
+They are features taken directly from SBT or modified by \lextm. SBT files are
+copyrighted by David Hervieux. New files are copyrighted by \lextm.
+
+% \boxing{It was my intention that features I created should be covered by GPL,
+% but I had no time to extract them from WiseEditor Plus. I would move them to a
+% separate plus later, for example, Source Navigator. So remember if you want to
+% use these specific files, see the headers please. I added GPL headers to them
+% already.}
+
+WiseEditor Plus uses the following third party libraries which are included as
+binaries (DLLs):
+
+\begin{itemize}
+  \item ThirdParty assembly. Refer to appendix \ref{sec:thirdparty} for details.
+
+  \item NetSpell library.
+\end{itemize}
+
+NFamily Plus uses the following third party libraries which are included as
+binaries (DLLs):
+
+\begin{itemize}
+  \item ThirdParty assembly. Refer to appendix \ref{sec:thirdparty} for details.
+  \item SMS.Windows.Forms assembly.
+  \item NUnit Framework assembly.
+\end{itemize}
+
+\subsubsection{NetSpell library}
+The NetSpell project is a spell checking engine written entirely in managed C\#
+.net code.  NetSpell's suggestions for a misspelled word are generated using
+phonetic (sounds like) matching and ranked by a typographical score (looks
+like).  NetSpell supports multiple languages and the dictionaries are based on
+the OpenOffice Affix compression format. The library can be used in Windows or
+Web Form projects. The download includes an English dictionary with
+dictionaries for other languages available for download on the project web
+site. NetSpell also supports user added words and automatic creation of user
+dictionaries. The package includes a dictionary build tool to build custom
+dictionaries.
+
+
+BSD License
+\begin{quote}
+Copyright (c) 2003, Paul Welter\\
+All rights reserved.
+
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+  2) Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+  3) Neither the name of the ORGANIZATION nor the names of its contributors may
+  be used to endorse or promote products derived from this software without
+  specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTI\-AL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHE\-THER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  POSSIBILITY OF SUCH DAMAGE.
+
+\end{quote}
+Available on the web at
+\hyperlink{http://www.loresoft.com/Applications/NetSpell/default.aspx}
+
+\subsubsection{SMS.Windows.Forms library}
+This library is created by Steven Soloff. Available on the web at
+
+\hyperlink{www.codeguru.com/c\-sh\-arp/csh\-arp/\-cs\_con\-trols/\-wi\-zards/\-ar\-ticle.php/\-c4799/ }
+
+\subsubsection{NUnit Framework}
+NUnit Framework is under zlib/libpng License.
+
+Available on the web at
+\hyperlink{http://sourceforge.net/projects/nunit/}
+
+
+
+\subsection{ArtCSB Plus}
+It is written by \lextm. ArtCSB Plus consumes a few files of ArtCSB 2.5 which
+are copyrighted by Artyom Fedyuk. Other files are modified and copyrighted by
+\lextm.
+
+\subsubsection{ArtCSB (written by Artyom Fedyuk)}
+ArtCSB 2.5 is an addition to Borland C\# Builder 1.0 environment. Also you can
+install ArtCSB 2.5 to Borland Delphi 8 IDE.
+
+This product realize next new menu items in IDE:
+
+1. "View/ArtCSB Source Navigator" is intended for fast navigation in C\# -file.
+It includes an opportunity of sorting program objects in different ways. It can
+display an objects tree in the extraction mode. The extraction mode displays
+the source line that contains the object definition instead of a simple object
+name. Source Navigator can also save object structure to a html or text file.
+
+2. "View/Designer Navigator" is intended for tracking the tree of components
+located on the forms (Windows and ASP.NET applications). The purpose of
+creating Designer Navigator was to realize an expert similar to Delphi 7 Object
+TreeView. Like in Delphi 7 Object TreeView, you can select objects on the form,
+thus selecting corresponding items in Designer Navigator. When you select items
+in Designer Navigator, corresponding objects on the form will be selected too.
+Multiple selections are possible (by pressing key Ctrl or Shift).
+
+3. "View/ArtCSB Editor Outlining" is intended for handy elide/unelide
+functions. Draw an attention on powerful "Elide to definitions"-item.
+
+4. "View/ArtCSB View bdsproj as xml" is intended for viewing main
+bdsproj-project file as xml-file. It creates xml-copy of main bdsproj-project
+file in project directory and opens it.
+
+5. "Tools/ArtCSB Auto-Save Options" is intended for periodically project
+autosaving in Borland IDE.
+
+Available on the web at
+\hyperlink{http://cc.borland.com/Item.aspx?id=21908}
+
+
+\section{References}
+Tips from several articles are used in CBC development.
+
+\begin{itemize}
+%   \item C\#Builder XML Documentation Viewer Wizard, Pawel Glowacki, BorCon 2003
+%   Poster. I follow Pawel's way to build the viewer UI.
+
+  % \item A Treatise on Using Debug and Trace classes, including Exception
+  % Handling, Marc Clifton, The Code Project. I modified the unit provided and use
+  % it heavily.
+
+%   \item Some Cool Tips for .NET, Mukund Pujari, The Code Project. I use the
+%   alert form.
+
+  \item How to write a loading circle animation in .NET?, Martin Gagn$\acute{e}$, The
+  Code Project. Updated: 15 Feb 2007
+
+  \item A deep XmlSerializer, supporting complex classes, enumerations,
+  structs, collections, and arrays, Marcus Deecke, The Code Project. I use the
+  three units to manage settings. Updated: 15 Apr 2007
+
+  \item Mastering Delphi 2005, Marco Cant$\grave{u}$, Sybex. I follow Marco's
+  tip to do XSL tranform in .NET.
+
+  \item How to prevent multiple application instances?, Sergey A. Kryukov, BDN
+  Code Central. I use this to ensure that only one instance of Utilities Plus
+  executable is available.
+
+  % \item A C\# auto complete combo box, Matt Berther, The Code Project. I add one
+  % line and use this in Source Navigator.
+  \item Line Counter - Writing a Visual Studio 2005 Add-In, Jon Rista, The Code
+  Project. 	Updated: 31 May 2007
+
+  \item Line Counter - Writing a SharpDevelop AddIn, Daniel Grunwald, The Code
+  Project. Updated: 18 Jul 2006
+\end{itemize}
+
+\appendix
+\section{Things on SBT source code: A letter from SBT's author David}
+\label{sec:sbt}
+This section contains the reply from David Hervieux, the original author of
+SBT. All files used in CBC in the namespace "BeWise" are taken from his wizard
+either directly or with a few lines modified. In this reply, he permits me to
+use his code and distribute the code with CBC.
+
+
+\begin{quote}
+
+  %\begin{flushleft}
+Date: Sun, 09 Oct 2005 16:19:20 -0400 \\
+Sender: "David Hervieux" $<$dhervieux@videotron.ca$>$\\
+Title: Re: [dev] Ask you about SBT license issue \\
+Receiver: cylextm-guard@yahoo.com.cn
+%\end{flushleft}
+\end{quote}
+\begin{quotation}
+Hi,
+
+  I'm no longer working on Sharp Builder Tools. Unfortunatly I got too many
+  problem with Borland. But feel free to uses the code in Sharp Builder Tools.
+  It will be a pleasure to me if somebody uses it. I did the product to learn
+  C\# so I don't really care about the license, so don't be shy to incoporate
+  in your expert all the features that you need from SBT. You can't also change
+  the code (and the namespace) to reflect your add in.
+
+  David
+
+\end{quotation}
+
+\section{Things on bundled tools}
+
+Some tools are bundled in bundled folder or other places.
+
+\subsection{Artistic Style (written by Tal Davidson)} Artistic Style is a
+reindenter and reformatter of C, C++, C\# and Java source code.
+
+Artistic Style may be used and distributed under the GNU General Public
+License (GPL).
+
+Available on the web at
+
+\hyperlink{http://astyle.sourceforge.net}
+
+\subsection{JEDI Code Format (written by Anthony Steele)} The formatter can
+standardise all aspects of Delphi Object Pascal source code formatting,
+including indentation, spacing and capitalisation.
+
+This program is free and open-source. It is covered by the Mozilla Public
+Licence (MPL). I chose this particular open-source license at the suggestion of
+the Delphi-JEDI group.
+
+% \subsection{FavouritesMenu (written by Marc Rohloff)}
+% I often find that the recent files list in C\# Builder no longer contains
+% the files which I most often use. This add-in as an update of the previous
+% version which I had created for Delphi 5. It adds a 'Favourites' menu
+% option in the 'File' menu. But you can make it add a 'Favorites' menu option
+% if you prefer it that way.
+%
+% Needless to say this software is freeware and comes with no warranties against defects or any undesirable side-effects.
+
+\subsection{DILMerge (written by Mauro Venturini)}
+Delphi tradition was to generate a single executable but when strong reasons
+requested separated run time packages. With .NET things are different: a
+typical .NET application consists of an executable assembly, a bunch of
+assemblies in the program directory, and a bunch of assemblies in the GAC. Now,
+ok for the GAC, we have been used to system DLLs for a long time, but that DLLs
+around the executable look so VBish...
+
+Really MS has a assembly linker, ILMerge, that can be downloaded at (please
+read ILMerge.dll.txt)
+http://www.microsoft.com/down\-loads/de\-tails.aspx?Fa\-mi\-ly\-ID=22914587-b4ad-4eae-87cf-b14ae6a939b0\&displaylang=en
+
+ILMerge is a command line tool and its use is a bit akward, so I made a Delphi
+oriented GUI for it: DILMerge.
+
+DILMerge gets a Delphi or C\# project, extracts and shows a list of assembly
+references and suggests which merge together. If necessary the list can be
+adjusted and the ILMerge options tweaked before merging the assemblies and
+generating a good old single file executable. Alternatively the list can be
+manually constructed. When a project is available the options and the merge
+assembly list can be saved inside it and automatically recovered the next time
+the project is open.
+
+\subsection{AddMany (written by Mauro Venturini)}
+\label{sec:addmany}
+When a project has many files the IDE Project Manager dialogs may be quite
+cumbersome. AddMany introduces multiselection dialogs that make adding and
+opening units very fast and easy.
+
+Available on the web at
+\hyperlink{http://cc.borland.com/Item.aspx?id=23368}
+
+\subsection{Clearer (written by Mauro Venturini)}
+History is a great new feature of Delphi 2005. There is only a little drawback:
+after project completion getting rid of all the history files is a bit
+annoying. Clearer makes this more easy.
+
+Copyright (C) 2004 by Mauro Venturini.
+
+\subsection{Icon Browser (written by Kenny Kerr)}
+Created by Kenny Kerr in 2001. The bundled version is slightly modified by Lex
+Mark.
+
+Available on the web at
+\hyperlink{http://www.kennyandkarin.com/Kenny/CodeCorner/Tools/IconBrowser/}
+
+\subsection{Process Checker (written by David Clegg)}
+Utility to monitor whether specified processes are running, and restart them if
+necessary.
+
+Dependant processes can be associated with each monitored process, and these
+dependants will be terminated vefore the monitored process is restarted.
+
+\subsection{ThirdParty.dll}
+\label{sec:thirdparty}
+FormXmlDocPreview unit is in public domain. See its unit header for details.
+
+% AutoCompleteComboBox unit is created by Matt Berther.
+
+\subsection{Tip of the Day}
+This tool is a C\# port of CnPack's TipOfDay unit. Since the original code is
+covered by CnPack IDE Wizards License, I put this piece of software under that
+license, too. See that license in CnPack.txt in doc folder.
+
+ Using VCL classes in WinForms is not my idea. I read that from a BDN Code
+ Central entry \#22691. Its author is Bruce McGee. Thanks Bruce.
+
+
+\subsection{Install, Plus2Plus2, and Templates Tools}
+They are tools used in the installation process, or other purposes written by
+me, \lextm. The code is public domain, you may use and modify it freely.
+
+\end{document}
+% Postamble Section

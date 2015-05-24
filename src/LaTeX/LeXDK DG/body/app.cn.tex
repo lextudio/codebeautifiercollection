@@ -1,0 +1,126 @@
+
+\chapter{Plus\ 注册文件格式}
+
+\newpage
+\section{版本\ I\ 说明}
+从\ 5.1.1\ 版本起，.plus\ 文件格式废止，不再使用。
+
+后面的版本\ II\ 才是当前有效的\ plus\ 注册文件格式。
+
+\subsection{为什么版本\ I\ 十分简单}
+实际上开始设计这个架构的时候我对于自定义文件格式方面的知识没有什么了解。所以我通过一些简单的实验来熟悉这些东西。一个简单的版本就可以提供\ Plus\ 
+所需要的基本的设置能力。作为结果，这个版本的说明如下。
+
+今后的版本应该会复杂很多，不过依然很容易设置。
+
+\subsection{文件后缀}
+.plus\ 就是这个版本文件的后缀。
+
+\subsection{如何生成}
+这是一个文本文件。
+
+文件名需要和对应的\ Plus\ 文件一致。
+
+文件中的每一行代表一个\ feature。
+
+一行需要有两个分号分隔的部分组成。
+
+第一个部分是\ feature\ 类的名字。
+
+第二个部分是一个标志位。设为\ true\ 时启用这个\ feature，否则不启用。
+
+
+例如，这是我给\ Code Beautifiers Plus\ 写的注册文件。
+
+文件名应该是\ Lextm.CodeBeautifiers.Plus.plus。
+
+在文件中仅有一行：
+\code{
+  Lextm.CodeBeautifierCollection.Features.Code\-Beauti\-fiers;\-true
+}
+
+\section{版本\ II\ 说明}
+
+\subsection{版本\ I\ 中没有实现的功能}
+版本\ I\ 实现了基本的功能。但是，还不能很容易的通过一个\ GUI\ 界面的工具来设置（当然最后我还是设法写出了\ Plus 
+Manager），因为这个版本还缺乏不少的灵活性。所以新版本包含更多新的内容。
+
+有时候在\ BDS 1\ 中启用一个\ feature\ 而在\ BDS 2\ 中禁用它会是十分合适的。所以版本\ II\ 考虑了这一需求。例如\ 
+WiseEditor Plus\ 中的\ FileWizards\ 特性，由于一些\ OTA\ 接口的原因不能在\ BDS 1.0\ 上使用。所以，针对\ 
+BDS\ 版本设置激活/禁用选项是十分必要的。
+
+同时，应该还有一些和当前\ personality\ 相关的启用/禁用设置。这样的需求将会在这一版本或者今后的版本\ III\ 中实现。
+
+为了让这个版本更加强大，简单的文本文件或许不合适。XML\ 格式是最后的选择。.plus2\ 文件实际上是一个\ XML\ 文件。
+
+
+\subsection{文件后缀}
+.plus2\ 就是这个版本的文件后缀。
+
+\subsection{如何生成}
+\begin{quote}
+  \begin{flushleft}
+\begin{sffamily}
+$<$Plus2$>$\\
+\tab $<$ModuleName$>$G:$\backslash$lextm$\backslash$SharpDevelop 
+Projects$\backslash$XmlReader$\backslash$bin$\backslash$Debug$\backslash$Lextm.CodeBeautifiers.Plus$<$/ModuleName$>$\\
+\tab $<$Name$>$CodeBeautifiers$<$/Name$>$\\
+\tab $<$Features$>$\\
+\tab \tab $<$Feature2$>$\\
+\tab \tab \tab $<$EnabledRecords$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$1$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$2$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$3$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab \tab $<$EnabledRecord$>$\\
+\tab \tab \tab \tab \tab $<$Version$>$4$<$/Version$>$\\
+\tab \tab \tab \tab \tab $<$Enabled$>$true$<$/Enabled$>$\\
+\tab \tab \tab \tab $<$/EnabledRecord$>$\\
+\tab \tab \tab $<$/EnabledRecords$>$\\
+\tab \tab \tab $<$Name$>$Lextm.CodeBeautifierCollection.Features.
+Code\-Beaut\-ifi\-ers$<$/Name$>$\\
+\tab \tab \tab $<$Description$>$This feature invokes several tools to format 
+current file or projects.\\
+Ctrl + W is its shortcut.$<$/Description$>$\\
+\tab \tab $<$/Feature2$>$\\
+\tab $<$/Features$>$\\
+$<$/Plus2$>$
+\end{sffamily}
+\end{flushleft}
+\end{quote}
+
+上面展示的是一个\ .plus2\ 文件的例子。
+
+该文件名是\ Le\-xtm.Co\-de\-Beautifiers.Plus.plus2。
+
+文件名需要和对应的\ plus\ 文件一致。
+
+在加载时，这个文件被反序列化为一个\ Plus2\ 类型的对象。
+
+$<$Plus2$>$\ 标签标明这是一个\ Plus2\ 对象。
+
+$<$ModuleName$>$\ 标签对应\ plus assembly\ 的名字。
+
+$<$Name$>$\ 标签存储了\ plus\ 的名称。
+
+$<$Features$>$\ 标签存储了许多\ Feature2\ 类型的对象。
+
+$<$Feature2$>$\ 标签标识一个\ Feature2\ 对象。
+
+$<$EnabledRecords$>$\ 存储了一些\ EnabledRecord\ 对象。
+
+$<$EnabledRecord$>$\ 标签表示一个\ EnabledRecord\ 对象。
+
+$<$Version$>$\ 标签对应相应的\ IDE version，从\ 1\ 到\ 5。
+
+$<$Enabled$>$\ 标签是激活/禁用标志，设为\ true\ 或\ false。
+
+$<$Name$>$\ 和\ $<$Description$>$\ 标签存储\ feature\ 信息。

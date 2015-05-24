@@ -1,0 +1,313 @@
+\chapter{步骤}
+CBC~是我可以给与你的最好的范例。以我所写的~minus/plus~为例子，例如~C\#Builder Goodies Plus 
+(Lextm.CSBuilderGoodies.Plus.dll)。
+
+\section{如何开始一个~Plus}
+每一个~plus~都包含至少一个特性。在我的计划中，C\#Builder Goodies Plus~仅仅包含有一个特性。 
+这个特性包含了原本属于~C\#Builder Goodies 1.1~的''Doc Preview''功能。
+
+\subsection{第一个\ Plus}
+在~SharpDevelop~(或者其他~C\# IDE)中建立一个空的工程，名称是~Lextm.CS\-Builder\-Goodies.Plus。
+
+\boxing{Plus\ 被作为名称的最后一部分，以表明这是一个\ Plus\ 工程。Lextm\ 被使用是因为\ \lextm\ 是作者。}
+
+\subsection{你的第一个特性}
+添加一个名为~CSBuilderGoodiesFeature~的类。它的基类是~CustomFeature。
+
+\code{ public class CSBuilderGoodiesFeature : CustomFeature \{ //\ldots \} }
+
+CustomFeature~应该作为每一个特性的基类。这个类型实现了~ILoadableFeature~接口。
+
+上面建立的是一个空的类。下面我们需要填充它。
+
+从版本~5.3.1.1124~开始这个类不再需要实现~Singleton~模式，但是必须有一个公开的无任何参数的构造器：
+
+\code{ public CSBuilderGoodiesFeature( ) \{ //\ldots \}}
+
+
+以下是进一步开发时需要考虑的一些细节问题：
+
+\begin{description}
+  
+  \item[菜单项] 菜单项是特性与~IDE~间的桥梁。在特性中定义你需要的菜单项，LeXDK~会按照你 的定义来创建这些菜单项。
+  
+  \item[首选项] 一般的特性都需要管理首选项。你可以使用内建的管理服务或者自行管理。
+  
+  \item[Plus2~注册文件] 它是~LeXDK~用来注册各个~Plus~的关键信息。Framework~需要读取 
+  注册文件以便加载各个~Plus。没有注册文件的~Plus~会被认为是无效的，不会被正确加载。
+  
+  \boxing{由于~.plus2~文件独立于~plus~工程，所以，相关细节请参见附录。}
+\end{description}
+
+上面提及的内容将会在下面的各个小节中予以详细说明。
+
+\section{定义菜单项}
+\code{ //Taken from CSBuilderGoodies Plus.\\
+private const int DefaultViewDocShortcut = SharedNames.ALT + (int)Keys.Q;\\
+private const string MenuViewDoc = "CBCExpertViewDocMenu";\\
+private const string MenuLeXtudio = "CBCLeXtudioMenu";\\
+
+private const string MenuTextViewDoc = "View Doc";\\
+/// $<$summary$>$\\
+/// Registers menus.\\
+/// $<$/summary$>$\\
+protected override void IDERegisterMenus()\\
+\{\\
+
+\tab base.IDERegisterMenus();\\
+
+\tab // View Doc\\
+\tab RegisterMenu(\\
+\tab \tab CreateActionMenu(\\
+\tab \tab \tab MenuItemLocation.Child,\\
+\tab \tab \tab MenuLeXtudio,\\
+\tab \tab \tab MenuViewDoc,\\
+\tab \tab \tab DefaultViewDocShortcut,\\
+\tab \tab \tab MenuTextViewDoc,\\
+\tab \tab \tab new EventHandler(DoViewDoc)\\
+\tab \tab )\\
+\tab );\\
+
+\}\\
+
+private static void DoViewDoc(object sender, EventArgs e) \{\\
+\tab CsbGoodies.QuickdocViewer.Activate();\\
+\}\\
+}
+
+共有四类菜单对象可以定义，分别是~Action\-Menu，Emyty\-Menu，Separator\-Menu，和~Place\-Holder\-Menu。
+\begin{description}
+  \item [Action Menu] 一个带有回调函数/事件响应函数的菜单。
+  \item [Empty Menu] 例如~LeXtudio~菜单项，单击它不会触发任何事件响应，而下级菜单将会显示出来。
+  \item [Separator Menu] 会被转化为菜单中的一个分隔符。
+  \item [PlaceHolder Menu] 不会被转化为一个实际的菜单项。它们仅仅是作为占位符。菜单树的根节点就是一个不错的例子。
+  
+\end{description}
+
+在上面的例子中，C\#Builder Goodies Plus~创建了一个名叫''View Doc''的~IDE~菜单项。
+
+首先，重载名叫~IDERegisterMenus~的函数，你需要在这里创建所需要的菜单项。
+
+\boxing{开头的时候调用基类的同名函数(尽管当前是空的)以防止我今后在里面添加新的内容。}
+
+RegisterMenu~函数调用的目的是为你注册一个菜单。把一个菜单对象作为参数传给它。
+
+一个类别的菜单对象可以通过调用对应的函数来创建，例如~CreateActionMenu。
+
+这里，Doc Preview~菜单项通过调用~CreateActionMenu~函数创建的，作为~MenuLeXtudio~的子项。
+它的名字是~MenuViewDoc。 它的快捷键是~DefaultViewDocShortcut，而菜单上的内容是~MenuTextViewDoc。
+当你在~IDE~中最终单击这个菜单项，DoViewDoc~将被启动。
+
+\boxing{由于~Galileo OTA~的限制，菜单的名字，MenuViewDoc，不能够包含''.''(否则会出现运行时错误)。}
+\section{管理特性的首选项}
+现在~LeXDK~提供首选项注册表（Property Registry）来提供基本的管理服务。如果你需要更高级的服务，你可以自己管理，并且连接到~LeXDK。
+
+\boxing{什么是首选项呢? 一般来说，首选项指的是就是用户设置。首选项在~IDE~启动时被加载，并在合适的时机保存。}
+
+现在只有简单类型的选项，例如~int、char、string、bool~和~enum~等，可以使用属性注册表来管理。
+CBC~自带的多数特性都采用了一样的方法来管理选项。
+
+假设你使用了复杂类型的选项，例如~list、array、table~或其他，那么你最好自行管理它们。FavoritesFeature~和~ 
+ComponentNamerFeature~两个特性就是很好的例子。
+
+\subsection{使用~LeXDK~的属性注册表}
+
+每当你需要读取一个选项，例如~AStyle~可执行文件的路径，你可以呼叫属性注册表。 
+PropertyRegistry.Get(''AStylePath'')就会得到已保存的路径信息（如果没有相关记录，则会返回~null）。
+安全起见，呼叫时可以加上默认值，例如~PropertyRegistry.Get(''AStylePath'', 
+''C:$\backslash \backslash$'')，这样一旦没有相关记录，
+那么你给出的默认值将会被返回。保存选项时使用~PropertyRegistry.Set(''AStylePath'', 
+''C:$\backslash \backslash$'')。
+
+\subsection{高级管理}
+如果需要自行管理选项，那么在特性类型中~LoadPreferences, 
+SetDefaultPreferences~以及~SavePreferences~三个函数需要被重载。
+
+一般来说你有很多方法来实现对首选项的管理，但是我推荐~David~在~Sharp Builder Tools~中使用的方式。
+
+定义一个首选项类型（名字任意），然后将它标记为~[Serializable]。由于~.NET~的要求，这个类需要一个~public~构造器。 
+下面的例子来自~ComponentNamerFeature~特性类，表明了如何正确的读写设置。
+
+\code{ [System.Serializable]\\ public sealed class Preferences \{\\
+
+\tab private ControlPrefix[] controlPrefixes;\\
+
+\tab public ontrolPrefix[] ControlPrefixes \{\\
+\tab \tab get	\{\\
+\tab \tab \tab return controlPrefixes;\\
+\tab \tab \}\\
+\tab \tab set \{\\
+\tab \tab \tab controlPrefixes = value;\\
+\tab \tab \}\\
+\tab \}\\
+\tab public Preferences( ) \{	\} \\
+
+\}\\
+
+public static Preferences Options;
+
+public override void LoadPreferences( ) \{\\
+\tab base.LoadPreferences();\\
+\tab Options = SerializationService.Load(this.GetType(),\\
+\tab \tab typeof(Preferences)); \\
+\}\\
+public override void SavePreferences( ) \{\\
+\tab base.SavePreferences(); \tab SerializationService.Save(this.GetType(), \\
+\tab \tab Options));\\
+\}\\
+public override void SetDefaultPreferences( ) \{\\
+\tab base.SetDefaultPreferences();\\
+\tab	if (options == null)\\
+\tab	\{\\
+\tab \tab		options = new Preferences();\\
+\tab \tab		options.ControlPrefixes = new ControlPrefix[0];\\
+\tab	\}\\
+
+\tab	if (options.ControlPrefixes == null\\
+\tab \tab			$||$ options.ControlPrefixes.Length == 0) \\
+\tab    \{\\
+\tab \tab       ArrayList list = new ArrayList();\\
+
+\tab \tab        list.Add(new ControlPrefix("bt", "Button"));\\
+\tab \tab        list.Add(new ControlPrefix("chk", "CheckBox"));\\
+\tab \tab        list.Add(new ControlPrefix("cb", "ComboBox"));\\
+\tab \tab        list.Add(new ControlPrefix("lv", "ListView"));\\
+\tab \tab        list.Add(new ControlPrefix("txt", "TextBox"));\\
+
+\tab \tab		options.ControlPrefixes =\\
+\tab \tab \tab (ControlPrefix[]) list.ToArray(typeof(ControlPrefix));\\
+\tab     \}\\
+\}\\
+}
+
+
+这是你的代码中需要使用首选项对象的地方就应该使用~Options。
+
+如果你需要在特性类之外使用这个首选项对象，此时你需要首先得到这个特性类的一个对象。这可以通过
+使用特性注册表（Feature Registry）来得到。给~FeatureRegistry.GetFeature~传一个完整
+的类型名称，那么你需要的对象会以~ILoadableFeature~形式返回。
+
+\subsection{在\ Global Preferences Dialog\ 中注册选项页}
+\code{ //Taken from CodeBeautifiers Plus.\\
+private const string TabAStyle = "AStyle";\\
+private const string TabJcf = "JCF";\\
+private const string TabCBGeneral = "Beautifiers";\\
+protected override void IDERegisterTabs() \{\\
+\tab base.IDERegisterTabs();\\
+\tab RegisterTab(CreateTabNode(TabCBGeneral, 
+typeof(Gui.CodeBeautifiersGeneralPage)));\\
+\tab RegisterTab(CreateTabNode(TabCBGeneral, TabAStyle, 
+typeof(Gui.AStylePage)));\\
+\tab RegisterTab(CreateTabNode(TabCBGeneral, TabJcf, typeof(Gui.JcfPage)));\\
+\}\\
+}
+
+一般来说需要设计一个窗体，以便用户修改首选项。你可以在~LeXDK~的~FormPreferences~中注册一页，或者自己注册。
+
+上面的代码就注册了~FormPreferences，共有三个页面。你可以从中看出两种页面来:
+
+\begin{description}
+  \item[没有上层节点的页面] 这样的页面会被~LeXDK~创建在''Features''节点下面，
+  例如这里的''Beautifiers''。
+  
+  \item[有上层节点的页面] 其他两页都是这样的，它们的上层节点是''Beautifiers''。
+\end{description}
+
+你需要添加对应的页面类型作为第二个或第三个参数（忽略的话这个页面将是空的），这些类型
+的实例将由~LeXDK~稍后创建。
+
+页面类型必须继承于~LeXDK~中的~CustomPage~类型。这一类型其实是用户控件（User 
+Control），所以可以使用窗体设计器来设计。
+\boxing{你不再需要重载~IDERegisterComponents~方法，它已经被删除了。}
+
+最后，需要将首选项和这个页面关联。关联是通过重载~PreferencesToUI~和~UIToPreferneces~两个函数实现的。 \code{ 
+
+public override void PreferencesToUI( ) \{\\
+\tab base.PreferencesToUI();\\
+\tab switch ((ParentType)PropertyService.Get("ParentType", ParentType.Default)) 
+\{\\
+\tab \tab case ParentType.Tools:\\
+\tab \tab \tab rbUnderTools.Checked = true;\\
+\tab \tab \tab break;\\
+\tab \tab case ParentType.CNPack:\\
+\tab \tab \tab rbUnderCnPack.Checked = true;\\
+\tab \tab \tab break;\\
+\tab \tab default:\\
+\tab \tab \tab rbNewMenu.Checked = true;\\
+\tab \tab \tab break;\\
+\tab \}\\
+\}\\
+
+public override void UIToPreferences( ) \{\\
+\tab base.UIToPreferences();\\
+\tab PropertyService.Set("ParentType", GetCurrentParentType());\\
+\}\\
+}
+\subsection{不注册\ Global Preferences Dialog\ 的方式}
+你或许会喜欢用一个独立的对话框让特性的用户设置特性选项部分。这也是一个不错的选择。
+在你的~Plus~里面设计一个这样的对话框，然后在你的特性里面加入一个管理用的菜单项来激活这个对话框。
+
+当然还有其它方式。如果你看看~ArtCSB Plus，你可以看到这一部分代码允许用户通过操作~Designer 
+Navigator Form~来修改设置。
+
+\section{Assembly~信息}
+我建议你为所写的\ plus\ 提供下面的信息。
+
+\code{ using System.Reflection;\\
+using System.Runtime.InteropServices;\\
+using System;\\
+using System.Runtime.CompilerServices;\\
+
+[assembly: AssemblyCulture("")]\\
+
+[assembly: ComVisible(false)]\\
+
+[assembly: CLSCompliant(true)]\\
+
+[assembly: AssemblyTitle("*")]\\
+
+[assembly: AssemblyDescription("A Plus for CBC.$\backslash$r$\backslash$n" + 
+"Codename: *$\backslash$r$\backslash$n" + "Written by *.")]\\
+
+[assembly: AssemblyConfiguration("*")]\\
+
+[assembly: AssemblyVersion("*.*.*.*")]\\
+
+[assembly: AssemblyProduct("***")]\\
+
+[assembly: AssemblyCompany("*")]\\
+
+[assembly: AssemblyCopyright("All Right Reserved. Copyright (C) ****-****, 
+*")]\\
+
+[assembly: AssemblyTrademark("*")]\\
+}
+
+一般来说\ Culture\ 应该空着。Title\ 作为一个很短的\ plus\ 名字，而\ Product\ 则是一个完整的名字。Description\ 
+包含对于这个\ plus\ 的描述。对于\ feature\ 的描述添加在\ .plus2\ 文件中。
+
+Configuration\ 用来标明授权协议。你可以使用开源或其他有效的协议。
+
+Version\ 是这个\ plus\ 文件的版本号。
+
+其他的内容你可以自由添加。
+
+上面你提供的信息会被~Utilities Plus~的~Plus Manager~特性显示出来。
+
+\section{更多}
+记住这是一个\ SDK for .NET OTA，任何\ .NET\ 语言都可以用来开发，甚至可以混合多种语言。例如，AddMany 4.1\ 是由\ 
+Delphi for .NET\ 开发的，而我做的封装是纯粹的\ C\#.
+
+SDK\ 本身可以通过加入更多的类来实现扩展。这些类可以放在\ Minus\ 工程中(当然通过加入新的~Minus~这 减少了\ OTA\ 开发的复杂度)。
+
+我选择\ GPL/LGPL\ 就是为了让这个\ SDK\ 永远开源。但是使用~LeXDK~开发的~Minus~和~Plus~项目应该不 
+受它们的限制，也就是说你可以使用~LeXDK~来开发非开源的特性。
+
+这个~SDK~现在仍然在它的初级阶段。我写的更多有意思的~feature~或者库还不是十分的成熟，所以没有加入。 
+所以，继续等待，或者加入进来。如果你创作了一个~Minus~或者~Plus，把它发给我(有无源代码并不重要)。我 
+可以在~CBC~的主页上面发布相关的消息，让别人了解你的工作。
+
+另外我必须强调，在~LeXDK~的早期，很多内容可能经常变动，所以，请注意始终以最新版本的指南为准，较老的版 
+本可能已经过时了。而且，应该以英文版本的内容为准，因为很多时候中文翻译版本都是最后更新的。
+
+让我们建立一个我们的社群好了。

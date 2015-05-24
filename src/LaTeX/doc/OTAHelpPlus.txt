@@ -1,0 +1,7 @@
+This document is served as a supplement for OTA help file.
+
+1. How you get IOTAModule from IOTAModuleInfo?
+
+Answer: IOTAModuleInfo.OpenModule() will open the file in Editor and return the IOTAModule for you. But maybe you do not want the file to be opened.
+	IOTAModuleServices.FindModule(IOTAModuleInfo.FileName) will find only opened file module in Editor. If the file is not opened, null is returned.
+	It is strange that IOTAModuleServices.OpenModule will find the module for you without the file opened. And more accurately speaking, the file is ''opened'' but ''invisible'' in the Editor according to the help file. However, I find it the method I need in fact. This method is used in File Aid feature to determine whether a file is a form.

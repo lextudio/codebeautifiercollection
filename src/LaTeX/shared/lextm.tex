@@ -1,0 +1,69 @@
+\newcommand{\pic}[3]{
+	\begin{figure}[!htp]
+		\begin{center}
+			\includegraphics[#3]{images/#1}
+			\caption{#2}
+		\end{center}
+	\end{figure}
+}
+\newcommand{\picnocaption}[1]{
+	\begin{figure}[!htp]
+		\begin{center}
+			\includegraphics{images/#1}
+		\end{center}
+	\end{figure}
+}
+%% cbc picture
+\newcommand{\piccbc} {
+	\picnocaption{cbc36}{}
+}
+
+%% lextm
+\newcommand{\lextm} {\mbox{Lex Y. Li~}}
+
+%% emph
+\newcommand{\key}[1] {
+	\mbox{\emph{#1}}
+}
+%% boxed paragraph
+\newcommand{\boxing}[1] {
+	%% \framebox[\textwidth][r]{#1}\par
+	%% \parbox[c]{8cm}{#1}
+	%% \begin{minipage}[r]{8cm} #1 \end{minipage}
+	\begin{small}
+	\begin{verse}
+	{\em #1}
+	\end{verse}
+	\end{small}
+}
+%% For source code
+\newcommand{\code}[1] {
+	\begin{small}
+	\begin{quote}
+		\begin{flushleft}
+			\begin{sffamily}
+			#1
+			\end{sffamily}
+		\end{flushleft}
+	\end{quote}
+	\end{small}
+}
+%% Tab key alternative
+\newcommand{\tab} {\ \ \ \ }
+
+%% Hyperlink
+\newcommand{\hyperlink}[1] {
+	\begin{center}
+	\underline{#1}
+	\end{center}
+}
+
+\newcommand{\copyclaimer} {
+\newpage
+
+\input{../shared/copyright}
+
+\input{../shared/disclaimer}
+
+\input{../shared/trademarks}	
+}

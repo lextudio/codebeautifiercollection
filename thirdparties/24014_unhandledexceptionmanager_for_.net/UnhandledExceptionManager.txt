@@ -1,0 +1,117 @@
+UnhandledExceptionManager V2.3
+
+When a .NET application hits an unhandled exception the default behaviour is to show a very poor dialog (Form1.jpg). Therefore, it is (or should be) common practice to hook UnhandledException event of the current AppDomain and ThreadException event of Application.
+Unfortunately, there are security restrictions on these hookings that prevent their direct use inside applications that will be run without full trust (and even Local Intranet group does NOT have full trust).
+A solution is to delegate the hookings to a full trusted assembly inside the GAC and reference it. UnhandledExceptionManager is an assembly that implements the technique.
+
+
+Basic usage
+
+First of all copy UnhandledExceptionManager.dll in the target PC and in its GAC (normally this requires administrative privileges)*. Then, reference UnhandledExceptionManager.dll in your application and modify the main program according to the skeletons below. On an unhandled exception a resizable dialog form will be shown with the exception infos (Form2.jpg is a sample).
+
+Delphi.NET application
+
+begin
+  try
+    TExceptionManager.Initialize;
+    <your code here>;
+  except
+    on E: Exception do
+      TExceptionManager.UnhandledExceptionHandler(nil,UnhandledExceptionEventArgs.Create(E,true));
+    else
+      TExceptionManager.UnhandledExceptionHandler(nil,UnhandledExceptionEventArgs.Create(nil,true));
+  end;
+end.
+
+C# application
+
+static void Main(string[] args)
+{
+    try
+    {
+        TExceptionManager.Initialize();
+        <your code here>;
+    }
+    catch (Exception e)
+    {
+        TExceptionManager.UnhandledExceptionHandler(null,new UnhandledExceptionEventArgs(e,true));
+    }
+    catch
+    {
+        TExceptionManager.UnhandledExceptionHandler(null,new UnhandledExceptionEventArgs(null,true));
+    }
+}
+
+* UnhandledExceptionManager.dll can also be local to the application but in that case it will have its same security privileges.
+
+
+Usage details
+
+TExceptionManager is a static class and it must not be instantiated.
+
+procedure Initialize;
+  Hooks the unhandled exception handlers.
+
+procedure UnhandledExceptionHandler(Sender: TObject; Args: UnhandledExceptionEventArgs);
+procedure ThreadExceptionHandler(Sender: TObject; Args: ThreadExceptionEventArgs);
+  These are the actual exception handlers.
+
+property AppDomainUnhandledHooked: Boolean;
+property ApplicationThreadHooked: Boolean;
+  Read only. True if the corresponding event was successfully hooked, false otherwise.
+
+property UserContinue: Boolean;
+  If false an unhandled exception will always produce the termination of the application. If true, when possible, the user can select to continue the execution.
+
+property DefaultInfoManagerType: &Type;
+function AddInfoManagerType(InfoManagerType: &Type): Boolean;
+function RemoveInfoManagerType(InfoManagerType: &Type): Boolean;
+  UnhandledExceptionManager contains a default exception info dialog form whose type can be obtained from DefaultInfoManagerType. It is possible to complement/replace it with a different form or even something completely different (logger, e-mail sender, etc.) by writing new info management classes. These classes must have a parameterless default constructor and must implement IDisposable and IExceptionInfoManager interfaces. IExceptionInfoManager is defined inside UnhandledExceptionManager.dll, for details consult the included source code. AddInfoManagerType/RemoveInfoManagerType adds/removes a info management class to a list inside TExceptionManager. Therefore, to remove the default exception info dialog use RemoveInfoManagerType passing to it DefaultInfoManagerType. For every exception handled all the classes in the list will be instantiated, used and then disposed.
+
+If you do not want to make your application directly dependent on the presence of UnhandledExceptionManager.dll you should use delayed binding. For Delphi.NET applications the unit UnhandledExceptionManager.DelayedBinding implements all the bindings and exports a static class named TExceptionManager as the assembly does. Therefore, to use it simply remove the reference to UnhandledExceptionManager.dll and add the unit to the project.
+The default behaviour of TExceptionManager in case of missing UnhandledExceptionManager.dll is show a explicative dialog and close the application but this can be changed using these properties.
+
+property ExternalAssemblyRequired: Boolean;
+  If false the application is not closed on binding failure.
+
+property Binded: Boolean;
+  Read only. True if binding with UnhandledExceptionManager.dll was successfull, false otherwise.
+
+property UnbindedUnhandledExceptionHandler: procedure (Sender: TOBject; Args: UnhandledExceptionEventArgs);
+property UnbindedThreadExceptionHandler: procedure (Sender: TObject; Args: ThreadExceptionEventArgs);
+  Unhandled exception handlers to be used in case of binding failure. They replace the default handlers. Effective hooking of the events is not guaranteed and can be verified using AppDomainUnhandledHooked and ApplicationThreadHooked.
+
+The new skeleton for a Delphi.NET main program is as below.
+
+begin
+  try
+    TExceptionManager.ExternalAssemblyRequired := false;
+    TExceptionManager.Initialize;
+    <your code here>;
+  except
+    on E: Exception do
+      TExceptionManager.UnhandledExceptionHandler(nil,UnhandledExceptionEventArgs.Create(E,true));
+    else
+      TExceptionManager.UnhandledExceptionHandler(nil,UnhandledExceptionEventArgs.Create(nil,true));
+  end;
+end.
+
+
+As UnhandledExceptionManager.dll is created using Delphi it requires the presence of Borland.Delphi.dll inside the GAC. If this is not desiderd for any reason the merged directory contains a UnhandledExceptionManager.dll that includes a merged copy of  Borland.Delphi.dll and does not require it to be inside the GAC.
+
+Source code is included but to rebuild the assembly a key pair file is required (it can be obtained using the sn.exe .NET SDK utility).
+
+UnhandledExceptionManager.dll was created and tested using Borland Developer Studio V10.0.2288.42451 (Delhi 2006 Update 2) under Windows XP SP2, .NET 1.1 SP1
+Merging of Borland.Delphi.dll was done using DILMerge. DILMerge can be dowloaded at http://cc.borland.com/Item.aspx?id=23227
+
+
+
+
+
+
+
+
+
+
+
+

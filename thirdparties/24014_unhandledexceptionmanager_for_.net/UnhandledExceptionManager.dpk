@@ -1,0 +1,67 @@
+package UnhandledExceptionManager;
+
+
+{$ALIGN 4}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+{$R 'Form\UnhandledExceptionManager.Form.resources' 'Form\UnhandledExceptionManager.Form.resx'}
+
+requires
+  System,
+  System.Drawing,
+  System.Windows.Forms;
+
+contains
+  UnhandledExceptionManager.Base in 'Base\UnhandledExceptionManager.Base.pas',
+  UnhandledExceptionManager.InfoInterface in 'InfoInterface\UnhandledExceptionManager.InfoInterface.pas',
+  UnhandledExceptionManager.Form in 'Form\UnhandledExceptionManager.Form.pas' {UnhandledExceptionManager.Form.TExceptionDialog: System.Windows.Forms.Form};
+
+[assembly: AssemblyDescription('Unhandled Application Exception Manager')]
+[assembly: AssemblyConfiguration('')]
+[assembly: AssemblyCompany('')]
+[assembly: AssemblyProduct('UnhandledExceptionManager')]
+[assembly: AssemblyCopyright('')]
+[assembly: AssemblyTrademark('')]
+[assembly: AssemblyCulture('')]
+
+
+// The Delphi compiler controls the AssemblyTitleAttribute via the ExeDescription.
+// You can set this in the IDE via the Project Options.
+// Manually setting the AssemblyTitle attribute below will override the IDE
+// setting.
+// [assembly: AssemblyTitle('')]
+
+
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion('2.3.1.0')]
+
+end.

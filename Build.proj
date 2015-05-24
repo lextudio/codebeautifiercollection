@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+	<PropertyGroup>
+		<!--<MSBuildPath>"%windir%\microsoft.net\framework\v2.0.50727\msbuild.exe"</MSBuildPath>-->
+		<!--<MSBeeWords>/p:TargetFX1_1=true "/p:CustomAfterMicrosoftCommonTargets=%ProgramFiles%\MSBuild\MSBee\MSBuildExtras.Fx1_1.CSharp.targets" /p:BaseFX1_1OutputPath=bin\</MSBeeWords>-->
+		<SandcastleBuilderPath>"C:\Program Files\SharpDevelop\3.0\bin\Tools\SHFB\SandcastleBuilderConsole.exe"</SandcastleBuilderPath>
+		<ChmFolder>src\chm</ChmFolder>
+		<ChmFile>$(ChmFolder)\ClassReference.chm</ChmFile>
+		<DocFolder>doc</DocFolder>
+		<WorkingFolder>src\chm\working</WorkingFolder>
+	</PropertyGroup>
+	<ItemGroup>
+		<TempFiles Include="$(ChmFolder)\LastBuild.log" />
+		<TempFiles Include="$(ChmFolder)\ClassReference.chm" />
+		<TempFiles Include="$(DocFolder)\ClassReference.chm" />
+	</ItemGroup>
+	<Target Name="Clean">
+		<!--<Exec Command="$(MSBuildPath) $(MSBeeWords) /p:Configuration=Release /t:Clean Lextm.CBC2.Full.sln" />-->
+		<MSBuild Projects="Lextm.CBC2.Full.sln" Targets="Clean" Properties="Configuration=Release" />
+		<MSBuild Projects="Lextm.CBC2.Full.sln" Targets="Clean" Properties="Configuration=Debug" />
+		<!--<MSBuild Projects="Lextm.AddMany.proj" Targets="Clean" />-->
+		<RemoveDir Directories="obj" Condition="Exists('obj')" />
+		<RemoveDir Directories="bin" Condition="Exists('bin')" />
+		<RemoveDir Directories="$(WorkingFolder)" Condition="Exists('$(WorkingFolder)')" />
+		<Delete Files="@(TempFiles)" />
+	</Target>
+	<Target Name="Release">
+		<!--<Exec Command="$(MSBuildPath) $(MSBeeWords) /v:m /p:Configuration=Release Lextm.CBC2.Full.sln" />-->
+	    <MSBuild Projects="Lextm.CBC2.Full.sln" Properties="Configuration=Release" />
+	</Target>	
+		
+	<Target Name="Debug">
+		<!--<Exec Command="$(MSBuildPath) $(MSBeeWords) /p:Configuration=Debug Lextm.CBC2.Full.sln" />-->
+	    <MSBuild Projects="Lextm.CBC2.Full.sln" Properties="Configuration=Debug" />
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Sandcastle">
+		<MakeDir Directories="$(DocFolder)" Condition="!Exists('$(DocFolder)')" />
+		<Copy SourceFiles="$(ChmFile)" DestinationFolder="$(DocFolder)" 
+		      Condition="Exists('$(ChmFile)')"/>
+	</Target>
+		
+	<Target Name="Sandcastle" DependsOnTargets="Release">
+		<!--No longer part of the installer-->
+		<!--<Exec Command="$(SandcastleBuilderPath) $(ChmFolder)\lexdk.shfb" ContinueOnError="true" />-->
+	</Target>
+
+</Project>

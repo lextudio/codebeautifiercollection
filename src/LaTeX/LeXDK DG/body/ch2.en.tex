@@ -1,0 +1,107 @@
+\chapter{History Background}
+\newpage
+\section{OTA for Win32}
+\subsection{Before Delphi 4 (obsolete)} 
+Tool vendors can never meet every needs of their clients. As a result, they
+provide the clients some way to extend the products. Since the very first version of
+Delphi, OTA has been available so that developers could extend the IDE.
+
+The old OTA for Delphi was very complex according to Erik Berry because at the 
+beginning, the Delphi language did not support real interfaces (C++ does not
+support interfaces either). That kind of OTA is not available in Galileo IDE, so
+you cannot use it now, and details of it is not documented here.
+\begin{sffamily} 
+
+\begin{quote} 
+The older OTA is depreciated and should no longer be used except 
+to maintain compatibility with older IDE versions. Support for the old OTA will 
+be dropped in a future version of Delphi, and existing bugs in it are not being 
+fixed. The old Open Tools API consists of the following units: ExptIntf, 
+FileIntf, IStreams, ToolIntf, VcsIntf, VirtIntf.
+\end{quote}
+--- taken from ''Erik's Open Tools API FAQ and Resources'' on 
+\underline{gexperts.org}.
+\end{sffamily}
+
+\subsection{From Delphi 4 On}
+\begin{sffamily}
+\begin{quote} 
+This FAQ only covers the ''new'' Open Tools API (OTA), which 
+consists of the ToolsAPI.pas unit in Delphi 4 or greater and C++Builder 4 or 
+greater. Starting with Delphi 8, there are a few more files such as 
+PaletteAPI.pas and PropInspAPI.pas.
+\end{quote}
+--- taken from ''Erik's Open Tools API FAQ and Resources'' on 
+\underline{gexperts.org}.
+\end{sffamily}
+
+When real interfaces support was added to Object Pascal language, Borland R\&D
+started to provide Open Tools Architecture (for Win32). This ''OTA'' is too
+powerful to miss. However, it is hard to master. Once you know a lot about it,
+you can do some amazing things.
+
+CodeRush was one of the famous Delphi plug in. Its author, Mark Miller, used OTA
+very well and designed a flexible architecture for CodeRush. The users of
+CodeRush could even write plug in to extend CodeRush. This is why Mark invented
+a series of APIs himself, named RushAPI (for Win32). Before Delphi 8 was
+shipped, Mike's company was Merged with Developer Express, Inc. Since then no
+breaking version of CodeRush had come except the versions for Visual Studio
+.NET. It is said that CodeRush used too much subclassing so when Galileo came it
+was rather hard to port to the new IDE. It is a pity that we cannot use CodeRush
+or RushAPI to extend Delphi 8/2005/2006.
+
+Later other commercial OTA products such as Castalia has implemented similar 
+architectures. However, they are not open to other developers compared to CodeRush.
+
+Open source experts like GExperts and CnPack IDE Wizards are easy to extend, but
+still not as flexible as CodeRush. The main problem is that you can not just
+write a plug in for them which is loaded by them at run time. New features
+should be added in the project and compile with others.
+
+In all, I found no easy way to build an SDK for OpenTools development in Win32
+world.
+
+\section{OTA for .NET}
+First introduced in C\#Builder 1.0, Borland Developer Studio IDE offers OTA for 
+.NET, or Managed OTA, or Galileo OTA. This helps C\# users to extend the IDE.
+And there was even a contest for writing such kind of experts.
+
+When designing ConvertAddIn and FavouritesMenu, Marc Rohloff had implemented a 
+special architecture for his .NET OTA tools. It is open source but I don't 
+notice its existence until recently. I am already on SBT's way so far and I 
+cannot turn back. Mark's architecture reduces dependency on OTA APIs, but I 
+don't know whether I can build LeXDK upon his architecture. Marc won the second
+prize in the contest for his Favourites Menu.
+
+David Hervieux created Sharp Builder Tools for C\#Builder since its version 1. 
+The latest version of SBT is 3.1. This version is too old to support Delphi 
+2005/2006 (in fact after only a few modifications it can). Although David won 
+the first prize in the OTA contest held by Borland, he failed to continue this 
+project for ''too many problems with Borland''.\footnote{See License.pdf for 
+details.}
+
+After digging David's codebase I found it was easy to extend SBT, too. Code
+Beautifier Collection (originally named JCFExpert) was built then. At that
+moment, I had to mix my code with David's. That is why I decided to bring the
+codebase further to make an SDK for building OpenTools immediately. 
+
+David has set up a lot of patterns, while .NET Framework provides powerful
+reflection interfaces, it is easy to make a plug-in architecture come true at
+last. It can really reduce the complexity of extending the Galileo IDE. So I
+build later versions of Code Beautifier Collection on this SDK. This SDK is
+officially named as LeXtudio OpenTools SDK, LeXDK for short.
+
+Many people may fear to use this SDK because they think it reduces their freedom. 
+Actually, LeXDK does not prevent you from developing directly with Galileo OTA.
+You can directly use OTA when you develop a feature. Many existing features serve as
+good examples. Using LeXDK, you can get rid of duplicate code and enjoy a lot of
+generic services, such as logging and preference management.
+
+There are still some limitations, but they are temporary because I have not got
+time to implement certain features.
+
+Remember this SDK is improving in every new versions.
+
+This document focuses on telling you how to start a plug in project for LeXDK,
+or Code Beautifier Collection. In this way you can easily extend the function of
+Galileo IDE without starting from the scratch.

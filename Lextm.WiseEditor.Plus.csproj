@@ -1,0 +1,295 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5CEE57FA-81BD-4BFA-8DB7-5F693852FCC7}</ProjectGuid>
+    <RootNamespace>Lextm.WiseEditor</RootNamespace>
+    <AssemblyName>Lextm.WiseEditor.Plus</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnSuccessfulBuild</RunPostBuildEvent>
+    <NoConfig>false</NoConfig>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>False</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NMock2">
+      <HintPath>lib\NMock2.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDevTools">
+      <HintPath>lib\SharpDevTools.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Design">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Borland.Studio.ToolsAPI">
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VistaApi">
+      <HintPath>lib\VistaApi.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Lextm.WiseEditor</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\FormFavorites.resx">
+      <DependentUpon>FormFavorites.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\ComponentNamerPage.resx">
+      <DependentUpon>ComponentNamerPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\FormFileAid.resx">
+      <DependentUpon>FormFileAid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\WinMergePage.resx">
+      <DependentUpon>WinMergePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\NotificationPage.resx">
+      <DependentUpon>NotificationPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\FormNewPrefix.resx">
+      <DependentUpon>FormNewPrefix.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\wiseeditor\gui\FormComponentName.resx">
+      <DependentUpon>FormComponentName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\assemblyinfo\Common.cs" />
+    <Compile Include="src\assemblyinfo\LeXtudio.cs" />
+    <Compile Include="src\assemblyinfo\wiseeditor.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\helpers\SortHelpers.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\ProjectAidFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\AndSpec.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\FileNameSpec.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\ModuleFinder.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\ModuleRegistry.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\ProjectSpec.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\Spec.cs" />
+    <Compile Include="src\lextm\wiseeditor\fileaid\TypeSpec.cs" />
+    <Compile Include="src\lextm\wiseeditor\gui\FormFileAid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\gui\NotificationPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\gui\WinMergePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\gui\ComponentNamerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\ControlPrefix.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\ComponentNamerFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\ExtraFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\SpellCheckerFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\WinMergeFeature.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\tools\winmerge\WinMerge.cs" />
+    <Compile Include="src\lextm\wiseeditor\gui\FormFavorites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\gui\FormNewPrefix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\gui\FormComponentName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\wiseeditor\feature\FavoritesFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\XmlFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\ClipboardWatcherFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\ColorPalletteFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\ShellLauncherFeature.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\FileAidFeature.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmCopyFileName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmFileList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmFileProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmMissingFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmSaveFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmSelectXsdFileName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmSortOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmToolBoxManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmViewHexaDump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmViewXmlFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmCopyFileName.resx">
+      <DependentUpon>FrmCopyFileName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmFileList.resx">
+      <DependentUpon>FrmFileList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmFileProperties.resx">
+      <DependentUpon>FrmFileProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmMissingFiles.resx">
+      <DependentUpon>FrmMissingFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmSaveFiles.resx">
+      <DependentUpon>FrmSaveFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmSelectXsdFileName.resx">
+      <DependentUpon>FrmSelectXsdFileName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmSortOptions.resx">
+      <DependentUpon>FrmSortOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmToolBoxManager.resx">
+      <DependentUpon>FrmToolBoxManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmViewHexaDump.resx">
+      <DependentUpon>FrmViewHexaDump.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmViewXmlFile.resx">
+      <DependentUpon>FrmViewXmlFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="src\lextm\wiseeditor\projectaid\Generator.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\IGenerator.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\IHandler.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\IUser.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\Manner1xHandler.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\Manner20SignedHandler.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\Manner20UnsignedHandler.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\OptionSet.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\ProjectRecord.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\HandlerFactory.cs" />
+    <Compile Include="src\lextm\wiseeditor\projectaid\User.cs" />
+    <Compile Include="src\lextm\wiseeditor\tool\PEVerify.cs" />
+    <Compile Include="src\lextm\wiseeditor\feature\EditorAidFeature.cs" />
+    <Compile Include="src\bewise\sharpbuildertools\gui\FrmClipBoardViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestHandlerFactory.cs" />
+    <EmbeddedResource Include="src\bewise\sharpbuildertools\gui\FrmClipBoardViewer.resx">
+      <DependentUpon>FrmClipBoardViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Lextm.WiseEditor.Plus.plus2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="lextmkeyfiles\PublicPrivateKeyFile.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BeWise.SharpBuilderTools.Minus.csproj">
+      <Project>{C238A1A6-DE61-4729-8569-7041E2AC6C48}</Project>
+      <Name>BeWise.SharpBuilderTools.Minus</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+      <Name>Lextm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.OpenTools.Core.csproj">
+      <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
+      <Name>Lextm.OpenTools.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="thirdparties\NetSpell.SpellChecker\NetSpell.SpellChecker.csproj">
+      <Project>{A426EE0B-E52E-4D74-AF24-06797142D7B2}</Project>
+      <Name>NetSpell.SpellChecker</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

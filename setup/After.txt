@@ -1,0 +1,11 @@
+Thanks for choosing Code Beautifier Collection.
+
+It is maintained by Lex Y. Li (lextm). If you have problems and suggestions, please don't hesitate to contact him.
+
+E-mail Address: lextudio@gmail.com (please use a title beginning with "[CBC 2]")
+
+Author's Blog: http://lextm.cn
+
+Homepage: http://code.google.com/p/lextudio
+
+Happy Coding :-)

@@ -1,0 +1,69 @@
+\documentclass[CJK*, a4paper]{book}
+
+\input{../shared/package.cn}
+\input{../shared/lextm}
+\input{../shared/fancyhdr}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\author{\lextm}
+\title{Code Beautifier Collection User Manual\\Bilingual Version}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\copyclaimer
+
+\include{body/author}% me
+
+\input{body/preface}
+
+\begin{CJK*}{GBK}{song}
+
+\input{../shared/toc}
+
+\end{CJK*}
+
+\mainmatter
+%% English part
+\part{English}
+
+\include{body/ch01}% distinct
+% \include{body/ch02}% Features
+\include{body/ch03}% install
+\include{body/ch04}% usage
+% \include{body/ch05}% Compatible
+\include{body/ch06}% tips
+\include{body/ch09}% history
+%% \include{body/ch10}% todo
+\include{body/ch11}% contact
+
+%% \begin{CJK*}{GBK}{song}
+\begin{CJK*}{GBK}{kai}
+
+\part{¼òÌåÖÐÎÄ}
+
+%%\chapternumbering{1} no such a command.
+
+\include{body/ch01.cn}% distinct
+% \include{body/ch02.cn}% Features
+\include{body/ch03.cn}% install
+\include{body/ch04.cn}% usage
+% \include{body/ch05.cn}% Compatible
+\include{body/ch06.cn}% tips
+\include{body/ch09.cn}% history
+%% \include{body/ch10.cn}% todo
+\include{body/ch11.cn}% contact
+
+%% \part{Appendix}
+%% \appendix
+%% \include{body/ch12.cn}% me
+
+\backmatter
+\printindex
+\clearpage
+\end{CJK*}
+\end{document}

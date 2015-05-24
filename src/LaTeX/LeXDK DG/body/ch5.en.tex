@@ -1,0 +1,404 @@
+
+\chapter{Procedures}
+\newpage
+
+The minuses and pluses I wrote are used as the examples, such as the C\#Builder 
+Goodies Plus (contained in Lextm.CSBuilderGoodies.Plus.dll), because they are 
+the best demo I can give you. If you meet a special problem, you can contact me 
+by sending a mail to \underline{lextudio@gmail.com}.
+ 
+\section{How to Start a Plus}
+
+Every plus project should contain at least one feature. In my plan, C\#Builder 
+Goodies Plus only contains a QuickDoc Viewer feature (taken from C\#Builder 
+Goodies 1.1).
+
+\subsection{New Plus Project}
+\index{Plus creation}
+Make an empty .NET 1.1 library project in SharpDevelop (or any other C\# IDE).
+Name it as Lextm.CS\-Builder\-Goodies.Plus.
+
+\boxing{Plus is used as the last part so as to indicate it is a Plus project.
+Lextm is used because \lextm\ is the author.}
+
+\subsection{New Feature Class}
+Add a public class named CSBuilderGoodiesFeature. Its base class should be 
+CustomFeature.\index{feature creation}
+
+\code{ public class CSBuilderGoodiesFeature : CustomFeature \{//...\} }
+
+CustomFeature defined in LeXDK is the base class of every feature. It 
+implements ILoadableFeature interface.
+
+The class you created in last step is empty.
+
+Since version 5.3.1.1124 of LeXDK, it is no longer needed to be made the class 
+Singleton, but you have to make sure that it has a public constructor without 
+arguments (this constructor will be later called by the Framework) :
+
+\code{ public CSBuilderGoodiesFeature( ) \{//...\}}
+
+Before going forward, several design decisions had better be made here:
+
+\begin{description}
+  \item[Menu Items] Menu items build up a bridge that connects a feature to 
+  IDE. You may define necessary menu items in your feature and let LeXDK create 
+  them for you.
+  
+  \item[Preferences] Usually a feature needs preferences management. You can 
+  use the build-in service (defined in PropertyRegistry unit) or do it yourself.
+  
+  \item[Plus2 Registration File] It is required by LeXDK to register a feature
+  and its plus. Since this file is read by the Framework, it is necessary.
+  Pluses without registration files are considered invalid and not loadable.
+  
+  \boxing{Since a .plus2 file is a separate topic, details on it are placed in 
+  appendix.}
+\end{description}
+
+These design topics are described in follwing sections.
+
+\section{Define Menu Items}
+\index{Menu item creation}
+
+\code{ //Taken from CSBuilderGoodies Plus.\\
+private const int DefaultViewDocShortcut = \\
+\tab SharedNames.ALT + (int)Keys.Q;\\
+private const string MenuViewDoc = "CBCExpertViewDocMenu";\\
+private const string MenuLeXtudio = "CBCLeXtudioMenu";\\
+
+private const string MenuTextViewDoc = "View Doc";\\
+
+protected override void IDERegisterMenus()\\
+\{\\
+
+\tab base.IDERegisterMenus();\\
+
+\tab RegisterMenu(\\
+\tab \tab CreateActionMenu(\\
+\tab \tab \tab MenuItemLocation.Child,\\
+\tab \tab \tab MenuLeXtudio,\\
+\tab \tab \tab MenuViewDoc,\\
+\tab \tab \tab DefaultViewDocShortcut,\\
+\tab \tab \tab MenuTextViewDoc,\\
+\tab \tab \tab new EventHandler(DoViewDoc)\\
+\tab \tab )\\
+\tab );\\
+\}\\
+
+private static void DoViewDoc(object sender, EventArgs e) \{\\
+\tab CsbGoodies.QuickdocViewer.Activate();\\
+\}\\
+}
+
+There are four menu types you can define at this moment. They are ActionMenu, 
+EmytyMenu, SeparatorMenu, and PlaceHolderMenu.
+\begin{description}
+  \item [Action Menu] A menu item that can do something (this item must have an 
+  event handler).
+  
+  \item [Empty Menu] An example is the LeXtudio menu item. Click it, and no 
+  action executes and a submenu is shown.
+  
+  \item [Separator Menu] It will be translated to a separator in the menu.
+  
+  \item [PlaceHolder Menu] It will not be translated to a real menu item. They 
+  are place holder when you configure the menu tree storing the menu items. The 
+  ROOT of this tree is a good example.
+  
+\end{description}
+
+In above sample, C\#Builder Goodies Plus defines a ''View Doc'' action menu 
+item. Let us see the steps.
+
+At first, override a function named IDERegisterMenus, and new menu items are 
+defined here (and created internally by LeXDK).
+
+\boxing{Remember to call base function in the front (although the base function 
+is currently empty) in case that I add some lines in future versions of LeXDK.}
+
+RegisterMenu function call makes the menu item you define registered. Send a 
+menu item definition as its parameter. Such a definition (of a specific menu 
+type) can be created by calling a corresponding function, such as 
+CreateActionMenu.
+
+Here, a Doc Preview action menu item is defined by calling CreateActionMenu. It 
+is a child of MenuLeXtudio, the first menu item of CBC. Its name is 
+MenuViewDoc. Its shortcut is DefaultViewDocShortcut, and the text is 
+MenuTextViewDoc. When you click the menu item finally in IDE, the handler 
+DoViewDoc is called.
+
+\boxing{There is no existing menu name list in this guide. However, you can 
+read CBC source to find such items. Or you may use ''Mix for OTA'', a shortcut 
+the CBC installer adds in your Start Menu.\\SharedNames class contains the 
+most-frequently-used items such as Menu\-LeXtudio.\\According to Galileo OTA 
+constraints, no menu name can contain dots. Otherwise, a run time error occurs.}
+
+\boxing{Also you can see it is not hard to choose a shortcut value.\\SharedNames.ALT + (int)Keys.Q will give you the BDS TShortcut value for Alt + Q combination.}
+
+Notice that if you don't give a shortcut to an item at design time, the users 
+cannot add a shortcut to it later at run time. It is my intention to design 
+LeXDK this way. Also, I suggest you add shortcuts to a very limited range of 
+items. Too many shortcuts may collide.
+
+\section{How to Manage Preferences for a Feature}
+Now basic preferences management service is provided by LeXDK. Meanwhile, if 
+you want advanced service, you can define and implement it, too.
+
+\boxing{What is preferences? It is user options that need to be loaded when IDE 
+starts and saved whenever necessary.}
+
+Up to now, only simple type options can be managed by Property Registry. They 
+are bool, int, double, string, enum, and so on, all of which can be 
+de/serialized. If you look into the code, you will see most build-in features 
+manage their options this way.
+
+But if you have to use complex type options, such as list, array, table, and so 
+on, you'd better manage them yourself at this moment (they cannot be 
+de/serialized properly). FavoritesFeature and ComponentNamerFeature give good 
+examples.
+
+\subsection{Using LeXDK Property Registry}
+
+Wherever you need to load a property, such as AStyle executable, you can call 
+Property Registry. PropertyRegistry.Get(''AStylePath'') will give you the 
+correct path if the value stored somewhere (remember to cast whenever 
+necessary), and null is returned if there is no match. It is usually safer to 
+call with a default value, such as PropertyRegistry.Get(''AStylePath'', 
+''C:$\backslash \backslash$''), as the default value will be returned if there 
+is no match is the registry. To save a property, simply use 
+PropertyRegistry.Set(''AStylePath'', ''C:$\backslash \backslash$'').
+
+\subsection{Advanced Management}
+If you want to manage preferences yourself, you must override LoadPreferences, 
+SetDefaultPreferences, and SavePreferences functions (defined in CustomFeature).
+
+Generally speaking, you can do whatever sensible to manage the options, but for 
+me it is easy to follow the method David used in Sharp Builder Tools.
+
+Define a Preferences class (you can choose any name you like) and mark it as 
+[Serializable] at first. The class must have a public constructor (.NET 
+requirement). The following sample shows how ComponentNamerFeature class uses 
+this service.
+
+\code{ [System.Serializable]\\ public sealed class Preferences \{\\
+
+\tab private ControlPrefix[] controlPrefixes;\\
+
+\tab public ontrolPrefix[] ControlPrefixes \{\\
+\tab \tab get	\{\\
+\tab \tab \tab return controlPrefixes;\\
+\tab \tab \}\\
+
+\tab \tab set \{\\
+\tab \tab \tab controlPrefixes = value;\\
+\tab \tab \}\\
+\tab \}\\
+
+\tab public Preferences( ) \{	\} \\
+
+\}\\
+
+public static Preferences Options;
+
+public override void LoadPreferences( ) \{\\
+\tab base.LoadPreferences();\\
+\tab Options = SerializationService.Load(this.GetType(),\\
+\tab \tab typeof(Preferences));\\
+\}\\
+
+public override void SavePreferences( ) \{\\
+\tab base.SavePreferences(); \tab SerializationService.Save(this.GetType(), \\
+\tab \tab Options));\\
+\}\\
+
+public override void SetDefaultPreferences( ) \{\\
+\tab base.SetDefaultPreferences();\\
+\tab	if (options == null)\\
+\tab	\{\\
+\tab \tab		options = new Preferences();\\
+\tab \tab		options.ControlPrefixes = new ControlPrefix[0];\\
+\tab	\}\\
+
+\tab	if (options.ControlPrefixes == null\\
+\tab \tab			$||$ options.ControlPrefixes.Length == 0) \\
+\tab    \{\\
+\tab \tab       ArrayList list = new ArrayList();\\
+
+\tab \tab        list.Add(new ControlPrefix("bt", "Button"));\\
+\tab \tab        list.Add(new ControlPrefix("chk", "CheckBox"));\\
+\tab \tab        list.Add(new ControlPrefix("cb", "ComboBox"));\\
+\tab \tab        list.Add(new ControlPrefix("lv", "ListView"));\\
+\tab \tab        list.Add(new ControlPrefix("txt", "TextBox"));\\
+
+\tab \tab		options.ControlPrefixes =\\
+\tab \tab \tab (ControlPrefix[]) list.ToArray(typeof(ControlPrefix));\\
+\tab     \}\\
+\}\\
+}
+
+
+Whenever you need to use the preferences object in your code, please refer to 
+Options.
+
+Sometimes you need to use Options somewhere outside the feature class, you want 
+to find the feature object at first. It is easy to do this with the help of 
+Feature Registry (defined in FeatureRegistry unit). Just call 
+FeatureRegistry.GetFeature with the full qualified name of the feature class as 
+the parameter. The object will be returned to you as ILoadableFeature. You can 
+cast it to the type you need.
+
+\subsection{Register a Tab Page to Global Preferences Dialog}
+\index{Tab page creation}
+\code{ //Taken from CodeBeautifiers Plus.\\
+private const string TabAStyle = "AStyle";\\
+private const string TabJcf = "JCF";\\
+private const string TabCBGeneral = "Beautifiers";\\
+protected override void IDERegisterTabs() \{\\
+\tab base.IDERegisterTabs();\\
+\tab RegisterTab(CreateTabNode(TabCBGeneral, 
+typeof(Gui.CodeBeautifiersGeneralPage)));\\
+\tab RegisterTab(CreateTabNode(TabCBGeneral, TabAStyle, 
+typeof(Gui.AStylePage)));\\
+\tab RegisterTab(CreateTabNode(TabCBGeneral, TabJcf, typeof(Gui.JcfPage)));\\
+\}\\
+}
+
+It is common to provide a form that allows users to modified preferences. You 
+can either register a tab page in LeXDK FormPreferences or do such a form 
+yourself.
+
+If you decide to add a tab page to FormPreferences, you can follow the above 
+sample.
+
+In the sample, totally three tab pages are added. You can see two type of tab 
+pages here:
+
+\begin{description}
+  \item[No Parent Tab Page] LeXDK puts this type of tab 
+pages under the ''Features'' item . For example, ''Beautifiers'' is in this 
+type.
+  
+  \item[Tab Page with Parent] Other two tab pages in the sample are in this 
+  type. Their parent is ''Beautifiers''.
+\end{description}
+  
+You should also add a corresponding tab page type as the second or third 
+parameter (omit this Type parameter if this tab node is without a page). Inside 
+LeXDK, the page instance is delay-initialized to speed up loading process.
+
+The tab page classes must be subclasses of CustomPage class in LeXDK, which is
+of type User Control in fact. Only in this way you can use Form Designer to
+visually design the page, which is much easier than old LeXDK methods.
+\boxing{You needn't override IDERegisterComponents now, and it is removed from CustomFeature class.}
+
+At last, you must register the tab page you define to the feature's 
+preferences. PreferencesToUI and UIToPreferneces functions should be 
+overridden in this case. \code{
+
+public override void PreferencesToUI( ) \{\\
+\tab base.PreferencesToUI();\\
+\tab switch ((ParentType)PropertyService.Get("ParentType", ParentType.Default)) 
+\{\\
+\tab \tab case ParentType.Tools:\\
+\tab \tab \tab rbUnderTools.Checked = true;\\
+\tab \tab \tab break;\\
+\tab \tab case ParentType.CNPack:\\
+\tab \tab \tab rbUnderCnPack.Checked = true;\\
+\tab \tab \tab break;\\
+\tab \tab default:\\
+\tab \tab \tab rbNewMenu.Checked = true;\\
+\tab \tab \tab break;\\
+\tab \}\\
+\}\\
+
+public override void UIToPreferences( ) \{\\
+\tab base.UIToPreferences();\\
+\tab PropertyService.Set("ParentType", GetCurrentParentType());\\
+\}\\
+}
+
+\subsection{Without Registering Global Preferences Dialog}
+You may be happier to have a dialog of your own which allows users to configure
+the features. It can be done. Make such a configuration dialog/form in your
+Plus, and define a configuration menu item in your feature which creates the
+dialog for the user.
+
+Also, there are other ways. If you take a look at ArtCSB Plus, you will see how 
+ArtCSB code allows the user to change options from the Designer Navigator Form 
+directly.
+
+\section{About Assembly Info}
+For your plus, I suggest the following items should be 
+contained.\index{Assembly info}
+
+\code{ using System.Reflection;\\
+using System.Runtime.InteropServices;\\
+using System;\\
+using System.Runtime.CompilerServices;\\
+
+[assembly: AssemblyCulture("")]\\
+
+[assembly: ComVisible(false)]\\
+
+[assembly: CLSCompliant(true)]\\
+
+[assembly: AssemblyTitle("*")]\\
+
+[assembly: AssemblyDescription("A Plus for CBC.$\backslash$r$\backslash$n" + 
+"Codename: *$\backslash$r$\backslash$n" + "Written by *.")]\\
+
+[assembly: AssemblyConfiguration("*")]\\
+
+[assembly: AssemblyVersion("*.*.*.*")]\\
+
+[assembly: AssemblyProduct("***")]\\
+
+[assembly: AssemblyCompany("*")]\\
+
+[assembly: AssemblyCopyright("All Right Reserved. Copyright (C) ****-****, 
+*")]\\
+
+[assembly: AssemblyTrademark("*")]\\
+}
+
+Generally speaking, Culture should be left empty. Title is used as a short name 
+for the plus while Product indicates the full name. Description contains simple 
+words you make for the plus. Full description for each feature should be written
+in its .plus2 file instead.
+
+Configuration is used to indicate the license covering the plus code. You can 
+use any proper licenses. 
+
+Version is specific for the plus build.
+
+Others can be filled as you like.
+
+The above information you provide for the plus is used in Plus Manager feature 
+containing in Utilities Plus.
+
+\section{More...}
+Remember that this is an SDK for .NET OTA, any .NET languages can be used and 
+mix-language programming is allowed. For example, AddMany 4.1 is totally in 
+Delphi for .NET with a simple wrapper written in C\#.
+
+The SDK itself can be extended by adding more classes assemblies, or called 
+Minus (which reduces OTA complexity and provides more basic functions and APIs).
+
+You can even extend or reimplement Framework and 
+Lextm.Code\-Beauti\-fier\-Collection.Main in the framework using LeXtudio 
+Wrapping Technology.
+
+Although I choose GPL/LGPL in order to keep the core open source for ever, you
+can still write pluses or minuses (even not open source) to meet your needs.
+
+This SDK now is still in its early age. Many interesting features or libraries 
+I write are not mature enough to be added in. So keep waiting, or take part in. 
+If you write a Minus or Plus, send it to me (binary or source code). I can 
+publish the news on the homepage of CBC so that others know your creation.
+
+I have to announce that in the beginning stage of LeXDK, many names can be 
+changed frequently. So, always refer to the newest Guide, and old versions
+might be out-of-date.
+
+Let us make a community of our own.

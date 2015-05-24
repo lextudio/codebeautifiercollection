@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Utilities</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.Utilities.Feature.ExpertManagerFeature</Name>
+      <Description>This feature provides a tool to enable/disable most Win32 and .NET Experts.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.Utilities.Feature.PlusManagerFeature</Name>
+      <Description>This feature provides a tool to configure pluses and features visually. The changes take place after IDE restarts.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.Utilities.Feature.TipOfTheDayFeature</Name>
+      <Description>This feature displays usage tips.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>false</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.Utilities.Feature.HelpWizards</Name>
+      <Description>This feature adds some useful links under IDE Help menu.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.Utilities.Feature.InDateFeature</Name>
+      <Description>This feature helps you to keep CBC up-to-date. You should have an active Internet connection in advance.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>BagPlug</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.BagPlug.Feature.IconBrowserFeature</Name>
+      <Description>Some projects may contain an important readme file. This feature opens it automatically for you.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.BagPlug.Feature.ReadmeNotifierFeature</Name>
+      <Description>Some projects may contain an important readme file. This feature opens it automatically for you.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.BagPlug.Feature.TypingSpeederFeature</Name>
+      <Description>This feature expands pre-defined templates to speed up typing. At this moment, this function is experimental.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.BagPlug.Feature.SourceNavigatorFeature</Name>
+      <Description>This feature adds a VS-like Source Navigator bar.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.BagPlug.Feature.LineCounterFeature</Name>
+      <Description>This feature shows simple statistics of the solution.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

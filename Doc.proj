@@ -1,0 +1,47 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputPath>.\doc</OutputPath>
+	<LatexFolder>.\src\latex</LatexFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <ExtraFiles Include="$(LatexFolder)\doc\*.*" Exclude="*.xml" />
+		<TempFiles Include="**\*.aux" />
+		<TempFiles Include="**\*.idx" />
+		<TempFiles Include="**\*.log" />
+		<TempFiles Include="**\*.aux" />
+		<TempFiles Include="**\*.toc" />
+		<TempFiles Include="**\*.ind" />
+		<TempFiles Include="**\*.ilg" />
+		<TempFiles Include="**\*.dvi" />
+		<TempFiles Include="**\*.pdf" />
+  </ItemGroup>
+  <Target Name="Clean">
+    <MSBuild Projects="$(LatexFolder)\Readme\readme.proj" Targets="clean"/>
+  	<MSBuild Projects="$(LatexFolder)\manual\manual.proj" Targets="clean"/>
+  	<MSBuild Projects="$(LatexFolder)\lexdk dg\dg.proj" Targets="clean" />
+  	<MSBuild Projects="$(LatexFolder)\license\license.proj" Targets="clean" />
+    <RemoveDir Directories="$(OutputPath)" Condition="Exists('$(OutputPath)')" />
+	<Delete Files="@(TempFiles)"/>
+  </Target>
+  
+  <Target Name="Build" DependsOnTargets="CopyExtraFiles">    
+    <MSBuild Projects="$(LatexFolder)\Readme\readme.proj" />
+  	<MSBuild Projects="$(LatexFolder)\manual\manual.proj" />
+  	<MSBuild Projects="$(LatexFolder)\lexdk dg\dg.proj" />
+  	<MSBuild Projects="$(LatexFolder)\license\license.proj" />
+     <CreateItem Include="$(LatexFolder)\**\*.pdf">  
+         <Output ItemName="PdfFiles" TaskParameter="Include"/>  
+     </CreateItem> 
+	<Copy SourceFiles="@(PdfFiles)" DestinationFolder="$(OutputPath)" />
+  </Target>
+  
+  <Target Name="CopyExtraFiles" DependsOnTargets="CreateOutputPath">
+    <Copy SourceFiles="@(ExtraFiles)" DestinationFolder="$(OutputPath)" />  
+  </Target>
+  
+  <Target Name="CreateOutputPath" Condition="!Exists('$(OutputPath)')">
+    <MakeDir Directories="$(OutputPath)" />
+  </Target>
+	
+
+</Project>

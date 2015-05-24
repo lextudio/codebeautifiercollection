@@ -1,4 +1,0 @@
-Delphi 2005 is named the 'utimate Delphi', but I guess (and proved to be true that) the next version of BDS should be another milestone. At least, C++Builder would be included, too. So, about 4 languages would be possibly present in that IDE. Now, JCF can solve the Delphi languages (both Win32 and .NET), and AStyle is capable of C++/C#. As a result, I decide to make an expert based on SBT source code (where a good plug-in framework is built) which integrates these two command-line tools into Delphi 200X's IDE.
-The reasons are simple: First, I use so many languages and need beautifiers' help; Second, SBT is designed mainly for C# developers, so only C# source code are considered.
-C# will be used to program this expert, because I referred to part of SBT v0.9 (David, I owe you so much), and also I like this language. 
-Code Beautifier Collection Expert, action now!

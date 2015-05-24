@@ -1,0 +1,181 @@
+%\begin{CJK*}{GBK}{song}
+%\section{一般使用}
+\chapter{使用说明}
+\emph{“简单就是完美”}
+
+这就是现代。
+
+\label{cha:commonusagecn}
+\piccbc
+\newpage
+
+\section{主框架}
+
+\begin{description}
+\item[改变菜单位置] 改变\ LeXtudio\ 菜单的位置。
+
+\pic{framework}{设置对话框}{width=0.5\textwidth}
+
+选择''Options $|$ Preferences''菜单项。选择左侧的''Fr\-ame\-work''节点。在右侧的面板中，选择你需要的菜单位置。单击\ OK\ 离开。
+
+该设置在\ IDE\ 重启后生效。
+
+\boxing{首次保存首选项会稍微有点慢。}
+\item[To Change Shortcuts] 修改快捷键。
+
+选择''Options $|$ Shortcuts''菜单项。
+
+\pic{shortcuts}{快捷键对话框}{width=0.5\textwidth}
+
+在对话框的下拉菜单中选择一个菜单项名称，按键选择一个新的快捷键，新的快捷键将在空白中显示。单击~OK~离开，设置立即生效。
+
+\end{description}
+
+
+\section{CodeBeautifiers Plus}
+
+\begin{description}
+
+\item[格式化文件] 格式化一个打开的文件。
+
+\pic{beautify}{Beautify Menus}{width=0.25\textwidth}
+
+在\ IDE\ 中打开一个源代码文件。
+
+单击''Beautify $|$ Document''(或者使用默认的快捷键， Ctrl + W)。
+
+% \boxing{''Beautify''项下的其他菜单用于工程和工程组。但是没有完整的测试过。}
+\item[撤销美化]撤销。
+IDE~默认的撤销操作，Ctrl + Z，现在适用于美化文件。使用这个快捷键，代码编辑器中
+将还原未经美化的代码。
+\item[改变格式化样式] 改变当前使用的格式化样式。
+
+\begin{description}
+
+\item [基本]
+(内置样式)
+
+选择''Options $|$
+Preferences''菜单项。在对话框中单击左侧的''Object
+Pascal''或者''C/C++/C\#''节点。在右侧的面板中选择你需要的样式。单击\ OK\ 离开。
+
+\pic{astylestyles}{AStyle\ 样式}{width=0.5\textwidth}
+
+\pic{jcfstyles}{JCF\ 样式}{width=0.5\textwidth}
+
+
+\item[高级]
+如果你需要自定义的代码样式，请根据下面的线索进行尝试。
+
+对于~C/C++/C\#~代码，请按照基本步骤进入面板，然后选择命令行类型的样式。
+在出现的输入框中输入相应的~AStyle~命令行参数。(修改命令行参数不是很容易。
+你需要仔细学习\ Help\ 文件夹下的相关文件。)
+
+对于~Object Pascal~代码，从6.0开始你可以通过一个样式编辑器来定义自己喜欢的
+样式。首先，请选择~Custom Style~样式，然后点击~Configure~来启动编辑器。
+
+% \boxing{最近这一功能一直没有进一步测试。}
+\end{description}
+
+该设置立刻生效。
+
+\end{description}
+
+\section{AddMany Plus}
+
+\begin{description}
+\item[向工程中加入多个文件] 将多个不同文件夹中的文件加入当前工程。
+
+打开一个工程。
+单击''Add Many to Project\dots''(或者使用快捷键，Ctrl + Alt + A\footnote{这个键与\ GExperts\ 冲突，用户可以重新定义。})。一个选择文件夹的对话框出现。
+
+\pic{browsefolder}{选择文件夹}{width=0.5\textwidth}
+
+选择后单击确定。该文件夹以及子文件夹内所有文件都被列在一个新的对话框中供选择。使用\ Ctrl\ 和\ Shift\ 可实现多选。
+
+\pic{addmanydialog}{AddMany\ 对话框}{width=0.5\textwidth}
+
+单击\ OK\ ，这些文件都被加入工程中。Message Panel\ 中会显示相关信息。
+
+\end{description}
+
+\section{CSBuilderGoodies Plus}
+
+% (Doc Insight~和~Keycode Analyser\ 被禁用。)
+
+\begin{description}
+\item[预览\ XML\ 注释] 在一个预览窗口中预览一段\ XML\ 注释。
+
+打开一个\ C\#\ 文件，并将光标放在一段\ XML\ 注释区域。
+单击''Doc PreView''(或者使用快捷键, Alt + Q)来启动预览窗口。
+
+\pic{docview}{预览窗口}{width=0.5\textwidth}
+
+% Click other forms, and this previewer will hide itself automatically.
+
+\end{description}
+
+\section{WiseEditor Plus}
+
+\begin{description}
+\item[检查拼写] 检查一段文字的拼写。
+
+在编辑器中选择一段文字，然后选择''Spell Check\dots''。
+一个类似\ Word\ 中检查拼写的对话框出现。
+
+\pic{spell}{拼写检查}{width=0.5\textwidth}
+
+\item[Edit\ 菜单] 一些有用的东西。
+
+\pic{edit}{Edit\ 菜单项}{width=0.25\textwidth}
+
+% \pic{filewizards}{文件创建向导}{width=0.5\textwidth}
+
+\item[加速输入] 一些模版会在空格键按下时触发。
+
+例如，在\ C\#\ 文件中，输入\ else，然后按下空格键，一个模版自动完成。
+现在只实现了几个简单模版，而且不能用户自定义。
+
+\boxing{有时候自动完成会失败。}
+\item[收藏夹]提供收藏文件，工程和引用的对话框。
+\item[WinMerge]提供文件比较服务。
+
+\end{description}
+\section{ArtCSB Plus}
+\begin{description}
+  \item[文档大纲] 在编辑~WinForms~或者~WebForms~时，提供树结构浏览支持，类似~Visual Studio~的~Document
+  Outline~特性。
+\end{description}
+
+\section{Utilities Plus}
+
+\begin{description}
+\item[每日一帖] 显示一些有用的提示。
+
+\pic{tipoftheday}{每日一帖}{width=0.5\textwidth}
+
+\item[插件管理] 管理\ IDE\ 的插件。
+
+\pic{expertmanager}{插件管理}{width=0.5\textwidth}
+
+\item[Plus\ 管理] 管理\ CBC\ 的\ plus\ 和特性。
+
+\pic{plusmanager}{Plus\ 管理}{width=0.5\textwidth}
+
+% \item[帮助菜单项] 一些有用的菜单项被添加到\ IDE\ 的\ Help\ 菜单下面。
+%
+% \pic{help}{Help\ 菜单}{width=0.25\textwidth}
+
+% LeXDK Developer's Guide\ 和\ CBC\ 帮助指向\ PDF\ 文件。你需要事先安装相关的阅读软件。
+%
+% 其他的是网络连接，一个指向\ GForge\ 上\ CBC\ 的主页，另一个指向我的博客。
+
+\item[InDate] 自动在线更新\ CBC。
+
+如果找到更新，InDate\ 会提示你下载和安装这个更新。
+
+其他情况下，对话框会自动关闭。
+
+\pic{indate}{InDate\ 对话框}{width=0.5\textwidth}
+
+\end{description}

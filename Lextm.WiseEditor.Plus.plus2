@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>WiseEditor</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.EditorAidFeature</Name>
+      <Description>This feature adds an Editor Aid menu.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.ExtraFeature</Name>
+      <Description>This feature sets default projects folder and adds some notification helpers.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.SpellcheckerFeature</Name>
+      <Description>This feature checks spelling of selected text.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>false</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.FileWizardsFeature</Name>
+      <Description>This feature adds more wizards to create in File | New | Other.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.FavoritesFeature</Name>
+      <Description>This feature manages favorite files.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.ComponentNamerFeature</Name>
+      <Description>This feature auto-renames components added to a form.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.WinMergeFeature</Name>
+      <Description>WinMerge is a file comparator. This feature invokes WinMerge.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.ClipboardWatcherFeature</Name>
+      <Description>This feature manages clipboard.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.ColorPalletteFeature</Name>
+      <Description>This feature adds a Color Pallete Helper which helps you write a color string.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.ProjectAidFeature</Name>
+      <Description>This feature provides extra functions to manage projects.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.ShellLauncherFeature</Name>
+      <Description>This feature adds some shell commands.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.FileAidFeature</Name>
+      <Description>This feature helps you to locate files in various views.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.WiseEditor.Feature.XmlFeature</Name>
+      <Description>This feature adds some XML-related functions.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

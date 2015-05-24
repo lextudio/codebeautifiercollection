@@ -1,0 +1,227 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D91FA589-45B5-4F79-9EF7-4E8C88F3939F}</ProjectGuid>
+    <RootNamespace>Lextm.Utilities</RootNamespace>
+    <AssemblyName>Lextm.Utilities.Plus</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnSuccessfulBuild</RunPostBuildEvent>
+    <NoConfig>false</NoConfig>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <StartArguments>-i</StartArguments>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyFile>lextmkeyfiles\PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release</OutputPath>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <LangVersion>default</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>512</FileAlignment>
+    <BaseAddress>285212672</BaseAddress>
+    <UseLauncher>False</UseLauncher>
+    <LoadAllSymbols>True</LoadAllSymbols>
+    <LoadUnspecifiedSymbols>False</LoadUnspecifiedSymbols>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>False</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Borland.Studio.ToolsAPI">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>Borland.Studio.ToolsAPI</AssemblyName>
+      <Version>11.0.5000.9245</Version>
+      <HintPath>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</HintPath>
+      <AssemblyTag>C:\Program Files\CodeGear\RAD Studio\5.0\bin\Borland.Studio.ToolsAPI.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="Borland.VclRtl">
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>Borland.VclRtl</AssemblyName>
+      <Version>11.0.5000.9245</Version>
+      <HintPath>C:\Program Files\Common Files\CodeGear Shared\Rad Studio\Shared Assemblies\5.0\Borland.VclRtl.dll</HintPath>
+      <AssemblyTag>C:\Program Files\Common Files\CodeGear Shared\Rad Studio\Shared Assemblies\5.0\Borland.VclRtl.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.Data</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.Drawing</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.Windows.Forms</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</AssemblyTag>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <AssemblyName>System.XML</AssemblyName>
+      <Version>2.0.0.0</Version>
+      <HintPath>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</HintPath>
+      <AssemblyTag>$(SystemRoot)\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</AssemblyTag>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\utilities\gui\FormExpertManager.resx">
+      <DependentUpon>FormExpertManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\utilities\gui\FormPlusManager.resx">
+      <DependentUpon>FormPlusManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\utilities\gui\InDatePage.resx">
+      <DependentUpon>InDatePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\lextm\utilities\gui\TipOfTheDayFrm.resx">
+      <DependentUpon>TipOfTheDayFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\assemblyinfo\Common.cs" />
+    <Compile Include="src\assemblyinfo\LeXtudio.cs" />
+    <Compile Include="src\assemblyinfo\Utilities.cs" />
+    <Compile Include="src\lextm\utilities\feature\ExpertManagerFeature.cs" />
+    <Compile Include="src\lextm\utilities\feature\InDateFeature.cs" />
+    <Compile Include="src\lextm\utilities\feature\PlusManagerFeature.cs" />
+    <Compile Include="src\lextm\utilities\feature\TipOfTheDayFeature.cs" />
+    <Compile Include="src\lextm\utilities\gui\FormExpertManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\utilities\gui\FormPlusManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\lextm\utilities\gui\InDatePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\lextm\utilities\gui\TipOfTheDayFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="Lextm.Utilities.Plus.plus2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="lextmkeyfiles\PublicPrivateKeyFile.snk" />
+    <None Include="TipOfTheDay.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <ProjectReference Include="BeWise.SharpBuilderTools.Minus.csproj">
+      <Name>BeWise.SharpBuilderTools.Minus</Name>
+      <Project>{C238A1A6-DE61-4729-8569-7041E2AC6C48}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.Common.csproj">
+      <Name>Lextm.Common</Name>
+      <Project>{AA2C7296-5F3B-402D-BD8B-C1C80F7E6AD9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Lextm.OpenTools.Core.csproj">
+      <Name>Lextm.OpenTools.Core</Name>
+      <Project>{6BFB3BB2-4C5A-43CD-8FBA-020F0584437E}</Project>
+    </ProjectReference>
+    <ProjectReference Include="thirdparties\Crad.Windows.Forms.Actions\Crad.Windows.Forms.Actions.csproj">
+      <Project>{6E50D1BD-D8EA-4992-8B25-C5A0D7E179A5}</Project>
+      <Name>Crad.Windows.Forms.Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="thirdparties\SharpDevTools\SharpDevTools.csproj">
+      <Project>{49FA9FDF-019F-4E05-8501-38975F41C4C6}</Project>
+      <Name>SharpDevTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="thirdparties\Vista Api\VistaApi.csproj">
+      <Project>{9EC6098C-09C6-4623-819B-08835D183038}</Project>
+      <Name>VistaApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="thirdparties\ZetaLibNet\Windows\Windows.csproj">
+      <Project>{5796BE34-041B-4CBB-BE8F-AFA31F0E59EC}</Project>
+      <Name>Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ProjectExtensions>
+    <BorlandProject>
+      <BorlandProject>
+        <CSharp.Personality>
+          <Options>
+            <Options Name="AspNetUseHostServer">False</Options>
+            <Options Name="AspNetLaunchBrowser">False</Options>
+            <Options Name="AspNetStartPage">
+            </Options>
+            <Options Name="AspNetHostServer">IIS</Options>
+            <Options Name="AspNetCassiniPortIndex">0</Options>
+            <Options Name="AspNetCassiniStartup">
+            </Options>
+            <Options Name="AspNetIISVirtualDirectory">
+            </Options>
+            <Options Name="AspNetHTTPAddress">
+            </Options>
+            <Options Name="AspNetCassiniHTTPAddress">
+            </Options>
+          </Options>
+        </CSharp.Personality>
+      </BorlandProject>
+    </BorlandProject>
+    <VisualStudio />
+  </ProjectExtensions>
+</Project>

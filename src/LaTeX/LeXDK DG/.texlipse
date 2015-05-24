@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Fri Oct 12 20:09:05 CST 2007
+builderNum=0
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=dvi
+tempDir=tmp
+mainTexFile=LeXDK.tex
+outputFile=LeXDK.dvi
+langSpell=en
+markDer=true
+srcDir=

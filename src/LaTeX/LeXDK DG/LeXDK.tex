@@ -1,0 +1,68 @@
+\documentclass[CJK*]{book}
+
+\input{../shared/package.cn}
+\input{../shared/lextm}
+\input{../shared/fancyhdr}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\author{\lextm} 
+\title{LeXDK Developer's Guide\\Bilingual Version}
+
+\begin{document}
+ 
+\frontmatter
+
+\maketitle
+
+\copyclaimer 
+
+\input{../shared/notinmanual}
+
+\begin{CJK*}{GBK}{song}
+
+\input{../shared/toc}
+
+\end{CJK*}
+
+\mainmatter
+%% English part
+\part{English}
+
+% \include{body/ch1.en}
+\include{body/ch2.en}
+\include{body/ch3.en}
+\include{body/ch4.en}
+\include{body/ch5.en}
+\include{body/ch6.en}
+%% Simplified Chinese part
+
+\begin{CJK*}{GBK}{song}
+
+\part{¼òÌåÖÐÎÄ}
+% \input{body/ch1.cn}
+\include{body/ch2.cn}
+\include{body/ch3.cn}
+\include{body/ch4.cn}
+\include{body/ch5.cn}
+\include{body/ch6.cn}
+\end{CJK*}
+ 
+
+\part{Appendix}
+\appendix
+
+%% Simplified Chinese part
+\include{body/app.en}
+
+\begin{CJK*}{GBK}{song}
+
+\include{body/app.cn}
+
+\backmatter
+\printindex  
+\clearpage
+\end{CJK*}
+
+\end{document}
+

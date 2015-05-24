@@ -1,0 +1,40 @@
+\chapter{历史背景}
+\newpage
+\section{OTA for Win32}
+\subsection{Delphi 4\ 之前(已废弃)} 
+
+根据\ Erik Berry\ 的描述，那时的\ OTA\ 十分的复杂，因为在\ Delphi\ 语言诞生的时候，接口并不是其中一个概念。由于这一套体系已经被废弃，所以本文不再详述。
+\subsection{从~Delphi 4~开始}
+当接口概念加入之后，Borland R\&D\ 向开发者提供了新的\ Open Tools Architecture (for Win32)\ 来扩展\ IDE\ 
+的功能。你不可能忽略\ OTA，因为它实在太强大了，只是全面的学习需要太多的时间精力。
+
+Mark Miller\ ，OTA\ 架构作品\ CodeRush\ 的作者，发明了一套很不错的\ API\ 来扩展\ IDE，称为\ RushAPI 
+(for Win32)。由于\  CodeRush\ 是商业软件，所以我没有机会了解它是用何种方式实现的 (C++\ 还是\ Delphi)。在\ 
+Delphi 8\ 发布前，Mike\ 的公司与\ DevExpress\ 合并。从那时起，除了支持\ Visual Studio .NET\ 
+的版本，再也没有看到创新性的\ CodeRush\ 版本。所以你无法利用\ CodeRush\ 或者\ RushAPI\ 来扩展\ Delphi 
+8/2005/2006。这很令人遗憾。
+
+其他的商业软件例如\ Castalia\ 也实现了类似的架构，只是除了开发的公司，没有其他人了解其中的奥妙。
+
+开源的\ OTA\ 项目例如\ GExperts\ 和\ CnPack\ 都没有实现这样的插件架构，但是它们仍然很容易扩展。当然或许还有其他的\ OTA \ 
+或者\ SDK，但是我不知道。
+\section{OTA for .NET}
+从\ C\#Builder 1.0\ 开始，Borland Developer Studio IDE\ 开始提供\ OTA for .NET。
+
+为了开发\ ConvertAddIn\ 和\ FavouritesMenu, Marc Rohloff\ 设计一个特别的架构来实现这些\ .NET OTA\ 
+工具。它是开源的，但是我知道最近才注意到它的存在。但我已经在\ SBT\ 的道路上走了这么远了，所以懒得回头了。Mark\ 的架构减少了对于\ OTA 
+API\ 的依赖，但是我不知道可否以它为基础做一个\ SDK\ ，就像\ LeXDK。
+
+David Hervieux\ 制作了\ Sharp Builder Tools。SBT\ 最新的版本号是\ 3.1。当然这个版本太老了，不支持\ 
+Delphi 2005/2006 (实际上只需要一点点修改)。尽管\ David\ 在\ Borland\ 主持的\ OTA\ 
+比赛中夺冠，他没有能够继续这个开源项目，因为''too many problems with Borland''。他使用的开发语言是\ C\#。
+
+我使用了\ SBT\ 代码来开发\ Code Beautifier Collection (以及它的前身\ JCFExpert)。那时我发现很容易扩展\ 
+SBT\ 然而我不得不将自己的代码混杂进去。看得出来\ David\ 还来不及完成一个灵活的插件架构。
+
+受他的想法启迪，我利用这些代码设计了一个\ SDK\ 用于\ OpenTools\ 的开发。虽然不如\ RushAPI\ 
+那样强大，但是，它已经可以减少很多扩展\ IDE\ 的难度。Code Beautifier Collection\ 现在也是利用这个\ SDK\ 
+开发的。LeXtudio OpenTools SDK\ 就是这个\ SDK\ 的名字。LeXDK\ 是其简称。
+\section{更多消息}
+难免有人会害怕使用一个\ SDK\ 来做开发，因为或许这减少了他们的自由发挥。实际上，LeXDK\ 没有限制你直接利用\ IDE OTA\ 
+来开发。你甚至可以直接用\ OTA\ 来开发一个插件\ feature。

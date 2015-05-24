@@ -1,0 +1,78 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<OutputPath Condition=" '$(OutputPath)' == '' ">bin\release</OutputPath>
+		<BundledPath>$(OutputPath)\bundled</BundledPath>
+		<DataPath>$(OutputPath)\data</DataPath>
+		<DocPath>$(OutputPath)\doc</DocPath>
+		<PreferencesPath>$(OutputPath)\preferences</PreferencesPath>
+		<SetupPath>$(OutputPath)\setup</SetupPath>
+		<LibPath>$(OutputPath)\lib</LibPath>
+		<ComPath>$(OutputPath)\comimports</ComPath>
+		<SrcPath>$(OutputPath)\src</SrcPath>
+		<TestPath>$(OutputPath)\test</TestPath>
+		<ThirdpartiesPath>$(OutputPath)\thirdparties</ThirdpartiesPath>
+		<KeyPath>$(OutputPath)\lextmkeyfiles</KeyPath>
+		<LibFolder>lib</LibFolder>
+	</PropertyGroup>
+	<ItemGroup>
+		<BundledFiles Include="bundled\**\*.*" />
+		<DataFiles Include="data\**\*.*" Exclude="**\*.cfg;**\*.ota;**\*.exe.config" />
+		<PreferencesFiles Include="preferences\**\*.*" Exclude="**\*.ota" />
+		<InstallFiles Include="gacutil.exe*;psvince.dll;*.exe.manifest;*.ini" />
+		<ProjectFiles Include="*.*proj;*.sln;*.plus2;*.targets;make*.bat;*.bds*" />
+		<SetupFiles Include="setup\*.*" Exclude="setup\*.exe" />
+		<LibFiles Include="lib\**\*.*" />
+		<ComFiles Include="comimports\**\*.*" />
+		<SrcFiles Include="src\**\*.*" />
+		<ThirdpartiesFiles Include="thirdparties\**\*.*" />
+		<TestFiles Include="test\**\*.*" />
+		<KeyFiles Include="LextmKeyFiles\*.*" />
+		<ExtraFiles Include="*.*" Exclude="*.zip"/>
+		<LostReferences Include="$(LibFolder)\Unhandled*.dll" />
+		<LostReferences Include="$(LibFolder)\NUnit*.dll" />
+    <LostReferences Include="$(LibFolder)\visibles.dll" />
+    <LostReferences Include="$(LibFolder)\XmlSerializers.*.dll" />
+    <LostRefenreces Include="$(LibFolder)\CodersLab.Windows.Controls.TreeView .dll" />
+    <DebugFile Include="data\cbc2.exe.config" />
+	</ItemGroup>
+	<Target Name="Clean">
+		<RemoveDir Directories="$(OutputPath)" Condition="Exists('$(OutputPath)')" />
+	</Target>
+	
+	<Target Name="Common" DependsOnTargets="CreateOutputPath">
+		<Copy SourceFiles="@(BundledFiles)" DestinationFiles="@(BundledFiles->'$(BundledPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(DataFiles)" DestinationFiles="@(DataFiles->'$(DataPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(PreferencesFiles)" DestinationFiles="@(PreferencesFiles->'$(PreferencesPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(InstallFiles)" DestinationFolder="$(OutputPath)" />
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Common">
+		<CreateItem Include="doc\**\*.*">
+			<Output ItemName="DocFiles" TaskParameter="Include" />
+		</CreateItem>
+		<Copy SourceFiles="@(DocFiles)" DestinationFiles="@(DocFiles->'$(DocPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(LostReferences)" DestinationFolder="$(OutputPath)" />
+	</Target>
+	<Target Name="CreateOutputPath" Condition="!Exists('$(OutputPath)')">
+		<MakeDir Directories="$(OutputPath)" />
+	</Target>
+	<Target Name="SourceAll" DependsOnTargets="Source">
+		<Copy SourceFiles="@(ExtraFiles)" DestinationFolder="$(OutputPath)" />
+		<Copy SourceFiles="@(KeyFiles)" DestinationFiles="@(KeyFiles->'$(KeyPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+	</Target>
+	<Target Name="Debug" DependsOnTargets="Build">
+		<Copy SourceFiles="@(DebugFile)" DestinationFolder="$(DataPath)" />
+	</Target>
+	<Target Name="Source" DependsOnTargets="Common">
+		<Copy SourceFiles="@(SetupFiles)" DestinationFiles="@(SetupFiles->'$(SetupPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(LibFiles)" DestinationFiles="@(LibFiles->'$(LibPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(ComFiles)" DestinationFiles="@(ComFiles->'$(ComPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(SrcFiles)" DestinationFiles="@(SrcFiles->'$(SrcPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(ThirdpartiesFiles)" DestinationFiles="@(ThirdpartiesFiles->'$(ThirdpartiesPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(TestFiles)" DestinationFiles="@(TestFiles->'$(TestPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(ProjectFiles)" DestinationFolder="$(OutputPath)" />
+		<Copy SourceFiles="$(DebugFile)" DestinationFolder="$(DataPath)" />
+	</Target>
+
+</Project>

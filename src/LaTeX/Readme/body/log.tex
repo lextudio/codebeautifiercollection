@@ -1,0 +1,1802 @@
+\chapter{Change Log}
+This is different from the history chapter in the manual since more details are
+provided. I provide them just in case you meet same old problems one day. Wish
+they can be helpful.
+
+It should be noted that the date of announcements are usually a little bit
+earlier than the date of publishing (on BDN Code Central) because tests of the
+binaries take some time.
+
+There are also some unreleased versions here. Since NixNewNer, nearly all
+versions (including RCs) can be downloaded from CBC's GForge homepage.
+
+\begin{itemize}
+  \item 2008-02-08 GrapeVine Update 1
+\begin{description}
+\item[RC1]
+\begin{quotation}
+Now File Aid supports Delphi VCL projects. 
+\end{quotation}
+\end{description}
+  
+  \item 2007-10-22 HardQuery Release 2 Update 4
+  \begin{description}
+\item[RC1]
+\begin{quotation}
+Bug fixes from GrapeVine M8 is ported back to HardQuery Release 2. It is good
+news that I can port back this fixes. However, I cannot setup a build
+environment easily so this version is released as source code only.
+\end{quotation}
+  \end{description}
+	\item 2007-07-07 GrapeVine
+	\begin{description}
+\item[Release To User]
+\begin{quotation}
+Because of a bug, JCF 2.34 is not enough for GrapeVine Final. A customized
+build is made with help of Anthony Steele
+\end{quotation}
+\item[Milestone 11]
+\begin{quotation}
+You can see from this log that I started GrapeVine in early July. The funny
+thing is that I spent nearly five months on this release. It is not because I
+did not want to deliver it earlier but due to my job.
+
+I do not have lots of time now to work on this open source project, so
+general progress is slow. After learning from Paint.NET, I decide to release
+often. Thus I divided the process into so many milestones, and after about two
+weeks I released a new build.
+
+If you check Google Code homepage for Code Beautifier Collection you can see
+this site is much more popular than old site on GForge (6.0 binaries download
+count reaches over 2,500 in 5 months).
+
+6.0 Final is the first Final version on this new site, so wish all of you enjoy
+this release. I made a few changes from M10. First, I used Vista task dialog to
+replace several customized dialogs I designed. Task dialog is an important
+creation in Windows Vista which standardizes GUI elements to acquire user
+input. Second, I tried to make InDate process smoother with a hidden bug fixed.
+I changed a few captions to better describe the steps.
+
+JCF 2.33 is now included.
+\end{quotation}
+\item[Milestone 10]
+\begin{quotation}
+Have to turn off the experimental installer hack for ''install for all users''
+now. It will be available only if I think of a better idea.
+
+Also I got a report of issue 6. I forgot to check files included in the
+installer last time. So jcf.exe and astyle.exe were missing. To prevent it from
+happening again, I removed all '*' from Inno Setup script so the compiler will
+check if any file is missing for me automatically. Thanks to this nice feature
+of Inno Setup compiler. And I stopped to use Inno Setup build-in Post Install
+actions to run installforallusers.exe. I rather run it in [Code] section
+manually.
+
+JCF 2.33 is not included in this build because it contains an ASM code
+formatter now which is an important update across versions. I will handle this
+change later because now I need to maintain a separate project JCFStyle for
+GrapeVine which most makes use of JCF source code directly.
+\end{quotation}
+\item[Milestone 9]
+\begin{quotation}
+A CEO reported an issue to me that 'Install for all users' was not correctly
+implemented. So I decided to ask for help on CodeGear newsgroup. And it seemed
+that this issue cannot be fixed easily. That's why I still mark this feature
+'experimental' in this build. I have done a few tests about the changes I made,
+such as hacking bds.exe. It works on my machine so I wish it runs on others.
+But you can always expect issue report some time. I'd like to overcome the
+original issue but I may have introduced more (because of the way I hack).
+
+Also I have added AddMany Plus again but without enough testing. So please help
+test this feature, my dear users.
+\end{quotation}
+\item[Milestone 8]
+\begin{quotation}
+I keep a long list of features, and when all of them are done, I can say that
+Code Beautifier Collection 3 is ready (current version is still 2.6.0.0).
+Compared to JCF which is now 2.31 (31st build of version 2), I can predict that
+I have a long way to go.
+
+In earliest versions of User Manual, the TODO section is an important part, but
+some items are hard to implement. JCF Style Editor is one of them which is
+also a critical part of CodeBeautifiers Plus. And eventually I spend last
+weekend on this item and got it done. The approach is rather easy, just make
+use of JCF source code completely if possible. I haven't touched Object Pascal
+code for a few months, so it is not that easy to get back to the games at
+first. Then I ripped out most forms of JCFNotepad project. When only elements
+related to fAllSettings form left, I wrote a simple dpr to launch this form and
+everything is just okay. Wonderful.
+
+I'd like to say I love Delphi 2007 as well as RAD Studio 2007 which makes full
+use of MSBuild that simplify both Delphi/C++Builder project structure a lot.
+For example, my new JcfStyle project only needs one dproj project file (no
+bdsproj, cfg, or dof). Forget to mention that dpr is in fact a Pascal
+source file which I suddenly remembered.
+
+The JCF style editor is the most important new feature in M8. I am sure that
+you will like this new stuff. Stay tuned.
+
+Also a newly found issue 4 is resolved in this version.
+
+When uninstalling CBC, there was an exception. Yes, I had to work around Inno
+Setup implementation here in order to make installforallusers.exe runs well.
+Luckily, this issue is resolved in this build.
+\end{quotation}
+\item[Milestone 7]
+\begin{quotation}
+Issue 3 on Google Code is resolved in this build. Also I update the Inno Setup
+script and MSBuild script. In this way I can ensure the installer is correctly
+built. This is also a bug fix version.
+\end{quotation}
+	\item[Milestone 6]
+	\begin{quotation}
+	A big issue is reported on CBC Google Code Homepage. M6 is aiming to fix this
+	issue, so is only a bug fix version.
+
+	Also after a basic test of installer on test machine, I found and fixed more bugs.
+	One of them prevents InDate from downloading unstable builds, while another
+	prevents new version from installing.
+
+	Have to say a .NET assembly is much different from Win32 DLL. You must specify its
+	AssemblyFileVersion in code so Inno Setup Preprocessor can read its file version
+	correctly.
+	\end{quotation}
+\item[Milestone 5]
+\begin{quotation}
+CodeGear has done a great job to release Delphi 2007 Update 3 with RAD Studio 2007
+so soon. And it also requires a new version of GrapeVine. That is why I release this
+M5 now. No new features is added now.
+\end{quotation}
+\item[Milestone 4]
+\begin{quotation}
+I planed to provide more Vista related UI elements but I failed. Beside M3 failed
+to launch with RAD Studio, e.g. Delphi 2007 Update 2. I had to cut off a few
+items from list and focus on some important things, such as compatibility and
+stability.
+
+That's why I release this version now without much improvement. Yes, wish I
+could do more in M5.
+\end{quotation}
+	\item[Milestone 3]
+	\begin{quotation}
+	UAC support is complete in this version because Visual C\# 2008 Express Beta
+	2 is used to compile the projects.
+
+	The installer is redone in order to make ''install for all users'' possible.
+	Also many changes are introduced to folder structure.
+	\end{quotation}
+	\item[Milestone 2]
+	\begin{quotation}
+	This version starts to include Vista API library in order to provide better UI
+	on Windows Vista. UAC compliant is experimental.
+	\end{quotation}
+	\item[Milestone 1]
+	\begin{quotation}
+	In this version, I just compile against .NET 2.0. As a result,
+	TBackground\-Worker component is removed. Also no ActiveX component is used.
+	Visibles.dll is disassembled to C\#. In order to work around OTA changes, some
+	features are removed or reimplemented. The version number is updated to 6.0.
+	\end{quotation}
+	\end{description}
+  \item 2007-03-07 HardQuery Release 2 Update 3
+  \begin{description}
+	\item[Release To User]
+	\begin{quotation}
+	Actually RC 5 is finally released to users as the final version.
+	\end{quotation}
+    \item[RC 5]
+    \begin{quotation}
+          A few days ago I found that if I tried to use Typing Speeder while editing
+          TriggerKey.cs unit unhandled exception occurred. I tried to locate the
+          bug and found the Code DOM section in OTAUtils unit hard to read and
+          understand. As a result I started to update the code.
+
+          Today I have done it all. A new namespace ''LeXDK.Co\-de\-Dom'' is added.
+          All Code DOM related stuffs are moved there. Also the bug mentioned
+          above is solved, too. Yes, the old version cannot handle delegate
+          types well and the new version can. That is how now Source Navigator
+          and Typing Speeder are fixed. I find another OTA bug. Although the
+          delegate type can be processed correctly, the line number cannot be
+          located like the constructor case.
+
+          Since I have been prepared to leave for Shanghai, the project will be
+          silent soon. Wish I can deliver the final Update 3 soon. Yes, I try
+          to add some Delphi 2007 support but I do not have a copy to try.
+    \end{quotation}
+    \item[RC 4]
+    \begin{quotation}
+          I just added something really useful in BagPlug's Typing Speeder right
+          now. Yes, it was something I've been dreaming of for a long time.
+
+          Whenever you want to add some XML comments in C\#, you have to type a lot
+          of words and tags. SharpDevelop provides something really cool. If you
+          type ''///'' before a line of declarartion, the comments for that item
+          will be generated for you. That is why I use SD a lot. However, BDS
+          does not have a similar feature. And it is what I have done now. Now
+          Speeder will help you when you type ''///'' and press a Space key
+          then. It will generate most of the comments for you using CodeDOM. For
+          that reason, a DOM bug prevents it from doing something for
+          constructors.
+
+          I thought it would be easy to extend this to Delphi files. However, I
+          found that the Delphi CodeDOM was really different. The line number
+          for a method is not the first line but the first line after ''begin''.
+          That is why Delphi support is not available.
+
+          In fact Chua Chee Wee's Productivity Experts 0.8 (which is a Code
+          Central entry \#23380) inspires me a lot. However, we use different
+          approaches. Chee Wee reads a few more lines after ''///'' and parses them
+          using regular expressions while I am so lazy that I use CodeDOM
+          directly. It is lucky that I have done Source Navigator ahead, and a
+          lot experience can be applied here.
+
+          A few LeXDK lines are modified because of tuning. Get\-CurrentLine is
+          changed to GetLineOf, which is much faster. GetTotalLines is also
+          tuned.
+
+          Also I found a OTA bug. Yes, IOTAEditPosition.Read function can
+          make thing hard. When I count the char number by columns the TAB
+          char is counted as 4 chars, so when reading the following line will be
+          touched. A workaround is provided here.
+    \end{quotation}
+    \item[RC 3]
+    \begin{quotation}
+          A new feature of Icon Browser is added now. It gives you access to an
+          open source utility named Icon Browser made by Kenny Kerr. Also I find
+          that Path.Combine is a well function.
+    \end{quotation}
+
+	\item[RC 2] \
+	\begin{quotation}
+        Generally speaking nothing is new. However, most efforts were placed
+        on the moving from NAnt to MSBuild. The work is very funny. MSBuild is
+        not very similar to NAnt but most knowledge is still applicable. The
+        changes were made whenever I could not simply translate a NAnt line to
+        MSBuild. Significant ones are: 1) TipOfTheDay project is now merged into
+        Utilities Plus. 2) Install and Templates projects are now part of the
+        solution. 3) .plus2 files are now placed in the root folder.
+
+        I never thought I would create my own .targets file so soon. In order to
+        simplify the build of TeX files, a Lextm.\-LaTeX.\-Tasks.\-targets was
+        written. Also MSBuild Community Tasks were used to zip up files. This
+        makes my building easier but users may spend more time on setting up the
+        build environment.
+
+        MSBee tasks cannot be perfectly called from within a .proj file, so I
+        have to use an Exec task to call MSBuild outside the main process. The
+        same problem happens when I want to package source files. The evaluation
+        of wildcasts is so early that I have to use a Exec task again to ensure
+        all generated items are included. I think there is alternative way and I
+        will see if I can find it soon.
+
+        The line counter feature now has basic Delphi code counting support.
+        However, after reading the source code I think the algorithm is still
+        buggy, so the feature is really experimental. The parsing of a
+        real-world source file should be much more complicated.
+
+        The loading problem found in RC 1 is now fixed and disabled plus
+        assembly will not be loaded into memory any more.
+
+        By the way, this version is now still named a HardQuery version while in
+        fact a lot of changes made here were scheduled for GrapeVine. So I
+        should better call it the first GrapeVine version to go along with the
+        changes. Yes, so many changes.
+    \end{quotation}
+
+  \item[RC 1] \
+  \begin{quotation}
+      InDate is modified again. This time GForge turned back to HTTP. I had been
+      thinking of switching to Google Code, but since I could not upload
+      packages there the moving would be delayed. The change in InDate this time
+      will surely make the migration smoother.
+
+      I have been making a few features of my own in the latest versions of CBC,
+      such as Readme Notifier, Typing Speeder, and Source Navigator. Because I
+      wanna keep my code GPL/LGPL covered, I finally extract them from
+      Wise\-Editor and move to a new BagPlug Plus. So in fact nothing is really
+      new here.
+
+      I rename a few features to get along with the manual. I will try to
+      update the pictures, too. Besides I do a little clean up of the code.
+
+	  Although all features of a plus are disabled, when launching, the plus is
+	  still loaded into the memory. It is a big bug. I will fix it soon.
+
+	  A new feature is added named Line Counter (original named GroupStats). The
+	  initial version was based on King's Tools for Visual Studio. However, the
+	  implementation was soon replaced by a port of LineCounter feature from Jon
+	  Rista and Daniel Grunwald's Add ins for Visual Studio and SharpDevelop.
+	  Although Delphi OTA is different from VS or SD's API, the porting is easy.
+	  The problem is that Delphi code cannot be counted now. It should be easy to
+	  extend the code, so I wish the function can be added soon.
+\end{quotation}
+
+\end{description}
+  \item 2007-01-14 HardQuery Release 2 Update 2
+  \begin{description}
+
+    \item[Release to Users] \
+    \begin{quotation}
+      Since a national holiday, the Chinese New Year, is coming, I think I don't have
+      enough time to add more to the code tree, so will stop here. Finally I am near
+      the end of signing a wonderful contract to start my career. Wish all of you
+      happiness in the new year, the Pig year.
+
+      Even if AutoUpdate is set, InDate'd better check for updates once a day. This
+      function is added from now on.
+
+      Also when you open a file of a project, such as a .build file, because it are
+      not a ''source file'', the container project will not be activated by CBC in
+      the older versions. It is only in this version, the project can be activated
+      for you.
+    \end{quotation}
+    \item[RC 5] \
+    \begin{quotation}
+      A small change to the Doc Preview form makes all links inside disabled. Only in
+      this way the old unwanted action of navigating to invalid links is handled.
+    \end{quotation}
+    \item[RC 4] \
+    \begin{quotation}
+      AutoComplete feature has been heavily updated in this version, so many
+      hard-to-read code now is clearer. Null Object pattern is used twice here to
+      ensure simplicity.
+    \end{quotation}
+
+    \item[RC 3] \
+    \begin{quotation}
+      Matt Berther created a unit AutoCompleteComboBox. Although it is not perfect, I
+      find it useful in Source Navigator. As a result of using it, it is easier to
+      use the UI now.
+
+      Also I refactor AutoCompleteFeature again and create a new namespace for it.
+      Registry and Command patterns are used in order to clear the code. I leave a
+      few bad smells there because I am not ready to remove them this time. I will
+      see to them in later iterations.
+
+      After some more digging I will release RC 3 as the final RC for Update 2.
+      \#39 is such a big bug that I feel that a new and stable version should be
+      coming quickly enough this time.
+
+      At last I wanna comment on two AutoComplete\-Combo\-Box available on The Code
+      Project. In fact they achieve similar functionality. However, when the text
+      is auto-com\-ple\-ted, the list is not drop down so you are not 100\% sure the
+      choice is correct. A better solution may be dropping down the list and
+      highlighting the choice but the user can see similar choices in the list (the
+      list can be filered). This is a kind of UI David used in File Aid. Yes, I
+      like this kind of UI and I want to make such a custom ComboBox that is
+      suitable here in SourceNavigator.
+
+      Now after reading .NET 2.0 SDK Documentation, I see that ComboBox there
+      already supports auto complete feature. After a few tests, I find it good
+      enough. As a result, I will update Source Navigator later.
+
+      Soon I will release the final version.
+
+      As a matter of fact, this time I make big changes in Auto\-Complete feature.
+      For example, ''else if'' is no longer a keyword, because in this version only
+      one word symbols can be keywords. If ''else if'' should be supported, the
+      architecture needs to be modified. The verification of a keyword must be more
+      flexible. KeywordCommand.Verify(IOTASource\-Editor) would be okay. But if
+      foreach is used to iterate a long list, the efficiency will be low, and it
+      will be hard to tune the process.
+    \end{quotation}
+    \item[RC 2] \
+    \begin{quotation}
+      Today I received a bug report about \#39, and I blog about it
+      here\hyperlink{http://blog.csdn.net/lextm/}
+      \hyperlink{archive/2007/01/17/1486044.aspx}
+
+      This is a serious bug so I decided to fix it ASAP. I am glad that it has been
+      reported and fixed now.
+    \end{quotation}
+    \item[RC 1] \
+    \begin{quotation}
+      I am working on fixing bugs and upgrading certain features from SBT in this
+      version. The first step is on the File Aid feature. At first, because BDS 2006
+      IDE manages the tabs of Editor fine, I do not want to keep the Open Tabs tab
+      page any longer which complicates the code.
+
+      Also, I choose File Aid because this time more UI elements will be
+      processed and updated (I have to admit in the early versions I paid not
+      anough attention to them, so many elements behave unconvenient when you
+      resize the forms). I will focus on this kind of problems this time. The
+      tab order problems will be solved in a later version. As a result, I need
+      to find all the forms and user controls quickly. I turn to File Aid, but
+      it works bad. Because of a OTA bug, not WinForms are listed in the dialog.
+
+      After a lot of tests, I use maybe the simplest way --- a form or user
+      control file a.cs must have an a.resx with it. I know there are some
+      special cases but they are rare. Since it is the fastest method, I prefer
+      it and use it at last.
+    \end{quotation}
+
+
+
+
+  \end{description}
+  \item 2006-12-28 HardQuery Release 2 Update 1 Hotfix 1
+  \begin{quotation}
+    I have to confess GForge makes me angry this time. For a long period, I have
+    been sad that the service is vulnerable. Also you can only use one thread to
+    download the packages.
+
+    Lately, GForge has used a lot of HTTPS instead of HTTP. As a result, InDate
+    cannot download anything directly from the server and cannot work correctly.
+
+    Luckily this time I have to switch to other service or drop InDate for months,
+    and only a few changes in InDate make everything okay. Since HTTPS prevents
+    InDate from downloading the update list and packages, I place the list on my
+    blog instead. When InDate find an update package, it will send the link to your
+    default internet browser (Firefox or IE) instead of downloading directly. In
+    this way, you can still receive latest information on updates. As a result of
+    so many changes, you receive this Hotfix today. I write a readme file to tell
+    you how to install it besides. In fact, I find the changes rather slighter than
+    I ever imagined. What I have done is a few if-elses and a few new
+    PropertyRegistry items. Thus, once I need to turn back to the old InDate
+    functions, all I have to do is changing some properties in the settings. Oh, it
+    is rather easy this way.
+  \end{quotation}
+
+  \item 2006-11-11 HardQuery Release 2 Update 1
+  \begin{description}
+    \item[Release To Users] \
+    \begin{quotation}
+      It is already December and 5.3.1.1003 is stable enough, so I decide to
+      release the final version 5.3.1.1123 soon. I am sure it will be published
+      before the X'mas because I want it to be a present that I send you all my
+      dear users and friends.
+
+      Finally I use log4net in CBC to do the logging tasks. I knew this
+      library months ago and tried to learn it but I could not find a
+      convenient way to adopt it. I have to say Marc Clifton's Debug unit is
+      such a clean and easy way suitable for most cases that I can hardly
+      drop in a minute. At last, when I need more powerful features like
+      different logging levels which it cannot provide, I find a good reason
+      to leave it aside.
+
+      Also it is not easy to make use of log4net because it lacks certain
+      features such as Indent and Unindent. Compared to CodeSite, a famous
+      logging and debugging tool in Delphi field, log4net is not mature
+      enough and need further improvement. I am glad that this time I have
+      the power to make something useful myself. If you read the
+      LoggingService unit, you will find I make a wrapper for log4net which
+      adds a few interesting and common functions such as Indent, Unindent,
+      Enter, and Leave. In this way you can use log4net in a way similar to
+      plain old Debug and Trace. Because I find this unit very useful I
+      place it in Lextm.Common assembly and under LGPL, in that way you can
+      use it anywhere you like.
+
+      In the last minutes I have found ways to get parameter information out
+      of CodeDom classes. As a result, now when Source Navigator shows the
+      method list, parameters are listed, too. Thus you can distinguise
+      overloading functions easier. The limitation now is that I only
+      implement the C\# version, so even functions in Delphi shows in the
+      C\# way. I will further improve this feature in later versions.
+
+      Finally I remove two boring limitations in feature development.
+      Remember you have to make the feature classes Singleton? Now it is not
+      required. A newly-added unit FeatureRegistry will ensure only one
+      feature instance of one type exists. What you have to make sure is
+      that the feature class must have a public constructor. Wish this could
+      reduce your work on plus development. The only change is that the
+      order of menu items is totally different from early versions.
+
+      Also I find out the AutoFlush feature of PropertyRegistry is not
+      consuming too much time. As a result, I will keep AutoFlush field true
+      because manual flushing is prone to errors. Now Flush is only done
+      when AutoFlush is false. In this way, one day I can turn AutoFlush to
+      false without fearing something goes wrong somewhere.
+
+      Also I change the final version number to 5.3.1.1124.
+
+      Just right now I know how David changes the names of AntMenus at
+      run-time. Yes, just assign new strings to the menu items. As a result,
+      I know also how Marc Rohloff implements his FavouritesMenu. Maybe one
+      day I will drop the implementation of a Favorites Dialog and try
+      Marc's way. But both the approaches have ups and downs.
+
+      WiseEditor is now 1.0.1 and NFamily is now 0.9.1.
+
+      The documents are updated again slightly this time.
+    \end{quotation}
+    \item[RC 3] \
+    \begin{quotation}
+      In this build, I replace the former InDate UI with a compact one. After
+      that I add such an option that whenever BDS is started, InDate checks for
+      available updates.
+
+      Also I port Martin R. Gagn$\acute{e}$'s loading circle control back to
+      .NET 1.1, and use it in InDate UI. Since it is hard to predict the
+      progress, I do not prefer a progress bar control. This loading circle is
+      more suitable.
+
+      I spend time on learning Microsoft shared source Enterprise Library's
+      Logging Application Block for .NET. Yes, it is well designed and easy to
+      use. Similarly, I find I can use log4net quite well now. But both of them
+      require me to add something to bds.exe.config - because CBC is not an
+      executable, and is loaded by bds.exe. You know it is not hard to do it on
+      my machine but may be trouble for others. Meanwhile, it requires great
+      effort to transfer from using Debug and Trace to either approach above.
+      As a result, I will keep on using the old method for a few month.
+      However, if I ever start a new project, I must pay attention to log4net
+      or Enterprise Library because they provide more features and greater
+      power to log down information.
+
+      When I try to add something to bds.exe.config, I find that I can change
+      the runtime of the IDE to .NET 2.0. Also, this is possible. Although I
+      can even let C\# compiler 8.0 (.NET 2.0) compile the project. The problem
+      is that the WinForms designer is now .NET 2.0, the auto-generated code is
+      not .NET 1.1 compatible. I do not know how to change other parts of the
+      IDE and add references to .NET 2.0 assemblies. I have to stop my
+      experiment later because Highlander will surely solve all the problems.
+
+      Now I have found a method to use log4net in CBC. Yes, it is not hard to
+      get used to this kind of logging system. However, it requires a lot of
+      modifications of code. So I will finish the transformation later and find
+      a way to prevent logging for release versions. That will not be hard I
+      think.
+    \end{quotation}
+    \item[RC 2] \
+    \begin{quotation}
+      In RC 2, I add an easter egg with the help of Sharp Dev Tools. Open the
+      About form and use Alt + TEAM, and then you will see it. Yes, that is a
+      picture of David ''The Creator'', or David Hervieux --- father of Sharp
+      Builder Tools.
+
+      When designing this feature, I find that SDT is badly documented.
+      Something you have to do is not listed somewhere. For example, it is easy
+      to follow the demo to initialize and set SecretKeyManager, but you may
+      forget to set the Form's KeyPreview property to true. I will soon make
+      use of other classes in SDT so I will write more tips about using it
+      later.
+
+      Now MSBuild is used when building projects. However, I still use NAnt to
+      clean up folders and call other targets. Why not turning to MSBuild just
+      in one step? First, there is a lot of work ahead and I am not sure it
+      will be easy. Also in certain aspects NAnt is not bad. As a result, I use
+      MSBuild to reduce duplication. When I was using NAnt, I had to keep SD
+      projects while keeping NAnt scripts about project building. Now only SD
+      projects are required to be kept. The only problem of this change is that
+      you cannot specify which version of ToolsAPI assembly should be linked
+      because those SD projects are for BDS 4 exclusively.
+
+      There is something I have to add here about MSBuild. When it is shipped
+      in .NET 2.0, I know its existence. Sharp\-Develop uses its own targets to
+      override Microsoft's targets so as to make the projects .NET 1.1
+      compilable. However, there is a big gap between .NET 1.x and 2.0, so SD's
+      workaround is not perfect. Although the projects can be compiled against
+      .NET 1.1, the resources files are not linked into the final assemblies.
+      As a result, every forms that contain images triggers exception when it
+      shows. How to work around this? Microsoft provides MSBee, a set of .NET
+      1.1 only targets. Now I use MSBee and everything works fine except one -
+      I cannot let you build CBC in SD 2.1 now (if you do compile in SD 2.1,
+      the assemblies are against .NET 2.0 so BDS cannot load them). Instead,
+      you should use MSBuild command line to achieve this goal. At this moment,
+      I cannot find a better solution, so stay tuned.
+
+      JCF 2.25 is bundled now.
+    \end{quotation}
+
+    \item[RC 1] \
+    \begin{quotation}
+      Since NDoc is no longer maintained, everybody who have used it is searching for
+      an alternative way. As a result, Sandcastle is now dominant in this field even
+      though it is still in CTP age.
+
+      I did not know this tool until I read the roadmap of SharpDevelop. Yap,
+      SD will rip NAnt and NDoc in the future and use MSBuild and Sandcastle
+      instead. I am switching a little bit faster. Now, LeXDK reference file is
+      generated by Sandcastle (with a lot of help from Sandcastle Help File
+      Builder. Thanks a lot, Eric Woodruff) in Visual Studio 2005 help style
+      which is more beautiful than before. I have updated the NAnt script. In
+      order to catch up with the trend, I will soon drop NAnt and turn to
+      MSBuild.
+
+      Also two bugs are fixed in this version. One is an unexpected exception
+      in the C/C++/C\# tab, and the other is deadlock in WiseEditor.
+
+      Updated content includes JCF 2.24, and a new version of deep serializer
+      from Marcus Deecke.
+    \end{quotation}
+
+ \end{description}
+
+  \item 2006-10-21 HardQuery Release 2
+  \begin{quotation}
+    One more feature is added in this version. When you work in a project group,
+    the project that contains the current active file in the editor will be
+    activated automatically.
+
+    All documents are updated to meet changes in LeXDK 5.3.
+  \end{quotation}
+  \item 2006-10-17 HardQuery Release 2 Milestone 5
+  \begin{quotation}
+    Since no bugs are there to fix and much more features are added, I drop
+    the plan of Update 1 and announce Release 2 of HardQuery.
+
+    Many new items are now included inside LeXDK. The newly-added
+    PropertyRegistry is a convenient way to register an option or a
+    preference (now they are refered as ''properties''). As a result, LeXDK
+    5.3 stops providing you preference service, which was introduced in LeXDK
+    5.2.
+
+    Deep serializer and deserializer are added in Milestone 5. Both reduce
+    development complexity.
+  \end{quotation}
+
+  \item 2006-10-11 HardQuery Update 1 RC 4
+  \begin{quotation}
+    Minus bug in InDate is resolved. Also an Elide to definition menu item is
+    added under Edit.
+
+    Because UnhandledExceptionManager is used, every unexpected exceptions can
+    be catched now.
+  \end{quotation}
+  \item 2006-10-03 HardQuery Update 1 RC 3
+  \begin{quotation}
+    When David released SBT 3.1 final, he droped OTAMenuEnhancement and used
+    OTAEditorEnhancement instead. However, when I ported those OTAs into CBC, I
+    chose the dropped unit. What a mistake! Using BeyondCompare or WinMerge to
+    compare the two units you will see many important differences.
+
+    Luckily I notice this now and make use of EditorEnhancement unit
+    extensively. I do something beyond. More functions are added to
+    BaseLanguageCodeHelper unit in order to make use of the factory everywhere
+    needed. CodeBeautifiers Plus now has a few units removed. They are now
+    inside the SBT Minus. It is a change that I have been waiting for, because
+    now tools such as AStyle and Jcf is decoupled from CodeBeautifiers unit
+    finally. Further changes may make them completely independent, but I am not
+    sure.
+
+    Since there are big changes, I increase the version number again.
+
+    C\#Goodies's ConvertXml class is dropped finally. I write a class for my
+    personal use and it is much simpler to read and understand. Also, it is
+    inspired by Marco Cant$\grave{u}$'s Mastering Delphi 2005. Thanks Marco.
+    You are a great teacher.
+
+    How to open shell at any location? I have to run cmd.exe there. It is not
+    hard to implement, but isn't easy to find it out. David used ''/k cd
+    $<$path$>$'' which does not run properly on Windows XP. So now I provide a
+    work around, that is running cmd.exe in the folder.
+
+    I learn CodeDOM using SBT and ArtCSB's source code. Yes, it is an
+    interesting technique. Although the implementation in .NET 1.1 prevents me
+    from getting enough information about class's constructor, I make an
+    easy-to-use Source Navigation Bar which is common in Visual Studio and
+    SharpDevelop but rare in Delphi. Castalia has such a feature, which is
+    buggy because of a not-good-enough C\# parser. I use .NET build-in DOM
+    which is also buggy. SharpDevelop has a better parser but I do not keep its
+    1.1 version source code. Also, I think in GrapeVine I can make a better use
+    of SharpDevelop 2.0/2.1 source. David implemented something like
+    ViewCodeDomForm, but he chose a strange UI. I prefer a bar to a tabbed
+    form. That is also why I do not use ArtCSB Source Navigator finally. A tree
+    form is not my choice. This is the most important addition to HardQuery in
+    my opinions. It is quite useful and easier to use than Structure Panel of
+    BDS. Currently, this feature only supports Delphi (both Win32 and .NET) and
+    C\#. The limitation is that only CodeDOM for the two are realized in the
+    IDE OTA.
+
+    Two open source tools, Clearer and ProcessChecker, are added into the
+    bundled folder.
+  \end{quotation}
+  \item 2006-10-01 HardQuery Update 1 RC 2
+  \begin{quotation}
+    Rest of SBT features are ported finally in this version. I think most of
+    them are useful and tiny, so migration is not too hard. Except the
+    Singleton limitation, there is something boring about CustomFeatureTool.
+    One feature can only have one tool class related. So even two tools who are
+    similar should belong to two distinct features. It is not convenient, too.
+
+    Most of the newly-added features are tested. They works fine. So, I have to
+    arrange a date to release the update final.
+
+    Now it is even longer for CBC to load all its features. It is hard to tune
+    the performance now because I am lack of techniques. I will read Effective
+    C\# again to see what I can do then. Also, you can turn off the features
+    you do not need to reduce the loading burden.
+
+    I am planning to divide Framework and WiseEditor Plus into a few smaller
+    pluses. However, the process will end until GrapeVine.
+  \end{quotation}
+
+  \item 2006-09-28 HardQuery Update 1 RC 1
+  \begin{quotation}
+    All ArtCSB 2.5 features are imported in this version because I think an
+    auto-saver can decrease the risk of losing all changes if system crashes.
+    Also, fold to definition is friendly. I ported Source Navigator in order to
+    know more about CodeDOM.
+
+    It is done without difficulty. Why? I have to mention once again, LeXDK 5.2
+    is much better than before. So any migration is easier. However, there are
+    still problems. Why are all features Singletons? It is not convenient.
+  \end{quotation}
+
+  \item 2006-09-16 HardQuery Final
+  \begin{quotation}
+    I am glad to announce the final version here after so many testings and
+    debugging. It is two month after the first milestone version of HardQuery.
+    The process is so long that many users may find NixNewNer Update 1 buggy
+    enough. Yes, many bugs are found during this period either by me or by some
+    kind-hearted users. I cannot promise this final version is bug-free, but I
+    am sure it has much fewer bugs.
+
+    M12 is stable enough except it lacks some BASIC language support. I have
+    no time to tune the performance this time because hard work has been done
+    in the summer. Problems that have not been addressed will be considered
+    in GrapeVine.
+  \end{quotation}
+
+  \item 2006-09-13 HardQuery M12
+  \begin{quotation}
+    I am promoting the Turbos these days. My very first target is a friend
+    who teaches in the local high school. Luckily, she is teaching Pascal now
+    and using Turbo Pascal already. When I help her install Turbo Delphi for
+    Win32, she soon realises that it is a brand new and so modern IDE. The
+    only problem now is that I am not sure whether Turbo Pascal projects run
+    well in Delphi IDE. I will try it.
+
+    With the help of the SharpDevelop Team, AStyle for Sharp\-Develop is now
+    in Beta 3, which is much closer to a Final version. What I have known
+    from this process is that BDS OTA is much more complicated but
+    sometimes easier to extend.
+
+    M12 is mainly focused on bug fixes. \#32 and \#33 are fixed. They are
+    really big bugs I see.
+
+    How did I find them? It was so lucky that when I taught my dear friend
+    to use Turbo Delphi, I was using BDS Delphi Personality to create a
+    Console Application. I failed while she succeeded. Why? The newly added
+    Readme feature had a bug that only occurred in this case. I want to
+    point out that it is more likely a BDS OTA bug/limitation. Creating
+    applications in different personalities seem to be completely different.
+
+    The Plus Manager bug was found later when I tried to locate the Readme
+    bug. I wanted to disable fully-tested features in order to isolate the
+    bug. Then I found PM failed. In fact, currently PM code has a lot of
+    bad smells. I will redo this feature in GrapeVine. I have a good plan
+    now but I cannot make it under .NET 1.1.
+
+    More tests will be taken recenly. I wish to deliver a stable final
+    version.
+  \end{quotation}
+
+  \item 2006-09-10 HardQuery M11
+  \begin{quotation}
+    Why it is fast named as M11 just one day later? There is a big
+    improvement on CodeBeautifiers Plus, the UNDO support.
+
+    If you read along this log you will know I had done an AStyle plugin
+    for SharpDevelop. Since its Beta 1 cannot handle reloading after
+    astyle.exe processes the file correctly, when I announce it on the
+    SharpDevelop User Community, I ask for help.
+
+    I never dreamed Daniel Grunwald would answer my question, who is a
+    major developer of SD. He suggested me making a temporary file aside,
+    formatting it and loading it directly to SD editor's buffer. As a
+    result, this kind of formatting can enjoy SD's undo service.
+
+    Today, I successfully finished the Beta 2 of that SD plugin. What's
+    more? After analysing WinMerge feature's code, I found David
+    manipulated BDS editor's buffer there. I went deeper into OTAUtils unit
+    and found FillBufferWithFile and CreateFileFromBuffer right in the
+    place.
+
+    Although David did not leave a comment, you and I could understand the
+    functions immediately. As a result, I redid something inside the CB
+    Plus and everything was okay. However, the process was not quite easy.
+
+    David's FillBufferWithFile implementation had bugs. After reading some
+    OTA materials I found a solution after a few trials (poor documented
+    OTA!!!).
+
+    I was hurried to bring UNDO service in but I broke the old architecture
+    inside CB Plus. Now, Project and Project Group menu items are disabled.
+    I will make them work later. I do not know whether it will be in M11 or
+    in a hotfix after final.
+  \end{quotation}
+
+  \item 2006-09-09 HardQuery M10
+  \begin{quotation}
+    I ported Liz's Readme Viewer from Delphi to C\#, because I found there
+    are some problems to build a Delphi for .NET plus based on LeXDK
+    (terrible). Now I guess something wrong with CLR compatibilty. Maybe I
+    miss some settings. I will dig it later.
+
+    This feature is included in WiseEditor Plus now. Whenever you open a
+    project including a readme file (e.g. Readme.txt, Readme.rtf, and so
+    on), the readme file will be opened automatically for you.
+
+    Also, I updated the Inno Setup script to add ArtCSB Plus Beta inside.
+  \end{quotation}
+
+  \item 2006-09-07 HardQuery M9
+  \begin{quotation}
+    Since I ported ArtCSB Plus sucessfully, I decided to make another
+    milestone that contained this feature.
+
+    Also I found in ZetaLibNet a tri-state checked treeview control, which
+    might be quite useful in next version of Plus Manager feature in
+    Utilities Plus. However, that library is now under .NET 2.0. Although I
+    could do something to bring it back to .NET 1.1, I would not. This kind
+    of upgrades will all be available in GrapeVine versions.
+  \end{quotation}
+
+  \item 2006-08-30 CBC HardQuery M8
+  \begin{quotation}
+    M7 is released on GForge. Some tiny problems were found and fixed in
+    that version.
+    \begin{itemize}
+      \item Timer unit is renamed to Stopwatch, which provides similar functions as
+      Stopwatch class in .NET 2.0.
+      \item Assembly unit is renamed to AssemblyHelper. Many functions are modified
+      heavily.
+    \end{itemize}
+
+    I decided to release M7 as the last milestone for HardQuery, but it had
+    some bugs, too. I found them and fixed them soon, so I provide M8 and
+    wish it would be the last. Also, many beta features are disabled as I
+    wish to do in the final. NFamily is now disabled by default.
+    ComponentNamer in WiseEditor Plus is disabled, too.
+
+  \end{quotation}
+
+  \item 2006-08-19 CBC HardQuery M6
+  \begin{quotation}
+    LeXDK is refined to increase loading speed. Now preferences management
+    is much easier because LeXDK provides that basic service. Feature names
+    are removed, and preferences files extension is changed back to .ota.
+
+    Some documents are updated. Last version is the last milestone,
+    because LeXDK 5.2 is almost done.
+
+    An important note is that beta version of features and pluses such as
+    ComponentNamer and NFamily will be turn off when shipping. You can turn
+    it on manually if you want to have a try.
+  \end{quotation}
+
+  \item 2006-08-12 CBC HardQuery M5
+  \begin{quotation}
+    I am quite glad that NFamily Plus Beta is done in this version. All
+    features are successfully ported from SBT to CBC. Though a few bugs are
+    there, I wish I could finish testing and fixing soon.
+
+    Many things changes under the surface. For example. when you see
+    FavoritesFeature class source code, you will find it is not as the
+    same as most of other features because of its Preferences class.
+    Also, ExpressoFeature shows a brand new way to load and save
+    preferences with the help of newly-added PreferencesManager class.
+    The changes reduce complexity of a feature dramatically. As a result,
+    LeXDK DG will be updated and the word ''draft'' will be removed
+    finally. In my opinions, LeXDK HardQuery (5.2) is the most stable and
+    the most easy-to-use version since its birthday. Although later many
+    tunings will increase efficiency, the architecture will keep
+    untouched for a while.
+
+    You may notice that I use M5 instead of RC5. That is because I change
+    the release naming rules a little bit. Now every stage in Roadmap will
+    be finally release as a ''Final'', such as HardQuery Final (it should
+    be officially versioned 5.2.0.1123). Before a final version, there will
+    be a few ''Milestone'' versions (I borrow this idea from the Eclipse
+    Project). And after a final version, there will be ''Update'' versions
+    which addresses urgent bugs or vulnerabilities. Between final and
+    updates, there will be ''Update Release Candidate'' (RC) versions.
+    ''Hotfixes'' will be released if needed.
+
+    From now on, final versions are focused on adding features and updating
+    LeXDK. Update versions and Hotfixes are focused on bugfixing and
+    performance tuning. Milestone versions provide major advancements,
+    while RC versions present immediate but unstable patches.
+
+    Also, I wanna show something important about the new roadmap. The stage
+    after is now named as GrapeVine (6.0). GV is a tough stage because it
+    focuses mainly on HighLander and .NET 2.0. Many part of pluses will be
+    changed in order to suit .NET 2.0. However, some changes such as
+    FastInvoke are not available on .NET 1.x. In other words, GV only
+    supports HighLander and .NET 2.0. Those who stay on .NET 1.x legacy
+    platform cannot try GV, and HardQuery is the last version of CBC for
+    them. Luckily, changes in GrapeVine is limited in LeXDK mainly, so the
+    pluses updates may be able to ported back to .NET 1.1 and work well
+    with LeXDK HardQuery (5.2).
+
+    GrapeVine will bring in the following changes:
+    \begin{itemize}
+      \item FastInvoke method will be used to load pluses, which has been
+      revealed to be much faster.
+
+      \item Generics methods will be added to reduce duplicate code.
+
+      \item Many .NET 2.0 BCL new classes will be used such as Stop\-watch
+      and WebBrowser to replace a few custom classes.
+
+      \item BDS OTA version 5 support will be added in order to load with
+      BDS 2007/Highlander (BDS 5.0).
+
+    \end{itemize}
+
+    More pluses and minuses will be added. Current plan is to port in
+    more features from SBT and add a Readme Plus. Since HighLander will
+    be out next year, so these pluses and minuses may be completed even
+    on HardQuery.
+
+    Stay tuned.
+  \end{quotation}
+
+  \item 2006-08-05 Announce CBC HardQuery M4
+  \begin{quotation}
+    Last version I focused on refining LeXDK and made something really
+    easier now. Yes, all pluses except NFamily is now okay. But that was
+    still M3.
+
+    Today I am glad that feature ComponentNamer Beta is done. Something
+    wrong there seems to be an OTA bug (Now I am sure that it is an OTA
+    bug. PropertyDescriptor class is not correctly implemented in .NET
+    WinForms designer in BDS, so its SetValue method fails sometimes
+    without any exception or information. It just fails to set the value
+    to the object, as a result, ComponentNamer is not 100\% okay and
+    fails sometimes). I traced in the code and found it was out of my
+    scope. I do not know if I need to report this or David has reported
+    it already. Other parts of WiseEditor Plus may be tested this time
+    all in one. I wish when shipping, they works okay. This is the goal
+    of M4.
+
+    M5 will focus on NFamily. It is really a ''hard query'' because the
+    code is not designed by me. Maybe some day I can ask David for help.
+
+    Just a minute ago, I saw the resource not found exception when CBC was
+    not loaded. OMG, it is a bug of the IDE possibly.
+  \end{quotation}
+
+  \item 2006-07-30 Announce CBC HardQuery M3
+  \begin{quotation}
+    Last version is not released but some important changes happen today,
+    so I have to increase the version number a little bit.
+
+    In the beginning, I was looking for some easier way to fill controls
+    into Preferences Form. I failed because at that moment I did not know
+    how to use User Control. It is something just like TFrame in VCL.
+    Finally I know it today and make visually designing Tab Pages in Form
+    Designer possible.
+
+    Now, only Framework and CodeBeautifiers Plus are changed to meet this
+    change of using User Control. I wish soon I will make all other pluses
+    compatible. Thanks to this change, I adopt the SBT AStyle style preview
+    function immediately. This way is more accurate than using ToolTips.
+  \end{quotation}
+
+  \item 2006-7-23 Announce CBC HardQuery M2 (not released)
+
+  \begin{quotation}
+    KyrSoft.CSBuilderGoodies.M\-in\-us is now merged into ThirdParty.
+    Live Help window is now named AlertForm in Lextm Common Library. It
+    is implemented by Mukund Pujari.
+
+    In order to display HTML strings without any limitation, KyrSoft
+    implemented QuickdocViewer is dropped. Instead, I use Pawel
+    Glowacki's implementation. His implementation is better except that
+    he makes use of Borland.mshtml assembly which is not redistributable.
+    As a result, I add a getmshtml project, which automatically copies
+    that assembly from BDS bin folder to CBC folders during installation.
+    This workaround works fine.
+
+    Also, I find what's wrong with HtmlControl. hc.control is null when
+    that form is created and html segment is assigned, so no content is
+    displayed. I don't know what causes this situation.
+
+    Soon, I find that Microsoft.mshtml does just the same thing
+    Borland.mshtml does. As a result, I use Microsoft.mshtml instead and
+    now getmshtml is not used any more. It is sad to find that
+    Microsoft.mshtml is also large. However, after some checking I see that
+    it is already installed in GAC on two PCs in my lab. I guess it is
+    included in .NET SDK, so I will check whether it is there on my test
+    machine where only SDK is installed.
+
+    At last, I use a MSHTML.dll I build with SDK tool, tlbimp. I think I
+    have enough rights to redistribute it with CBC. Actually, anyone who
+    gets .NET SDK installed could build this assembly by himself or
+    herself. As a result, you know it replaces either Borland.mshtml.dll or
+    Microsoft.mshtml.dll. Thanks to The Code Project, and who wrote that
+    good article on it. I rather not have it shipped with CBC because many
+    users who have Office 2003 installed may already have this assembly
+    placed in GAC, since it is included in PIAs. However, other users may
+    not have this PIA. So, I am forced to increase the size of CBC this
+    time and you should forgive me.
+
+    I will check SharpDevelop source to see if there is a good solution.
+
+    SharpDevelop 1.1 was using a HtmlControl, but I do not want to see in
+    to it. The main reason is about .NET 2.0 changes. In .NET 2.0, neither
+    a HtmlControl nor a MSHTML.dll wrapper is needed, because there is a
+    WebBrowser class and a HtmlDocument class. After checking those classes
+    in 2.0 SDK documentation, I find it rather easy to make things done
+    well in .NET 2.0. So when I have a workaround above in .NET 1.1, I do
+    not have to do some smarter thing when a quite simple solution is there
+    in .NET 2.0 waiting for me. So as to be compatible with HighLander, I
+    will surely rewrite FormXmlDocViewer with WebBrowser and HtmlDocument
+    later. This is my final decision.
+
+    Also, I find it unnecessary to make a LeXDK for SharpDevelop. It is
+    easy to extend SD. In about 30 minutes I wrote a AStyle AddIn (Beta).
+    Although SD has included an indenter inside, it lacks of certain
+    features like build-in styles implemented in AStyle. I guess this AddIn
+    may be useful. I will publish its Beta version and see whether people
+    like it.
+
+    I use ASpell to check errors in these documents, and I find some
+    conflicts. When I use --encoding=utf-8, find all errors, and quick fix
+    them, Eclipse parses the file again and deadlocks. It is not hard to
+    find that encoding is the cause. Today I change Eclipse's default
+    encoding to utf-8 instead of GBK, then I find the bug is gone.
+
+    These days I have been reading the book, ''Humane Interface''. Although
+    my English skill is still poor and I cannot understand many terms and
+    theories inside, I enjoy myself very much because the pictures in it
+    already display many important design rules I must follow. Today I
+    update CB Plus FormSaveFile. You can see the changes and feel that it
+    is much easier to use this form.
+
+    ToolTip is used to add Style Preview function to CB Plus AStyle tab
+    page. It is a easy but painful way because in ToolTip class spaces in
+    tip are compressed, and the style does not look exactly what it is. I
+    think in order to gain best appearance, a previewer may be added later
+    to display the styles.
+
+    --indent-namespace option seems to be not necessary when generating
+    AStyle parameter list. I will check AStyle manual again and make a hard
+    decision.
+  \end{quotation}
+
+  \item 2006-7-16 Announce CBC HardQuery RC 1
+
+  \begin{quotation}
+    Now I remove the reference to csbgoodies.dll and include some files
+    into a new minus named KyrSoft.CSBuilder\-Goodies.\-M\-in\-us. It
+    provides a Live Help window to display HTML strings. I add some code
+    in CodeBeautifiers Plus in order to test this Live Help feature. When
+    Ctrl + W is pressed, a tip will show.
+
+    Some UI items are modified. For example, the forms have accept
+    buttons and cancel buttons this time. Also, License and Readme
+    documents are updated.
+
+    Now, I use Eclipse + TeXlipse instead of EditPlus to maintain these
+    documents. It is fantastic and really platform independent. You may
+    imagine that I am doing some modifications on Ubuntu Linux system.
+
+    I will soon make InDate 2 complete and make Live Help more beautiful.
+
+    I have found an article on CodeProject about FastInvoke method by
+    reflection. However, this great method is implemented in .NET 2.0. CBC
+    will switch from normal P/Invoke to FastInvoke in order to speed up
+    loading.
+  \end{quotation}
+
+  \item 2006-7-1 Announce CBC NixNewNer Update 1
+
+  \begin{quotation}
+    \begin{enumerate}
+      \item + InDate 2 is completed.
+      \item * License.pdf is modified.
+    \end{enumerate}
+    Regular expression is now used to find matches in CBC's GForge
+    homepage file list in InDate 2. The structure for this tool is also
+    modified. A linked list is used to store those steps and make it
+    easy to understand. What is left? I have not connect UpdateInfo
+    unit to InDate's preferences.
+
+    Currently, InDate 2 needs a lot of tests still. Once I find problems,
+    hotfixes would be provided.
+
+    For those Update 1 RCs users, I will update the old blog link and you
+    can try whether InDate 1 works well.
+
+    This update took about a month to finish because I was writing an
+    article meanwhile. I wish this update is stable enough for users.
+
+    What is more? License.pdf contains a lot of modifications so as to let
+    you know more about this project's licensing issue. Since many other
+    projects' source/binaries are used in CBC, the problem is complex and
+    driving me crazy sometimes. I wish I have expressed myself correctly in
+    that document.
+  \end{quotation}
+
+  \item 2006-6-24 Announce CBC NixNewNer Update 1 RC 6
+
+  \begin{quotation}
+    \begin{enumerate}
+      \item * InDate is completed in RC 4.
+      \item * Bug \#14 is fixed in RC 5.
+      \item * Bug \#15 is fixed in this RC.
+    \end{enumerate}
+    There are no features added now. I have no time to do much work.
+  \end{quotation}
+
+  \item 2006-6-14 Announce CBC NixNewNer Update 1 RC 3
+
+  \begin{quotation}
+    \begin{enumerate}
+      \item * .plus2 file format is done.
+      \item + InDate feature is added.
+    \end{enumerate}
+    Although InDate feature is half-implemented, it can be used to
+    update CBC now. .plus2 file format gives the user more power to
+    configure features for every BDS versions. I wish I could make them
+    work well before the final of Update 1 is released.
+
+    RC 1 and RC 2 are fast fixes for N3 Final. They contain items listed
+    above. But they are not mature.
+  \end{quotation}
+  \item 2006-6-8 Announce CBC NixNewNer
+
+  \begin{quotation}
+    \begin{enumerate}
+      \item * Plus Manager GUI is updated.
+
+      Use TreeView instead of ListView. Partially enabled Plus will be
+      displayed in yellow color.
+
+      \item * AutoCompletion is tuned again.
+      \item + Adds some XML tag supports in C\# that you can invoke in
+      Ctrl + J. (BDS 4 only)
+      \item * \#13 bug on the bug tracker is fixed.
+      \item - Input Helper is disabled.
+      \item * AddMany Plus now works well under BDS 1.0.
+      \item - FileWizards of WiseEditor Plus is disabled under BDS 1.0.
+      \item * Documents are updated.
+    \end{enumerate}
+
+    Plus File Format Version II will be included in Update 1.
+
+    Much effort is put on testing. Unstable features are disabled by
+    default. Across BDS version compatibility is analysed this time. BDS
+    1.0 and 2.0 supports are tested.
+
+    Since I am stuck with BDS OTA bugs and vulnerabilities, I find it is
+    not easy to deliver AutoCompletion and Input Helper before HardQuery
+    (LeXDK version after NixNewNer).
+
+    Stay tuned.
+  \end{quotation}
+
+  \item 2006-6-3 Announce CBC NixNewNer RC 1
+
+  \begin{quotation}
+    1. Plus Manager GUI is updated.
+
+    2. AutoCompletion is tuned again.
+
+    I decided not to release a WalkPace version because now LeXDK
+    undertakes a lot of changes after I update the Plus Manager. Soon
+    there will be more. So last version, WalkPace Update 2 RC 3 is the
+    final.
+
+    Finally I think the Utilities Plus is mature now. So I version it 1.0
+    and start a new project codenamed WideLane. Plus Manager feature
+    version 2 is the beginning. Why don't features have distinct icons as
+    well as the pluses? It will be much more beautiful.
+
+    Version number is now updated to 5.1. This is better indicating the
+    changes in LeXDK is not quite compatible to 5.0. But I try my best to
+    keep your migration smoother.
+  \end{quotation}
+
+
+  \item 2006-5-31 Announce CBC WalkPace Update 2 RC 3 (Released)
+
+  \begin{quotation}
+    This should have been the 10th version but actually it is similar to
+    last, because I has just enough time to tune AutoCompletion and Input
+    Helper. So I haven't changed the version number of WalkPace this time
+    again.
+  \end{quotation}
+
+  \item 2006-5-28 Announce CBC WalkPace Update 2 RC 2 (Released)
+
+  \begin{quotation}
+    This was the ninth build of WalkPace.
+
+    Finally I decided to break the planned SBT Plus into a few small
+    pluses. The first plus ready was called WiseEditor Plus. The name was
+    chosen because all features were ported from BeWise SBT. I redid the
+    AutoCompletion code.
+
+    Not all features in this new plus are available, because some tests
+    are not done.
+
+    Some custom changes are easy to find. For example, it is now easy to
+    set a shortcut used SharedNames class. Expressions such as
+    \code{private const int DefaultFileShortcut =\\ \tab SharedNames.CTRL
+    + (int)Keys.W; //16471 } can be studied without difficulty.
+
+    NAnt scripts are updated. TipOfTheDay and Lextm.AddM\-an\-y projects
+    source are included. To build them, simply use the make.bat in their
+    root folders.
+
+    C\#Builder Goodies Doc Insight feature is disabled. I will soon
+    combine this feature with CnPack IDE Wizard Input H\-elp\-er feature
+    to do an enhanced feature.
+  \end{quotation}
+  \item 2006-5-22 Announce CBC WalkPace Update 2 RC 1 (Released)
+
+  \begin{quotation}
+    It was WP's eighth build, but I forgot to modify the assembly
+    information in time and left ''WP V'' label there.
+    \begin{itemize}
+      \item Some class/function names changed.
+      \item Tip of the Day feature added.
+      \item LeXDK composition changed.
+    \end{itemize}
+  \end{quotation}
+  \item 2006-5-1 Announce CBC WalkPace VII
+
+  \begin{quotation}
+    It is so easy now to port in SBT otas, because I keep so many
+    things nearly the same. After a few minutes I ported in about five
+    important parts of SBT, including NDoc, NANT, and so on.
+
+    However, it is still hard to port in the configuration form. I need
+    to find a good way.
+
+    After more tests, I think it will be stable enough to be published.
+    Because many tests are already done by David long time ago.
+
+    Also inspired by the match man icon of China-Pub, I creates a new
+    icon for LeXtudio.
+
+    Nearly all SBT code are ported in. Tests are needed.
+  \end{quotation}
+  \item 2006-4-24 Announce CBC WalkPace Update 1 (5.0.1.1018)
+  (Released)
+
+  \begin{quotation}
+    Licensing issues are changed. And also there are more features.
+
+    Yes, some features are finished while others not.
+
+    Here I update the information.
+
+    Finished:
+
+    1. a Plus Manager to manage Pluses and Features.
+
+    2. an Expert Manager to manage both .NET and Win32 BDS plug-ins. It
+    is an updated version of SBT's Expert Manager.
+
+    ** The above file "lextm.utilities.plus.exe" can also execute as a
+    stand alone executable. By default, it is the Expert Manager. If -p
+    parameter is used, it will be the Plus Manager. Isn't it wonder?
+
+    3. New Help menus added to BDS's Help menu.
+
+    4. Updated manuals
+
+    5. New Code Beautifiers Plus codenamed Long Jeans.
+
+    6. New installer.
+
+    7. Mix for BDS, which is a group of useful BDS shortcuts.
+
+    8. More libraries added like ThirdParty.dll.
+
+    Not Ready:
+
+    1. Use ShineOn library to port in some Delphi for Win32 code.
+
+    2. Comments for imported SBT code.
+
+    See the Plus versions. 0.9.0.0 indicates that a Beta version it is.
+    Actually only CB Plus is stable enough.
+
+    And at last I started to use GForge to host this project. Visit it
+    frequently and I will show new betas there.
+  \end{quotation}
+  \item 2006-3-12 Announce CBC WalkPace II (5.0.0.1018) (Released)
+
+  \begin{quotation}
+    AddMany 4.1 functions are now ported. It is also the first Delphi
+    for .NET project I ported. Although there were a few annoying bugs
+    popping up, I succeeded. It serves as a good demo of mixing C\# and
+    Delphi for .NET code. Also it is a good demo to show that LeXtudio
+    OpenTools SDK (LeXDK, for short) is easy to use.
+
+    Sharp\-Builder\-Tools.Com\-mon files are moved to
+    Lextm.Code\-Beauti\-fier\-Col\-lection.Com\-mon.
+
+    I modified them using information in this email. It is from David
+    Hervieux.
+
+    \begin{quote}
+      Hi here is a fix for SBT, I plan to do a release but I don't know
+      when
+
+      ----- Original Message -----
+
+      From: Tomek Pi��rkowski \\
+      To: dhervieux@users.sourceforge.net \\
+      Sent: Sunday, February 20, 2005 6:04 AM \\
+      Subject: [dev] SbTools and Delphi 2k5
+
+
+      Hi,
+
+
+
+      In Delphi 2005, SbTools don't work - you don't adapted yet sbt for
+      this new Borland IDE.
+
+      I correct sbt 3.1 sources to run in Delhi 2k5.
+
+
+
+      Main problem, getting Borland IDE registry key, adequate to BDS
+      version.
+
+      It is possible to get this key form IOTAService, so this be
+      independent of BDS version.
+
+
+      \code{ Private string ideRegKey = "";\\
+      public static string IDERegKey\{\\
+
+      \tab      get \\
+
+      \tab      \{\\
+
+      \tab \tab           if( ideRegKey == "" )\\
+
+      \tab \tab           \{\\
+
+      \tab \tab                  ideRegKey =
+      GetService().BaseRegistryKey;\\
+
+      \tab \tab                   if( ideRegKey.Substring(
+      ideRegKey.Length - 1, 1 ) != "$\backslash$$\backslash$" )\\
+
+      \tab \tab                   \{\\
+
+      \tab \tab                         ideRegKey +=
+      "$\backslash$$\backslash$";\\
+
+      \tab \tab                   \}\\
+
+      \tab \tab             \}\\
+
+      \tab \tab             return ideRegKey;\\
+
+      \tab       \}\\
+
+      \}\\
+      }
+
+
+      I attach this corrections with this message.
+
+      After this alterations, sbt work with delphi 2k5.
+
+
+
+      I attach also my InheritanceWizard, to generate new cs modules for
+      subclassing. Maybe you use it in sbTools. Is a small problem with
+      this wizard, I don't know, it is possible to create 2 files to new
+      module (cs and aspx) to webcontrols new modules. It's not problem
+      for me, because, I don't use WebForms, but generally problem
+      remain. Files *Template.cs to put in the
+      sbTolsBinDir$\backslash$Template$\backslash$Inheritance folder.
+
+
+
+      Thanks for sbTools
+
+
+
+      tom
+    \end{quote}
+
+    It is Tom's good idea that SBT can be run on Delphi 2005 and BDS
+    2006. However, he failed to notice that there is an OTA bug in
+    C\#Bu\-ild\-er 1.0 that prevents such modified version of SBT from
+    running. (GetService().Base\-Reg\-istry\-Key returns a dirty string
+    starting with an annoying ''$\backslash$'' ahead.) When I used his
+    idea in CBC, I modified this property further to work around known
+    issues (refer to OTAUtils unit to see details).
+
+    Reflection is now used by the framework to load features (such as
+    OtaAddMany and OtaCSBuilderGoodies). I also invent a special file
+    format to store feature information in CBC 2 plugin assemblies.
+    However, it is not completed yet. Next week I will solve it.
+
+    I think it is good time to close the feature set of this Beta
+    although I list a few more features in TODO. Before releasing CBC 2
+    WalkPace Final more documents should be written and more tests
+    should be carried out. They need time.
+
+    In the future, two different distributions will ship for CBC 2. One
+    is the Basic distribution, which contains only the framework
+    feature, the code beautifiers feature and the LeXDK. The other is
+    called Deluxe distribution that not only includes basic features
+    but more features as well. The Basic version is for those who only
+    needs a formatter. The Deluxe version is for those who ask for more.
+
+    Also this is the first time I begin to release update for older
+    versions. For example, last version CBC WalkPace I is made public
+    as CBC BigFace Update 1. This is not my intention but I guess BF
+    users may like to see it. I don't know whether it is a good way.
+    This update can only be installed with BF already installed because
+    a few supporting files are not included in the installer to reduce
+    its size.
+
+    Since I finally removed dependency on BDS version, I think it is
+    time to bring CBC to other BDS version like Delphi 2005. I will
+    do it lately before shipping this build.
+
+    Added on 2006-3-19:
+
+    It is neither too easy nor too hard to break this whole project
+    further to a bunch of six assemblies. However, this enables me to
+    layer this software as well as the LeXDK. This separation surely
+    reduces coupling between classes.
+
+    However, I only apply a few Design Patterns from the GoF Bible. I
+    believe further learning and practice can make a more stable and
+    flexible LeXDK.
+
+    Also I make two solution for Basic and Plus Pack.
+
+    Some files will not be shipped with this WalkPace Final version.
+    The version number is now changed to 5.0.0.1018 so as to reflect
+    its distinctions from the old 4.5 series. Next version should be a
+    NixNewNer.
+
+    The currently unavailable files are Plus Pack version 2006-3-19,
+    LeXDK DG, and a few articles. They will be available on the
+    homepage of CBC as soon as I finish.
+  \end{quotation}
+
+  \item 2006-3-5 Announce CBC WalkPace I (4.5.1.*)
+
+  \begin{quotation}
+    Architectural changes are finished. Shortcut settings are back
+    with brand new design. Menu items with a non-zero default
+    shortcut value now can be customized in FormShortcuts (so, more
+    items than ever).
+
+    XML indentation can not be changed in CBC FormOptions from this
+    version on because now XMLLex reads BDS's settings for XML files.
+    If you want to indent XML as you wish, you should changes BDS's
+    settings, either by RegEdit or BDS itself.
+
+  \end{quotation}
+
+  \item 2006-2-12 Announce CBC BigFace II (2.4 RC 4 or Beta 4)
+  (Released) (Added on 2006-3-5)
+
+  \begin{quotation}
+    Since when testing BigFace I found a few bugs that need urgent
+    attention, I stopped to do some patches. However, at that moment I
+    already changed the version number to 4.4, so I decided not to
+    change it back. If you were careful, you may see some WalkPace
+    features as well as Code Name WP in this release. However, it is
+    still BigFace version in my eyes.
+
+    I had ported many BeWise files to conform to my files. After porting
+    GPL headers were added.
+
+    Shortcut and XML indentation cannot be set in this release. They will
+    be back very soon in WP 1 (you can change it in code and build
+    manually).
+  \end{quotation}
+  \item 2006-2-7 Announce CBC BigFace I (2.4 RC 3 or Beta 3)
+
+  \begin{quotation}
+    This is not the BigFace mentioned in the Roadmap because finally I
+    decided to implement the style designer (maybe named JCFHelper) in
+    WalkPace. However, this version has a few annoying bugs fixed (for
+    example, the updated XML formatter, XMLLex, will not eat your XML
+    files when they are incomplete). The Roadmap will be updated soon.
+
+    I did a lot to learn Design Patterns and finally found some way to
+    update SBT 3.1 architecture a bit. You can find a lot patterns and
+    data structures I use in this version so as to reimplement certain
+    important functions (mentioned last time, OtaCodeBeautifier unit
+    has a lot of changes. Actually Factory Method and Singleton
+    Patterns are used now.) When this kind of refactorings were done,
+    BigFace would go out and reach you.
+
+    After these refactoring I believe this architecture has been improved
+    much and allows me to bring in more features later.
+
+    A lot of thanks go to NUnit. Now I can use this excellent tool after
+    some trials. It is really a powerful tool. Believe me, without NUnit,
+    I would not have done these important refactorings this time.
+  \end{quotation}
+
+  \item 2005-12-25 Announce CBC 2.4 RC 2 (Released as Beta 2)
+
+  \begin{quotation}
+    I have posted a roadmap on my personal blog. Yes, it is a new
+    version done today with a few user-friendly improvements like a
+    setter after installation and bundled AStyle and JCF executables.
+    However, these improvements are not listed in the roadmap.
+
+    After some painful refactoring I improved the Kiviat Chart for
+    OtaCodeBeautifier class a lot. So I have to confess that Together
+    for C\# has been a great tool in BDS 4. The speed of CBC must have
+    been quicker. A few bottlenecks have been removed. Even though now
+    only a few Singleton Design Patterns occurs in CBC, I find that it
+    is much easier to understand the code now. Go lextm.
+  \end{quotation}
+
+  \item 2005-12-10 Announce CBC 2.4 RC 1 (Released as Beta 1)
+
+  \begin{quotation}
+    I hadn't include an announcement of 2.3 because I was not happy
+    that day. Yes, I messed things up then. Version 2.3 was just an
+    urgent fix for 2.2.
+
+    I have to confess that since this December, I feel that I cannot
+    contribute as much energy as usual to this little project. So,
+    after this release I may take a good rest. Also, I should do more
+    preparations of my coming career and find a good job next year.
+
+    CBC 2.4 is a version that solely supports Delphi 2006 (BDS 4.0).
+    Delphi 2005 users should use 2.3. Actually the cores are the same.
+    Enjoy coding!
+
+    Added on 2005-12-16: Inno Setup 5 and ISTool help me a lot when I
+    make an installer for CBC. And I guess I can say farewell to the
+    dear InstallShield now and forever. So all CBC users can enjoy an
+    much easier way to install/uninstall CBC. Sorry that I know of Inno
+    Setup so late :-)
+  \end{quotation}
+
+  \item 2005-11-18 Announce CBC 2.2 RC 3 (Released)
+
+  \begin{quotation}
+    Since I decided to use Microsoft FxCop (Oh it is OPEN SOURCE) to
+    analyse my code (except original SBT part). So you may see a lot of
+    change now in this version. Yes, I learned a lot during this
+    period. At first I was following my own style formed in these
+    years, but now I choose a more popular (maybe not that popular)
+    way. It may be called some kind of standardization.
+
+    Also I knew that I could not change a WinForm's initialComponents
+    function now if I use an IDE. So when I do some refactoring with that
+    function, I should take care. Yes, a hint about CBC3. Yeah, the
+    architecture will be modified a bit then, I think. It is a good
+    architecture that David implemented but years goes by. Maybe I can
+    make some modifications in order to support Delphi 2006. It is now
+    that I think I have the ability for the first time. So I should start
+    soon. But you know it is end of this year these days. And I find it
+    really hard to concentrate on my projects now.
+
+    The icons are modified with the help of GIMP. They should be of
+    better quality now.
+
+    A beta version of installer is added. It only works for BDS 3 now,
+    and should be able to install/uninstall the release version of CBC 2.
+
+    If you want a better CBC, I beg you e-mail to me so as to remind me
+    that I should work harder than now. Thanks.
+  \end{quotation}
+
+  \item 2005-11-13 Announce CBC 2.2 RC 2
+
+  \begin{quotation}
+    Update a few places and add a project for Delphi 8 for .NET. Now I
+    officially support that IDE. Since the OTA version of it is still
+    7.1 (nearly the same as C\#Builder 1.0). Yes it is enhanced but not
+    as mature as Delphi 2005's OTA.
+
+    I make a decision to do some important refactoring in the next
+    version, so this should be a last version of 2 series. And thus
+    next version should be 3.0. However, I still work on this version
+    if it is required by the users.
+
+    Also I found that Marc Clifton's CodeProject article "A Treatise on
+    ..." was really bright and carefully designed. Now I use his code in
+    my project to correct the bug numbered 11.
+
+  \end{quotation}
+
+  \item 2005-10-30 Announce CBC 2.2 RC 1
+
+  \begin{quotation}
+    Forgot to write down something about CBC 2.1's release on last
+    Friday. It should be something sad. Since I have done a lot before
+    the day except using it myself for a few day to find more problems.
+
+    The Debug Builds should work well, but they give out log files. And
+    the Release Build cannot be used at all. That is my business. I
+    used the Debug Build myself so I forgot to change the settings to
+    Release Build. I think next time I will do better.
+
+    Thus, actually the version I released that day was really the 2.1 RC
+    4. This time may be I should release RC 5 or RC 6. Who knows?
+
+    Today I add an installer to replace SBT's Expert Manager. It is
+    simple. And yesterday, I change the option dialog a bit. Now I should
+    add some icons, too. Also I correct the Build settings. That is
+    important. Maybe I should fix this on BBS.cn\-pack.org and BDN soon.
+
+    Now icons are loaded from the file directly. I give up the way ArtCSB
+    uses. To use a resource file is much complex.
+
+  \end{quotation}
+
+  \item 2005-10-26 Announce CBC 2.1 RC 4 (Released)
+
+  \begin{quotation}
+    I finally make it easy to change the shortcut these days. And a few
+    tests are in advance on Delphi 2005. So a more stable version it is
+    now.
+
+    What bugs remaining is still the main menu. I don't know how
+    Borland R\&D've done their plug-in like StarTeam and Together. But
+    it is not a big matter, so I decide to solve it later.
+
+    I am also waiting for the reply of ArtCSB's author. I need his
+    permission to avoid future legal issues. :-)
+
+    I believe the 2.1 version will be out soon.
+
+    And Yahoo told me that I cannot reach the author of ArtCSB now. The
+    e-mail was returned.
+
+    I think I may release 2.1 without his permission, if I declare my
+    acknowledgement.
+
+  \end{quotation}
+
+  \item 2005-10-22 Announce CBC 2.1 RC 3
+
+  \begin{quotation}
+    I don't know when 2.1 will be out now. It seemed that I tried to
+    make it more stable every day. So I feel that maybe tomorrow a new
+    bug will occur. Maybe Code Review is necessary now.
+
+    First, the XML formatter was back, but now I add messages to it,
+    and test it outside the plug-in. I choose some NUnit way, but I
+    don't use NUnit, but a console written by me. The test is easiest,
+    because I use CodeDom from MS as the technique core, so further
+    tests are unnecessary. What I focus is whether it works.
+
+    Second, a few separators are added, so when the plug-in menus
+    displayed under Tools or CnPack menu, a clean UI is there.
+
+    Third, I realise the idea that I make a few available build-in styles
+    for JCF. Now, basic structure is set up. What is needed are settings
+    files. So if you want a special style or you have something to
+    contribute, send e-mail to me.
+
+    Fourth, according to ArtCSB 2.5's source, I add all things about
+    IDEUnregister. And since I use materials from BDN's article on
+    C\#Builder 1.0's .NET OTA, now the shortcut refreshing problem is
+    solved. What is remaining is that the menu is still different from
+    others. I should have checked the solution on CnPack's BBS.
+
+  \end{quotation}
+  \item 2005-10-20 Announce CBC 2.1 RC 2
+
+  \begin{quotation}
+    Minor changes occur to result a more stable version before it is
+    released.
+
+    First, XML formatter is back (though still buggy).
+
+    Second, change a few OTA calls to be compatible with ToolsAPI 7.1
+    (BDS 1.0).
+
+    Third, one more position available for you to place CBC menus. That
+    is under CnPack menu. I add it because I still care for those
+    CnPack users who demand a formatter feature in CnPack. Let this
+    wizard be a alternative way. Also, here I add a new validate line
+    to verify that the position is valid before inserting CBC menus.
+
+    Fourth, add a data folder to hold data used by CBC, and place files
+    there in a new order, thus OptionManager.cs has been heavily changed.
+    Rename AssemblyInfo.cs to PlugInInfo.cs to reduced confusion.
+
+  \end{quotation}
+  \item 2005-10-16 Announce CBC 2.1 RC 1
+
+  \begin{quotation}
+    CBC should be called "the ultimate code beautifiers" now, I
+    believe. And Borland finally decides to release DeXter in early
+    December. A good news for BCB users.
+
+    After applying a lot of refactoring principles, now CBC has evolved
+    to be SBT 3.1.0.0 compatible. That architecture is quite beautiful
+    if you dive in (although there is still work ahead). And David has
+    already replied to my e-mail, and permitted me to use his code.
+    "Everything's gonna be all right".
+
+    Other major changes are listed in the readme file.
+
+    I have done a lot of enhancements for the documents and source
+    structure. It is the first time that I add a short description about
+    me, the author of this plug-in.
+
+    Now there is a new folder named "technotes" in the "docs" directory
+    for those ideas flashed into my mind suddenly. I wish they would be
+    useful for the beginners to understand the process I develop this
+    piece of software. For experts, a lot of files about the techniques
+    I've used are included also. For instance, there are files about SBT
+    architecture, and BDS OTA for .NET.
+
+    Big thanks to CBC itself. I've found a good chance to make use of
+    those software engineering books, articles, and tools here.
+
+    Also I pulled out some memory on JCF Expert 1.0 and put them at the
+    beginning of this file (I should've started to write about that long
+    before).
+
+    There are still things to do, such as internationalization of CBC
+    (currently only English version is available). I'm learning about
+    this technique these days.
+
+  \end{quotation}
+  \item 2005-9-15 Announce CBC 2.0 (Released)
+
+  \begin{quotation}
+    Delphi 2005 is named the 'ultimate Delphi', but I guess (and proved
+    to be true that) the next version of BDS should be another
+    milestone. In the version 2006, C++Builder would be included. So,
+    totally 4 languages would be in BDS IDE.
+
+    Luckily JCF can format both of the Delphi languages (Win32 and
+    .NET), and AStyle is capable of C++/C\#. As a result, I decide to
+    make an expert based on SBT's code (where a good plug-in framework
+    is built in) which integrates these two command-line tools into
+    Delphi 200X's IDE.
+
+    The reasons are simple:
+
+    First, I use so many languages and need beautifiers' help;
+
+    Second, SBT is designed mainly for C\# developers, so only C\# source
+    code are considered.
+
+    C\# will be used to program this expert, because I referred to part
+    of SBT v0.9 (David, I owe you so much), and also I like this
+    language, who is another son of Anders.
+
+    Code Beautifier Collection Expert, action now!
+
+  \end{quotation}
+  \item 2005-3-19 Announce JCF Integration Expert v 1.0.1 (Released)
+  (Added on 2005-10-16)
+
+  \begin{quotation}
+    The software was something derived from SBT v0.9. I didn't choose
+    SBT v3.1.0.0 because I didn't understand that new architecture very
+    well then. After learning more about Design Patterns, I use SBT
+    v3.1.0.0's architecture later.
+
+    The long name was a mimic of ModelMakerTools' plug-in for
+    ModelMaker 8.
+
+    This piece of software was written for personal use in the beginning,
+    but soon released to public at 2ccc.com.
+
+    As twin of this software, I wrote a patch to SBT v3.1.0.0 in order to
+    add JCF support. That was the basis of later CBC. However, at that
+    moment, David, author of SBT decided to stop updating SBT, so it is
+    impossible for the users to see my patch packed in SBT's new version.
+
+    Later (about two months later, in May), I found a Delphi native open
+    source plug-in named CnPack. I joined that team, but my
+    Delphi-version of JCF and AStyle patch (available on
+    BBS.cn\-pack.org) was not finally accepted by that team. It is a pity
+    since I made a lot of efforts to move my C\# code to Delphi code, and
+    moved from SBT architecture to CnPack's.
+
+    This made me feel that I should update JCF Expert in some ways.
+
+    The trigger of CBC was a letter from my first known user. He
+    downloaded the plug-in from 2ccc.com, and e-mail to me. He asked for
+    a new version, and I just had update the piece I was using those
+    days. So, everything was OK for CBC to be born.
+
+  \end{quotation}
+
+\end{itemize}

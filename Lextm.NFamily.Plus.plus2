@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Plus2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>NFamily</Name>
+  <Features>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.NFamily.Feature.ExpressoFeature</Name>
+      <Description>Expresso helps to generate regular expressions. This feature connects Expresso to IDE.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>false</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.NFamily.Feature.AntFeature</Name>
+      <Description>Ant and NAnt are powerful build tools. This feature connects them to IDE.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>false</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.NFamily.Feature.NDocFeature</Name>
+      <Description>NDoc is a good document generator. This feature connects it to IDE.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>false</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.NFamily.Feature.NUnitFeature</Name>
+      <Description>NUnit is a .NET unit test tool. This feature connects it to IDE.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.NFamily.Feature.FxCopFeature</Name>
+      <Description>FxCop is used to audit code according to .NET guidelines. This feature connects it to IDE.</Description>
+    </Feature2>
+    <Feature2>
+      <EnabledRecords>
+        <EnabledRecord>
+          <Version>5</Version>
+          <Enabled>true</Enabled>
+        </EnabledRecord>
+      </EnabledRecords>
+      <Name>Lextm.NFamily.Feature.AssemblyInfoEditorFeature</Name>
+      <Description>This feature makes it easier to generate AssemblyInfo.cs.</Description>
+    </Feature2>
+  </Features>
+</Plus2>

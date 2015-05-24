@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="list" invoke="manual">
+		<point name="content">
+			<hint>
+				XML doc tag content
+			</hint>
+			<text>
+				Content
+			</text>
+		</point>
+		<point name="term">
+			<text>
+				Term
+			</text>
+		</point>
+		<point>
+			<hint>
+				list type can be bullet, number, and table
+			</hint>
+			<text>
+				bullet
+			</text>
+		</point>
+		<description>
+			list XML doc tag
+		</description>
+		<author>
+			Lex Mark (lextm)
+		</author>
+		<code language="CSharp" context="methodbody"><![CDATA[<list type="$type$">
+///    <listheader>
+///		   <term>$term$</term>
+///		   <description>$content$</description>
+///	   </listheader>
+///	   <item>
+///		   <term>$term$</term>
+///		   <description>$content$</description>
+///	   </item>
+///    <item>
+///        <term>$term$</term>
+///        <description>$content$</description>
+///	   </item>
+///</list>]]>
+		</code>
+	</template>
+</codetemplate>
