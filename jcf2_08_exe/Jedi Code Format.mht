@@ -1,0 +1,494 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: Jedi Code Format
+Date: Mon, 14 Mar 2005 22:22:51 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C528E4.5C2DD810"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C528E4.5C2DD810
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://jedicodeformat.sourceforge.net/
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Jedi Code Format</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2180" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD width=3D"33%">
+      <P align=3Dcenter><A href=3D"http://sourceforge.net/"><IMG=20
+      alt=3D"SourceForge Logo"=20
+      src=3D"http://sourceforge.net/sflogo.php?group_id=3D41564" =
+border=3D0></A>=20
+    </P></TD>
+    <TD width=3D"33%">
+      <P align=3Dcenter><A href=3D"http://www.delphi-jedi.org/"><IMG =
+height=3D104=20
+      src=3D"http://jedicodeformat.sourceforge.net/oslogoobpas.gif" =
+width=3D103=20
+      border=3D0></A></P></TD>
+    <TD width=3D"34%"><BR></TD></TR></TBODY></TABLE>
+<H1 align=3Dcenter>Jedi Code Format<BR></H1>
+<H2 style=3D"TEXT-ALIGN: center">Version 2.08<BR></H2>
+<P align=3Dcenter>March 2005<BR></P>
+<P align=3Dcenter><BR></P>
+<DIV style=3D"TEXT-ALIGN: left">The following Sourceforge pages are =
+available:<BR>
+<UL>
+  <LI><A name=3DDownload></A><A style=3D"FONT-WEIGHT: bold"=20
+  =
+href=3D"http://sourceforge.net/project/showfiles.php?group_id=3D41564">Do=
+wnload=20
+  Executables and Source Code</A>=20
+  <LI><A =
+href=3D"http://jedicodeformat.sourceforge.net/Jcf2changes.html">Change=20
+  log</A><BR>
+  <LI><A=20
+  =
+href=3D"http://sourceforge.net/tracker/?group_id=3D41564&amp;atid=3D43078=
+0"><SPAN=20
+  style=3D"FONT-WEIGHT: bold"></SPAN>Bug reporting and tracking</A>=20
+  <LI><A=20
+  =
+href=3D"http://sourceforge.net/tracker/?atid=3D430783&amp;group_id=3D4156=
+4&amp;func=3Dbrowse">Feature=20
+  request</A>=20
+  <LI><A=20
+  =
+href=3D"http://sourceforge.net/tracker/?atid=3D430781&amp;group_id=3D4156=
+4&amp;func=3Dbrowse">Support=20
+  request</A><BR>
+  <LI><A href=3D"http://sourceforge.net/forum/?group_id=3D41564"><SPAN=20
+  style=3D"FONT-WEIGHT: bold"></SPAN>Forums</A>=20
+  <LI><A =
+href=3D"http://sourceforge.net/project/stats/?group_id=3D41564"><SPAN=20
+  style=3D"FONT-WEIGHT: bold"></SPAN>Project statistics</A>=20
+  <LI>And other functions via the <A=20
+  href=3D"http://sourceforge.net/projects/jedicodeformat/">project =
+details=20
+  page</A> </LI></UL></DIV>
+<H2>What does it do?</H2>
+<P>The formatter can standardise all aspects of Delphi Object Pascal =
+source code=20
+formatting, including indentation, spacing and capitalisation.&nbsp;If =
+you are=20
+still not sure, see <A=20
+href=3D"http://jedicodeformat.sourceforge.net/examples.html">the =
+examples of=20
+program input and output</A> . </P>
+<H2>Why use a code formater?</H2>
+<P>It is useful if you are taking over code and don't like the original=20
+formatting. It is useful if you are trying to bring code from multiple =
+sources=20
+to one standard.</P>
+<P>A human <B>can</B> always produce better formatting than a program, =
+but in=20
+many cases they don't. If you find a piece of code's formatting annoying =
+or hard=20
+to read, this program can save you a lot of time.</P>
+<P>On your own code it can catch your mistakes, and even automate some =
+mundane=20
+tasks that may have annoyed you but you haven't bothered with up to now =
+(e.g. to=20
+turn tabs to spaces, standardise&nbsp; indentation, spacing and =
+capitalisation,=20
+globally change a variable or procedure name, globally remove redundant =
+unit=20
+from all uses clauses, or even to insert the MPL licence comment into =
+all=20
+units).</P>
+<H2>How should I format my Delphi programs?</H2>
+<P>You should format your Delphi programs as per this program's default=20
+settings, i.e. <A=20
+href=3D"http://community.borland.com/article/0,1410,10280,00.html">as =
+Borland=20
+suggests</A>.</P>
+<H2>Licence and disclaimer:</H2>
+<P>This program is free and open-source. It is covered by the <A=20
+href=3D"http://www.mozilla.org/MPL/MPL-1.1.html">Mozilla Public Licence =
+(MPL)</A>.=20
+I chose this particular open-source license at the <A=20
+href=3D"http://www.delphi-jedi.org/Jedi:ADMINLICENSING:187710526">suggest=
+ion</A>=20
+of the <A href=3D"http://www.delphi-jedi.org/">Delphi-JEDI group</A>. If =
+you=20
+improve this program in any way (bug fix, new feature, better algorithm, =
+
+whatever), I would appreciate it if you send those improvements back to =
+me for=20
+possible inclusion in a future version.</P>
+<P><B>Disclaimer:</B> This program may have bugs or not yet fully meet =
+it's=20
+design objectives. Although it has been fairly well tested and is used =
+with some=20
+success, I cannot make any guarantees. If you care about the quality of =
+this=20
+program, send in bug reports.&nbsp;</P>
+<P>I recommend using a <A=20
+href=3D"http://www.mactech.com/articles/mactech/Vol.14/14.06/VersionContr=
+olAndTheDeveloper/">source=20
+control system</A> such as <A=20
+href=3D"http://msdn.microsoft.com/ssafe/default.asp">Microsoft Visual=20
+SourceSafe</A>, <A=20
+href=3D"http://www.loria.fr/~molli/cvs/doc/cvs_toc.html">CVS</A>, <A=20
+href=3D"http://community.borland.com/article/1,1410,10492,00.html">TeamSo=
+urce</A>=20
+or the like. Remember "<A=20
+href=3D"http://community.borland.com/article/1,1410,10492,00.html">Source=
+ control=20
+is like flossing</A> - you don't have to floss <B>all</B> your teeth - =
+just the=20
+ones you want to keep." If you are still not using such a tool, =
+<B>please make=20
+backups</B> before using the formatter.</P>
+<H2>How to install</H2>
+<P>This version is downloadable as source or as executable.</P>
+<P>Install the executables as follows:</P>
+<UL>
+  <LI><A =
+href=3D"http://jedicodeformat.sourceforge.net/#Download">Download the=20
+  executable programs</A>, and unzip to a suitable directory.=20
+  <LI>Place the file <CODE>JCF2Settings.cfg</CODE> in your windows=20
+directory.<BR>
+  <LI>Run the gui <CODE>JcfNotepad.exe</CODE> to experiment with =
+files.<BR>
+  <LI>Run the GUI program <CODE>JcfGui.exe</CODE> to format files from =
+the gui -=20
+  this is good when you have a directory or directory tree of Delphi =
+files that=20
+  you want to format.=20
+  <LI>Run the commandline program <CODE>jcf.exe</CODE> if you are making =
+a batch=20
+  file or you are masochistic.=20
+  <LI>Use the IDE plugin to format files or projects while you are =
+working in=20
+  the Delphi IDE. </LI></UL>
+<P>The Delphi IDE pluggin can be installed for Delphi 7 as follows. All =
+packages=20
+can be installed by selecting the menu item <CODE>Component|Install=20
+packages</CODE> and clicking the "Add" button.</P>
+<UL>
+  <LI>Install the <A =
+href=3D"http://www.delphi-jedi.org/">JCL&nbsp;design-time=20
+  package</A>&nbsp; into Delphi. <BR>
+  <LI>Install the JVCL design-time controls into Delphi.<BR>
+  <LI>Install the JcfIde7.bpl <BR>
+  <LI>Read the <A=20
+  =
+href=3D"http://jedicodeformat.sourceforge.net/idepluggin.html">Instructio=
+ns for=20
+  use</A> for the JCF IDE pluggin. </LI></UL>
+<P>Install the source as follows:<BR></P>
+<UL>
+  <LI><A href=3D"http://homepages.borland.com/jedi/jcl/">Get the JCL =
+code=20
+  library</A>, install the design-time packages. <BR>
+  <LI>Download, build and install the <A=20
+  href=3D"http://homepages.borland.com/jedi/jvcl/">JVCL components</A>.=20
+  <LI>For the test harness, you will also need <A=20
+  href=3D"http://dunit.sourceforge.net/">DUnit</A>.<BR>
+  <LI><A =
+href=3D"http://jedicodeformat.sourceforge.net/#Download">Download the=20
+  source</A>, and unzip to a suitable directory.=20
+  <LI>Launch Delphi.<BR>
+  <LI>Open the code formatter program group in =
+<CODE>JediCodeFormat.bpg</CODE>=20
+  <LI>Compile and run. Take care, have fun. </LI></UL>
+<P>Things that can go wrong with compilation:</P>
+<UL>
+  <LI>&nbsp;The project TestProject.dpr is opened by default, and this =
+project=20
+  is full of warnings. Remember&nbsp; it is just test code for the =
+formatter to=20
+  work on, and is not intended to be run. Delphi opens the last project =
+in a=20
+  group automatically, and I wish Borland would change this. TestProject =
+is the=20
+  least important of the projects. Use the menu item&nbsp; =
+<CODE>View|Project=20
+  manager</CODE> and open the first project, JediCodeFormat.dpr instead. =
+
+  <LI>Some files can't be found (you will get an error like =
+"<CODE>[Fatal Error]=20
+  JediCodeFormat.dpr(142): File not found: 'JclStrings.dcu'."</CODE> The =
+JCF=20
+  files and JediComponents files are not included in this zip file. You =
+may have=20
+  placed them&nbsp; in a different location on your hard drive. Change =
+the paths=20
+  in the <CODE>JediCodeFormat.dpr, Jcf.dpr and Jcfide.dpk </CODE>files.=20
+  <LI>The files are marked read-only. This is the way that they come out =
+of the=20
+  source-control system. You may clear this setting.&nbsp;=20
+  <LI>The <CODE>Output</CODE> directory is not found. I like to =
+configure Delphi=20
+  to write the <CODE>.dcu</CODE> files and executables to an output =
+directory.=20
+  Naturally, when distributing the source, this directory is empty. =
+WinZip=20
+  doesn't store empty directories, so it may not exist after you unzip.=20
+  Sometimes I remember to put a dummy file called Delme.tmp in this =
+directory.=20
+  If you see that file, it has already served it's purpose and may be=20
+  removed.&nbsp; Make an <CODE>Output</CODE> directory under your =
+CodeFormat=20
+  directory, or clear (or change) this setting in Delphi's=20
+  <CODE>Project|Options|Directories/Conditionals</CODE> settings.=20
+  <LI><CODE>Jdfide.dpk</CODE> gives a lot of warnings about implicly =
+imported=20
+  units. Yes it does. It's not serious.=20
+  <LI>All projects except the first will not build at all becuase of =
+files that=20
+  are not found, and thse files are part of JCF. Make sure that you have =
+an=20
+  output directory, and that it contains the DCU files, and that it is =
+on the=20
+  project's search path.=20
+  <LI>When compiling all projects, do a "Build all" not a "Compile all", =
+as=20
+  there is a litte bit of code behind&nbsp; $IFDEF macros to make the =
+IDE=20
+  pluggin different to the GUI executable. Compiling without rebuilding =
+is not=20
+  sensitive to the fact that these units need to be recompiled due to =
+changed=20
+  project defines. </LI></UL>
+<H2>How do I report a bug? </H2>
+<P><A=20
+href=3D"http://sourceforge.net/tracker/?group_id=3D41564&amp;atid=3D43078=
+0">Report the=20
+bug here</A>. Submit a test case and (optionally) a fix to the source, =
+and tell=20
+me which if these categories, ordered by severity, that you think the =
+bug falls=20
+into: </P>
+<OL>
+  <LI>Program error: The program crashes (access violation, assertion =
+failure,=20
+  etc.) or aborts when given your test case.=20
+  <LI>Bad output: The program gives output that does not compile when =
+given your=20
+  test case.=20
+  <LI>Lousy formatting: The output compiles but looks bad. Give an =
+example of=20
+  input code that is badly formatted, and preferably a fix.&nbsp;=20
+  <LI>Nonstandard formatting: The output is readable but not compliant =
+with the=20
+  agreed standards.Give an example with your test case of what you think =
+the=20
+  output should be, and preferably a fix.&nbsp;=20
+  <LI>Missing option: The formatting that you want is not standard, but =
+it's how=20
+  you do it and the formatter does not support it. If you don't give a =
+fix that=20
+  adds your favorite option, give an example with your test case of what =
+you=20
+  think the output should be. </LI></OL>
+<H2>What to do if you don't like this program</H2>
+<P>Breath. Calm down. Remember that I am offering this program free and =
+without=20
+any guarantees. Remember that I did not force you to use it. Remember =
+that I=20
+strongly suggested that you make backups. Constructive suggestions, =
+especially=20
+those with code, will be kindly treated. Flames will be deleted. I =
+haven't had=20
+any flames yet for this program, and I'd like to keep it that way.</P>
+<H2>Where is the program going? </H2>
+<P>The goal for Version 2.0 is that the program should have no bugs and =
+generate=20
+output compliant with official code formatting standards (and have =
+options for=20
+other styles). It should allow the user to configure anything that needs =
+to be=20
+configured, and it should not overload the user with useless =
+options.&nbsp; </P>
+<P>It should also have, in order of priority: readable source, an easily =
+
+extendable and well-documented architecture, and should run fast enough. =
+</P>
+<H2>Can I get involved?</H2>Yes, please do. Report a bug. Request a =
+feature.=20
+Download the source, compile it, and fix a bug or add a feature. If your =
+
+addition is sound it will be included in the next release and your name =
+will be=20
+listed. If you want to be added to the Sourceforge project developers =
+list, do=20
+this first, then we'll talk. I'm not interested in adding people the =
+project's=20
+developers list just because they want the status of being there. I =
+<SPAN=20
+style=3D"FONT-WEIGHT: bold">am</SPAN> interested in giving that status =
+to people=20
+who have proved that they can and do add something of value. I am a bit=20
+skeptical of wild verbal enthusiasms. To paraphrase Bruce Sterling, it =
+doesn't=20
+take youthfull enthusiasm, it takes dogged middle-aged=20
+persistence.<BR><BR>Howver bear in mind that this is open source =
+software. If=20
+you want to play with the code, forge ahead in your own direction or =
+just or=20
+roll your own version of JCF, go right ahead.<BR>
+<H2>What other Delphi code formatters exist?</H2>
+<UL>
+  <LI><A href=3D"http://pasind.tsx.org/">Pascal indent</A> is a Pascal =
+and Delphi=20
+  formatter written (in C) by Ladislav Sobr. It can also generate HTML =
+or TeX=20
+  output from P`ascal or Delphi source.<BR>
+  <LI>The <A href=3D"http://www.freepascal.org/">Free Pascal</A> =
+Compiler is=20
+  available under the <A href=3D"http://www.gnu.org/">GPL</A> licence, =
+and=20
+  includes an Object-Pascal code formatter called PTOP.&nbsp;=20
+  <LI><A href=3D"http://www.dow.wau.nl/aew/DelForExp.html">DelForExp</A> =
+is a free=20
+  (but no source) Delphi source formatter by Egbert van Nes&nbsp;=20
+  <LI>The <A=20
+  =
+href=3D"http://www.delphicity.net/catalogue/tools/codeformatters/sourceno=
+rmalizer/index.html">Source=20
+  Normalizer</A> costs $47. I know nothing about it except what is on =
+the web=20
+  pages=20
+  <LI><A=20
+  =
+href=3D"http://www.cocolsoft.com.au/cocolcloak/cocolcloak.htm">CocolCloak=
+</A> is=20
+  a rather misguided program that can only obfuscate delphi source code. =
+When=20
+  version 1 is released, it will cost $150.&nbsp; It is "a new way of =
+securing=20
+  your products and source code from theft and reverse engineering". I =
+prefer to=20
+  <A href=3D"http://www.mozilla.org/MPL/MPL-1.1.html">MPL</A> the =
+source. The FAQ=20
+  seems to imply that it will even obfuscate variable names. What a =
+senseless=20
+  waste of effort.=20
+  <LI><A=20
+  =
+href=3D"http://www.preview.org/cgi-bin/nav_e.pl?t=3Dscshot12.htm">SourceC=
+oder</A>=20
+  is an extensive source code tool that does code formatting as one of =
+its=20
+  functions. It costs $89, but there is a free trial version that works =
+for 50=20
+  days. </LI></UL>
+<H2>What other delphi code tools exist?</H2>
+<P>You could look for delphi code tools at <A=20
+href=3D"http://www.innercircleproject.org/">The inner circle=20
+project</A>.&nbsp;<BR>You could look for the API translations, code =
+library and=20
+components at <A href=3D"http://www.delphi-jedi.org/">The Joint =
+Endeavour of=20
+Delphi Innovators (project JEDI)</A>.<BR><A=20
+href=3D"http://www.gexperts.org/">GExperts</A>&nbsp; is Open source =
+programming=20
+tools for Delphi and C++ builder. Not only are they good tools, the =
+source is=20
+good examples on how to do this kind of thing.<BR>There are several =
+sites that=20
+act as clearing-houses for Delphi shareware, components and free =
+code.</P>
+<H2>Does JCF just work on Delphi code?</H2>
+<P>Yes, it is designed with only Delphi in mind. However it may work on =
+other=20
+dialects of Pascal. I have no way to test this as I only use Delphi, but =
+if you=20
+have any luck, let me know. If you would like JCF to support a syntax =
+element=20
+from another dialect of Pascal, then send me a code sample =
+please!&nbsp;</P>
+<P>For other languages such as C, Java and so on - do a search on the =
+web and=20
+you will probably find a selection of tools.</P>
+<HR>
+
+<P style=3D"TEXT-ALIGN: center"><SPAN style=3D"FONT-STYLE: =
+italic">Contact me via=20
+the </SPAN><A style=3D"FONT-STYLE: italic"=20
+href=3D"http://sourceforge.net/forum/?group_id=3D41564">forums</A><BR></P=
+></BODY></HTML>
+
+------=_NextPart_000_0000_01C528E4.5C2DD810
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://sourceforge.net/sflogo.php?group_id=41564
+
+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
+
+------=_NextPart_000_0000_01C528E4.5C2DD810
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://jedicodeformat.sourceforge.net/oslogoobpas.gif
+
+R0lGODdhZwBoAOMAAAAAAICAAIAAgACAgMDAwABAgEAA/4BAAP//////gICA//+AQICAgAAAAAAA
+AAAAACwAAAAAZwBoAAAE/hDJSau9OOud1yJcKI5kGXqLqa4si35tLK+gRbzpVc98j+4IHGxy8/SO
+MyGhiEMkcECktMQUWpvTrOnKfWm/o243Ci7bxFezuoMWrt+UatsIl5Ex8vmvLiIoFAaBgoF/S2d6
+Y3w6gIONjoQgeYhXCYoSBAKPgn6aBiBPk22KBJ2DNZyDCnGhXHdlmKWpFahkkoiuZYyxg3hsobhl
+u4/AGKyjwo+qJLZifKTIjyWsQ2/QmsQV0zlqz9aOyiHMaNXemmFQoFBKarrlpufUQTiVl3uv7o3Y
+FQm1WLP0YPBtOvICYJ1u5fRRQWEJoTWFKjxAlNLO28Rl2/gIHGhpikOB/hc5hOxRcaOCkTYAHduY
+LIYulDE+sjQgwKUgcG9KzoR5iVedmcNk+IQD1NGMl3BksuRJhOMapRuZTnDKrejNRRlOXmCE0wxU
+fDhRedJx01BPA11zWQ10SeeFTI0EKCOUdO2uKF+vvslr10AFZFKp9I21gy/dvYNjTQX8M3GnSNAC
+l3BcyrAgPjope0vrVfNSRZ6jKsocelfD0gk7orbY0fJqzkRXC+vYVHYp2HVI26Ydx/Y13r19ywJO
+QXdo4haEs0We3DdzDLYlgzG+9vkG6jNxW6+dWHruvtq3LyqqVbyJJSa9MxcrrLz5Hkv+AAIkt5D6
+9/g3ANjPH8BBBgDe/ldCfwTu99R+DBSwn4AhFOigGgAwQEGCfDho4SxE3LFELZeYhQABAABBwAFx
+BBjHiR0yUJiKs7A4AQAwwlhBjDJOoGCENxawAwM0RngJjAHwCGMBL0qIAY8FKGgkAUS+CAKASRLJ
+JAAKDhCJgliC0OMFW0pwY481IYBkAQnCaCSVPfooppIu/mgkj082KUGIYvoIQgEkfugjmRMwMAAC
+NGYQqJdm6gnjElj+mKShEU6p5odlUlkDhRMcICGTFNDJIxF0XvKhlD8CGqOgg95YwwAKEiAkmQCi
+qaWCEiBp5CxJ3jnrmrjaeCURcnKa5qCk1pikmgccCiKVBQiQbLKv/vpXp48AWrDnrRRSOueusfaa
+7YYbAotBqVRe6iqIi3p6SZbPSrjpjE/mKcEAl8oJYpyc7qhipz+OqkGpOQ7b5I3w3ngmlbEWikCq
+l6wL4pt0LlwwvTbm6XCtBXvLpb5YCinpJQP0uCSaFS+56sYVG4xAsalC2+uUSp6LZogWS4sxwh5m
+2GaHheGlai0btmjuhzbcDGkNMc84M775jVB0phgfmvSA+j4NxtIv6luj0TH8akaNVM9ptbM8cA22
+qGWIffW3Xx8hNtZfmD32xW5fLbe3WwZ6NtmiRp332F3uDbbb+n3t7Np44z234XwP/rfiXjfe+OGI
+62005Ig7XjnbYlpXPejdhTO9+eKca7541Y5nzjnhMpPuNeWqX+433JQTHvrpjF/cuuq045645H3n
+XXrtrsuIOtuXoy786J3/qrznUc+td9/HB/v52dCn2bnfyzf4ttSwZ64999r3zkHo4EcAADs=
+
+------=_NextPart_000_0000_01C528E4.5C2DD810--
