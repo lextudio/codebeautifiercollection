@@ -1,1 +1,0 @@
-downloaded from http://jedicodeformat.sourceforge.net/

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<VisualStudioProject>
+	<CSHARP ProjectType="Local" ProductVersion="7.10.3052" SchemaVersion="2.0" ProjectGuid="{20E9543B-FC18-4284-92C8-6FADC10FF5A7}">
+		<Build>
+			<Settings ApplicationIcon="" AssemblyKeyContainerName="" AssemblyName="" AssemblyOriginatorKeyFile="" DefaultClientScript="JScript" DefaultHTMLPageLayout="Grid" DefaultTargetSchema="IE50" DelaySign="false" PreBuildEvent="" PostBuildEvent="" RunPostBuildEvent="" OutputType="Library" RootNamespace="Lextm" StartupObject="">
+				<Config Name="Release" AllowUnsafeBlocks="False" BaseAddress="285212672" CheckForOverflowUnderflow="False" ConfigurationOverrideFile="" DefineConstants="TRACE;" DocumentationFile="" DefineDebug="false" DebugSymbols="False" FileAlignment="4096" IncrementalBuild="True" NoStdLib="false" NoWarn="" Optimize="True" OutputPath="bin\Release" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="False" WarningLevel="4"/>
+				<Config Name="Debug" AllowUnsafeBlocks="False" BaseAddress="285212672" CheckForOverflowUnderflow="False" ConfigurationOverrideFile="" DefineConstants="TRACE;DEBUG" DocumentationFile="" DefineDebug="false" DebugSymbols="True" FileAlignment="4096" IncrementalBuild="True" NoStdLib="false" NoWarn="" Optimize="False" OutputPath="bin\Debug" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="False" WarningLevel="4"/>
+			</Settings>
+			<References>
+				<Reference Name="System" AssemblyName="System" HintPath="$(SystemRoot)\microsoft.net\framework\v1.1.4322\System.dll"/>
+				<Reference Name="System.Data" AssemblyName="System.Data" HintPath="$(SystemRoot)\microsoft.net\framework\v1.1.4322\System.Data.dll"/>
+				<Reference Name="System.XML" AssemblyName="System.XML" HintPath="$(SystemRoot)\microsoft.net\framework\v1.1.4322\System.XML.dll"/>
+				<Reference Name="System.Drawing" AssemblyName="System.Drawing" HintPath="$(SystemRoot)\microsoft.net\framework\v1.1.4322\System.Drawing.dll"/>
+				<Reference Name="System.Windows.Forms" AssemblyName="System.Windows.Forms" HintPath="$(SystemRoot)\microsoft.net\framework\v1.1.4322\System.Windows.Forms.dll"/>
+				<Reference Name="Borland.Studio.ToolsAPI" AssemblyName="Borland.Studio.ToolsAPI" HintPath="c:\program files\borland\bds\3.0\bin\Borland.Studio.ToolsAPI.dll" Private="False"/>
+			</References>
+		</Build>
+		<Files>
+			<Include>
+				<File RelPath="src\lextm\CBC\CbcExpertResource.resx" BuildAction="EmbeddedResource"/>
+				<File RelPath="src\lextm\CBC\gui\FrmCodeBeautifier.resx" BuildAction="EmbeddedResource" DependentUpon="FrmCodeBeautifier.cs"/>
+				<File RelPath="src\lextm\CBC\gui\FrmOption.resx" BuildAction="EmbeddedResource" DependentUpon="FrmOption.cs"/>
+				<File RelPath="src\lextm\CBC\AssemblyInfo.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\BaseOTA.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\Configuration.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\Consts.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\Enums.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\Main.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\OTACodeBeautifier.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\OTAOptions.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\Common.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\OTAUtils.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\RunProcess.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\MethodInfo.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\ClassInfo.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\FieldInfo.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\MemberInfo.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\ViewFileInfo.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\utils\WinAPI.cs" BuildAction="Compile"/>
+				<File RelPath="src\lextm\CBC\gui\FrmCodeBeautifier.cs" BuildAction="Compile" SubType="Form"/>
+				<File RelPath="src\lextm\CBC\gui\FrmOption.cs" BuildAction="Compile" SubType="Form"/>
+			</Include>
+		</Files>
+	</CSHARP>
+</VisualStudioProject>
